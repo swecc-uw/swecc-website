@@ -36,3 +36,122 @@
     transform: rotate(360deg);
   }
 }
+
+@font-face {
+  font-family: assistant;
+  src: url
+}
+
+#homepage {
+  position: relative;
+  width: 100%;
+  height: 3066px;
+  background: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  font-family: 'Assistant';
+}
+
+#clubTitleSection {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 610px;
+  top: 140px;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), linear-gradient(0deg, rgba(190, 184, 235, 0.1), rgba(190, 184, 235, 0.1)), url(https://s3-alpha-sig.figma.com/img/9358/3ff0/1a91d545c99e6a03c9dc55ac53a46a8d?Expires=1681689600&Signature=UPmk7cqWeEt1yWMLN78H8ToCXfpUV8iRfphMiJ-QpgexpvJXWlpBW~U~ohSgFBpMkMCrOC1zzAyA95OHWioXxxcopvBZPYgTSyVzap6ywnsHQhZBEKc0Oo6lkRCfCWMVO305Lh9qe7oBwKIiOfeol2t1MzVNuylUbiOI0J0jWSTcROrWm1glJVKlZQuP7A3vj1SP4CO~5AnB2Adl28YN6Kg6qHJ0S8-21MVqHWdFIXeiPzql8PVSJxLrBQM6rLKdJGPcvIpPzBDw75e0jwh2BSQQpaFtyldSPiZ~F3QchuyADaTbbWP4cwYHBsc1AUHwXmdlYqRcrQlDqFMCRpqFJg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4);
+}
+
+#uwLogo {
+  position: absolute;
+  height: 50%;
+  margin: auto;
+  top: 12%;
+}
+
+#clubName {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 105px;
+  color: #4B2E83; 
+  position: absolute;
+  bottom: 10%;
+}
+
+#whatWeDoSection {
+  position: absolute;
+  top: 750px;
+  height: 675px;
+  text-align: center;
+}
+
+#summary {
+  position: relative;
+  margin-left: 146px;
+  margin-right: 146px;
+}
+
+h2 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 78px;
+  color: #4B2E83;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 72px;
+  color: #BEB8EB;
+}
+
+p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 47px;
+}
+
+#meetingsSection {
+  position: absolute;
+  top: 1360px;
+  height: 630px;
+  width: 100%;
+  background: #F8F5F5;
+}
+
+#meetingsInfoSection {
+  position: relative;
+  height: 447px;
+  width: 43%;
+  top: 90px;
+  left: 8%;
+}
+
+#map {
+  position: absolute;
+  right: 7%;
+  top: 102px;
+  height: 500px;
+  text-align: center;
+}
+
+#mapPic {
+  height: 416px;
+}
+
+#mapLabel {
+  position: relative;
+  font-weight: 700;
+  bottom: 1em;
+}
+
+#sweccMeetings, #meetingInfo, #meetingTime, #meetingTimes {
+  margin: 0;
+}
+
+#meetingTime {
+  padding-top: 1em;
+}
