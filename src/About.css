@@ -22,6 +22,8 @@
         linear-gradient(0deg, rgba(190, 184, 235, 0.1),
             rgba(190, 184, 235, 0.1)), url(about.svg);
     background-size: cover;
+    background-attachment: fixed;
+    background-position: 20%;
 }
 
 .about-title {
