@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import backgroundImg from './BackgroundImg.jpg';
 
 function homepage() {
   return (
@@ -8,7 +9,7 @@ function homepage() {
 @import url('https://fonts.googleapis.com/css2?family=Assistant&display=swap');
       </style>
       <div id="clubTitleSection">
-        <img id="uwLogo" src="https://s3-alpha-sig.figma.com/img/52b1/c8c0/6479893d9df58e791f33334295c4d07f?Expires=1681689600&Signature=boJ9Vn5IJQC0CG0R94o~iMvDAKoM9QCtD7umhko7wGEe1pBx~5BRD2hN~Nsc~IoeF~IFW9oxUw8CPk~Ch64l1ysp76IGRp13kUdmF8bybi4YeMCnrOcyNSPF5Unmtc0Sa4oo3eAu99FpjShD--X1~YrQ~PNrBd8dLMhcUguXwyZ5MULnu5vDwRoMmDtJ9vA~oVPrJ~q0WIWR8uI4WkslWUt9xhXd52znQ6TCAKtfYKBnVufy~hktLiTLfNC611CW0g9zN2pQJxPtvZ2Y4TDNB5awhC8qQTjfBZARbOdM25fLCR4Jtz5zMEgwj3Sd64CqP6X0C6Gxv6-KQh3FuOKH-w__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"/>
+        <img id="uwLogo" src='https://s3-alpha-sig.figma.com/img/52b1/c8c0/6479893d9df58e791f33334295c4d07f?Expires=1682899200&Signature=Gs5uN3yRTV8VIUAutApgrX7cI3ZLWpitgxKLCz-UNCDP-A4AeUtGksD-FvJcLL9oOpQSoOH2hBpO-G~vLNRG1WcZP3sIQW5Uz5XGQhb4Qw31PNBzH~05t2fQN3Za9mgl7ci4lKRwGXeEGRabQ~YIYPS-mAUIUzeZNTyH5gGeOZjXEb6fEoKfQ9wEciCiXFVNtmqlWLUglE3ar7UuIAUfZV4ptZrpGaU-tIK7jeKQ7TLsURJhS-0xONVW8B9clRwo1YagdKJmUSNFVgxHy312igNww988BGhWqHk9KYU6Olld8CBX4XNzLEkvJM-UW7y~s0dyEODoWmLu4PyXW-pnuw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4'/>
         <h1 id="clubName">Software Engineering Career Club</h1>
       </div>
       <div id="whatWeDoSection">
