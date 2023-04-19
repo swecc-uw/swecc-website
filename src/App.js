@@ -1,12 +1,17 @@
 import logo from './logo.svg';
 import About from './About';
+import './App.css'; 
+import Footer from './Footer'; 
+import Header from './Header'; 
 
 function App() {
   return (
     <div class="wrapper">
-      <About>
-        <h1>Content Content Content</h1>
-      </About>
+      <Header />
+          <About>
+            <h1>Content Content Content</h1>
+          </About>
+        <Footer />
     </div>
   );
 }
