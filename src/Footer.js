@@ -2,8 +2,9 @@ import React from 'react';
 import './Footer.css'
 import discordLogo from './discord-logo.jpg';
 import instaLogo from './insta-logo.jpg';
-import mailLogo from './mail-logo.jpg';
+import LinkedInLogo from './LinkedInLogo.jpg';
 import SWECClogo2 from './SWECClogo2.jpg';
+import { Link } from 'react-router-dom';
 
 const Footer = () =>  {
     return (
@@ -11,9 +12,9 @@ const Footer = () =>  {
         <div class = "contact-copyright-box">
               <div class = "contact">
                 <a id = "contact-text">CONTACT</a>
-                <img class = "contact-images" src = {instaLogo} alt = "instalogo" />
-                <img class = "contact-images" src = {discordLogo} alt = "discord" />
-                <img class = "contact-images" src = {mailLogo} alt = "mail" />
+                <a href = "https://instagram.com/swecc.uw?igshid=YmMyMTA2M2Y="><img class = "contact-images" src = {instaLogo} alt = "instalogo" /> </a>
+                <a href = "https://discord.com/invite/Pbk4sCEWDY"><img class = "contact-images" src = {discordLogo} alt = "discord" /></a>
+                <a href = "https://www.linkedin.com/company/software-engineering-career-club-at-uw/"><img class = "contact-images" src = {LinkedInLogo} alt = "mail" /></a>
               </div>
               <div class = "copyright">
                 <img id = "footer-logo" src = {SWECClogo2} alt = "SWECC logo" />
@@ -29,7 +30,7 @@ const Footer = () =>  {
             <p id = "join-newsletter">Join our newsletter</p>
           </div>
           <div class = "email-box">
-            <p> <a class = "email-enter"> Enter your email</a><a id = "subscribe-btn">Subscribe</a></p>
+            <p> <input placeholder = "Enter your email" class = "email-enter"></input><button type = "button" id = "subscribe-btn">Subscribe</button></p>
           </div>
         </div>
       </footer>

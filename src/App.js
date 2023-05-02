@@ -1,17 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
 import Footer from './Footer';
 import Header from './Header';
+import { BrowserRouter,  Route, Routes } from 'react-router-dom';
+import Home from './Home';
+import Events from './Events';
+import About from './About';
+import JoinNow from './Join-Now';
 
 
-function App() {
+const App = () => {
   return (
-    <div class = "wrapper">
+    <BrowserRouter>
       <Header />
-      <h1>Content Content Content</h1>
+      <div>
+        <Routes>
+          <Route index path = "/Home" element={<Home/>} />
+          <Route path="/About" element={<About/>} />
+          <Route path="/Events" element={<Events/>} />
+          <Route path="/Join-Now" element={<JoinNow/>} />
+        </Routes>
+      </div>
       <Footer />
-    </div>
+    </BrowserRouter>
   );
-}
+};
+
 
 export default App;
