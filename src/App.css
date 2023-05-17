@@ -13,6 +13,13 @@
   }
 }
 
+@font-face {
+  font-family: 'Roboto';
+  src: url('./Roboto-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -36,4 +43,3 @@
     transform: rotate(360deg);
   }
 }
-
