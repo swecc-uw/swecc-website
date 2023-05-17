@@ -1,5 +1,7 @@
 import React from 'react';
 import './About.css';
+import Footer from './Footer';
+
 const About = () => {
     return (
         <div class="about">
@@ -20,11 +22,12 @@ const About = () => {
                         to begin. We bring in panels of people currently in the field
                         to answer questions, help prepare for interviews,
                         work to give people a head start in their software engineering career!
-                        (This is just a quick sample paragraph pls don't judge the writing)(Add a bit
-                        more info here blah blah blah)
+                        {/* (This is just a quick sample paragraph pls don't judge the writing)(Add a bit
+                        more info here blah blah blah) */}
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 }
