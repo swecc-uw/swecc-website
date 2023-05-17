@@ -2,7 +2,7 @@
 import './App.css';
 import Footer from './Footer';
 import Header from './Header';
-import { BrowserRouter,  Route, Routes } from 'react-router-dom';
+import { BrowserRouter,  Route, Routes, Redirect } from 'react-router-dom';
 import Home from './Home';
 import Events from './Events';
 import About from './About';
@@ -15,7 +15,7 @@ const App = () => {
       <Header />
       <div>
         <Routes>
-          <Route index path = "/Home" element={<Home/>} />
+          <Route path = "/" element={<Home/>} />
           <Route path="/About" element={<About/>} />
           <Route path="/Events" element={<Events/>} />
           <Route path="/Join-Now" element={<JoinNow/>} />
