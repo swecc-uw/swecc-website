@@ -1,0 +1,36 @@
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table {
+    margin: 0px auto;
+    table-layout: fixed ;
+    width: 80% ;
+    border-spacing: 0px 10px;
+    border-collapse: separate;
+}
+
+ td {
+    padding: 0 100px;
+}
+
+.info-title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 44px;
+    color: #3D3061;
+    text-align: center;
+}
+
+.info-text {    
+    font-family: 'Assistant';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 39px;
+    color: #676767;
+}
