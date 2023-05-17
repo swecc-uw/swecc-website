@@ -1,4 +1,3 @@
-
 import './App.css';
 import Footer from './Footer';
 import Header from './Header';
@@ -28,3 +27,4 @@ const App = () => {
 
 
 export default App;
+>>>>>>> 97946200b8cf9b697c4c42617b2f7e49ebda61b3
