@@ -3,6 +3,7 @@ import backgroundImg from "./BackgroundImg.jpg";
 import SWECCmap from './SWECC-MAP.jpg'
 import UWlogo from './UW_logo.png'
 import Footer from './Footer.js'
+import { InstagramEmbed } from 'react-social-media-embed';
 
 
 const homepage = () => {
@@ -44,6 +45,15 @@ const homepage = () => {
           id="map" src = {SWECCmap} />
         <p id="mapLabel">Location: Loew Hall Room 215</p>
       </div>
+      <div style={{ display: 'flex', justifyContent: 'center', padding: '2%'}}>
+      {/* <InstagramEmbed url="https://www.instagram.com/p/CsDKoflLlNM/?igshid=MzRlODBiNWFlZA==" width={328} />
+      <InstagramEmbed url="https://www.instagram.com/p/CrPXP4Oqobe/?igshid=MzRlODBiNWFlZA==" width={328} />
+      <InstagramEmbed url="https://www.instagram.com/p/Cq8-ZsxqlTM/?igshid=MzRlODBiNWFlZA==" width={328} /> */}
+     
+      </div>
+
+      
+
       <Footer/>
       </div>
   );
