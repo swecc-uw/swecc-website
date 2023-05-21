@@ -36,12 +36,16 @@
     margin: 5px;
     font-style: none;
     font-weight: bold;
-    color: #7E6D90;
     font-family: 'Roboto';
   }
   
   nav :hover {
     color: #D7C464;
+  }
+
+  a {
+    color: #7E6D90;
+    text-decoration: none;
   }
   
   /* The special coloring for the button of join now! */

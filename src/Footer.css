@@ -34,7 +34,7 @@ footer {
   #contact-text {
     margin-right: 10px;
     color: #FFFFFF;
-    font-size: 15px;
+    font-size: 1rem;
     font-family: 'Roboto';
     font-weight: bold;
   }
@@ -67,7 +67,7 @@ footer {
     color: #FFFFFF;
     font-family: 'Roboto';
     font-weight: bold;
-    font-size: 12px;
+    font-size: 0.8rem;
     letter-spacing: 0.5px;
   }
   
@@ -78,7 +78,7 @@ footer {
     color: #FFFFFF;
     font-family: 'Roboto';
     font-weight: lighter;
-    font-size: 10px;
+    font-size: 0.7rem;
   }
   
   /* styling for the email entering peice of the text */
@@ -97,7 +97,7 @@ footer {
   
   /* Styling for the stay in touch message */
   #stay-in-touch {
-    font-size: 18px;
+    font-size: 150%;
     font-weight: bold;
     margin-bottom: -15px;
   }
@@ -105,6 +105,7 @@ footer {
   /* Styling for join newsletter message */
   #join-newsletter {
     text-align: center;
+    font-size: 100%;
   }
   
   /* Styling for the larger email box */
@@ -115,30 +116,49 @@ footer {
     border: 1.5px solid #5941A9;
     display: flex;
     border-radius: 34px;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 7px;
+    padding-right: 7px;
+    height: 60px;
+    align-items: center;
+    justify-self: center;
   }
   
   /* Styling for the enter your email message */
   .email-enter {
-    font-size: 12px;
+    font-size: 15px;
     color: #3D3061;
     font-family: 'Roboto';
     padding-bottom: 1px;
     border-bottom: 1px solid #FFFFFF;
+    border: 0px;
+    background-color: #E5E2ED;
+  }
+
+  .email-enter:focus {
+    outline:none;
+    border-bottom: 0.1rem solid #FFFFFF;
   }
   
   /* Styling for the subscribe button of the enter your email*/
   #subscribe-btn {
-    font-size: 8px;
+    font-size: 0.55rem;
     font-weight: bold;
     letter-spacing: 1px;
     color: #4B2E83;
-    margin-left: 40px;
+    margin-left: 30px;
     box-sizing: border-box;
     background: #FFFFFF;
     padding: 4px 10px;
     border-radius: 20px;
+    border: 0px;
+  }
+
+  #subscribe-btn:hover {
+    transform: scale(1.2);
   }
   
+  #subscribe-btn:active {
+    color: #FFFFFF;
+    background-color: #4B2E83;
+  }
   /* End of the footer content  */
