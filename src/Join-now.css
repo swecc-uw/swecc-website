@@ -1,46 +1,3 @@
-img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-table {
-    border-collapse: separate;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-
-.info-title {
-    font-family: 'Assistant';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 200%;
-    /* line-height: 44px; */
-    color: #3D3061;
-    text-align: center;
-}
-
-.info-text {   
-    margin-left: auto;
-    margin-right: auto;
-    font-family: 'Assistant';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 150%;
-    line-height: 39px;
-    color: #676767;
-    text-align: center;
-    width: 60%;
-}
-
-.example-images {
-    display: flex;
-    align-self: center;
-    width: 50%;
-}
-
 @font-face {
     font-family: 'Assistant';
     src: url('./Assistant-Regular.ttf');
@@ -162,6 +119,49 @@ table {
 
 #thanks-message {
     color:#3D3061;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table {
+    border-collapse: separate;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.info-title {
+    font-family: 'Assistant';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 200%;
+    /* line-height: 44px; */
+    color: #3D3061;
+    text-align: center;
+}
+
+.info-text {   
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Assistant';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 150%;
+    line-height: 39px;
+    color: #676767;
+    text-align: center;
+    width: 60%;
+}
+
+.example-images {
+    display: flex;
+    align-self: center;
+    width: 50%;
 }
 
 #entire {

@@ -1,16 +1,16 @@
 import './App.css';
 import Footer from './Footer';
 import Header from './Header';
-import { BrowserRouter,  Route, Routes, Redirect } from 'react-router-dom';
+import { HashRouter,  Route, Routes, Redirect } from 'react-router-dom';
 import Home from './Home';
 import Events from './Events';
 import About from './About';
-import JoinNow from './Join-now';
+import JoinNow from './Join-Now';
 
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Header />
       <div>
         <Routes>
@@ -21,7 +21,7 @@ const App = () => {
         </Routes>
       </div>
       <Footer />
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 

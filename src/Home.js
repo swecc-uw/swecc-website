@@ -45,15 +45,13 @@ const homepage = () => {
           id="map" src = {SWECCmap} />
         <p id="mapLabel">Location: Loew Hall Room 215</p>
       </div>
-      <div style={{ display: 'flex', justifyContent: 'center', padding: '2%'}}>
-      {/* <InstagramEmbed url="https://www.instagram.com/p/CsDKoflLlNM/?igshid=MzRlODBiNWFlZA==" width={328} />
+      {/* <div style={{ display: 'flex'}}> */}
+      {/* <InstagramEmbed url="https://www.instagram.com/swecc.uw/" /> */}
+      <div style={{ display: 'flex', justifyContent: 'center'}}>
+      <InstagramEmbed url="https://www.instagram.com/p/CsDKoflLlNM/?igshid=MzRlODBiNWFlZA==" width={328} />
       <InstagramEmbed url="https://www.instagram.com/p/CrPXP4Oqobe/?igshid=MzRlODBiNWFlZA==" width={328} />
-      <InstagramEmbed url="https://www.instagram.com/p/Cq8-ZsxqlTM/?igshid=MzRlODBiNWFlZA==" width={328} /> */}
-     
+      <InstagramEmbed url="https://www.instagram.com/p/Cq8-ZsxqlTM/?igshid=MzRlODBiNWFlZA==" width={328} />
       </div>
-
-      
-
       <Footer/>
       </div>
   );

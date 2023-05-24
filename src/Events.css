@@ -119,8 +119,15 @@
 }
 
 .past-event-image {
-    width: 15rem;
+    width: 14rem;
     border-radius: 10px;
+}
+
+@media (min-width: 768px){
+    .past-event-image {
+        width: 20rem;
+        border-radius: 10px;
+    }
 }
 
 .past-event-title {
