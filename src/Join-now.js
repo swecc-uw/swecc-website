@@ -6,6 +6,9 @@ import completionBar0 from './join-now-img0.png';
 import completionBar1 from './join-now-img1.png';
 import completionBar2 from './join-now-img2.png';
 import completionBar3 from './join-now-img3.png';
+import career from './career.png';
+import community from './community.png';
+import networking from './networking.png';
 
 
 
@@ -67,13 +70,13 @@ export default function JoinNow() {
                   <tbody>
                   <tr>
                       <td align='center'>
-                          <img class = "example-images" src="networking.png" alt="Networking Picture" width="60%"/>
+                          <img class = "example-images" src={networking} alt="Networking Picture" width="60%"/>
                       </td>
                       <td align='center'>
-                          <img class = "example-images" src="community.png" alt="Community Picture"  width="60%"/>
+                          <img class = "example-images" src={community} alt="Community Picture"  width="60%"/>
                       </td>
                       <td align="center">
-                          <img class = "example-images" src="career.png" alt="Career Picture"  width="60%"/>
+                          <img class = "example-images" src={career} alt="Career Picture"  width="60%"/>
                       </td>
                   </tr>
                   <tr>
