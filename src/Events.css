@@ -22,7 +22,7 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    height: 200px;
+    height: 100%;
 }
 
 .event-headers {
@@ -143,4 +143,30 @@
     font-family: 'Assistant';
     font-size: 75%;
     text-align: left;
+}
+
+/*Default settings*/
+.calendar { 
+    border: 0px;
+    width: 800px; 
+    height: 600px;
+    margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .calendar {
+      border: 0; 
+      width: 600px; 
+      height: 450px;
+      margin-bottom: 1rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .calendar {
+        border: 0; 
+        width: 450px; 
+        height: 338px; 
+        margin-bottom: 1rem;
+    }
 }

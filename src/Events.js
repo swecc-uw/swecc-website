@@ -10,6 +10,9 @@ const Events = () => {
           {/* This is the beginning of calendar stuff */}
           <h2 class='event-headers'>Upcoming Events</h2>
           {/* Please put HTML calendar here :) */}
+          <div align="center">
+            <iframe class="calendar" src="https://calendar.google.com/calendar/embed?src=ryannguyen10023%40gmail.com&ctz=America%2FLos_Angeles"></iframe>
+          </div>
         </div>
         <div class = 'upcoming-events-section'>
           {/* This is the start of upcoming events */}

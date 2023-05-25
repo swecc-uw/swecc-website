@@ -75,3 +75,117 @@
     transform: translate(0%, 10%);
     color: #676767;
 }
+
+.team-members-title {
+    padding-top: 40px;
+    font-style: normal;
+    text-align: center;
+    font-weight: 700;
+    font-size: 4em;
+    color: rgba(75, 46, 131, 0.95);
+}
+
+.team-members-section {
+    background: #F8F5F5;
+}
+
+.team-members-subtitle {
+    font-style: normal;
+    text-align: center;
+    font-weight: 700;
+    font-size: 2em;
+    color: #676767;
+}
+
+.picture-container {
+    display: grid; 
+    grid-template-columns: auto auto auto; 
+    grid-template-rows: auto 80px auto 80px auto 80px; 
+    column-gap: 30px;
+    row-gap: 10px;
+    width: 1000px; 
+    margin: 0 auto; 
+    padding-bottom: 90px
+}
+
+.picture {
+    border-radius: 5px; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.team-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+@media only screen and (max-width: 768px) {
+    .about-message-section {
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 500px;
+        /* top: 134px; */
+        display: flex;
+        flex-direction: column;
+        background: linear-gradient(0deg, rgba(190, 184, 235, 0.8),
+                rgba(190, 184, 235, 0.8)), linear-gradient(0deg,
+                rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)),
+            linear-gradient(0deg, rgba(190, 184, 235, 0.1),
+                rgba(190, 184, 235, 0.1)), url(about.svg);
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: 20%;
+    }
+    
+    
+    .about-title {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 3em;
+        line-height: 105px;
+        color: #3D3061;
+    } 
+    
+    .about-text {
+        text-align: center;
+        font-weight: 700;
+        font-size:  1em;
+        line-height: 20px;
+        color: #3D3061;
+    }
+
+    .goal-message-section {
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 500px;
+        /* top: 134px; */
+        display: flex;
+        flex-direction: column;
+        background: #FFFFFF;
+    }
+
+    .goal-title {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 2.45em;
+        line-height: 78px;
+        padding-bottom: 40px; 
+        color: rgba(75, 46, 131, 0.95);
+    }
+
+    .goal-text {
+        text-align: center;
+        max-width: 500px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1em;
+        line-height: 30px;
+        color: #676767;
+    }
+}
