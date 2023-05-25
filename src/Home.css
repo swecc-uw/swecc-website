@@ -138,4 +138,19 @@
     padding-top: 2vw;
   }
 
+  .posts {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  .instaPost {
+    margin-top: 5rem;
+  }
+
+  @media (min-width: 1070px) {
+    .instaPost {
+      margin: 5rem 0.5rem 0.5rem 1rem;
+    }
+  }
   

@@ -8,7 +8,9 @@ const Header = () =>  {
     return (
       <nav class = "full-nav">
         <div class = "header-logo">
-            <img id = "nav-logo" src = {SWECClogo} alt = "SWECC Logo"/>
+            <NavLink to="/">
+              <img id = "nav-logo" src = {SWECClogo} alt = "SWECC Logo"/>
+            </NavLink>
         </div>
         <div class = "nav-bar">
           <a class = "header-pages"><NavLink to="/"> HOME </NavLink></a>
