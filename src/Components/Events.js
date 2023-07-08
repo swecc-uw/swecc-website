@@ -1,7 +1,7 @@
-import './App.css';
-import './Events.css';
-import pseudoCurrImage from './pseudo-current-event.jpg'
-import pseudoPastImage from './pseudo-past-event.jpg'
+import '../CSS/App.css';
+import '../CSS/Events.css';
+import pseudoCurrImage from '../Data/img/pseudo-current-event.jpg'
+import pseudoPastImage from '../Data/img/pseudo-past-event.jpg'
 
 const Events = () => {
     return (

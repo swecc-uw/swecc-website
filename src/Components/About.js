@@ -1,6 +1,6 @@
 import React from 'react';
-import './About.css';
-import Footer from './Footer';
+import '../CSS/About.css';
+import Footer from './Footer.js';
 
 const About = () => {
     return (
@@ -31,37 +31,37 @@ const About = () => {
                     <p class="team-members-subtitle">2022-2023</p>
                     <div class="picture-container">
                         <div class="picture">
-                            <img src={require('./pipachu.png')} alt="Image 1"/>
+                            <img src={require('../Data/img/pipachu.png')} alt="Image 1"/>
                         </div>
                         <div class="picture">
-                            <img src={require('./pipachu.png')} alt="Image 2"/>
+                            <img src={require('../Data/img/pipachu.png')} alt="Image 2"/>
                         </div>
                         <div class="picture">
-                            <img src={require('./pipachu.png')} alt="Image 3"/>
-                        </div>
-                        <p class="team-title"><strong>Position:</strong></p>
-                        <p class="team-title"><strong>Position:</strong></p>
-                        <p class="team-title"><strong>Position:</strong></p>
-                        <div class="picture">
-                            <img src={require('./pipachu.png')} alt="Image 4"/>    
-                        </div>
-                        <div class="picture">
-                            <img src={require('./pipachu.png')} alt="Image 5"/>
-                        </div>
-                        <div class="picture">
-                            <img src={require('./pipachu.png')} alt="Image 6"/>
+                            <img src={require('../Data/img/pipachu.png')} alt="Image 3"/>
                         </div>
                         <p class="team-title"><strong>Position:</strong></p>
                         <p class="team-title"><strong>Position:</strong></p>
                         <p class="team-title"><strong>Position:</strong></p>
                         <div class="picture">
-                            <img src={require('./pipachu.png')} alt="Image 7"/>
+                            <img src={require('../Data/img/pipachu.png')} alt="Image 4"/>    
                         </div>
                         <div class="picture">
-                            <img src={require('./pipachu.png')} alt="Image 8"/>
+                            <img src={require('../Data/img/pipachu.png')} alt="Image 5"/>
                         </div>
                         <div class="picture">
-                            <img src={require('./pipachu.png')} alt="Image 9"/>
+                            <img src={require('../Data/img/pipachu.png')} alt="Image 6"/>
+                        </div>
+                        <p class="team-title"><strong>Position:</strong></p>
+                        <p class="team-title"><strong>Position:</strong></p>
+                        <p class="team-title"><strong>Position:</strong></p>
+                        <div class="picture">
+                            <img src={require('../Data/img/pipachu.png')} alt="Image 7"/>
+                        </div>
+                        <div class="picture">
+                            <img src={require('../Data/img/pipachu.png')} alt="Image 8"/>
+                        </div>
+                        <div class="picture">
+                            <img src={require('../Data/img/pipachu.png')} alt="Image 9"/>
                         </div>
                         <p class="team-title"><strong>Position:</strong></p>
                         <p class="team-title"><strong>Position:</strong></p>
