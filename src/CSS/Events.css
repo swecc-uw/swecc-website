@@ -40,13 +40,13 @@
     height: 30rem;
 }
 
-#upcoming-event-images {
+.upcoming-event-images {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
 
-#upcoming-event-infos {
+.upcoming-event-group {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -60,7 +60,7 @@
     border-radius: 20px;
 }
 
-#upcoming-event-info {
+.upcoming-event-info {
     font-family: 'Assistant';
     font-size: 0.7rem;
     padding-left: 1rem;
@@ -78,7 +78,7 @@
     line-height: 1.2rem;
 }
 
-#rsvp-btn {
+.rsvp-btn {
     font-family: 'Roboto';
     font-size: 0.55rem;
     font-weight: bold;
@@ -91,11 +91,11 @@
     border: 1px solid #7E6D90;
   }
 
-  #rsvp-btn:hover {
+  .rsvp-btn:hover {
     transform: scale(1.2);
   }
   
-  #rsvp-btn:active {
+  .rsvp-btn:active {
     color: #FFFFFF;
     background-color: #7E6D90;
   }
