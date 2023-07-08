@@ -5,7 +5,7 @@ import { HashRouter,  Route, Routes, Redirect } from 'react-router-dom';
 import Home from './Home';
 import Events from './Events';
 import About from './About';
-import JoinNow from './Join-Now';
+import JoinNow from './Join-now';
 
 
 const App = () => {
