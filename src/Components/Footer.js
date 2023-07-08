@@ -1,9 +1,9 @@
 import React from 'react';
-import './Footer.css'
-import discordLogo from './discord-logo.jpg';
-import instaLogo from './insta-logo.jpg';
-import LinkedInLogo from './LinkedInLogo.jpg';
-import SWECClogo2 from './SWECClogo2.jpg';
+import '../CSS/Footer.css'
+import discordLogo from '../Data/img/discord-logo.jpg';
+import instaLogo from '../Data/img/insta-logo.jpg';
+import LinkedInLogo from '../Data/img/LinkedInLogo.jpg';
+import SWECClogo2 from '../Data/img/SWECClogo2.jpg';
 import { Link } from 'react-router-dom';
 
 const Footer = () =>  {

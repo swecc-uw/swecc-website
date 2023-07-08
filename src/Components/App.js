@@ -1,11 +1,11 @@
-import './App.css';
-import Footer from './Footer';
-import Header from './Header';
+import '../CSS/App.css';
+import Footer from './Footer.js';
+import Header from './Header.js';
 import { HashRouter,  Route, Routes, Redirect } from 'react-router-dom';
-import Home from './Home';
-import Events from './Events';
-import About from './About';
-import JoinNow from './Join-Now';
+import Home from './Home.js';
+import Events from './Events.js';
+import About from './About.js';
+import JoinNow from './Join-now.js';
 
 
 const App = () => {

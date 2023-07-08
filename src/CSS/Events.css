@@ -1,13 +1,13 @@
 @font-face {
     font-family: 'Assistant';
-    src: url('./Assistant-Regular.ttf');
+    src: url('../Data/Assistant-Regular.ttf');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Roboto';
-    src: url('./Roboto-Regular.ttf');
+    src: url('../Data/Roboto-Regular.ttf');
     font-weight: normal;
     font-style: normal;
 }

@@ -1,14 +1,14 @@
 
-import './App.css';
-import './Join-now.css';
+import '../CSS/App.css';
+import '../CSS/Join-now.css';
 import React, { useState } from 'react';
-import completionBar0 from './join-now-img0.png';
-import completionBar1 from './join-now-img1.png';
-import completionBar2 from './join-now-img2.png';
-import completionBar3 from './join-now-img3.png';
-import career from './career.png';
-import community from './community.png';
-import networking from './networking.png';
+import completionBar0 from '../Data/img/join-now-img0.png';
+import completionBar1 from '../Data/img/join-now-img1.png';
+import completionBar2 from '../Data/img/join-now-img2.png';
+import completionBar3 from '../Data/img/join-now-img3.png';
+import career from '../Data/img/career.png';
+import community from '../Data/img/community.png';
+import networking from '../Data/img/networking.png';
 
 
 

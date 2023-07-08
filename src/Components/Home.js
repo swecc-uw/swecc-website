@@ -1,7 +1,7 @@
-import "./Home.css";
-import backgroundImg from "./BackgroundImg.jpg";
-import SWECCmap from './SWECC-MAP.jpg'
-import UWlogo from './UW_logo.png'
+import "../CSS/Home.css";
+import backgroundImg from "../Data/img/BackgroundImg.jpg";
+import SWECCmap from '../Data/img/SWECC-MAP.jpg'
+import UWlogo from '../Data/img/UW_logo.png'
 import Footer from './Footer.js'
 import { InstagramEmbed } from 'react-social-media-embed';
 

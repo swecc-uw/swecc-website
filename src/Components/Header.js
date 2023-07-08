@@ -1,6 +1,6 @@
 import React from 'react';
-import SWECClogo from './SWECClogo.jpg';
-import './Header.css'
+import SWECClogo from '../Data/img/SWECClogo.jpg';
+import '../CSS/Header.css'
 import { NavLink } from 'react-router-dom';
 
 
