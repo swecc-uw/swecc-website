@@ -155,4 +155,9 @@ p {
   .posts {
     flex-direction: column;
   }
+
+  .instaPost {
+    margin: 0;
+    width: 100%;
+  }
 }
