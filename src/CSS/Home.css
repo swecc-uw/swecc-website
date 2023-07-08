@@ -136,7 +136,7 @@ p {
 }
 
 .posts {
-  margin: 50px 0;
+  margin: 50px 35px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
