@@ -1,7 +1,7 @@
 import '../CSS/App.css';
 import Footer from './Footer.js';
 import Header from './Header.js';
-import { HashRouter,  Route, Routes, Redirect } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import Home from './Home.js';
 import Events from './Events.js';
 import About from './About.js';
@@ -14,10 +14,10 @@ const App = () => {
       <Header />
       <div>
         <Routes>
-          <Route path = "/" element={<Home/>} />
-          <Route path="/About" element={<About/>} />
-          <Route path="/Events" element={<Events/>} />
-          <Route path="/Join-Now" element={<JoinNow/>} />
+          <Route path="/" element={<Home />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Events" element={<Events />} />
+          <Route path="/Join-Now" element={<JoinNow />} />
         </Routes>
       </div>
       <Footer />

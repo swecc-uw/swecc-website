@@ -1,5 +1,4 @@
 import "../CSS/Home.css";
-import backgroundImg from "../Data/img/BackgroundImg.jpg";
 import SWECCmap from '../Data/img/SWECC-MAP.jpg'
 import UWlogo from '../Data/img/UW_logo.png'
 import Footer from './Footer.js'
@@ -8,14 +7,14 @@ import { InstagramEmbed } from 'react-social-media-embed';
 
 const homepage = () => {
   return (
-    <div id="homepage">
-      <div id="clubTitleSection">
-        <img id="uwLogo" src= {UWlogo}/>
-        <h1 id="clubName">Software Engineering Career Club</h1>
+    <div className="homepage">
+      <div className="clubTitleSection">
+        <img className="uw-logo" src={UWlogo} alt="UW logo" />
+        <h1 className="clubName">Software Engineering Career Club</h1>
       </div>
-      <div id="whatWeDoSection">
-        <h2 id="summaryTitle">What we do</h2>
-        <p id="summary">
+      <div className="whatWeDoSection">
+        <h2 className="summaryTitle">What we do</h2>
+        <p className="summary">
           Software Engineering Career Club (also known as SWECC) is a
           student-led organization at the University of Washington based in
           Seattle. Our club's mission is to be a space for people that want to
@@ -27,33 +26,30 @@ const homepage = () => {
           other activities that will add value to our members.
         </p>
       </div>
-      <div id="meetingsSection">
-      <div id="meetingsInfoSection">
-          <h2 id="sweccMeetings">SWECC Meetings</h2>
-          <p id="meetingInfo">
+      <div className="meetingsSection">
+        <div className="meetingsInfoSection">
+          <h2 className="sweccMeetings">SWECC Meetings</h2>
+          <p className="meetingInfo">
             Held in the EAC, these meeting feature topics in a vast number of areas,
             including professional development, resume building, and mentor circles
           </p>
-          <h3 id="meetingTime">Meeting Times/Location</h3>
-          <p id="meetingTimes">
+          <h3 className="meetingTime">Meeting Times/Location</h3>
+          <p className="meetingDetails">
             Every week on Thursday, from 5:30-6:30pm
             <br />
             Location: Loew Hall Room 213
           </p>
         </div>
-        <img
-          id="map" src = {SWECCmap} />
-        <p id="mapLabel">Location: Loew Hall Room 213</p>
+        <img className="map" src={SWECCmap} alt="map" />
+        <p className="mapLabel">Location: Loew Hall Room 213</p>
       </div>
-      {/* <div style={{ display: 'flex'}}> */}
-      {/* <InstagramEmbed url="https://www.instagram.com/swecc.uw/" /> */}
       <div className="posts">
-      <InstagramEmbed className="instaPost" url="https://www.instagram.com/p/CsDKoflLlNM/?igshid=MzRlODBiNWFlZA==" width={328} />
-      <InstagramEmbed className="instaPost" url="https://www.instagram.com/p/CrPXP4Oqobe/?igshid=MzRlODBiNWFlZA==" width={328} />
-      <InstagramEmbed className="instaPost" url="https://www.instagram.com/p/Cq8-ZsxqlTM/?igshid=MzRlODBiNWFlZA==" width={328} />
+        <InstagramEmbed className="instaPost" url="https://www.instagram.com/p/CsDKoflLlNM/?igshid=MzRlODBiNWFlZA==" width={328} />
+        <InstagramEmbed className="instaPost" url="https://www.instagram.com/p/CrPXP4Oqobe/?igshid=MzRlODBiNWFlZA==" width={328} />
+        <InstagramEmbed className="instaPost" url="https://www.instagram.com/p/Cq8-ZsxqlTM/?igshid=MzRlODBiNWFlZA==" width={328} />
       </div>
-      <Footer/>
-      </div>
+      <Footer />
+    </div>
   );
 };
 

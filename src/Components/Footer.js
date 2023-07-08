@@ -4,37 +4,36 @@ import discordLogo from '../Data/img/discord-logo.jpg';
 import instaLogo from '../Data/img/insta-logo.jpg';
 import LinkedInLogo from '../Data/img/LinkedInLogo.jpg';
 import SWECClogo2 from '../Data/img/SWECClogo2.jpg';
-import { Link } from 'react-router-dom';
 
-const Footer = () =>  {
-    return (
-      <footer>
-        <div class = "contact-copyright-box">
-              <div class = "contact">
-                <a id = "contact-text">CONTACT</a>
-                <a href = "https://instagram.com/swecc.uw?igshid=YmMyMTA2M2Y="><img class = "contact-images" src = {instaLogo} alt = "instalogo" /> </a>
-                <a href = "https://discord.com/invite/Pbk4sCEWDY"><img class = "contact-images" src = {discordLogo} alt = "discord" /></a>
-                <a href = "https://www.linkedin.com/company/software-engineering-career-club-at-uw/"><img class = "contact-images" src = {LinkedInLogo} alt = "mail" /></a>
-              </div>
-              <div class = "copyright">
-                <img id = "footer-logo" src = {SWECClogo2} alt = "SWECC logo" />
-                <div class = "copyright-text">
-                  <p id = "copyright-message"> Copyright © UW SWECC 2023</p>
-                  <p id = "collaboration-message">Collaboration with Dubvelopers</p>
-                </div>
-              </div>
+const Footer = () => {
+  return (
+    <footer>
+      <div className="contact-copyright-box">
+        <div className="contact">
+          <a href="mailto:swecc@uw.edu" className="contact-text">CONTACT</a>
+          <a href="https://instagram.com/swecc.uw?igshid=YmMyMTA2M2Y="><img className="contact-images" src={instaLogo} alt="instalogo" /> </a>
+          <a href="https://discord.com/invite/Pbk4sCEWDY"><img className="contact-images" src={discordLogo} alt="discord" /></a>
+          <a href="https://www.linkedin.com/company/software-engineering-career-club-at-uw/"><img className="contact-images" src={LinkedInLogo} alt="mail" /></a>
         </div>
-        <div className="email-hook">
-          <div class = "email-message">
-            <p id = "stay-in-touch">Let's stay in touch!</p>
-            <p id = "join-newsletter">Join our newsletter</p>
-          </div>
-          <div class = "email-box">
-            <p> <input placeholder = "Enter your email" class = "email-enter"></input><button type = "button" id = "subscribe-btn">Subscribe</button></p>
+        <div className="copyright">
+          <img className="footer-logo" src={SWECClogo2} alt="SWECC logo" />
+          <div className="copyright-text">
+            <p className="copyright-message"> Copyright © UW SWECC 2023</p>
+            <p className="collaboration-message">Collaboration with Dubvelopers</p>
           </div>
         </div>
-      </footer>
-    );
-  }
+      </div>
+      <div className="email-hook">
+        <div className="email-message">
+          <p className="stay-in-touch">Let's stay in touch!</p>
+          <p className="join-newsletter">Join our newsletter</p>
+        </div>
+        <div className="email-box">
+          <p> <input placeholder="Enter your email" className="email-enter"></input><button type="button" className="subscribe-btn">Subscribe</button></p>
+        </div>
+      </div>
+    </footer>
+  );
+}
 
-  export default Footer
+export default Footer

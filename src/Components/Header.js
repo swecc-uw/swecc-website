@@ -4,23 +4,25 @@ import '../CSS/Header.css'
 import { NavLink } from 'react-router-dom';
 
 
-const Header = () =>  {
-    return (
-      <nav class = "full-nav">
-        <div class = "header-logo">
-            <NavLink to="/">
-              <img id = "nav-logo" src = {SWECClogo} alt = "SWECC Logo"/>
-            </NavLink>
-        </div>
-        <div class = "nav-bar">
-          <a class = "header-pages"><NavLink to="/"> HOME </NavLink></a>
-          <a class = "header-pages"><NavLink to="/Events" class = "header-pages"> EVENTS </NavLink> </a>
-          <a class = "header-pages"> <NavLink to="/About" class = "header-pages"> ABOUT </NavLink>  </a>
-          <a class = "header-pages"> <NavLink to="/Join-Now" id = "join-now-btn" class = "header-pages"> JOIN NOW </NavLink> </a>
-        </div>
-      </nav>
-      
-    )
+const Header = () => {
+  return (
+    <nav className="full-nav">
+      <div className="header-logo">
+        <NavLink to="/">
+          <img className="nav-logo" src={SWECClogo} alt="SWECC Logo" />
+        </NavLink>
+      </div>
+      <div className="nav-bar">
+        <ul>
+          <NavLink to="/" className="nav-link">HOME</NavLink>
+          <NavLink to="/Events" className="nav-link">EVENTS</NavLink>
+          <NavLink to="/About" className="nav-link">ABOUT</NavLink>
+          <NavLink to="/Join-Now" className="join-now-btn nav-link">JOIN NOW</NavLink>
+        </ul>
+      </div>
+    </nav>
+
+  )
 }
 
 export default Header;
