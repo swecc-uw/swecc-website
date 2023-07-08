@@ -4,8 +4,36 @@ import UWlogo from '../Data/img/UW_logo.png'
 import Footer from './Footer.js'
 import { InstagramEmbed } from 'react-social-media-embed';
 
+function HomePage() {
 
-const homepage = () => {
+  const meetingInfo = (
+    <div className="meetingsSection">
+      <div className="meetingsInfoSection">
+        <h2 className="sweccMeetings">SWECC Meetings</h2>
+        <p className="meetingInfo">
+          Held in the EAC, these meeting feature topics in a vast number of areas,
+          including professional development, resume building, and mentor circles
+        </p>
+        <h3 className="meetingTime">Meeting Times/Location</h3>
+        <p className="meetingDetails">
+          Every week on Thursday, from 5:30-6:30pm
+          <br />
+          Location: Loew Hall Room 213
+        </p>
+      </div>
+      <img className="map" src={SWECCmap} alt="map" />
+      <p className="mapLabel">Location: Loew Hall Room 213</p>
+    </div>
+  )
+
+  const posts = (
+    <div className="posts">
+      <InstagramEmbed className="instaPost" url="https://www.instagram.com/p/CsDKoflLlNM/?igshid=MzRlODBiNWFlZA==" />
+      <InstagramEmbed className="instaPost" url="https://www.instagram.com/p/CrPXP4Oqobe/?igshid=MzRlODBiNWFlZA==" />
+      <InstagramEmbed className="instaPost" url="https://www.instagram.com/p/Cq8-ZsxqlTM/?igshid=MzRlODBiNWFlZA==" />
+    </div>
+  )
+
   return (
     <div className="homepage">
       <div className="clubTitleSection">
@@ -26,33 +54,13 @@ const homepage = () => {
           other activities that will add value to our members.
         </p>
       </div>
-      <div className="meetingsSection">
-        <div className="meetingsInfoSection">
-          <h2 className="sweccMeetings">SWECC Meetings</h2>
-          <p className="meetingInfo">
-            Held in the EAC, these meeting feature topics in a vast number of areas,
-            including professional development, resume building, and mentor circles
-          </p>
-          <h3 className="meetingTime">Meeting Times/Location</h3>
-          <p className="meetingDetails">
-            Every week on Thursday, from 5:30-6:30pm
-            <br />
-            Location: Loew Hall Room 213
-          </p>
-        </div>
-        <img className="map" src={SWECCmap} alt="map" />
-        <p className="mapLabel">Location: Loew Hall Room 213</p>
-      </div>
-      <div className="posts">
-        <InstagramEmbed className="instaPost" url="https://www.instagram.com/p/CsDKoflLlNM/?igshid=MzRlODBiNWFlZA==" width={328} />
-        <InstagramEmbed className="instaPost" url="https://www.instagram.com/p/CrPXP4Oqobe/?igshid=MzRlODBiNWFlZA==" width={328} />
-        <InstagramEmbed className="instaPost" url="https://www.instagram.com/p/Cq8-ZsxqlTM/?igshid=MzRlODBiNWFlZA==" width={328} />
-      </div>
+      {meetingInfo}
+      {posts}
       <Footer />
     </div>
   );
 };
 
-export default homepage;
+export default HomePage;
 
 
