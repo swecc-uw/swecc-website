@@ -1,0 +1,217 @@
+:root {
+  --bg: #fcfcfc;
+  --bg-accent: #ffffff;
+  --bg-hover: #e5e5e5;
+  --text-color: #4b2e83;
+  --text-header-color: #3e2076;
+  --text-subtitle-color: #3e2076;
+  --nav-bottom: #3e2076;
+  --nav-size: 60px;
+  --border: 1.5px solid #474a4d;
+  --border-radius: 8px;
+  --speed: 350ms;
+}
+
+.dark-mode {
+  --bg: #242526;
+  --bg-accent: #484a4d;
+  --bg-hover: #525357;
+  --text-color: #d5cedc;
+  --text-title-color: #d5c6f8;
+  --text-subtitle-color: #beb8eb;
+  --nav-bottom: #a277f4;
+  --border: 1px solid #474a4d;
+}
+
+@font-face {
+  font-family: 'Assistant';
+  src: url('../Data/Assistant-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.homepage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--bg);
+  font-family: "Assistant";
+}
+
+.clubTitleSection {
+  position: relative;
+  width: 100%;
+  height: 40vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background:
+    linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)),
+    linear-gradient(0deg, rgba(190, 184, 235, 0.1), rgba(190, 184, 235, 0.1)),
+    url(../Data/img/BackgroundImg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.uw-logo {
+  position: absolute;
+  margin: auto;
+  width: 40%;
+  top: 10%;
+}
+
+.clubName {
+  position: absolute;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 6vw;
+  line-height: 5vw;
+  color: var(--text-header-color);
+  bottom: 8%;
+}
+
+.whatWeDoSection {
+  position: relative;
+  width: 100%;
+  height: 50vw;
+  top: 40px;
+  text-align: center;
+  background-color: var(--bg);
+}
+
+/* .summaryTitle {
+  position: absolute;
+  top: 9%;
+  height: 12%;
+  width: 30%;
+  left: 35%;
+  margin: 0;
+} */
+
+.summary {
+  position: absolute;
+  left: 10%;
+  bottom: 13%;
+  width: 80%;
+  height: 60%;
+}
+
+h2 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 5vw;
+  line-height: 6vw;
+  color: var(--text-title-color);
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 3vw;
+  line-height: 4vw;
+  color: var(--text-subtitle-color);
+}
+
+p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.1vw;
+  line-height: 3vw;
+  color: var(--text-color);
+}
+
+.meetingsSection {
+  position: relative;
+  /* margin: 40px 0; */
+  width: 100%;
+  height: 40vw;
+  background-color: var(--bg-accent);
+}
+
+.meetingsInfoSection {
+  position: absolute;
+  height: 70%;
+  width: 45%;
+  top: 14%;
+  left: 8%;
+}
+
+.map {
+  position: absolute;
+  right: 7%;
+  top: 16%;
+  height: 66%;
+  width: 32%;
+}
+
+.mapLabel {
+  position: absolute;
+  font-weight: 700;
+  bottom: 5%;
+  right: 9.5%;
+}
+
+.sweccMeetings,
+.meetingInfo,
+.meetingDetails {
+  margin: 0;
+}
+
+.meetingTime {
+  margin: 0;
+  padding-top: 2vw;
+}
+
+.posts {
+  /* margin: 50px 35px; */
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: var(--bg);
+  /* back to this */
+}
+
+.instaPost {
+  margin: 15px 25px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.instaPost:hover {
+  transform: scale(1.05);
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-up {
+  animation: slide-up 0.5s ease-out;
+}
+
+@media (max-width: 830px) {
+  .posts {
+    flex-direction: column;
+    padding: 80px;
+  }
+
+  .instaPost {
+    margin: 20px 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .posts {
+    margin: 30px;
+  }
+}

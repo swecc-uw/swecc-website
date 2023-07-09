@@ -1,0 +1,102 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../Data/Roboto-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+footer {
+  display: flex;
+  background-color: #beb8eb;
+  padding: 20px;
+}
+
+/* Controls the flexbox for the contact and copyright sections */
+.footer-contents-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+/* CSS for the two footer sections */
+.links-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 50%;
+  justify-content: space-between;
+  padding-right: 5%;
+}
+
+.copyright-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 50%;
+  justify-content: space-between;
+  padding-left: 5%;
+}
+
+/* Controls the text styling for the text of contact and join newsletter */
+.contact-text,
+.join-newsletter {
+  display: flex;
+  color: #ffffff;
+  font-size: 1rem;
+  font-family: "Roboto";
+  font-weight: bold;
+}
+
+.contact-text { flex-basis: 10%; }
+
+.join-newsletter { flex-basis: 30%; }
+
+
+/* Styling for the images of the textbox */
+.contact-images {
+  display: flex;
+  flex-basis: 5%;
+  height: 30px;
+}
+
+a {
+  flex-basis: 10%;
+  text-decoration: none;
+}
+
+.copyright-message {
+  display: flex;
+  flex-basis: 45%;
+  color: #ffffff;
+  font-size: 1rem;
+  font-family: "Roboto";
+  padding-left: 5%;
+  font-weight: bold;
+}
+
+/* Styling for the message under the copyright */
+.collaboration-message {
+  flex-basis: 45%;
+  display: flex;
+  color: #ffffff;
+  font-family: "Roboto";
+  font-weight: lighter;
+  font-size: 0.7rem;
+}
+
+/* Styling for the footer images */
+.footer-logo {
+  display: flex;
+  height: 40px;
+}
+
+/* End of the footer content  */

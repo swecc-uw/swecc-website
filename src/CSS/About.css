@@ -18,8 +18,8 @@
     background: linear-gradient(0deg, rgba(190, 184, 235, 0.8),
             rgba(190, 184, 235, 0.8)), linear-gradient(0deg,
             rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)),
-        linear-gradient(0deg, rgba(190, 184, 235, 0.1),
-            rgba(190, 184, 235, 0.1)), url(about.svg);
+            linear-gradient(0deg, rgba(190, 184, 235, 0.1),
+            rgba(190, 184, 235, 0.1)), url(../Data/about.svg);
     background-size: cover;
     background-attachment: fixed;
     background-position: 20%;
@@ -135,7 +135,7 @@
                 rgba(190, 184, 235, 0.8)), linear-gradient(0deg,
                 rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)),
             linear-gradient(0deg, rgba(190, 184, 235, 0.1),
-                rgba(190, 184, 235, 0.1)), url(about.svg);
+                rgba(190, 184, 235, 0.1)), url(../Data/about.svg);
         background-size: cover;
         background-attachment: fixed;
         background-position: 20%;

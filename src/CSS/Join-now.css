@@ -1,23 +1,23 @@
 @font-face {
     font-family: 'Assistant';
-    src: url('./Assistant-Regular.ttf');
+    src: url('../Data/Assistant-Regular.ttf');
     font-weight: normal;
     font-style: normal;
-  }
+}
 
-#background-image {
+.background-image {
     background: linear-gradient(0deg, rgba(190, 184, 235, 0.8),
             rgba(190, 184, 235, 0.8)), linear-gradient(0deg,
             rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)),
         linear-gradient(0deg, rgba(190, 184, 235, 0.1),
-            rgba(190, 184, 235, 0.1)), url(man-on-computer..jpg);
+            rgba(190, 184, 235, 0.1)), url(../Data/img/man-on-computer..jpg);
     background-size: cover;
     background-attachment: fixed;
     display: flex;
     justify-content: center;
 }
 
-#js-white-box {
+.js-white-box {
     display: flex;
     flex-direction: column;
     margin: 15%;
@@ -35,12 +35,12 @@
     width: 400px;
 }
 
-#center-images {
+.center-images {
     display: flex;
     justify-content: center;
 }
 
-#content-flex {
+.content-flex {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -69,11 +69,11 @@
     background-color: #3D3061;
 }
 
-#separate-insta-linkedin {
+.separate-insta-linkedin {
     margin: 7.5px;
 }
 
-#button-flex {
+.button-flex {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -96,7 +96,7 @@
     border: 0px;
 }
 
-#join-message {
+.join-message {
     font-family: 'Assistant';
     color: #3D3061;
     font-weight: bolder;
@@ -104,7 +104,7 @@
     margin: 10px;
 }
 
-#thanks-box {
+.thanks-box {
     justify-self: center;
     box-sizing: border-box;
     border-radius: 20px;
@@ -117,6 +117,53 @@
     margin-left: -15px;
 }
 
-#thanks-message {
-    color:#3D3061;
+.thanks-message {
+    color: #3D3061;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table {
+    border-collapse: separate;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.info-title {
+    font-family: 'Assistant';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 200%;
+    color: #3D3061;
+    text-align: center;
+}
+
+.info-text {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Assistant';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 150%;
+    line-height: 39px;
+    color: #676767;
+    text-align: center;
+    width: 60%;
+}
+
+.example-images {
+    display: flex;
+    align-self: center;
+    width: 50%;
+}
+
+.entire {
+    display: flex;
+    flex-direction: column;
 }

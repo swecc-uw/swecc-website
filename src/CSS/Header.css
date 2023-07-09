@@ -1,0 +1,75 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('../Data/Roboto-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Content for the entirety of the nav bar */
+.full-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  border-top: 1.2px solid #7E6D90;
+  border-bottom: 1.2px solid #7E6D90;
+  align-items: center;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.nav-link:hover {
+  color: #D7C464;;
+}
+
+/* Controls all the links on the nav bar */
+.nav-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Styling for the links of each indivdual section */
+.nav-link {
+  font-size: 15px;
+  text-decoration: none;
+  margin: 5px;
+  font-style: none;
+  font-weight: bold;
+  font-family: 'Roboto';
+  color: #7E6D90;
+}
+
+/* The special coloring for the button of join now! */
+.join-now-btn {
+  box-sizing: border-box;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  background: #FFFFFF;
+  border: 1.5px solid #7E6D90;
+  border-radius: 34px;
+  padding: 4px 10px;
+}
+
+.join-now-btn:hover {
+  background-color: #7E6D90;
+  color: #FFFFFF;
+}
+
+/* Styling for the box of the logo */
+.header-logo {
+  display: flex;
+  align-items: center;
+}
+
+/* Logo styling */
+.nav-logo {
+  height: 40px;
+}
+
+ul {
+  margin: 0;
+}

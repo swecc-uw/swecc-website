@@ -15,7 +15,7 @@
 
 @font-face {
   font-family: 'Roboto';
-  src: url('./Roboto-Regular.ttf');
+  src: url('../Data/Roboto-Regular.ttf');
   font-weight: normal;
   font-style: normal;
 }
