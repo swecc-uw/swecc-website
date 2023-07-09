@@ -6,7 +6,7 @@ import Home from './Home.js';
 import Events from './Events.js';
 import About from './About.js';
 import JoinNow from './Join-now.js';
-import Navbar from './Navbar';
+import Navbar from './Navbar.js';
 
 function App() {
   return (

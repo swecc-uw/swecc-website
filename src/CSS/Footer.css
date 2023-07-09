@@ -69,7 +69,6 @@ footer {
 }
 
 a {
-  display: flex;
   flex-basis: 10%;
   text-decoration: none;
 }

@@ -44,6 +44,7 @@ const Events = () => {
       <div className='past-events-section'>
         <h2 className='event-headers'>Event History</h2>
         <div className='past-events'>
+          
           <div className='past-event'>
             <img src={pseudoPastImage} className='past-event-image' alt='past event' />
             <div className='past-event-image'>

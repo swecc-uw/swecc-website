@@ -16,7 +16,10 @@
   --bg-hover: #525357;
   --text-color: #dadce1;
   --nav-bottom: #a277f4;
+  --nav-size: 60px;
   --border: 1px solid #474a4d;
+  --border-radius: 8px;
+  --speed: 350ms;
 }
 
 ul {
@@ -27,7 +30,6 @@ ul {
 
 a {
   color: var(--text-color);
-  text-decoration: none;
 }
 
 .navbar {
@@ -84,7 +86,6 @@ a {
   background-color: var(--bg-hover);
   transition: all var(--speed) ease;
   cursor: pointer;
-
 }
 
 .icon-button.no-action {
@@ -94,7 +95,7 @@ a {
   background-color: var(--bg);
 }
 
-/* tooltip for the buttons */
+/* testing */
 .icon-button.tooltip {
   position: relative;
 }
