@@ -14,8 +14,23 @@ import { IoHome } from 'react-icons/io5';
 import { RiCalendarTodoFill } from 'react-icons/ri';
 import { MdGroupAdd } from 'react-icons/md';
 import { BiInfoCircle } from 'react-icons/bi';
+import { ImSun } from 'react-icons/im';
+import { PiMoonBold } from 'react-icons/pi';
+
+import Switch from "./Switch.js";
 
 function Navbar() {
+
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleMode = () => {
+    if (darkMode) {
+      document.body.classList.remove('dark-mode');
+    } else {
+      document.body.classList.add('dark-mode');
+    }
+    setDarkMode(!darkMode);
+  };
 
   const [expand, setExpand] = useState(false);
 
@@ -28,13 +43,14 @@ function Navbar() {
   }
 
   return (
-    <NavBar>
+    <NavBar className={`${darkMode ? 'dark-mode' : ''}`}>
       <NavItem icon={<NavLink to="/"><img className="swecc-logo" src={SWECClogo} alt="SWECC Logo" ></img></NavLink>} route={"/"} closeExpand={closeExpand} />
-      <NavItem icon={<FcHome />} route={"/"} closeExpand={closeExpand} />
-      <NavItem icon={<FcCalendar />} route={"/Events"} closeExpand={closeExpand}  ></NavItem>
-      <NavItem icon={<FcAbout />} route={"/About"} expand={expand} closeExpand={closeExpand} />
-      <NavItem icon={<MdGroupAdd />} route={"/Join-Now"} expand={expand} closeExpand={closeExpand} />
-      <NavExpandItem id="wow" icon={<CaretIcon />} expand={expand} togglExpand={togglExpand} closeExpand={closeExpand} >
+      <NavToggle icon={<ImSun />} /><Switch toggleMode={toggleMode} /><NavToggle icon={<PiMoonBold />} />
+      <NavItem icon={<FcHome />} route={"/"} closeExpand={closeExpand} tooltip="Home" />
+      <NavItem icon={<FcCalendar />} route={"/Events"} closeExpand={closeExpand} tooltip="Events" ></NavItem>
+      <NavItem icon={<FcAbout />} route={"/About"} expand={expand} closeExpand={closeExpand} tooltip="About" />
+      <NavItem icon={<MdGroupAdd />} route={"/Join-Now"} expand={expand} closeExpand={closeExpand} tooltip="Join" />
+      <NavExpandItem id="wow" icon={<CaretIcon />} expand={expand} togglExpand={togglExpand} closeExpand={closeExpand} tooltip="More" >
         <DropdownMenu closeExpand={closeExpand} />
       </NavExpandItem>
     </NavBar>
@@ -49,11 +65,21 @@ function NavBar(props) {
   );
 }
 
+function NavToggle(props) {
+  return (
+    <li className="nav-item no-action" onClick={props.closeExpand}>
+      <div className="icon-button no-action">{props.icon}</div>
+    </li>
+  );
+}
+
 function NavItem(props) {
+  const { tooltip } = props;
+
   return (
     <li className="nav-item" onClick={props.closeExpand}>
       <NavLink to={props.route}>
-        <div className="icon-button" data-tooltip="sample">
+        <div className={"icon-button" + (tooltip ? " tooltip" : "")} data-tooltip={tooltip}>
           {props.icon}
         </div>
       </NavLink>
