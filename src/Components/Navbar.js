@@ -50,7 +50,7 @@ function Navbar() {
       <NavItem icon={<FcCalendar />} route={"/Events"} closeExpand={closeExpand} tooltip="Events" ></NavItem>
       <NavItem icon={<FcAbout />} route={"/About"} expand={expand} closeExpand={closeExpand} tooltip="About" />
       <NavItem icon={<MdGroupAdd />} route={"/Join-Now"} expand={expand} closeExpand={closeExpand} tooltip="Join" />
-      <NavExpandItem id="wow" icon={<CaretIcon />} expand={expand} togglExpand={togglExpand} closeExpand={closeExpand} tooltip="More" >
+      <NavExpandItem icon={<CaretIcon />} expand={expand} togglExpand={togglExpand} closeExpand={closeExpand} tooltip="More" >
         <DropdownMenu closeExpand={closeExpand} />
       </NavExpandItem>
     </NavBar>
