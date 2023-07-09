@@ -1,3 +1,28 @@
+:root {
+    --bg: #fcfcfc;
+    --bg-accent: #ffffff;
+    --bg-hover: #e5e5e5;
+    --text-color: #4b2e83;
+    --text-header-color: #3e2076;
+    --text-subtitle-color: #3e2076;
+    --nav-bottom: #3e2076;
+    --nav-size: 60px;
+    --border: 1.5px solid #474a4d;
+    --border-radius: 8px;
+    --speed: 350ms;
+}
+
+.dark-mode {
+    --bg: #242526;
+    --bg-accent: #484a4d;
+    --bg-hover: #525357;
+    --text-color: #d5cedc;
+    --text-title-color: #d5c6f8;
+    --text-subtitle-color: #beb8eb;
+    --nav-bottom: #a277f4;
+    --border: 1px solid #474a4d;
+}
+
 @font-face {
     font-family: 'Assistant';
     src: url('../Data/Assistant-Regular.ttf');
@@ -23,11 +48,13 @@
     justify-content: center;
     text-align: center;
     height: 100%;
+    background-color: var(--bg);
+    padding: 50px 10px;
 }
 
 .event-headers {
     font-size: 200%;
-    color: #BEB8EB;
+    color: var(--text-subtitle-color);
     text-align: center;
     font-family: 'Assistant';
 }
@@ -35,9 +62,11 @@
 .upcoming-events-section {
     display: flex;
     flex-direction: row;
-    background-color: #F8F5F5;
+    background-color: var(--bg);
     justify-content: space-evenly;
     height: 30rem;
+    background-color: var(--bg-accent);
+    padding: 50px 10px;
 }
 
 .upcoming-event-images {
@@ -83,26 +112,27 @@
     font-size: 0.55rem;
     font-weight: bold;
     letter-spacing: 1px;
-    color: #7E6D90;
+    color: var(--text-color);
     box-sizing: border-box;
-    background: #FFFFFF;
+    background: var(--bg);
     padding: 4px 10px;
     border-radius: 20px;
     border: 1px solid #7E6D90;
-  }
+}
 
-  .rsvp-btn:hover {
+.rsvp-btn:hover {
     transform: scale(1.2);
-  }
-  
-  .rsvp-btn:active {
-    color: #FFFFFF;
+}
+
+.rsvp-btn:active {
+    color: var(--bg);
     background-color: #7E6D90;
-  }
+}
 
 .past-events-section {
     display: flex;
     flex-direction: column;
+    background-color: var(--bg);
 }
 
 .past-events {
@@ -123,7 +153,7 @@
     border-radius: 10px;
 }
 
-@media (min-width: 768px){
+@media (min-width: 768px) {
     .past-event-image {
         width: 20rem;
         border-radius: 10px;
@@ -146,27 +176,27 @@
 }
 
 /*Default settings*/
-.calendar { 
+.calendar {
     border: 0px;
-    width: 800px; 
+    width: 800px;
     height: 600px;
     margin-bottom: 1rem;
 }
 
 @media only screen and (max-width: 768px) {
     .calendar {
-      border: 0; 
-      width: 600px; 
-      height: 450px;
-      margin-bottom: 1rem;
+        border: 0;
+        width: 600px;
+        height: 450px;
+        margin-bottom: 1rem;
     }
 }
 
 @media only screen and (max-width: 480px) {
     .calendar {
-        border: 0; 
-        width: 450px; 
-        height: 338px; 
+        border: 0;
+        width: 450px;
+        height: 338px;
         margin-bottom: 1rem;
     }
 }
