@@ -75,7 +75,6 @@ a {
 }
 
 .copyright-message {
-  /* margin-right: 10px; */
   display: flex;
   flex-basis: 45%;
   color: #ffffff;
