@@ -20,6 +20,10 @@
   padding-right: 2%;
 }
 
+.nav-link:hover {
+  color: #D7C464;;
+}
+
 /* Controls all the links on the nav bar */
 .nav-bar {
   display: flex;
@@ -36,10 +40,6 @@
   font-weight: bold;
   font-family: 'Roboto';
   color: #7E6D90;
-}
-
-nav :hover {
-  color: #D7C464;
 }
 
 /* The special coloring for the button of join now! */

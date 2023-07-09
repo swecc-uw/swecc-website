@@ -1,4 +1,4 @@
-import '../CSS/App.css';
+// import '../CSS/App.css';
 import Footer from './Footer.js';
 import Header from './Header.js';
 import { HashRouter, Route, Routes } from 'react-router-dom';
@@ -6,12 +6,13 @@ import Home from './Home.js';
 import Events from './Events.js';
 import About from './About.js';
 import JoinNow from './Join-now.js';
+import Navbar from './Navbar';
 
-
-const App = () => {
+function App() {
   return (
     <HashRouter>
-      <Header />
+      <Navbar />
+      {/* <Header /> */}
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -23,6 +24,6 @@ const App = () => {
       <Footer />
     </HashRouter>
   );
-};
+}
 
 export default App;

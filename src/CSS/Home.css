@@ -143,7 +143,7 @@ p {
 }
 
 .instaPost {
-  margin: 10px 15px;
+  margin: 15px 25px;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -151,13 +151,35 @@ p {
   transform: scale(1.05);
 }
 
-@media (max-width: 768px) {
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-up {
+  animation: slide-up 0.5s ease-out;
+}
+
+@media (max-width: 830px) {
   .posts {
     flex-direction: column;
+    margin: 60px;
   }
 
   .instaPost {
-    margin: 0;
+    margin: 20px 0;
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .posts {
+    margin: 30px;
   }
 }
