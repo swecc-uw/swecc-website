@@ -1,11 +1,37 @@
+
+:root {
+    --bg: #fcfcfc;
+    --bg-accent: #ffffff;
+    --bg-hover: #e5e5e5;
+    --text-color: #4b2e83;
+    --text-header-color: #3e2076;
+    --text-subtitle-color: #3e2076;
+    --nav-bottom: #3e2076;
+    --nav-size: 60px;
+    --border: 1.5px solid #474a4d;
+    --border-radius: 8px;
+    --speed: 350ms;
+  }
+  
+
+.dark-mode {
+    --bg: #242526;
+    --bg-accent: #484a4d;
+    --bg-hover: #525357;
+    --text-color: #d5cedc;
+    --text-title-color: #d5c6f8;
+    --text-subtitle-color: #beb8eb;
+    --nav-bottom: #a277f4;
+    --border: 1px solid #474a4d;
+  }
+
 .about {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #FFFFFF;
+    background: var(--bg);
     font-family: 'Assistant';
 }
-
 .about-message-section {
     position: relative;
     align-items: center;
@@ -25,12 +51,19 @@
     background-position: 20%;
 }
 
-.about-title {
+/* .about-title {
     font-style: normal;
     font-weight: 700;
     font-size: 5em;
     line-height: 105px;
     color: #3D3061;
+} */
+.about-title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: calc(var(--nav-size) * .8);
+    line-height: calc(var(--nav-size) * .8);
+    color: var(--text-header-color);
 }
 
 .about-text {
@@ -41,25 +74,35 @@
     color: #3D3061;
 }
 
-.goal-message-section {
+/* .goal-message-section {
     position: relative;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 710px;
-    /* top: 134px; */
     display: flex;
     flex-direction: column;
     background: #FFFFFF;
+} */
+.goal-message-section {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    /* width: 100%;
+    height: calc(var(--nav-size) * .8 * .8 * .8 * .8 * .8 * .8 * .8 * .8 * .8 * .8); */
+    width: 100%;
+    height: 710px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg);
 }
-
 .goal-title {
     font-style: normal;
     font-weight: 700;
     font-size: 3.5em;
     line-height: 78px;
     transform: translate(0%, -70%);
-    color: rgba(75, 46, 131, 0.95);
+    color: var(--text-title-color)
 }
 
 .goal-text {
@@ -73,20 +116,21 @@
     font-size: 2em;
     line-height: 52px;
     transform: translate(0%, 10%);
-    color: #676767;
+    color: var(--text-subtitle-color);
 }
 
 .team-members-title {
     padding-top: 40px;
+    margin-top: 0px;
     font-style: normal;
     text-align: center;
     font-weight: 700;
     font-size: 4em;
-    color: rgba(75, 46, 131, 0.95);
+    color: var(--text-title-color);
 }
 
 .team-members-section {
-    background: #F8F5F5;
+    background: var(--bg);
 }
 
 .team-members-subtitle {
@@ -94,10 +138,10 @@
     text-align: center;
     font-weight: 700;
     font-size: 2em;
-    color: #676767;
+    color: var(--text-subtitle-color);
 }
 
-.picture-container {
+/* .picture-container {
     display: grid; 
     grid-template-columns: auto auto auto; 
     grid-template-rows: auto 80px auto 80px auto 80px; 
@@ -106,7 +150,13 @@
     width: 1000px; 
     margin: 0 auto; 
     padding-bottom: 90px
-}
+} */
+.picture-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 30px;
+    justify-content: center;
+  }
 
 .picture {
     border-radius: 5px; 
@@ -122,6 +172,9 @@
     
 }
 @media only screen and (max-width: 768px) {
+    .picture-container {
+        grid-template-columns: auto;
+    }
     .about-message-section {
         position: relative;
         align-items: center;

@@ -3,7 +3,36 @@ import '../CSS/About.css';
 import Footer from './Footer.js';
 
 const About = () => {
+    const Card = ({ imgSrc, altText, position, name }) => {
+        return (
+          <div className="card">
+            <div className="picture">
+              <img src={imgSrc} alt={altText} />
+            </div>
+            <p className="team-members-subtitle">{name}</p>
+            <p className="team-title">
+              <strong>{position}</strong>
+            </p>
+          </div>
+        );
+      };
+      const teamMembers = [
+        { imgSrc: require("../Data/img/pipachu.png"), altText: "Shiina", position: "President", name: "Shiina" },
+        { imgSrc: require("../Data/img/pipachu.png"), altText: "Deeksha", position: "President", name: "Deeksha" },
+        { imgSrc: require("../Data/img/pipachu.png"), altText: "Daniel", position: "Opportunities Manager", name: "Daniel" },
+        { imgSrc: require("../Data/img/pipachu.png"), altText: "David Pham", position: "Mentorship Manager", name: "David Pham" },
+        { imgSrc: require("../Data/img/pipachu.png"), altText: "Aditya Khowal", position: "External Head", name: "Aditya Khowal" },
+        { imgSrc: require("../Data/img/pipachu.png"), altText: "Leah", position: "External Outreach", name: "Leah" },
+        { imgSrc: require("../Data/img/pipachu.png"), altText: "Eric Xiao", position: "External Outreach", name: "Eric Xiao" },
+        { imgSrc: require("../Data/img/pipachu.png"), altText: "Aditya Akhileshwaran", position: "External Outreach", name: "Aditya Akhileshwaran" },
+        { imgSrc: require("../Data/img/pipachu.png"), altText: "Hawa", position: "Advisor", name: "Hawa" },
+        { imgSrc: require("../Data/img/pipachu.png"), altText: "Ruhee", position: "Marketing Manager", name: "Ruhee" },
+        { imgSrc: require("../Data/img/pipachu.png"), altText: "Trang Tran", position: "Social Media Manager", name: "Trang Tran" }
+      ];
+      
+      
     return (
+        <>
         <div className="about">
             <style>
                 @import url('https://fonts.googleapis.com/css2?family=Assistant&display=swap');
@@ -29,50 +58,25 @@ const About = () => {
                     </div>
                 </div>
                 <div className="team-members-section">
-                    <h1 className="team-members-title">Board Members</h1>
-                    <p className="team-members-subtitle">2023-2024</p>
-                    <div className="picture-container">
-                        <div className="picture">
-                            <img src={require('../Data/img/pipachu.png')} alt="Position 1" />
-                        </div>
-                        <div className="picture">
-                            <img src={require('../Data/img/pipachu.png')} alt="Position 2" />
-                        </div>
-                        <div className="picture">
-                            <img src={require('../Data/img/pipachu.png')} alt="Position 3" />
-                        </div>
-                        <p className="team-title"><strong>Position:</strong></p>
-                        <p className="team-title"><strong>Position:</strong></p>
-                        <p className="team-title"><strong>Position:</strong></p>
-                        <div className="picture">
-                            <img src={require('../Data/img/pipachu.png')} alt="Position 4" />
-                        </div>
-                        <div className="picture">
-                            <img src={require('../Data/img/pipachu.png')} alt="Position 5" />
-                        </div>
-                        <div className="picture">
-                            <img src={require('../Data/img/pipachu.png')} alt="Position 6" />
-                        </div>
-                        <p className="team-title"><strong>Position:</strong></p>
-                        <p className="team-title"><strong>Position:</strong></p>
-                        <p className="team-title"><strong>Position:</strong></p>
-                        <div className="picture">
-                            <img src={require('../Data/img/pipachu.png')} alt="Position 7" />
-                        </div>
-                        <div className="picture">
-                            <img src={require('../Data/img/pipachu.png')} alt="Position 8" />
-                        </div>
-                        <div className="picture">
-                            <img src={require('../Data/img/pipachu.png')} alt="Position 9" />
-                        </div>
-                        <p className="team-title"><strong>Position:</strong></p>
-                        <p className="team-title"><strong>Position:</strong></p>
-                        <p className="team-title"><strong>Position:</strong></p>
-                    </div>
+      <h1 className="team-members-title">Board Members</h1>
+      <p className="team-members-subtitle">2023-2024</p>
+      <div className="picture-container">
+        {teamMembers.map((member) => (
+          <Card
+            key={member.position}
+            imgSrc={member.imgSrc}
+            name={member.name}
+            altText={member.altText}
+            position={member.position}
+          />
+        ))}
+      </div>
+
                 </div>
             </div>
             <Footer />
         </div>
+        </>
     );
 }
 
