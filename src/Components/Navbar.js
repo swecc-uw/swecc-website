@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../CSS/Navbar.css';
 import { CSSTransition } from 'react-transition-group';
 import SWECClogo from '../Data/img/SWECClogo.jpg';
@@ -20,6 +20,19 @@ import { PiMoonBold } from 'react-icons/pi';
 import Switch from "./Switch.js";
 
 function Navbar() {
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 576);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const [darkMode, setDarkMode] = useState(false);
 
@@ -46,10 +59,14 @@ function Navbar() {
     <NavBar className={`${darkMode ? 'dark-mode' : ''}`}>
       <NavItem icon={<NavLink to="/"><img className="swecc-logo" src={SWECClogo} alt="SWECC Logo" ></img></NavLink>} route={"/"} closeExpand={closeExpand} />
       <NavToggle icon={<ImSun />} /><Switch toggleMode={toggleMode} /><NavToggle icon={<PiMoonBold />} />
-      <NavItem icon={<FcHome />} route={"/"} closeExpand={closeExpand} tooltip="Home" />
-      <NavItem icon={<FcCalendar />} route={"/Events"} closeExpand={closeExpand} tooltip="Events" ></NavItem>
-      <NavItem icon={<FcAbout />} route={"/About"} expand={expand} closeExpand={closeExpand} tooltip="About" />
-      <NavItem icon={<MdGroupAdd />} route={"/Join-Now"} expand={expand} closeExpand={closeExpand} tooltip="Join" />
+      {!isMobile &&
+        <>
+          <NavItem icon={<FcHome />} route={"/"} closeExpand={closeExpand} tooltip="Home" />
+          <NavItem icon={<FcCalendar />} route={"/Events"} closeExpand={closeExpand} tooltip="Events" ></NavItem>
+          <NavItem icon={<FcAbout />} route={"/About"} expand={expand} closeExpand={closeExpand} tooltip="About" />
+          <NavItem icon={<MdGroupAdd />} route={"/Join-Now"} expand={expand} closeExpand={closeExpand} tooltip="Join" />
+        </>
+      }
       <NavExpandItem icon={<CaretIcon />} expand={expand} togglExpand={togglExpand} closeExpand={closeExpand} tooltip="More" >
         <DropdownMenu closeExpand={closeExpand} />
       </NavExpandItem>
