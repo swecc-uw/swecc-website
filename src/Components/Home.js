@@ -21,8 +21,10 @@ function HomePage() {
           Location: Loew Hall Room 213
         </p>
       </div>
-      <img className="map" src={SWECCmap} alt="map" />
-      <p className="mapLabel">Location: Loew Hall Room 213</p>
+      <div className="map-and-label">
+        <img className="map" src={SWECCmap} alt="map" />
+        <p className="mapLabel">Location: Loew Hall Room 213</p>
+      </div>
     </div>
   )
 
