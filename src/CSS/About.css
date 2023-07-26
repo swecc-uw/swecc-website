@@ -1,29 +1,6 @@
-
-:root {
-    --bg: #fcfcfc;
-    --bg-accent: #ffffff;
-    --bg-hover: #e5e5e5;
-    --text-color: #4b2e83;
-    --text-header-color: #3e2076;
-    --text-subtitle-color: #3e2076;
-    --nav-bottom: #3e2076;
-    --nav-size: 60px;
-    --border: 1.5px solid #474a4d;
-    --border-radius: 8px;
-    --speed: 350ms;
-  }
-  
-
-.dark-mode {
-    --bg: #242526;
-    --bg-accent: #484a4d;
-    --bg-hover: #525357;
-    --text-color: #d5cedc;
-    --text-title-color: #d5c6f8;
-    --text-subtitle-color: #beb8eb;
-    --nav-bottom: #a277f4;
-    --border: 1px solid #474a4d;
-  }
+p {
+    color: var(--text-color);
+}
 
 .about {
     position: absolute;
@@ -32,6 +9,7 @@
     background: var(--bg);
     font-family: 'Assistant';
 }
+
 .about-message-section {
     position: relative;
     align-items: center;
@@ -44,7 +22,7 @@
     background: linear-gradient(0deg, rgba(190, 184, 235, 0.8),
             rgba(190, 184, 235, 0.8)), linear-gradient(0deg,
             rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)),
-            linear-gradient(0deg, rgba(190, 184, 235, 0.1),
+        linear-gradient(0deg, rgba(190, 184, 235, 0.1),
             rgba(190, 184, 235, 0.1)), url(../Data/about.svg);
     background-size: cover;
     background-attachment: fixed;
@@ -68,10 +46,11 @@
 
 .about-text {
     text-align: center;
-    font-weight: 700;
-    font-size: 2em;
+    font-weight: 600;
+    font-size: 2.5em;
     line-height: 47px;
-    color: #3D3061;
+    color: var(--text-header-color);
+    margin: 3rem
 }
 
 /* .goal-message-section {
@@ -96,6 +75,7 @@
     flex-direction: column;
     background-color: var(--bg);
 }
+
 .goal-title {
     font-style: normal;
     font-weight: 700;
@@ -156,12 +136,12 @@
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 30px;
     justify-content: center;
-  }
+}
 
 .picture {
-    border-radius: 5px; 
+    border-radius: 5px;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
 }
 
@@ -169,12 +149,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
+
 @media only screen and (max-width: 768px) {
     .picture-container {
         grid-template-columns: auto;
     }
+
     .about-message-section {
         position: relative;
         align-items: center;
@@ -193,22 +175,22 @@
         background-attachment: fixed;
         background-position: 20%;
     }
-    
-    
+
+
     .about-title {
         font-style: normal;
         font-weight: 700;
         font-size: 3em;
         line-height: 105px;
-        color: #3D3061;
-    } 
-    
+        color: var(--text-header-color);
+    }
+
     .about-text {
         text-align: center;
         font-weight: 700;
-        font-size:  1em;
-        line-height: 20px;
-        color: #3D3061;
+        font-size: 2em;
+        /* line-height: 20px; */
+        color: var(--text-header-color);
     }
 
     .goal-message-section {
@@ -220,7 +202,7 @@
         /* top: 134px; */
         display: flex;
         flex-direction: column;
-        background: #FFFFFF;
+        background: var(--bg);
     }
 
     .goal-title {
@@ -228,8 +210,8 @@
         font-weight: 700;
         font-size: 2.45em;
         line-height: 78px;
-        padding-bottom: 40px; 
-        color: rgba(75, 46, 131, 0.95);
+        padding-bottom: 40px;
+        color: var(--text-title-color);
     }
 
     .goal-text {
@@ -239,6 +221,6 @@
         font-weight: 400;
         font-size: 1em;
         line-height: 30px;
-        color: #676767;
+        color: var(--text-color);
     }
 }
