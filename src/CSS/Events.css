@@ -1,38 +1,12 @@
-:root {
-    --bg: #fcfcfc;
-    --bg-accent: #ffffff;
-    --bg-hover: #e5e5e5;
-    --text-color: #4b2e83;
-    --text-header-color: #3e2076;
-    --text-subtitle-color: #3e2076;
-    --nav-bottom: #3e2076;
-    --nav-size: 60px;
-    --border: 1.5px solid #474a4d;
-    --border-radius: 8px;
-    --speed: 350ms;
-}
-
-.dark-mode {
-    --bg: #242526;
-    --bg-accent: #484a4d;
-    --bg-hover: #525357;
-    --text-color: #d5cedc;
-    --text-title-color: #d5c6f8;
-    --text-subtitle-color: #beb8eb;
-    --nav-bottom: #a277f4;
-    --border: 1px solid #474a4d;
-}
-
 body {
     background-color: var(--bg);
     font-family: 'assistant', 'Montserrat', "Lato", "Helvetica Neue", "Helvetica", sans-serif;
 }
 
 .event-page h1, .event-page h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-align: center;
-    margin-top: 3rem;
-    margin-bottom: 2.5rem;
+    margin: 5rem 0;
     color: var(--text-title-color);
 }
 
@@ -74,8 +48,8 @@ body {
 }
 
 .calendar {
-    width: 90%;
-    height: 600px;
+    width: 73%;
+    height: 45vw;
     border-radius: 10px;
 }
 
@@ -93,9 +67,10 @@ body {
 }
 
 .upcoming-event-image {
-    width: 25rem;
+    width: 30rem;
     border-radius: 20px;
     margin: 20px;
+    margin-left: 6rem;
 }
 
 .upcoming-event-group {
@@ -108,7 +83,8 @@ body {
 
 .upcoming-event-info {
     font-size: medium;
-    margin: 0px 30px 10px 25px;
+    max-width: 40rem;
+    margin: 0 6rem 3rem 5rem;
 }
 
 .rsvp-btn {
@@ -137,7 +113,6 @@ body {
 .past-events-section {
     display: flex;
     flex-direction: column;
-    background-color: var(--bg);
 }
 
 .past-events {
@@ -148,7 +123,7 @@ body {
 }
 
 .past-event {
-    width: 300px;
+    width: 25rem;
     margin: 10px;
     border-radius: 5px;
     padding: 10px;
@@ -169,9 +144,11 @@ body {
     text-align: left;
 }
 
-@media (max-width: 768px) {
-    .calendar {
-        height: 400px;
+
+@media (max-width: 1076px) {
+    .event-page h1, .event-page h2 {
+        font-size: 2.2rem;
+        margin: 4rem 0 2rem 0;
     }
 
     .upcoming-event {
@@ -180,19 +157,27 @@ body {
     }
 
     .upcoming-event-image {
-        width: 30rem;
+        width: 75%;
+        margin-left: 0;
     }
 
     .upcoming-event-info {
-        width: 28rem;
+        width: 75%;
     }
+}
 
-    .past-event {
-        width: 28rem;
+@media (max-width: 768px) {
+    .calendar {
+        width: 85%;
+        height: 400px;
     }
 }
 
 @media (max-width: 572px) {
+    .calendar {
+        height: 350px;
+    }
+
     .upcoming-event-image {
         width: 80%;
         margin: 0 16rem;
@@ -218,7 +203,7 @@ body {
 
 @media (max-width: 470px) {
     .calendar {
-        height: 300px;
+        height: 280px;
     }
 
     .upcoming-event-image {

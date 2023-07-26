@@ -1,27 +1,3 @@
-:root {
-  --bg: #fcfcfc;
-  --bg-accent: #ffffff;
-  --bg-hover: #e5e5e5;
-  --text-color: #3e2076;
-  --nav-bottom: #3e2076;
-  --nav-size: 60px;
-  --border: 1.5px solid #474a4d;
-  --border-radius: 8px;
-  --speed: 350ms;
-}
-
-.dark-mode {
-  --bg: #242526;
-  --bg-accent: #484a4d;
-  --bg-hover: #525357;
-  --text-color: #dadce1;
-  --nav-bottom: #a277f4;
-  --nav-size: 60px;
-  --border: 1px solid #474a4d;
-  --border-radius: 8px;
-  --speed: 350ms;
-}
-
 ul {
   list-style: none;
   margin: 0;
