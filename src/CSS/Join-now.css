@@ -152,7 +152,7 @@ table {
     font-weight: 600;
     font-size: 150%;
     line-height: 39px;
-    color: #676767;
+    color: var(--text-color);
     text-align: center;
     width: 60%;
 }
