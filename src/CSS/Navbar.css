@@ -11,7 +11,7 @@ a {
 .navbar {
   height: var(--nav-size);
   background-color: var(--bg);
-  padding: .5rem 1.5rem;
+  padding: 1rem 1.5rem 1.8rem;
   border-bottom: 2px solid var(--nav-bottom);
 }
 
@@ -30,7 +30,7 @@ a {
 
 .swecc-logo {
   height: calc(var(--button-size) * 1.4);
-  border-radius: .6rem;
+  border-radius: 0.6rem;
   overflow: hidden;
 }
 
@@ -39,7 +39,9 @@ a {
   align-items: center;
   display: flex;
   justify-content: center;
-  margin: 3px;
+  margin: 8px;
+  text-align: center;
+  flex-direction: column;
 }
 
 /* Icon Button */
@@ -56,6 +58,15 @@ a {
   justify-content: center;
   transition: filter 300ms;
   border: 2px solid var(--bg-hover);
+}
+
+.nav-page {
+  margin-top: 23px;
+}
+
+/* testing */
+.nav-expand .icon-button {
+  margin: 0;
 }
 
 .icon-button:hover {
@@ -82,20 +93,16 @@ a {
   top: calc(100% + 5px);
   left: 50%;
   transform: translateX(-50%);
-  background-color: #1b1b1b;
-  color: white;
+  color: var(--subtitle-color);
   padding: 3px 8px;
   font-size: 15px;
+  font-weight: 800;
   border-radius: 5px;
-  opacity: 0;
-  z-index: 2;
 }
 
 .icon-button.tooltip:hover::before {
   opacity: 1;
 }
-
-/*  */
 
 .icon-button svg {
   fill: var(--text-color);

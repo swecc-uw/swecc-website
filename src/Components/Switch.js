@@ -1,11 +1,15 @@
 import React, { useState } from "react";
-import '../CSS/Switch.css';
+import "../CSS/Switch.css";
 
 function Switch({ toggleMode }) {
-  const [isToggled, setIsToggled] = useState(false);
+  const [isToggled, setIsToggled] = useState(
+    JSON.parse(localStorage.getItem("isToggled")) || false
+  );
 
   const onToggle = () => {
-    setIsToggled(!isToggled);
+    const newToggleState = !isToggled;
+    setIsToggled(newToggleState);
+    localStorage.setItem("isToggled", JSON.stringify(newToggleState));
     toggleMode();
   };
 

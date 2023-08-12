@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Assistant';
-  src: url('../Data/Assistant-Regular.ttf');
+  font-family: "Assistant";
+  src: url("../Data/Assistant-Regular.ttf");
   font-weight: normal;
   font-style: normal;
 }
@@ -20,8 +20,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background:
-    linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.2)
+    ),
     linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)),
     linear-gradient(0deg, rgba(190, 184, 235, 0.1), rgba(190, 184, 235, 0.1)),
     url(../Data/img/BackgroundImg.jpg);
@@ -47,12 +50,6 @@
   bottom: 8%;
 }
 
-/* .whatWeDoSection .summaryTitle, .meetingsInfoSection .sweccMeetings {
-  font-size: 2rem;
-  margin: 5px 0;
-  color: var(--text-title-color);
-} */
-
 .whatWeDoSection {
   background-color: var(--bg);
   padding: 5rem 100px;
@@ -64,7 +61,8 @@ h3 {
   color: var(--text-title-color);
 }
 
-.summaryTitle, h2.sweccMeetings {
+.summaryTitle,
+h2.sweccMeetings {
   color: var(--text-title-color);
   margin: 10px 0;
 }
@@ -74,7 +72,9 @@ h3 {
   margin: 30px;
 }
 
-.summary, .meetingsSection p.meetingInfo, .meetingsSection p.meetingDetails {
+.summary,
+.meetingsSection p.meetingInfo,
+.meetingsSection p.meetingDetails {
   font-size: 1.5rem;
   color: var(--text-color);
   line-height: 1.5;
@@ -91,39 +91,8 @@ h3 {
   color: var(--text-color);
 }
 
-/* .meetingsSection {
-  position: relative;
-  margin: 40px 0;
-  height: 400px;
-  background-color: var(--bg-accent);
-}
-
-.meetingsInfoSection {
-  position: absolute;
-  height: 70%;
-  width: 45%;
-  top: 14%;
-  left: 8%;
-}
-
-.map {
-  position: absolute;
-  right: 7%;
-  top: 16%;
-  width: 32%;
-}
-
-.mapLabel {
-  position: absolute;
-  font-weight: 700;
-  bottom: 5%;
-  right: 9.5%;
-} */
-
-
 .meetingsSection {
   padding: 4rem 10rem;
-  /* padding-left: 50px; */
   display: flex;
   justify-content: center;
   background-color: var(--bg-accent);
@@ -147,16 +116,11 @@ h3.meetingTime {
   margin: 10px 0;
 }
 
-.meetingDetails {
-  /* font-size: 16px; */
-}
-
 .map-and-label {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* padding-right: 50px; */
 }
 
 .map {
@@ -228,7 +192,6 @@ h3.meetingTime {
 }
 
 @media (max-width: 976px) {
-
   .meetingsSection {
     /* padding: 5px; */
     flex-direction: column;
@@ -245,7 +208,8 @@ h3.meetingTime {
     margin: 10px;
   }
 
-  .meetingsSection p.meetingInfo, .meetingsSection p.meetingDetails {
+  .meetingsSection p.meetingInfo,
+  .meetingsSection p.meetingDetails {
     text-align: center;
     font-size: 1.3rem;
     padding: 0 20px;
