@@ -60,6 +60,7 @@
     text-decoration: none;
     border-radius: 20px;
     background-color: #E5E2ED;
+    color: var(--text-color-light);
 
 }
 
@@ -115,7 +116,12 @@
     text-align: center;
     width: 120%;
     margin-left: -15px;
+    color: var(--text-title-color-light);
 }
+
+.dark-mode .info-title {
+    color: #FFFFFF;
+  }
 
 .thanks-message {
     color: #3D3061;
@@ -152,10 +158,15 @@ table {
     font-weight: 600;
     font-size: 150%;
     line-height: 39px;
-    color: var(--text-color);
+    color: var(--text-subtitle-color-light); /* Set the light mode color as default */
     text-align: center;
     width: 60%;
-}
+  }
+
+  .dark-mode .info-text {
+    color: #FFFFFF; /* Set the white color for text in dark mode */
+  }
+
 
 .example-images {
     display: flex;

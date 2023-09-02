@@ -3,34 +3,41 @@ import '../CSS/About.css';
 import Footer from './Footer.js';
 
 const About = () => {
-    const Card = ({ imgSrc, altText, position, name }) => {
-        return (
-          <div className="card">
-            <div className="picture">
-              <img src={imgSrc} alt={altText} />
-            </div>
-            <p className="team-members-subtitle">{name}</p>
-            <p className="team-title">
-              <strong>{position}</strong>
-            </p>
-          </div>
-        );
-      };
+  const Card = ({ imgSrc, altText, position, name }) => {
+    return (
+      <div className="card">
+        <div className="picture">
+          <img src={imgSrc} alt={altText} />
+        </div>
+
+        <div className="team-info"> {/* Wrap the name and position */}
+          <p className="team-members-subtitle">{name}</p>
+          <p className="team-title">
+            <strong>{position}</strong>
+          </p>
+        </div>
+      </div>
+    );
+};
+
+
       const teamMembers = [
-        { imgSrc: require("../Data/img/pipachu.png"), altText: "Shiina", position: "President", name: "Shiina" },
-        { imgSrc: require("../Data/img/pipachu.png"), altText: "Deeksha", position: "President", name: "Deeksha" },
-        { imgSrc: require("../Data/img/pipachu.png"), altText: "Daniel", position: "Opportunities Manager", name: "Daniel" },
-        { imgSrc: require("../Data/img/pipachu.png"), altText: "David Pham", position: "Mentorship Manager", name: "David Pham" },
-        { imgSrc: require("../Data/img/pipachu.png"), altText: "Aditya Khowal", position: "External Head", name: "Aditya Khowal" },
-        { imgSrc: require("../Data/img/pipachu.png"), altText: "Leah", position: "External Outreach", name: "Leah" },
-        { imgSrc: require("../Data/img/pipachu.png"), altText: "Eric Xiao", position: "External Outreach", name: "Eric Xiao" },
-        { imgSrc: require("../Data/img/pipachu.png"), altText: "Aditya Akhileshwaran", position: "External Outreach", name: "Aditya Akhileshwaran" },
-        { imgSrc: require("../Data/img/pipachu.png"), altText: "Hawa", position: "Advisor", name: "Hawa" },
-        { imgSrc: require("../Data/img/pipachu.png"), altText: "Ruhee", position: "Marketing Manager", name: "Ruhee" },
-        { imgSrc: require("../Data/img/pipachu.png"), altText: "Trang Tran", position: "Social Media Manager", name: "Trang Tran" }
+        { imgSrc: require("./shiina.jpg"), altText: "Shiina", position: "President", name: "Shiina" },
+        { imgSrc: require("./deeksha.jpg"), altText: "Deeksha", position: "President", name: "Deeksha" },
+        { imgSrc: require("./david.jpg"), altText: "David Pham", position: "Mentorship Manager", name: "David Pham" },
+        { imgSrc: require("./adityak.jpg"), altText: "Aditya Khowal", position: "External Head", name: "Aditya Khowal" },
+        { imgSrc: require("./leah.jpg"), altText: "Leah", position: "External Outreach", name: "Leah" },
+        { imgSrc: require("./eric.jpg"), altText: "Eric Xiao", position: "External Outreach", name: "Eric Xiao" },
+        { imgSrc: require("./adityaa.jpg"), altText: "Aditya Akhileshwaran", position: "External Outreach", name: "Aditya Akhileshwaran" },
+        { imgSrc: require("./deeksha.jpg"), altText: "Hawa", position: "Advisor", name: "Hawa" },
+        { imgSrc: require("./ruhee.jpg"), altText: "Ruhee", position: "Marketing Manager", name: "Ruhee" },
+        { imgSrc: require("./trang.jpg"), altText: "Trang Tran", position: "Social Media Manager", name: "Trang Tran" },
+        { imgSrc: require("./daniel.jpg"), altText: "Daniel", position: "Opportunities Manager", name: "Daniel" },
+        { imgSrc: require("./bhavya.jpg"), altText: "Bhavya", position: "Opportunities Manager", name: "Bhavya" },
+
       ];
-      
-      
+
+
     return (
         <>
         <div className="about">
