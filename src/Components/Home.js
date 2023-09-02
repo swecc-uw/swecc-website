@@ -14,16 +14,16 @@ function HomePage() {
           Held in the EAC, these meeting feature topics in a vast number of areas,
           including professional development, resume building, and mentor circles
         </p>
-        <h3 className="meetingTime">Meeting Times/Location</h3>
+        <h3 className="meetingTime">Meeting Times/Location (AU23)</h3>
         <p className="meetingDetails">
-          Every week on Thursday, from 5:30-6:30pm
+          Every week on Wednesday, from 5:30-6:30pm
           <br />
-          Location: Loew Hall Room 213
+          Location: TBD
         </p>
       </div>
       <div className="map-and-label">
         <img className="map" src={SWECCmap} alt="map" />
-        <p className="mapLabel">Location: Loew Hall Room 213</p>
+        <p className="mapLabel">Location: TBD</p>
       </div>
     </div>
   )
