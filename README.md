@@ -29,8 +29,8 @@ The website can be found at [swecc.org](swecc-url).
 
 ## Contributors ✨
 
-<a href="https://github.com/swecc-uw/.github/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=swecc-uw/.github" />
+<a href="https://github.com/swecc-uw/swecc-website/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=swecc-uw/swecc-website" />
 </a>
 
 [swecc-shield]: https://img.shields.io/badge/SWECC.ORG-%238d3ac5?style=for-the-badge

@@ -23,17 +23,17 @@ const About = () => {
 
     const teamMembers = [
         { imgSrc: require("../Data/img/shiina.jpg"), altText: "Shiina", position: "President", name: "Shiina" },
-        { imgSrc: require("../Data/img//deeksha.jpg"), altText: "Deeksha", position: "President", name: "Deeksha" },
-        { imgSrc: require("../Data/img//david.jpg"), altText: "David Pham", position: "Mentorship Manager", name: "David Pham" },
-        { imgSrc: require("../Data/img//adityak.jpg"), altText: "Aditya Khowal", position: "External Head", name: "Aditya Khowal" },
-        { imgSrc: require("../Data/img//leah.jpg"), altText: "Leah", position: "External Outreach", name: "Leah" },
-        { imgSrc: require("../Data/img//eric.jpg"), altText: "Eric Xiao", position: "External Outreach", name: "Eric Xiao" },
-        { imgSrc: require("../Data/img//adityaa.jpg"), altText: "Aditya Akhileshwaran", position: "External Outreach", name: "Aditya Akhileshwaran" },
-        { imgSrc: require("../Data/img//deeksha.jpg"), altText: "Hawa", position: "Advisor", name: "Hawa" },
-        { imgSrc: require("../Data/img//ruhee.jpg"), altText: "Ruhee", position: "Marketing Manager", name: "Ruhee" },
-        { imgSrc: require("../Data/img//trang.jpg"), altText: "Trang Tran", position: "Social Media Manager", name: "Trang Tran" },
-        { imgSrc: require("../Data/img//daniel.jpg"), altText: "Daniel", position: "Opportunities Manager", name: "Daniel" },
-        { imgSrc: require("../Data/img//bhavya.jpg"), altText: "Bhavya", position: "Opportunities Manager", name: "Bhavya" },
+        { imgSrc: require("../Data/img/deeksha.jpg"), altText: "Deeksha", position: "President", name: "Deeksha" },
+        { imgSrc: require("../Data/img/david.jpg"), altText: "David Pham", position: "Mentorship Manager", name: "David Pham" },
+        { imgSrc: require("../Data/img/adityak.jpg"), altText: "Aditya Khowal", position: "External Head", name: "Aditya Khowal" },
+        { imgSrc: require("../Data/img/leah.jpg"), altText: "Leah", position: "External Outreach", name: "Leah" },
+        { imgSrc: require("../Data/img/eric.jpg"), altText: "Eric Xiao", position: "External Outreach", name: "Eric Xiao" },
+        { imgSrc: require("../Data/img/adityaa.jpg"), altText: "Aditya Akhileshwaran", position: "External Outreach", name: "Aditya Akhileshwaran" },
+        { imgSrc: require("../Data/img/pipachu.png"), altText: "Hawa", position: "Advisor", name: "Hawa" },
+        { imgSrc: require("../Data/img/ruhee.jpg"), altText: "Ruhee", position: "Marketing Manager", name: "Ruhee" },
+        { imgSrc: require("../Data/img/trang.jpg"), altText: "Trang Tran", position: "Social Media Manager", name: "Trang Tran" },
+        { imgSrc: require("../Data/img/daniel.jpg"), altText: "Daniel", position: "Opportunities Manager", name: "Daniel" },
+        { imgSrc: require("../Data/img/bhavya.jpg"), altText: "Bhavya", position: "Opportunities Manager", name: "Bhavya" },
     ];
 
     return (
