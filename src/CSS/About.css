@@ -7,7 +7,7 @@ p {
     width: 100%;
     height: 100%;
     background: var(--bg);
-    font-family: 'Assistant';
+    font-family: "Assistant";
 }
 
 .about-message-section {
@@ -19,11 +19,9 @@ p {
     /* top: 134px; */
     display: flex;
     flex-direction: column;
-    background: linear-gradient(0deg, rgba(190, 184, 235, 0.8),
-            rgba(190, 184, 235, 0.8)), linear-gradient(0deg,
-            rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)),
-        linear-gradient(0deg, rgba(190, 184, 235, 0.1),
-            rgba(190, 184, 235, 0.1)), url(../Data/about.svg);
+    background: linear-gradient(0deg, rgba(190, 184, 235, 0.8), rgba(190, 184, 235, 0.8)),
+        linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)),
+        linear-gradient(0deg, rgba(190, 184, 235, 0.1), rgba(190, 184, 235, 0.1)), url(../Data/about.svg);
     background-size: cover;
     background-attachment: fixed;
     background-position: 20%;
@@ -39,8 +37,8 @@ p {
 .about-title {
     font-style: normal;
     font-weight: bold;
-    font-size: calc(var(--nav-size) * .8);
-    line-height: calc(var(--nav-size) * .8);
+    font-size: calc(var(--nav-size) * 0.8);
+    line-height: calc(var(--nav-size) * 0.8);
     color: var(--text-header-color);
 }
 
@@ -50,7 +48,7 @@ p {
     font-size: 2.5em;
     line-height: 47px;
     color: var(--text-header-color);
-    margin: 3rem
+    margin: 3rem;
 }
 
 /* .goal-message-section {
@@ -82,7 +80,7 @@ p {
     font-size: 3.5em;
     line-height: 78px;
     transform: translate(0%, -70%);
-    color: var(--text-title-color)
+    color: var(--text-title-color);
 }
 
 .goal-text {
@@ -138,7 +136,6 @@ p {
     justify-content: center;
 }
 
-
 .picture {
     border-radius: 5px;
     display: flex;
@@ -152,27 +149,21 @@ p {
 }
 
 .picture img {
-
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-
-
-
 .team-title {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .team-info {
     text-align: center;
     margin-top: 10px;
 }
-
 
 @media only screen and (max-width: 768px) {
     .picture-container {
@@ -188,16 +179,13 @@ p {
         /* top: 134px; */
         display: flex;
         flex-direction: column;
-        background: linear-gradient(0deg, rgba(190, 184, 235, 0.8),
-                rgba(190, 184, 235, 0.8)), linear-gradient(0deg,
-                rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)),
-            linear-gradient(0deg, rgba(190, 184, 235, 0.1),
-                rgba(190, 184, 235, 0.1)), url(../Data/about.svg);
+        background: linear-gradient(0deg, rgba(190, 184, 235, 0.8), rgba(190, 184, 235, 0.8)),
+            linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)),
+            linear-gradient(0deg, rgba(190, 184, 235, 0.1), rgba(190, 184, 235, 0.1)), url(../Data/about.svg);
         background-size: cover;
         background-attachment: fixed;
         background-position: 20%;
     }
-
 
     .about-title {
         font-style: normal;
