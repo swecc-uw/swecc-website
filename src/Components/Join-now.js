@@ -55,15 +55,19 @@ export default function JoinNow() {
             <p>{messages[count]}</p>
           </div>
           <div className="button-flex">
-            <button className="click-button-styling" onClick={decrement}>
-              back
-            </button>
-            <button className="click-button-styling" onClick={increment}>
-              next
-            </button>
-          </div>
+        {count > 0 && (
+          <button className="click-button-styling" onClick={decrement}>
+            Back
+          </button>
+        )}
+        {count < 3 && (
+          <button className="click-button-styling" onClick={increment}>
+            Next
+          </button>
+        )}
+      </div>
         </div>
-      </div> {/* This is the end of the join now box*/}
+      </div> {}
       <div className="join">
         <div className="join-section">
           <div className="info-message-section">
