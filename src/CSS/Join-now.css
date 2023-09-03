@@ -1,175 +1,279 @@
-@font-face {
-    font-family: "Assistant";
-    src: url("../Data/Assistant-Regular.ttf");
-    font-weight: normal;
-    font-style: normal;
+:root {
+  --none: #c9c9c9;
+  --active: #c6a3ff;
+  --completed: #957dff;
+  --height: 50px;
 }
 
 .background-image {
-    background: linear-gradient(0deg, rgba(190, 184, 235, 0.8), rgba(190, 184, 235, 0.8)),
-        linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), linear-gradient(0deg, rgba(190, 184, 235, 0.1), rgba(190, 184, 235, 0.1)),
-        url(../Data/img/man-on-computer..jpg);
-    background-size: cover;
-    background-attachment: fixed;
-    display: flex;
-    justify-content: center;
+  background: linear-gradient(0deg, rgba(190, 184, 235, 0.8), rgba(190, 184, 235, 0.8)),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), linear-gradient(0deg, rgba(190, 184, 235, 0.1), rgba(190, 184, 235, 0.1)),
+    url(../Data/img/man-on-computer..jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
 }
 
 .js-white-box {
-    display: flex;
-    flex-direction: column;
-    margin: 15%;
-    border: 1.5px solid #3d3061;
-    background-color: #ffffff;
-    border-radius: 35px;
-    justify-content: center;
-    align-items: center;
-    width: 400%;
-    height: 200%;
-}
-
-.completion-bar {
-    display: flex;
-    width: 400px;
-}
-
-.center-images {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin: 15%;
+  border: 1.5px solid #3d3061;
+  background-color: #ffffff;
+  border-radius: 35px;
+  justify-content: center;
+  align-items: center;
+  width: 400%;
+  height: 200%;
 }
 
 .content-flex {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.center-images {
+  display: flex;
+  justify-content: center;
+}
+
+.completion-bar {
+  display: flex;
+  width: 400px;
 }
 
 .link-boxes {
-    font-family: "Assistant";
-    border: 2px solid #3d306180;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    box-sizing: border-box;
-    color: #3d3061;
-    font-size: 110%;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 20px;
-    background-color: #e5e2ed;
-    color: var(--text-color);
+  border: 2px solid #3d306180;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  font-size: 20px;
+  text-decoration: none;
+  border-radius: 20px;
+  background-color: #e5e2ed;
+  color: var(--text-color);
+  /* here */
+  animation: slide-up 0.5s ease;
+  transition: all 0.2s ease;
 }
 
 .link-boxes:hover {
-    text-decoration: none;
-    color: #e5e2ed;
-    background-color: #3d3061;
+  text-decoration: none;
+  color: #e5e2ed;
+  background-color: #3d3061;
+  transition: all 0.2s ease;
 }
 
 .separate-insta-linkedin {
-    margin: 7.5px;
+  margin: 7.5px;
 }
 
-.button-flex {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 2%;
-    width: 95%;
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  width: 90%;
 }
 
-.click-button-styling {
-    display: flex;
-    border-radius: 12px;
-    border-color: #9c7ef3;
-    background-color: #9c7ef3;
-    padding-left: 2%;
-    padding-right: 2%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    font-size: 85%;
-    color: #e5e2ed;
-    font-family: "Assistant";
-    border: 0px;
+.next-button {
+  margin-left: auto;
+}
+
+.click-button {
+  display: flex;
+  border-radius: 15px;
+  border-color: #9c7ef3;
+  background-color: #9c7ef3;
+  padding: 10px 20px;
+  margin: 5cap 15px;
+  color: #e5e2ed;
+  border: 0;
+  animation: slide-up 0.5s ease;
+  transition: all 0.2s ease;
+}
+
+.click-button:hover {
+  cursor: pointer;
+  background-color: var(--text-header-color);
+  transition: all 0.2s ease;
 }
 
 a.link-boxes {
-    color: var(--text-header-color);
+  color: var(--text-header-color);
 }
 
 .join-message {
-    font-family: "Assistant";
-    color: #3d3061;
-    font-weight: bolder;
-    font-size: 150%;
-    margin: 10px;
+  color: #3d3061;
+  font-size: 150%;
+  margin: 10px;
+}
+
+.action-item {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
 }
 
 .thanks-box {
-    justify-self: center;
-    box-sizing: border-box;
-    border-radius: 20px;
-    font-family: "Assistant";
-    font-size: 120%;
-    background-color: #beb8eb80;
-    border: 1.5px solid #5941a9;
-    text-align: center;
-    width: 120%;
-    margin-left: -15px;
-    color: var(--text-text-color);
+  justify-self: center;
+  box-sizing: border-box;
+  border-radius: 20px;
+  font-size: 120%;
+  background-color: #beb8eb80;
+  border: 1.5px solid #5941a9;
+  text-align: center;
+  color: var(--text-text-color);
 }
 
 div.info-title {
-    color: var(--text-title-color);
+  color: var(--text-title-color);
 }
 
 .thanks-message {
-    color: #3d3061;
+  padding: 5px 25px;
+  margin: 10px;
+  color: #3d3061;
 }
 
 img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 table {
-    border-collapse: separate;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  border-collapse: separate;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .info-title {
-    font-family: "Assistant";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 200%;
-    color: #3d3061;
-    text-align: center;
+  font-style: normal;
+  font-size: 200%;
+  color: #3d3061;
+  text-align: center;
 }
 
 .info-text {
-    margin-left: auto;
-    margin-right: auto;
-    font-family: "Assistant";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 150%;
-    line-height: 39px;
-    color: var(--text-color);
-    text-align: center;
-    width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  font-style: normal;
+  font-size: 150%;
+  line-height: 39px;
+  color: var(--text-color);
+  text-align: center;
+  width: 60%;
 }
 
 .example-images {
-    display: flex;
-    align-self: center;
-    width: 50%;
+  display: flex;
+  align-self: center;
+  width: 50%;
 }
 
 .entire {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+}
+
+.stepper-wrapper {
+  margin: 40px auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.stepper-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  width: 200px;
+  font-size: 18px;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+}
+
+.stepper-item::before {
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid #ccc;
+  width: 100%;
+  top: calc(var(--height) / 2);
+  left: -50%;
+  z-index: 2;
+}
+
+.stepper-item::after {
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid #ccc;
+  width: 100%;
+  top: calc(var(--height) / 2);
+  left: 50%;
+  z-index: 2;
+}
+
+.stepper-item .step-counter {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--height);
+  height: var(--height);
+  border-radius: 50%;
+  background: #ccc;
+  margin-bottom: 6px;
+}
+
+.stepper-item.active {
+  font-weight: bold;
+}
+
+.stepper-item .step-counter {
+  background-color: var(--none);
+}
+
+.stepper-item.active .step-counter {
+  background-color: var(--active);
+}
+
+.stepper-item.completed .step-counter {
+  background-color: var(--completed);
+}
+
+.stepper-item.completed::after {
+  position: absolute;
+  content: "";
+  border-bottom: 4px solid #957dff;
+  width: 100%;
+  top: calc(var(--height) / 2);
+  left: 50%;
+  z-index: 3;
+}
+
+.stepper-item:first-child::before {
+  content: none;
+}
+.stepper-item:last-child::after {
+  content: none;
+}
+
+.step-name {
+  color: var(--text-header-color);
+}
+
+.stepper-item.completed .step-counter {
+  color: #fff;
 }
