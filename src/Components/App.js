@@ -1,6 +1,7 @@
 // import '../CSS/App.css';
+import React from "react";
 import Footer from "./Footer.js";
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Home from "./Home.js";
 import Events from "./Events.js";
 import About from "./About.js";
@@ -12,18 +13,17 @@ function App() {
   link.href = require("../icons/logo-23.png");
 
   return (
-    <HashRouter>
+    <div>
       <Navbar />
-      <div>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/Events" element={<Events />} />
-          <Route path="/Join-Now" element={<JoinNow />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Events" element={<Events />} />
+        <Route path="/Join-Now" element={<JoinNow />} />
+        <Route path="*" element={<Home />} />
+      </Routes>
       <Footer />
-    </HashRouter>
+    </div>
   );
 }
 
