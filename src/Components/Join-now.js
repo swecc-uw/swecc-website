@@ -1,9 +1,12 @@
 import "../CSS/App.css";
 import "../CSS/Join-now.css";
-import React, { useState } from "react";
-import career from "../Data/img/career.png";
-import community from "../Data/img/community.png";
-import networking from "../Data/img/networking.png";
+import React, { useEffect, useState } from "react";
+import career from "../Data/img/career.svg";
+import careerDarkmode from "../Data/img/career-darkmode.svg";
+import community from "../Data/img/community.svg";
+import communityDarkmode from "../Data/img/community-darkmode.svg";
+import networking from "../Data/img/networking.svg";
+import networkingDarkmode from "../Data/img/networking-darkmode.svg";
 
 const actions = [
   <div className="action-item">
@@ -18,12 +21,7 @@ const actions = [
   </div>,
   <div className="action-item">
     <p>
-      <a
-        className="separate-insta-linkedin link-boxes"
-        href="https://instagram.com/swecc.uw?igshid=YmMyMTA2M2Y="
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a className="separate-insta-linkedin link-boxes" href="https://instagram.com/swecc.uw" target="_blank" rel="noopener noreferrer">
         Instagram
       </a>
       <a
@@ -40,10 +38,7 @@ const actions = [
     <div className="thanks-box">
       <p className="thanks-message">
         <strong>Thanks for Joining! </strong>
-        <br />
-        We're looking forward to seeing
-        <br />
-        you at our next meeting :)
+        We're looking forward to seeing you at our next meeting :)
       </p>
     </div>
   </div>,
@@ -51,6 +46,19 @@ const actions = [
 
 export default function JoinNow() {
   const [count, setCount] = useState(0);
+  const [darkMode, setDarkMode] = useState(JSON.parse(localStorage.getItem("darkMode")) || false);
+
+  useEffect(() => {
+    const handleStorageChange = (e) => {
+      if (e.key === "darkMode") {
+        setDarkMode(JSON.parse(e.newValue));
+      }
+    };
+    window.addEventListener("storage", handleStorageChange);
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, []);
 
   function increment() {
     if (count < 3) {
@@ -102,50 +110,28 @@ export default function JoinNow() {
           </div>
         </div>
       </div>
-      <div className="join">
-        <div className="join-section">
-          <div className="info-message-section">
-            <div className="info-table">
-              <table>
-                <tbody>
-                  <tr>
-                    <td align="center">
-                      <img className="example-images" src={networking} alt="Networking" width="60%" />
-                    </td>
-                    <td align="center">
-                      <img className="example-images" src={community} alt="Community" width="60%" />
-                    </td>
-                    <td align="center">
-                      <img className="example-images" src={career} alt="Career" width="60%" />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div className="info-title">networking</div>
-                    </td>
-                    <td>
-                      <div className="info-title">community</div>
-                    </td>
-                    <td>
-                      <div className="info-title">career</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div className="info-text">make connections in a network of future and current software engineers</div>
-                    </td>
-                    <td>
-                      <div className="info-text">Join a vibrant community of future software engineers</div>
-                    </td>
-                    <td>
-                      <div className="info-text">Gain access to career talks, and more opportunities</div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
+      <div className="join join-section info-message-section info-table">
+        <table>
+          <tbody className="community-benefits">
+            <tr>
+              <td>
+                <img className="example-images" src={darkMode ? networkingDarkmode : networking} alt="Networking" />
+                <div className="info-title">networking</div>
+                <div className="info-text">make connections in a network of future and current software engineers</div>
+              </td>
+              <td>
+                <img className="example-images" src={darkMode ? communityDarkmode : community} alt="Community" />
+                <div className="info-title">community</div>
+                <div className="info-text">Join a vibrant community of future software engineers</div>
+              </td>
+              <td>
+                <img className="example-images" src={darkMode ? careerDarkmode : career} alt="Career" />
+                <div className="info-title">career</div>
+                <div className="info-text">Gain access to career talks, and more opportunities</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   );

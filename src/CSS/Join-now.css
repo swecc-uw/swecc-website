@@ -20,12 +20,12 @@
   flex-direction: column;
   margin: 15%;
   border: 1.5px solid #3d3061;
-  background-color: #ffffff;
   border-radius: 35px;
   justify-content: center;
   align-items: center;
   width: 400%;
   height: 200%;
+  background-color: var(--bg-accent);
 }
 
 .content-flex {
@@ -106,7 +106,7 @@ a.link-boxes {
 }
 
 .join-message {
-  color: #3d3061;
+  color: var(--text-subtitle-color);
   font-size: 150%;
   margin: 10px;
 }
@@ -125,9 +125,10 @@ a.link-boxes {
   border-radius: 20px;
   font-size: 120%;
   background-color: #beb8eb80;
-  border: 1.5px solid #5941a9;
+  border: 1.5px solid var(--border);
   text-align: center;
   color: var(--text-text-color);
+  max-width: 30rem;
 }
 
 div.info-title {
@@ -137,7 +138,7 @@ div.info-title {
 .thanks-message {
   padding: 5px 25px;
   margin: 10px;
-  color: #3d3061;
+  color: var(--text-subtitle-color);
 }
 
 img {
@@ -161,20 +162,22 @@ table {
 }
 
 .info-text {
-  margin-left: auto;
-  margin-right: auto;
-  font-style: normal;
-  font-size: 150%;
-  line-height: 39px;
+  margin: 10px auto;
+  font-size: 20px;
   color: var(--text-color);
   text-align: center;
   width: 60%;
 }
 
+.community-benefits {
+  margin: 3rem;
+}
+
 .example-images {
   display: flex;
   align-self: center;
-  width: 50%;
+  height: 10rem;
+  width: 10rem;
 }
 
 .entire {
@@ -207,7 +210,7 @@ table {
 .stepper-item::before {
   position: absolute;
   content: "";
-  border-bottom: 2px solid #ccc;
+  border-bottom: 4px solid #ccc;
   width: 100%;
   top: calc(var(--height) / 2);
   left: -50%;
@@ -271,7 +274,7 @@ table {
 }
 
 .step-name {
-  color: var(--text-header-color);
+  color: var(--text-subtitle-color);
 }
 
 .stepper-item.completed .step-counter {
