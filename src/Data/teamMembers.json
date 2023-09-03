@@ -1,0 +1,62 @@
+[
+  {
+    "imgSrc": "shiina.jpg",
+    "position": "President",
+    "name": "Shiina"
+  },
+  {
+    "imgSrc": "deeksha.jpg",
+    "position": "President",
+    "name": "Deeksha"
+  },
+  {
+    "imgSrc": "david.jpg",
+    "position": "Mentorship Manager",
+    "name": "David Pham"
+  },
+  {
+    "imgSrc": "adityak.jpg",
+    "position": "External Head",
+    "name": "Aditya Khowal"
+  },
+  {
+    "imgSrc": "leah.jpg",
+    "position": "External Outreach",
+    "name": "Leah"
+  },
+  {
+    "imgSrc": "eric.jpg",
+    "position": "External Outreach",
+    "name": "Eric Xiao"
+  },
+  {
+    "imgSrc": "adityaa.jpg",
+    "position": "External Outreach",
+    "name": "Aditya Akhileshwaran"
+  },
+  {
+    "imgSrc": "pipachu.png",
+    "position": "Advisor",
+    "name": "Hawa"
+  },
+  {
+    "imgSrc": "ruhee.jpg",
+    "position": "Marketing Manager",
+    "name": "Ruhee"
+  },
+  {
+    "imgSrc": "trang.jpg",
+    "position": "Social Media Manager",
+    "name": "Trang Tran"
+  },
+  {
+    "imgSrc": "daniel.jpg",
+    "position": "Opportunities Manager",
+    "name": "Daniel"
+  },
+  {
+    "imgSrc": "bhavya.jpg",
+    "position": "Opportunities Manager",
+    "name": "Bhavya"
+  }
+]
