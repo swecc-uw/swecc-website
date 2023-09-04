@@ -1,6 +1,5 @@
-import { InstagramEmbed } from "react-social-media-embed";
-import "../CSS/App.css";
 import "../CSS/Events.css";
+import { InstagramEmbed } from "react-social-media-embed";
 import pseudoCurrImage from "../Data/img/pseudo-current-event.jpg";
 
 function Events() {
@@ -54,7 +53,6 @@ function Events() {
 
       <div className="past-events-section">
         <h2 className="event-headers">Past Events at SWECC</h2>
-        {/* <div className="past-events">{pastEventsList}</div> */}
         {posts}
       </div>
     </div>
