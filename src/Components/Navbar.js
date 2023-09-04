@@ -8,12 +8,8 @@ import { ReactComponent as BellIcon } from "../icons/bell.svg";
 import { ReactComponent as MessengerIcon } from "../icons/messenger.svg";
 import { ReactComponent as CaretIcon } from "../icons/caret.svg";
 import { ReactComponent as ArrowIcon } from "../icons/arrow.svg";
-import { FaInstagram, FaLinkedin, FaDiscord, FaUsers, FaChevronRight } from "react-icons/fa";
-import { FcShare, FcCalendar, FcAbout, FcHome } from "react-icons/fc";
-import { IoHome } from "react-icons/io5";
-import { RiCalendarTodoFill } from "react-icons/ri";
-import { MdGroupAdd } from "react-icons/md";
-import { BiInfoCircle } from "react-icons/bi";
+import { FaInstagram, FaLinkedin, FaDiscord, FaChevronRight, FaGithub } from "react-icons/fa";
+import { FcShare, FcCalendar, FcAbout, FcConferenceCall, FcHome } from "react-icons/fc";
 import { ImSun } from "react-icons/im";
 import { PiMoonBold } from "react-icons/pi";
 
@@ -80,9 +76,9 @@ function Navbar() {
       {!isMobile && (
         <>
           <NavItem icon={<FcHome />} route={"/"} closeExpand={closeExpand} tooltip="Home" label="Home" />
-          <NavItem icon={<FcCalendar />} route={"/Events"} closeExpand={closeExpand} tooltip="Events" label="Events"></NavItem>
           <NavItem icon={<FcAbout />} route={"/About"} expand={expand} closeExpand={closeExpand} tooltip="About" label="About" />
-          <NavItem icon={<MdGroupAdd />} route={"/Join-Now"} expand={expand} closeExpand={closeExpand} tooltip="Join" label="Join" />
+          <NavItem icon={<FcCalendar />} route={"/Events"} closeExpand={closeExpand} tooltip="Events" label="Events"></NavItem>
+          <NavItem icon={<FcConferenceCall />} route={"/Join-Now"} expand={expand} closeExpand={closeExpand} tooltip="Join" label="Join" />
         </>
       )}
       <NavExpandItem icon={<CaretIcon />} expand={expand} togglExpand={togglExpand} closeExpand={closeExpand} tooltip="More">
@@ -163,20 +159,17 @@ function DropdownMenu(props) {
       <CSSTransition in={activeMenu === "main"} unmountOnExit timeout={500} classNames="menu-primary" onEnter={getHeight}>
         <div className="menu">
           <NavLink to="/" onClick={props.closeExpand}>
-            <DropdownItem leftIcon={<IoHome />}>Home</DropdownItem>
+            <DropdownItem leftIcon={<FcHome />}>Home</DropdownItem>
           </NavLink>
           <NavLink to="/About" onClick={props.closeExpand}>
-            <DropdownItem leftIcon={<BiInfoCircle />}>About</DropdownItem>
+            <DropdownItem leftIcon={<FcAbout />}>About</DropdownItem>
           </NavLink>
           <NavLink to="/Events" onClick={props.closeExpand}>
-            <DropdownItem leftIcon={<RiCalendarTodoFill />}>Events</DropdownItem>
+            <DropdownItem leftIcon={<FcCalendar />}>Events</DropdownItem>
           </NavLink>
           <NavLink to="/Join-Now" onClick={props.closeExpand}>
-            <DropdownItem leftIcon={<FaUsers />}>Join Now</DropdownItem>
+            <DropdownItem leftIcon={<FcConferenceCall />}>Join Now</DropdownItem>
           </NavLink>
-          <DropdownItem leftIcon={<BellIcon />} url={"http://mailman11.u.washington.edu/mailman/listinfo/sweccmailinglist"}>
-            Subscribe to our newsletter
-          </DropdownItem>
           <DropdownItem leftIcon={<FcShare />} rightIcon={<FaChevronRight style={{ padding: 10 }} />} goToMenu="socials">
             Social Media
           </DropdownItem>
@@ -189,17 +182,20 @@ function DropdownMenu(props) {
           <DropdownItem leftIcon={<FaDiscord />} url={"https://discord.gg/Pbk4sCEWDY"}>
             Discord
           </DropdownItem>
-
           <DropdownItem leftIcon={<FaInstagram />} url={"https://www.instagram.com/swecc.uw/"}>
             Instagram
           </DropdownItem>
-
           <DropdownItem leftIcon={<FaLinkedin />} url={"https://www.linkedin.com/company/software-engineering-career-club-at-uw/"}>
             LinkedIn
           </DropdownItem>
-
+          <DropdownItem leftIcon={<FaGithub />} url={"https://github.com/swecc-uw"}>
+            Github
+          </DropdownItem>
           <DropdownItem leftIcon={<MessengerIcon />} url={"mailto:swecc@uw.edu"}>
             Email
+          </DropdownItem>
+          <DropdownItem leftIcon={<BellIcon />} url={"http://mailman11.u.washington.edu/mailman/listinfo/sweccmailinglist"}>
+            Newsletter
           </DropdownItem>
         </div>
       </CSSTransition>
