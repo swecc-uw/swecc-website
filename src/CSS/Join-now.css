@@ -28,6 +28,10 @@
   background-color: var(--bg-accent);
 }
 
+td {
+  width: 500px;
+}
+
 .content-flex {
   padding: 20px;
   display: flex;
@@ -54,7 +58,6 @@
   border-radius: 20px;
   background-color: #e5e2ed;
   color: var(--text-color);
-  /* here */
   animation: slide-up 0.5s ease;
   transition: all 0.2s ease;
 }
