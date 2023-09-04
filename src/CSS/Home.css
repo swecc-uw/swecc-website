@@ -13,15 +13,25 @@
   background-attachment: fixed;
 }
 
-.uw-logo {
+.uw-logo,
+.clubName {
   position: absolute;
+}
+
+.uw-logo,
+.clubName,
+.whatWeDoSection h2,
+.whatWeDoSection p {
+  animation: slide-up 0.5s ease-out;
+}
+
+.uw-logo {
   margin: auto;
   width: 40%;
   top: 10%;
 }
 
 .clubName {
-  position: absolute;
   font-style: normal;
   font-weight: 700;
   font-size: 6vw;
