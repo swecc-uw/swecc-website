@@ -1,0 +1,104 @@
+.card-container {
+  padding: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  box-sizing: border-box;
+  position: relative;
+  width: 300px;
+  min-height: 265px;
+  background-color: var(--card-bg);
+  border-radius: 18px;
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin: 56px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 15px 35px -15px rgba(0, 0, 0, 0.5), 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.card-image img {
+  width: 100%;
+  transform: scale(1.2);
+}
+
+.card p {
+  color: var(--card-text);
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.name {
+  margin-top: 80px;
+  font-size: 1.4em;
+  color: var(--card-text);
+  font-weight: bold;
+  letter-spacing: 0.8px;
+  margin-bottom: 8px;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-container button {
+  margin: 12px 8px;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: opacity 0.4s;
+}
+
+.card-container button:hover {
+  opacity: 0.8;
+  transition: 200ms;
+}
+
+.card-container button a {
+  color: #fff;
+  font-size: 1.4em;
+}
+
+.card-container button svg {
+  padding-top: 4px;
+  width: 20px;
+  height: 20px;
+}
+
+.card-container button.portfolio {
+  background-color: #3c8c2d;
+}
+
+.card-container button.github {
+  background-color: #24292e;
+}
+
+.card-container button.linkedin {
+  background-color: #2d64bc;
+}
+
+.card-container button.email {
+  background-color: #aa5738;
+}

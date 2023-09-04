@@ -1,62 +1,90 @@
 [
   {
+    "name": "Shiina",
     "imgSrc": "shiina.jpg",
     "position": "President",
-    "name": "Shiina"
+    "linkedin": "https://www.linkedin.com/in/shiinas/",
+    "email": "shiina12@uw.edu"
   },
   {
+    "name": "Deeksha",
     "imgSrc": "deeksha.jpg",
     "position": "President",
-    "name": "Deeksha"
+    "linkedin": "https://www.linkedin.com/in/deeksha-vatwani/",
+    "email": "vatwani2@uw.edu"
   },
   {
-    "imgSrc": "david.jpg",
-    "position": "Mentorship Manager",
-    "name": "David Pham"
-  },
-  {
-    "imgSrc": "adityak.jpg",
-    "position": "External Head",
-    "name": "Aditya Khowal"
-  },
-  {
-    "imgSrc": "leah.jpg",
-    "position": "External Outreach",
-    "name": "Leah"
-  },
-  {
-    "imgSrc": "eric.jpg",
-    "position": "External Outreach",
-    "name": "Eric Xiao"
-  },
-  {
-    "imgSrc": "adityaa.jpg",
-    "position": "External Outreach",
-    "name": "Aditya Akhileshwaran"
-  },
-  {
-    "imgSrc": "pipachu.png",
-    "position": "Advisor",
-    "name": "Hawa"
-  },
-  {
+    "name": "Ruhee",
     "imgSrc": "ruhee.jpg",
     "position": "Marketing Manager",
-    "name": "Ruhee"
+    "portfolio": "https://www.rrajwani.com/"
   },
   {
+    "name": "Trang Tran",
     "imgSrc": "trang.jpg",
     "position": "Social Media Manager",
-    "name": "Trang Tran"
+    "linkedin": "https://www.linkedin.com/in/trangtran10/",
+    "email": "trangt10@uw.edu"
   },
   {
+    "name": "Elijah Melton",
+    "imgSrc": "elijah.jpg",
+    "position": "Resource Manager",
+    "linkedin": "linkedin.com/in/elijah-melton/",
+    "github": "https://github.com/elimelt",
+    "email": "elimelt@uw.edu"
+  },
+  {
+    "name": "David Pham",
+    "imgSrc": "david.jpg",
+    "position": "Mentorship Manager",
+    "linkedin": "https://www.linkedin.com/in/phamdavid722/"
+  },
+  {
+    "name": "Aditya Khowal",
+    "imgSrc": "adityak.jpg",
+    "position": "External Head",
+    "linkedin": "www.linkedin.com/in/aditya-khowal/"
+  },
+  {
+    "name": "Leah",
+    "imgSrc": "leah.jpg",
+    "position": "External Outreach",
+    "portfolio": "https://leahjia.com/",
+    "linkedin": "https://www.linkedin.com/in/leahjia",
+    "github": "https://github.com/leahjia",
+    "email": "yuwenj3@uw.edu"
+  },
+  {
+    "name": "Eric Xiao",
+    "imgSrc": "eric.jpg",
+    "position": "External Outreach",
+    "linkedin": "https://www.linkedin.com/in/xiaoe5800/",
+    "github": "https://github.com/mathlord2",
+    "email": "exiao@uw.edu"
+  },
+  {
+    "name": "Aditya Akhileshwaran",
+    "imgSrc": "adityaa.jpg",
+    "position": "External Outreach",
+    "linkedin": "https://www.linkedin.com/in/adiakhil/",
+    "email": "aakhiles@uw.edu"
+  },
+  {
+    "name": "Hawa",
+    "imgSrc": "pipachu.png",
+    "position": "Advisor"
+  },
+  {
+    "name": "Daniel",
     "imgSrc": "daniel.jpg",
     "position": "Opportunities Manager",
-    "name": "Daniel"
+    "email": "danielbejar316@gmail.com"
   },
   {
+    "name": "Bhavya",
     "imgSrc": "bhavya.jpg",
     "position": "Opportunities Manager",
-    "name": "Bhavya"
+    "linkedin": "https://www.linkedin.com/in/bhavya-linga-4b274725b/"
   }
 ]
