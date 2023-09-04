@@ -1,3 +1,4 @@
+import { InstagramEmbed } from "react-social-media-embed";
 import "../CSS/App.css";
 import "../CSS/Events.css";
 import pseudoCurrImage from "../Data/img/pseudo-current-event.jpg";
@@ -45,6 +46,14 @@ function Events() {
     </div>
   ));
 
+  const posts = (
+    <div className="posts">
+      <InstagramEmbed className="instaPost slide-up" url="https://www.instagram.com/p/CsDKoflLlNM/?igshid=MzRlODBiNWFlZA==" />
+      <InstagramEmbed className="instaPost slide-up" url="https://www.instagram.com/p/CrPXP4Oqobe/?igshid=MzRlODBiNWFlZA==" />
+      <InstagramEmbed className="instaPost slide-up" url="https://www.instagram.com/p/Cq8-ZsxqlTM/?igshid=MzRlODBiNWFlZA==" />
+    </div>
+  );
+
   return (
     <div className="event-page">
       <div className="calendar-section">
@@ -63,8 +72,9 @@ function Events() {
       </div>
 
       <div className="past-events-section">
-        <h2 className="event-headers">Event History</h2>
-        <div className="past-events">{pastEventsList}</div>
+        <h2 className="event-headers">Past Events at SWECC</h2>
+        {/* <div className="past-events">{pastEventsList}</div> */}
+        {posts}
       </div>
     </div>
   );
