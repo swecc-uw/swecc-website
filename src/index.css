@@ -11,6 +11,8 @@
   --border: 1.5px solid #474a4d;
   --border-radius: 8px;
   --speed: 300ms;
+  --card-bg: #fff;
+  --card-text: var(--text-subtitle-color);
 }
 
 .dark-mode {
@@ -22,6 +24,8 @@
   --text-subtitle-color: #beb8eb;
   --nav-bottom: #a277f4;
   --border: 1px solid #474a4d;
+  --card-bg: var(--bg-accent);
+  --card-text: #d4ccdd;
 }
 
 * {
