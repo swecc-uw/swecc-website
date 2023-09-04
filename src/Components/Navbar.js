@@ -9,7 +9,7 @@ import { ReactComponent as MessengerIcon } from "../icons/messenger.svg";
 import { ReactComponent as CaretIcon } from "../icons/caret.svg";
 import { ReactComponent as ArrowIcon } from "../icons/arrow.svg";
 import { FaInstagram, FaLinkedin, FaDiscord, FaChevronRight, FaGithub } from "react-icons/fa";
-import { FcShare, FcCalendar, FcAbout, FcConferenceCall, FcHome } from "react-icons/fc";
+import { FcShare, FcCalendar, FcNext, FcApproval, FcCheckmark, FcConferenceCall, FcHome } from "react-icons/fc";
 import { ImSun } from "react-icons/im";
 import { PiMoonBold } from "react-icons/pi";
 
@@ -76,9 +76,9 @@ function Navbar() {
       {!isMobile && (
         <>
           <NavItem icon={<FcHome />} route={"/"} closeExpand={closeExpand} tooltip="Home" label="Home" />
-          <NavItem icon={<FcAbout />} route={"/About"} expand={expand} closeExpand={closeExpand} tooltip="About" label="About" />
+          <NavItem icon={<FcConferenceCall />} route={"/About"} expand={expand} closeExpand={closeExpand} tooltip="Officers" label="Officers" />
           <NavItem icon={<FcCalendar />} route={"/Events"} closeExpand={closeExpand} tooltip="Events" label="Events"></NavItem>
-          <NavItem icon={<FcConferenceCall />} route={"/Join-Now"} expand={expand} closeExpand={closeExpand} tooltip="Join" label="Join" />
+          <NavItem icon={<FcCheckmark />} route={"/Join-Now"} expand={expand} closeExpand={closeExpand} tooltip="Join" label="Join" />
         </>
       )}
       <NavExpandItem icon={<CaretIcon />} expand={expand} togglExpand={togglExpand} closeExpand={closeExpand} tooltip="More">
@@ -162,13 +162,13 @@ function DropdownMenu(props) {
             <DropdownItem leftIcon={<FcHome />}>Home</DropdownItem>
           </NavLink>
           <NavLink to="/About" onClick={props.closeExpand}>
-            <DropdownItem leftIcon={<FcAbout />}>About</DropdownItem>
+            <DropdownItem leftIcon={<FcConferenceCall />}>Officers</DropdownItem>
           </NavLink>
           <NavLink to="/Events" onClick={props.closeExpand}>
             <DropdownItem leftIcon={<FcCalendar />}>Events</DropdownItem>
           </NavLink>
           <NavLink to="/Join-Now" onClick={props.closeExpand}>
-            <DropdownItem leftIcon={<FcConferenceCall />}>Join Now</DropdownItem>
+            <DropdownItem leftIcon={<FcApproval />}>Join Now</DropdownItem>
           </NavLink>
           <DropdownItem leftIcon={<FcShare />} rightIcon={<FaChevronRight style={{ padding: 10 }} />} goToMenu="socials">
             Social Media

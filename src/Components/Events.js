@@ -2,7 +2,6 @@ import { InstagramEmbed } from "react-social-media-embed";
 import "../CSS/App.css";
 import "../CSS/Events.css";
 import pseudoCurrImage from "../Data/img/pseudo-current-event.jpg";
-import pseudoPastImage from "../Data/img/pseudo-past-event.jpg";
 
 function Events() {
   const upcomingEvents = [
@@ -11,14 +10,6 @@ function Events() {
       timeAndPlace: "TBD",
       description: "We are currently planning more events for the quarter. Check back soon for more information!",
       image: pseudoCurrImage,
-    },
-  ];
-
-  const pastEvents = [
-    {
-      title: "We're updating our website!",
-      description: "Currently we are updating our website. Check back soon for more information!",
-      image: pseudoPastImage,
     },
   ];
 
@@ -32,16 +23,6 @@ function Events() {
         <button type="button" className="rsvp-btn">
           RSVP
         </button>
-      </div>
-    </div>
-  ));
-
-  const pastEventsList = pastEvents.map((event, index) => (
-    <div key={index} className="past-event">
-      <img src={event.image} className="past-event-image" alt="past event" />
-      <div className="past-event-info">
-        <h3 className="past-event-title">{event.title}</h3>
-        <p className="past-event-description">{event.description}</p>
       </div>
     </div>
   ));
