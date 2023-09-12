@@ -240,6 +240,19 @@ h3.meetingTime {
     width: 70%;
   }
 }
+
+@media (max-width: 830px) {
+  .posts {
+    flex-direction: column;
+    padding: 2rem 5rem;
+  }
+
+  .instaPost {
+    margin: 20px 0;
+    width: 100%;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .goal-message-section {
     position: relative;
@@ -290,18 +303,6 @@ h3.meetingTime {
 
   h3.meetingTime {
     text-align: center;
-  }
-}
-
-@media (max-width: 830px) {
-  .posts {
-    flex-direction: column;
-    padding: 2rem 5rem;
-  }
-
-  .instaPost {
-    margin: 20px 0;
-    width: 100%;
   }
 }
 
