@@ -6,9 +6,7 @@
   height: 400px;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(0deg, rgba(190, 184, 235, 0.8), rgba(190, 184, 235, 0.8)),
-    linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), linear-gradient(0deg, rgba(190, 184, 235, 0.1), rgba(190, 184, 235, 0.1)),
-    url(../Data/img/about.svg);
+  background: linear-gradient(0deg, rgba(190, 184, 235, 0.8), rgba(190, 184, 235, 0.8)), linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), linear-gradient(0deg, rgba(190, 184, 235, 0.1), rgba(190, 184, 235, 0.1)), url(../Data/img/about.svg);
   background-size: cover;
   background-attachment: fixed;
   background-position: 20%;
@@ -36,7 +34,7 @@
   font-style: normal;
   text-align: center;
   font-weight: 700;
-  font-size: 4em;
+  font-size: 3rem;
   color: var(--text-title-color);
 }
 
@@ -54,6 +52,25 @@
   align-items: center;
 }
 
+@media (max-width: 976px) {
+  .about-title,
+  .team-members-title {
+    font-size: 2rem;
+    line-height: 50px;
+  }
+
+  .about-text,
+  .team-members-subtitle {
+    font-size: 1.5rem;
+    margin: 1rem 1.5rem;
+    line-height: 30px;
+  }
+
+  .about-message-section {
+    height: 250px;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .about-message-section {
     position: relative;
@@ -63,9 +80,7 @@
     height: 500px;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(0deg, rgba(190, 184, 235, 0.8), rgba(190, 184, 235, 0.8)),
-      linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), linear-gradient(0deg, rgba(190, 184, 235, 0.1), rgba(190, 184, 235, 0.1)),
-      url(../Data/img/about.svg);
+    background: linear-gradient(0deg, rgba(190, 184, 235, 0.8), rgba(190, 184, 235, 0.8)), linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), linear-gradient(0deg, rgba(190, 184, 235, 0.1), rgba(190, 184, 235, 0.1)), url(../Data/img/about.svg);
     background-size: cover;
     background-attachment: fixed;
     background-position: 20%;
@@ -84,5 +99,40 @@
     font-weight: 700;
     font-size: 2em;
     color: var(--text-header-color);
+  }
+
+  @media only screen and (max-width: 768px) {
+    .about-title,
+    .team-members-title {
+      font-size: 2rem;
+      line-height: 50px;
+    }
+    .about-text,
+    .team-members-subtitle {
+      font-size: 1.5rem;
+      margin: 1rem 1.5rem;
+      line-height: 30px;
+    }
+
+    .about-message-section {
+      height: 250px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .about-title,
+    .team-members-title {
+      font-size: 1.5rem;
+      line-height: 50px;
+    }
+    .about-text,
+    .team-members-subtitle {
+      font-size: 1rem;
+      margin: 0.5rem 1rem;
+      line-height: 30px;
+    }
+    .about-message-section {
+      height: 200px;
+    }
   }
 }

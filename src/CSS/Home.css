@@ -5,9 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
-    linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), linear-gradient(0deg, rgba(190, 184, 235, 0.1), rgba(190, 184, 235, 0.1)),
-    url(../Data/img/BackgroundImg.jpg);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), linear-gradient(0deg, rgba(190, 184, 235, 0.1), rgba(190, 184, 235, 0.1)), url(../Data/img/BackgroundImg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -242,6 +240,19 @@ h3.meetingTime {
     width: 70%;
   }
 }
+
+@media (max-width: 830px) {
+  .posts {
+    flex-direction: column;
+    padding: 2rem 5rem;
+  }
+
+  .instaPost {
+    margin: 20px 0;
+    width: 100%;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .goal-message-section {
     position: relative;
@@ -272,17 +283,26 @@ h3.meetingTime {
     line-height: 30px;
     color: var(--text-color);
   }
-}
 
-@media (max-width: 830px) {
-  .posts {
-    flex-direction: column;
-    padding: 2rem 5rem;
+  .whatWeDoSection,
+  .meetingsSection {
+    padding: 1rem;
   }
 
-  .instaPost {
-    margin: 20px 0;
-    width: 100%;
+  .summaryTitle,
+  .sweccMeetings,
+  .meetingsInfoSection .meetingTime {
+    font-size: 1.5rem;
+  }
+
+  .whatWeDoSection p.summary,
+  .meetingsInfoSection p.meetingInfo,
+  .meetingsInfoSection p.meetingDetails {
+    font-size: 1rem;
+  }
+
+  h3.meetingTime {
+    text-align: center;
   }
 }
 

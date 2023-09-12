@@ -102,3 +102,9 @@
 .card-container button.email {
   background-color: #aa5738;
 }
+
+@media (max-width: 480px) {
+  .card-container {
+    padding: 50px;
+  }
+}
