@@ -34,7 +34,7 @@
   font-style: normal;
   text-align: center;
   font-weight: 700;
-  font-size: 4em;
+  font-size: 3rem;
   color: var(--text-title-color);
 }
 
@@ -50,6 +50,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 976px) {
+  .about-title,
+  .team-members-title {
+    font-size: 2rem;
+    line-height: 50px;
+  }
+
+  .about-text,
+  .team-members-subtitle {
+    font-size: 1.5rem;
+    margin: 1rem 1.5rem;
+    line-height: 30px;
+  }
+
+  .about-message-section {
+    height: 250px;
+  }
 }
 
 @media only screen and (max-width: 768px) {

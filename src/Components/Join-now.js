@@ -7,6 +7,7 @@ import community from "../Data/img/community.svg";
 import communityDarkmode from "../Data/img/community-darkmode.svg";
 import networking from "../Data/img/networking.svg";
 import networkingDarkmode from "../Data/img/networking-darkmode.svg";
+import Stepper from "./Stepper";
 
 const actions = [
   <div className="action-item">
@@ -24,12 +25,7 @@ const actions = [
       <a className="separate-insta-linkedin link-boxes" href="https://instagram.com/swecc.uw" target="_blank" rel="noopener noreferrer">
         Instagram
       </a>
-      <a
-        className="separate-insta-linkedin link-boxes"
-        href="https://www.linkedin.com/company/software-engineering-career-club-at-uw/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a className="separate-insta-linkedin link-boxes" href="https://www.linkedin.com/company/software-engineering-career-club-at-uw/" target="_blank" rel="noopener noreferrer">
         LinkedIn
       </a>
     </p>
@@ -76,40 +72,47 @@ export default function JoinNow() {
     <div className="entire">
       <div className="background-image">
         <div className="js-white-box">
-          <div className="content-flex">
+          <div className="content-flex-small">
             <p className="join-message">
               <strong>Join SWECC </strong>
+              <Stepper className="stepper" />
             </p>
-            <div className="stepper-wrapper">
-              <div className={`stepper-item ${count > 0 ? "completed" : count === 0 ? "active" : ""}`}>
-                <div className="step-counter">1</div>
-                <div className="step-name">Join our discord</div>
-              </div>
-              <div className={`stepper-item ${count > 1 ? "completed" : count === 1 ? "active" : ""}`}>
-                <div className="step-counter">2</div>
-                <div className="step-name">Join our mailing list</div>
-              </div>
-              <div className={`stepper-item ${count > 2 ? "completed" : count === 2 ? "active" : ""}`}>
-                <div className="step-counter">3</div>
-                <div className="step-name">Attend an event</div>
-              </div>
-            </div>
-            <p>{actions[count]}</p>
           </div>
-          <div className="button-container">
-            {count > 0 && (
-              <button className="click-button back-button" onClick={decrement}>
-                Back
-              </button>
-            )}
-            {count < 3 && (
-              <button className="click-button next-button" onClick={increment}>
-                Next
-              </button>
-            )}
+            <div className="content-flex">
+              <p className="join-message">
+                <strong>Join SWECC </strong>
+              </p>
+              <p className="join-message"></p>
+              <div className="stepper-wrapper">
+                <div className={`stepper-item ${count > 0 ? "completed" : count === 0 ? "active" : ""}`}>
+                  <div className="step-counter">1</div>
+                  <div className="step-name">Join our discord</div>
+                </div>
+                <div className={`stepper-item ${count > 1 ? "completed" : count === 1 ? "active" : ""}`}>
+                  <div className="step-counter">2</div>
+                  <div className="step-name">Join our mailing list</div>
+                </div>
+                <div className={`stepper-item ${count > 2 ? "completed" : count === 2 ? "active" : ""}`}>
+                  <div className="step-counter">3</div>
+                  <div className="step-name">Attend an event</div>
+                </div>
+              </div>
+              <p>{actions[count]}</p>
+            </div>
+            <div className="button-container">
+              {count > 0 && (
+                <button className="click-button back-button" onClick={decrement}>
+                  Back
+                </button>
+              )}
+              {count < 3 && (
+                <button className="click-button next-button" onClick={increment}>
+                  Next
+                </button>
+              )}
+            </div>
           </div>
         </div>
-      </div>
       <div className="join join-section info-message-section info-table">
         <table>
           <tbody className="community-benefits">

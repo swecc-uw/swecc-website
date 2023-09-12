@@ -5,10 +5,25 @@
   --height: 50px;
 }
 
+.content-flex-small {
+  display: none;
+}
+
+.content-flex-small p {
+  color: var(--text-subtitle-color);
+}
+
+.css-1hv8oq8-MuiStepLabel-label,
+.back-btn {
+  color: var(--text-subtitle-color) !important;
+}
+
+.css-1di5t78-MuiPaper-root {
+  background-color: var(--bg-accent) !important;
+}
+
 .background-image {
-  background: linear-gradient(0deg, rgba(190, 184, 235, 0.8), rgba(190, 184, 235, 0.8)),
-    linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), linear-gradient(0deg, rgba(190, 184, 235, 0.1), rgba(190, 184, 235, 0.1)),
-    url(../Data/img/man-on-computer.jpg);
+  background: linear-gradient(0deg, rgba(190, 184, 235, 0.8), rgba(190, 184, 235, 0.8)), linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), linear-gradient(0deg, rgba(190, 184, 235, 0.1), rgba(190, 184, 235, 0.1)), url(../Data/img/man-on-computer.jpg);
   background-size: cover;
   background-attachment: fixed;
   display: flex;
@@ -282,4 +297,69 @@ table {
 
 .stepper-item.completed .step-counter {
   color: #fff;
+}
+
+@media only screen and (max-width: 768px) {
+  .about-title,
+  .team-members-title {
+    font-size: 2rem;
+    line-height: 50px;
+  }
+  .about-text,
+  .team-members-subtitle {
+    font-size: 1.5rem;
+    margin: 1rem 1.5rem;
+    line-height: 30px;
+  }
+
+  .about-message-section {
+    height: 250px;
+  }
+
+  .content-flex-small {
+    display: block;
+    padding: 3rem;
+    width: 80%;
+  }
+
+  .js-white-box {
+    margin: 5rem;
+    width: 70%;
+    height: 70%;
+  }
+
+  .js-white-box .content-flex,
+  .js-white-box .button-container {
+    display: none;
+  }
+
+  /* testing */
+  .join-section table {
+    width: 100%;
+  }
+
+  table {
+    align-items: center;
+  }
+
+  .join-section td {
+    display: block;
+    padding: 20px 0;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+
+  .action-item a {
+    font-size: 1rem;
+  }
+
+  p.thanks-message {
+    padding: 1rem 0;
+  }
+}
+
+@media only screen and (max-width: 524px) {
+  .action-item a {
+    display: flex;
+  }
 }
