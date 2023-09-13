@@ -1,5 +1,6 @@
 import React from "react";
 import Footer from "./Footer.js";
+import FooterHotfix from "./FooterMobile.js";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Home.js";
 import Events from "./Events.js";
@@ -22,6 +23,7 @@ function App() {
         <Route path="*" element={<Home />} />
       </Routes>
       <Footer />
+      <FooterHotfix />
     </div>
   );
 }

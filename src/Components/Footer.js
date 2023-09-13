@@ -7,7 +7,7 @@ import SWECClogo2 from "../Data/img/SWECClogo2.jpg";
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="og-footer">
       <div className="footer-contents-container">
         <div className="row">
           <span className="links-section">

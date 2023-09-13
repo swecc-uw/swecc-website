@@ -37,3 +37,103 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* testing */
+
+.hotfix {
+  display: none;
+}
+
+footer {
+  text-align: center;
+  flex-direction: column;
+}
+
+.hotfix div {
+  padding-top: 1rem;
+}
+
+footer h3 {
+  color: var(--bg-color);
+}
+
+.fa {
+  padding: 20px;
+  font-size: 25px;
+  width: 25px;
+  margin: 5px 4px;
+  border-radius: 62px;
+  color: #dcd9f3;
+}
+
+.fa-envelope {
+  background: #3d94eb;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+}
+
+.fa-instagram {
+  background: linear-gradient(145deg, #3051f1 10%, #c92bb7 70%) no-repeat;
+}
+
+.fa-github {
+  background: #0d2028;
+}
+
+.fa-threads {
+  background: #f1a665;
+}
+
+.github-in-line,
+.fa-link {
+  width: 10px;
+  margin: 0 10px;
+  padding: 0px;
+  border-radius: 50%;
+  background: none;
+}
+
+.links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.links a {
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.links a:hover {
+  transition: 0.3s;
+}
+
+.copyright {
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.copyright a {
+  color: white;
+}
+
+a:hover {
+  opacity: 0.7;
+  transition: 0.2s;
+}
+
+.copyright a:hover {
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .og-footer {
+    display: none;
+  }
+
+  .hotfix {
+    display: flex;
+  }
+}
