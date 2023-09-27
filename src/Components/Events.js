@@ -28,9 +28,9 @@ function Events() {
 
   const posts = (
     <div className="posts">
-      <InstagramEmbed className="instaPost slide-up" url="https://www.instagram.com/p/CsDKoflLlNM/?igshid=MzRlODBiNWFlZA==" />
-      <InstagramEmbed className="instaPost slide-up" url="https://www.instagram.com/p/CrPXP4Oqobe/?igshid=MzRlODBiNWFlZA==" />
-      <InstagramEmbed className="instaPost slide-up" url="https://www.instagram.com/p/Cq8-ZsxqlTM/?igshid=MzRlODBiNWFlZA==" />
+      <InstagramEmbed className="instaPost slide-up" url="https://www.instagram.com/p/CxrxWcQLpSb" />
+      <InstagramEmbed className="instaPost slide-up" url="https://www.instagram.com/p/CsDKoflLlNM" />
+      <InstagramEmbed className="instaPost slide-up" url="https://www.instagram.com/p/CrPXP4Oqobe" />
     </div>
   );
 
@@ -39,11 +39,7 @@ function Events() {
       <div className="calendar-section">
         <h1 className="event-headers">Upcoming Events</h1>
         <div align="center">
-          <iframe
-            title="calendar"
-            className="calendar"
-            src="https://calendar.google.com/calendar/embed?src=swecc%40uw.edu&ctz=America%2FLos_Angeles"
-          ></iframe>
+          <iframe title="calendar" className="calendar" src="https://calendar.google.com/calendar/embed?src=swecc%40uw.edu&ctz=America%2FLos_Angeles"></iframe>
         </div>
       </div>
 

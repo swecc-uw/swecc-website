@@ -362,4 +362,8 @@ table {
   .action-item a {
     display: flex;
   }
+
+  td {
+    width: 300px;
+  }
 }
