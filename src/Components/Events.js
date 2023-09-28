@@ -1,14 +1,14 @@
 import "../CSS/Events.css";
 import { InstagramEmbed } from "react-social-media-embed";
-import pseudoCurrImage from "../Data/img/pseudo-current-event.jpg";
+import eventImg from "../Data/img/event-1.png";
 
 function Events() {
   const upcomingEvents = [
     {
-      title: "More events coming soon!",
-      timeAndPlace: "TBD",
-      description: "We are currently planning more events for the quarter. Check back soon for more information!",
-      image: pseudoCurrImage,
+      title: "SWECC Tech Career Panel",
+      timeAndPlace: "Oct 4, 2023 | 6pm to 7:30pm | Gowen Hall 201 | University of Washington",
+      description: "Come join us for a moderated career panel and hear stories about work and life at Google. Better understand how to prepare for interviews and listen to advice from folks in the tech industry. Be sure to bring your questions for the Q&A session!",
+      image: eventImg,
     },
   ];
 
@@ -19,9 +19,11 @@ function Events() {
         <h3>{event.title}</h3>
         <p>{event.timeAndPlace}</p>
         <p>{event.description}</p>
-        <button type="button" className="rsvp-btn">
-          RSVP
-        </button>
+        <a href="https://rsvp.withgoogle.com/events/fall-2023-co-general-event-form_d87513_afeb36_6ef465/forms/registration" target="_blank" rel="noopener noreferrer">
+          <button type="button" className="rsvp-btn">
+            RSVP
+          </button>
+        </a>
       </div>
     </div>
   ));

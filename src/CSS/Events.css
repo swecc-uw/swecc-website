@@ -1,213 +1,223 @@
 body {
-    background-color: var(--bg);
-    font-family: 'assistant', 'Montserrat', "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+  background-color: var(--bg);
+  font-family: "assistant", "Montserrat", "Lato", "Helvetica Neue", "Helvetica", sans-serif;
 }
 
-.event-page h1, .event-page h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin: 5rem 0;
-    color: var(--text-title-color);
+.event-page h1,
+.event-page h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 5rem 0;
+  color: var(--text-title-color);
 }
 
 .event-page h2 {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
-
-.event-page h3,
-.event-page p {
-    font-size: 1.5rem;
-    text-align: left;
-    min-width: 0;
-    line-height: normal;
-}
-
-.event-page p {
-    color: var(--text-color);
-}
-
 
 .event-page h3 {
-    margin: 1rem 0 0 0;
+  font-size: 1.5rem;
+  text-align: left;
+  min-width: 0;
 }
 
 .event-page p {
-    font-size: 1.1rem;
-    margin: .5rem 0;
+  color: var(--text-color);
+}
+
+.event-page h3 {
+  margin: 1rem 0 0 0;
+}
+
+.event-page p {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
 }
 
 .event-headers {
-    color: var(--text-title-color);
-    text-align: center;
-    font-size: 2.5rem;
-    margin: 3rem 0;
+  color: var(--text-title-color);
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 3rem 0;
 }
 
 .calendar-section {
-    padding: 20px 10px 50px 10px;
+  padding: 20px 10px 50px 10px;
 }
 
 .calendar {
-    width: 73%;
-    height: 45vw;
-    border-radius: 10px;
+  width: 73%;
+  height: 45vw;
+  border-radius: 10px;
 }
 
 .upcoming-events-section {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    background-color: var(--bg-accent);
-    padding: 50px 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: var(--bg-accent);
+  padding: 50px 10px;
+}
+
+.upcoming-event p {
+  padding: 0.5rem 0 0 0;
+  font-size: 1.2rem;
 }
 
 .upcoming-event {
-    display: flex;
-    align-items: flex-start;
+  display: flex;
+  align-items: flex-start;
 }
 
 .upcoming-event-image {
-    width: 30rem;
-    border-radius: 20px;
-    margin: 20px;
-    margin-left: 6rem;
+  width: 30rem;
+  border-radius: 20px;
+  margin: 20px;
+  margin-left: 6rem;
 }
 
 .upcoming-event-group {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 40%;
 }
 
 .upcoming-event-info {
-    font-size: medium;
-    max-width: 40rem;
-    margin: 0 6rem 3rem 5rem;
+  max-width: 40rem;
+  margin: 0 6rem 0 5rem;
+  height: fit-content;
 }
 
 .rsvp-btn {
-    font-family: 'Roboto';
-    font-weight: bold;
-    color: var(--text-color);
-    box-sizing: border-box;
-    background: var(--bg);
-    padding: 4px 10px;
-    border-radius: 20px;
-    margin: 8px 0;
+  font-family: "Roboto";
+  font-weight: bold;
+  color: var(--text-color);
+  box-sizing: border-box;
+  background: var(--bg);
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin: 8px 0;
+  border: 2px solid var(--bg);
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
 }
 
 .rsvp-btn:hover {
-    transform: scale(1.2);
-    transition: transform 0.2s ease-in-out;
-    cursor: pointer;
+  transform: scale(1.2);
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 .rsvp-btn:active {
-    color: var(--bg);
-    background-color: #7E6D90;
+  color: var(--bg);
+  background-color: #7e6d90;
 }
 
 .past-events-section {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .past-events {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 50px;
 }
 
 .past-event {
-    width: 25rem;
-    margin: 10px;
-    border-radius: 5px;
-    padding: 10px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
+  width: 25rem;
+  margin: 10px;
+  border-radius: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 .past-event-image {
-    border-radius: 10px;
-    width: 100%;
-    margin-top: 20px;
-    margin-bottom: 10px;
+  border-radius: 10px;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .past-event-title {
-    color: var(--text-subtitle-color);
-    text-align: left;
+  color: var(--text-subtitle-color);
+  text-align: left;
 }
 
-
 @media (max-width: 1076px) {
-    .event-page h1, .event-page h2 {
-        font-size: 2.2rem;
-        margin: 4rem 0 2rem 0;
-    }
+  .event-page h1,
+  .event-page h2 {
+    font-size: 2.2rem;
+    margin: 4rem 0 2rem 0;
+  }
 
-    .upcoming-event {
-        flex-direction: column;
-        align-items: center;
-    }
+  .upcoming-event {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .upcoming-event-image {
-        width: 75%;
-        margin-left: 0;
-    }
+  .upcoming-event-image {
+    width: 75%;
+    margin-left: 0;
+  }
 
-    .upcoming-event-info {
-        width: 75%;
-    }
+  .upcoming-event-info {
+    width: 75%;
+  }
 }
 
 @media (max-width: 768px) {
-    .calendar {
-        width: 85%;
-        height: 400px;
-    }
+  .calendar {
+    width: 85%;
+    height: 400px;
+  }
 }
 
 @media (max-width: 572px) {
-    .calendar {
-        height: 350px;
-    }
+  .calendar {
+    height: 350px;
+  }
 
-    .upcoming-event-image {
-        width: 80%;
-        margin: 0 16rem;
-        margin-top: 15px;
-    }
+  .upcoming-event-image {
+    width: 80%;
+    margin: 0 16rem;
+    margin-top: 15px;
+  }
 
-    .upcoming-event-info {
-        width: 75%;
-    }
+  .upcoming-event-info {
+    width: 75%;
+  }
 
-    .rsvp-btn {
-        margin-bottom: 20px;
-    }
+  .rsvp-btn {
+    margin-bottom: 20px;
+  }
 
-    .event-page h1 {
-        margin: 26px 0;
-    }
+  .event-page h1 {
+    margin: 26px 0;
+  }
 
-    .event-page h2 {
-        margin-bottom: 0;
-    }
+  .event-page h2 {
+    margin-bottom: 0;
+  }
 }
 
 @media (max-width: 470px) {
-    .calendar {
-        height: 280px;
-    }
+  .calendar {
+    height: 280px;
+  }
 
-    .upcoming-event-image {
-        width: 85%;
-        margin: 0 5%;
-        margin-top: 15px;
-    }
+  .upcoming-event-image {
+    width: 85%;
+    margin: 0 5%;
+    margin-top: 15px;
+  }
 }
