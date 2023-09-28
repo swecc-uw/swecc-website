@@ -13,12 +13,12 @@ function HomePage() {
         <p className="meetingDetails">
           Every week on Wednesday, from 5:30-6:30pm
           <br />
-          Location: HUB 334
+          Location: TBD
         </p>
       </div>
       <div className="map-and-label">
         <img className="map" src={SWECCmap} alt="map" />
-        <p className="mapLabel">Location: HUB 334</p>
+        <p className="mapLabel">Location: TBD</p>
       </div>
     </div>
   );
