@@ -158,8 +158,8 @@ body {
 @media (max-width: 1076px) {
   .event-page h1,
   .event-page h2 {
-    font-size: 2.2rem;
-    margin: 4rem 0 2rem 0;
+    font-size: 2rem;
+    margin-top: 4rem;
   }
 
   .upcoming-event {
@@ -225,5 +225,10 @@ body {
     margin: 0 5%;
     margin-top: 15px;
     height: 100%;
+  }
+
+  .event-page h1,
+  .event-page h2 {
+    font-size: 1.8rem;
   }
 }
