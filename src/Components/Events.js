@@ -1,14 +1,22 @@
 import "../CSS/Events.css";
 import { InstagramEmbed } from "react-social-media-embed";
-import eventImg from "../Data/img/event-1.png";
 
 function Events() {
   const upcomingEvents = [
     {
-      title: "SWECC Tech Career Panel",
+      title: "SWECC x Google Tech Career Panel",
       timeAndPlace: "Oct 4, 2023 | 6pm to 7:30pm | Gowen Hall 201 | University of Washington",
       description: "Come join us for a moderated career panel and hear stories about work and life at Google. Better understand how to prepare for interviews and listen to advice from folks in the tech industry. Be sure to bring your questions for the Q&A session!",
-      image: eventImg,
+      image: require("../Data/img/event-1.png"),
+      publish: true,
+      rsvp: "https://rsvp.withgoogle.com/events/fall-2023-co-general-event-form_d87513_afeb36_6ef465/forms/registration",
+    },
+    {
+      title: "SWECC x NeetCode",
+      timeAndPlace: "Oct 18, 2023 | 5:30pm to 6:30pm | Gowen Hall 201 | University of Washington",
+      description: "Come meet youtuber and software engineer Neetcode in person! Ask him any questions about his career and work life. ",
+      image: require("../Data/img/event-2.png"),
+      publish: false,
     },
   ];
 
@@ -19,11 +27,15 @@ function Events() {
         <h3>{event.title}</h3>
         <p>{event.timeAndPlace}</p>
         <p>{event.description}</p>
-        <a href="https://rsvp.withgoogle.com/events/fall-2023-co-general-event-form_d87513_afeb36_6ef465/forms/registration" target="_blank" rel="noopener noreferrer">
-          <button type="button" className="rsvp-btn">
-            RSVP
-          </button>
-        </a>
+        {event.publish ? (
+          <a href={event.rsvp} target="_blank" rel="noopener noreferrer">
+            <button type="button" className="rsvp-btn">
+              RSVP
+            </button>
+          </a>
+        ) : (
+          <p>RSVP releasing soon✨</p>
+        )}
       </div>
     </div>
   ));

@@ -74,6 +74,8 @@ body {
   border-radius: 20px;
   margin: 20px;
   margin-left: 6rem;
+  height: 18rem;
+  object-fit: cover;
 }
 
 .upcoming-event-group {
@@ -87,7 +89,7 @@ body {
 .upcoming-event-info {
   max-width: 40rem;
   margin: 0 6rem 0 5rem;
-  height: fit-content;
+  /* height: fit-content; */
 }
 
 .rsvp-btn {
@@ -166,11 +168,12 @@ body {
   }
 
   .upcoming-event-image {
-    width: 75%;
+    /* width: 75%; */
     margin-left: 0;
   }
 
   .upcoming-event-info {
+    margin: 0;
     width: 75%;
   }
 }
@@ -191,6 +194,8 @@ body {
     width: 80%;
     margin: 0 16rem;
     margin-top: 15px;
+    height: 15rem;
+    /* object-fit: cover; */
   }
 
   .upcoming-event-info {
@@ -219,5 +224,6 @@ body {
     width: 85%;
     margin: 0 5%;
     margin-top: 15px;
+    height: 100%;
   }
 }
