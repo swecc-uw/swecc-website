@@ -9,25 +9,25 @@ function HomePage() {
       <div className="meetingsInfoSection">
         <h2 className="sweccMeetings">SWECC Meetings</h2>
         <p className="meetingInfo">Held in the EAC, these meeting feature topics in a vast number of areas, including professional development, resume building, and mentor circles</p>
-        <h3 className="meetingTime">Meeting Times/Location (AU23)</h3>
+        <h3 className="meetingTime">Meeting Times/Location (Fall 23)</h3>
         <p className="meetingDetails">
           Every week on Wednesday, from 5:30-6:30pm
           <br />
-          Location: TBD
+          Location: HUB 334
         </p>
       </div>
       <div className="map-and-label">
         <img className="map" src={SWECCmap} alt="map" />
-        <p className="mapLabel">Location: TBD</p>
+        <p className="mapLabel">Location: HUB 334</p>
       </div>
     </div>
   );
 
   const posts = (
     <div className="posts">
+      <InstagramEmbed className="instaPost slide-up" url="https://www.instagram.com/p/Cxum20yOlkQ" />
       <InstagramEmbed className="instaPost slide-up" url="https://www.instagram.com/p/CxrxWcQLpSb" />
       <InstagramEmbed className="instaPost slide-up" url="https://www.instagram.com/p/CsDKoflLlNM" />
-      <InstagramEmbed className="instaPost slide-up" url="https://www.instagram.com/p/CrPXP4Oqobe" />
     </div>
   );
 
