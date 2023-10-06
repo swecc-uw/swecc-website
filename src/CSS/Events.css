@@ -41,6 +41,10 @@ body {
   margin: 3rem 0;
 }
 
+p.event-status {
+  color: var(--nav-bottom);
+}
+
 .calendar-section {
   padding: 20px 10px 50px 10px;
 }
