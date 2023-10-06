@@ -1,7 +1,7 @@
 .clubTitleSection {
   position: relative;
   width: 100%;
-  height: 40vw;
+  height: 23vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,11 +9,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-}
-
-.uw-logo,
-.clubName {
-  position: absolute;
+  padding: 30px 0;
 }
 
 .uw-logo,
@@ -24,18 +20,13 @@
 }
 
 .uw-logo {
-  margin: auto;
-  width: 40%;
-  top: 10%;
+  width: 25%;
+  margin-top: 20px;
 }
 
 .clubName {
-  font-style: normal;
-  font-weight: 700;
-  font-size: 6vw;
-  line-height: 5vw;
+  font-size: 4vw;
   color: var(--text-header-color);
-  bottom: 8%;
 }
 
 .whatWeDoSection {
@@ -207,6 +198,10 @@ h3.meetingTime {
   .whatWeDoSection p.summary {
     font-size: 1.5rem;
   }
+
+  div.posts {
+    margin: 0;
+  }
 }
 
 @media (max-width: 976px) {
@@ -314,5 +309,19 @@ h3.meetingTime {
   .instaPost {
     width: 100%;
     max-width: 100%;
+  }
+
+  .clubTitleSection {
+    height: 30vw;
+    padding: 1rem 0;
+  }
+
+  .uw-logo {
+    width: 30%;
+  }
+
+  .clubName {
+    font-size: 5vw;
+    color: var(--text-header-color);
   }
 }
