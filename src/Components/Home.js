@@ -25,9 +25,9 @@ function HomePage() {
 
   const posts = (
     <div className="posts">
+      <InstagramEmbed className="instaPost slide-up" url="https://www.instagram.com/p/CyRondZPVVS" />
       <InstagramEmbed className="instaPost slide-up" url="https://www.instagram.com/p/Cxum20yOlkQ" />
       <InstagramEmbed className="instaPost slide-up" url="https://www.instagram.com/p/CxrxWcQLpSb" />
-      <InstagramEmbed className="instaPost slide-up" url="https://www.instagram.com/p/CsDKoflLlNM" />
     </div>
   );
 
