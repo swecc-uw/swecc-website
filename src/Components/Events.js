@@ -4,21 +4,22 @@ import { InstagramEmbed } from "react-social-media-embed";
 function Events() {
   const upcomingEvents = [
     {
+      title: "SWECC x NeetCode",
+      timeAndPlace: "Oct 18, 2023 | 5:30pm - 6:30pm | Gowen Hall 201 | University of Washington",
+      description: "🚀 Come meet YouTuber, ex-Google and ex-Amazon software engineer NEETCODE and his fellow software engineer from Tesla! Ask questions about software engineering careers, being a software YouTuber, and more!",
+      image: require("../Data/img/event-2.png"),
+      publish: true,
+      end: true,
+      rsvp: "https://forms.gle/a5BGaJE9dR7diPPL8",
+    },
+    {
       title: "Google @ UW : SWECC Tech Career Panel 2023",
-      timeAndPlace: "Oct 4, 2023 | 6pm to 7:30pm | Gowen Hall 201 | University of Washington",
+      timeAndPlace: "Oct 4, 2023 | 6pm - 7:30pm | Gowen Hall 201 | University of Washington",
       description: "Come join us for a moderated career panel and hear stories about work and life at Google. Better understand how to prepare for interviews and listen to advice from folks in the tech industry. Be sure to bring your questions for the Q&A session!",
       image: require("../Data/img/event-1.png"),
       publish: true,
       end: true,
       rsvp: "https://rsvp.withgoogle.com/events/fall-2023-co-general-event-form_d87513_afeb36_6ef465/forms/registration",
-    },
-    {
-      title: "SWECC x NeetCode",
-      timeAndPlace: "Oct 18, 2023 | 5:30pm to 6:30pm | Gowen Hall 201 | University of Washington",
-      description: "Come meet youtuber and software engineer Neetcode in person! Ask him any questions about his career and work life. ",
-      image: require("../Data/img/event-2.png"),
-      publish: false,
-      end: false,
     },
   ];
 
@@ -29,7 +30,7 @@ function Events() {
         <h3>{event.title}</h3>
         <p>{event.timeAndPlace}</p>
         <p>{event.description}</p>
-        {event.publish && !event ? (
+        {event.publish && !event.end ? (
           <a href={event.rsvp} target="_blank" rel="noopener noreferrer">
             <button type="button" className="rsvp-btn">
               RSVP
@@ -44,10 +45,12 @@ function Events() {
 
   const posts = (
     <div className="posts">
+      <InstagramEmbed className="instaPost slide-up" url="https://www.instagram.com/p/CyRondZPVVS" />
+      <InstagramEmbed className="instaPost slide-up" url="https://www.instagram.com/p/CyMWg-BywYm" />
       <InstagramEmbed className="instaPost slide-up" url="https://www.instagram.com/p/CyCms3mLOLb" />
+      <InstagramEmbed className="instaPost slide-up" url="https://www.instagram.com/p/Cxum20yOlkQ" />
       <InstagramEmbed className="instaPost slide-up" url="https://www.instagram.com/p/CxrxWcQLpSb" />
       <InstagramEmbed className="instaPost slide-up" url="https://www.instagram.com/p/CsDKoflLlNM" />
-      <InstagramEmbed className="instaPost slide-up" url="https://www.instagram.com/p/CrPXP4Oqobe" />
     </div>
   );
 

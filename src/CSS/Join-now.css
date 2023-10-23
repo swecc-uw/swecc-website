@@ -88,15 +88,16 @@ td {
   margin: 7.5px;
 }
 
-.button-container {
+div.button-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 20px;
+  padding: 5px 20px 40px;
   width: 90%;
+  height: 20px;
 }
 
-.next-button {
+button.click-button.next-button {
   margin-left: auto;
 }
 
@@ -106,7 +107,7 @@ td {
   border-color: #9c7ef3;
   background-color: #9c7ef3;
   padding: 10px 20px;
-  margin: 5cap 15px;
+  margin: 5px 15px;
   color: #e5e2ed;
   border: 0;
   animation: slide-up 0.5s ease;
