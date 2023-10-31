@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: npm run predeploy; npm run deploy
+      - run: git config user.name "$(git log -n 1 --pretty=format:%an)";git config user.email "$(git log -n 1 --pretty=format:%ae)";npm run predeploy; npm run deploy
         env:
          CI: false
       - uses: FirebaseExtended/action-hosting-deploy@v0
