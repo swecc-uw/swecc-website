@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: npm run predeploy; firebase deploy
+      - run: echo "${{ secrets.ENV_FILE }}" > .env; npm run predeploy
         env:
          CI: false
       - uses: FirebaseExtended/action-hosting-deploy@v0
