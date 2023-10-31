@@ -43,14 +43,13 @@ function Events() {
     </div>
   ));
 
+  const postId = ["Cy4WTIJvVvB", "CyzVzMTJlhQ", "CyRondZPVVS", "CyMWg-BywYm", "CyCms3mLOLb", "Cxum20yOlkQ", "CxrxWcQLpSb", "CsDKoflLlNM"];
+
   const posts = (
     <div className="posts">
-      <InstagramEmbed className="instaPost slide-up" url="https://www.instagram.com/p/CyRondZPVVS" />
-      <InstagramEmbed className="instaPost slide-up" url="https://www.instagram.com/p/CyMWg-BywYm" />
-      <InstagramEmbed className="instaPost slide-up" url="https://www.instagram.com/p/CyCms3mLOLb" />
-      <InstagramEmbed className="instaPost slide-up" url="https://www.instagram.com/p/Cxum20yOlkQ" />
-      <InstagramEmbed className="instaPost slide-up" url="https://www.instagram.com/p/CxrxWcQLpSb" />
-      <InstagramEmbed className="instaPost slide-up" url="https://www.instagram.com/p/CsDKoflLlNM" />
+      {postId.map((id, index) => (
+        <InstagramEmbed key={index} className="instaPost slide-up" url={`https://www.instagram.com/p/${id}`} />
+      ))}
     </div>
   );
 
