@@ -8,6 +8,7 @@ import About from "./About.js";
 import JoinNow from "./Join-now.js";
 import Navbar from "./Navbar.js";
 
+
 function App() {
   const link = document.querySelector("link[rel~='icon']");
   link.href = require("../icons/logo-23.png");
