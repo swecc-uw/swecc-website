@@ -9,7 +9,7 @@ import { ReactComponent as MessengerIcon } from "../icons/messenger.svg";
 import { ReactComponent as CaretIcon } from "../icons/caret.svg";
 import { ReactComponent as ArrowIcon } from "../icons/arrow.svg";
 import { FaInstagram, FaLinkedin, FaDiscord, FaChevronRight, FaGithub } from "react-icons/fa";
-import { FcShare, FcCalendar, FcNext, FcApproval, FcCheckmark, FcConferenceCall, FcHome } from "react-icons/fc";
+import { FcShare, FcCalendar, FcApproval, FcCheckmark, FcConferenceCall, FcHome } from "react-icons/fc";
 import { ImSun } from "react-icons/im";
 import { PiMoonBold } from "react-icons/pi";
 
