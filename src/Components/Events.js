@@ -1,31 +1,11 @@
 import "../CSS/Events.css";
 import { InstagramEmbed } from "react-social-media-embed";
+import events from "../Data/events.json";
 
 function Events() {
-  const upcomingEvents = [
-    {
-      title: "SWECC x NeetCode",
-      timeAndPlace: "Oct 18, 2023 | 5:30pm - 6:30pm | Gowen Hall 201 | University of Washington",
-      description: "🚀 Come meet YouTuber, ex-Google and ex-Amazon software engineer NEETCODE and his fellow software engineer from Tesla! Ask questions about software engineering careers, being a software YouTuber, and more!",
-      image: require("../Data/img/event-2.png"),
-      publish: true,
-      end: true,
-      rsvp: "https://forms.gle/a5BGaJE9dR7diPPL8",
-    },
-    {
-      title: "Google @ UW : SWECC Tech Career Panel 2023",
-      timeAndPlace: "Oct 4, 2023 | 6pm - 7:30pm | Gowen Hall 201 | University of Washington",
-      description: "Come join us for a moderated career panel and hear stories about work and life at Google. Better understand how to prepare for interviews and listen to advice from folks in the tech industry. Be sure to bring your questions for the Q&A session!",
-      image: require("../Data/img/event-1.png"),
-      publish: true,
-      end: true,
-      rsvp: "https://rsvp.withgoogle.com/events/fall-2023-co-general-event-form_d87513_afeb36_6ef465/forms/registration",
-    },
-  ];
-
-  const upcomingEventsList = upcomingEvents.map((event, index) => (
+  const upcomingEventsList = events.map((event, index) => (
     <div key={index} className="upcoming-event">
-      <img src={event.image} className="upcoming-event-image" alt="upcoming event" />
+      <img src={require(`../Data/img/${event.image}`)} className="upcoming-event-image" alt={event.title} />
       <div className="upcoming-event-info">
         <h3>{event.title}</h3>
         <p>{event.timeAndPlace}</p>
@@ -43,7 +23,7 @@ function Events() {
     </div>
   ));
 
-  const postId = ["Cy4WTIJvVvB", "CyzVzMTJlhQ", "CyRondZPVVS", "CyMWg-BywYm", "CyCms3mLOLb", "Cxum20yOlkQ", "CxrxWcQLpSb", "CsDKoflLlNM"];
+  const postId = ["CzVNKp6r9hn", "CzVLbJWLwsI", "Cy4WTIJvVvB", "CyzVzMTJlhQ", "CyRondZPVVS", "CyCms3mLOLb", "Cxum20yOlkQ", "CxrxWcQLpSb"];
 
   const posts = (
     <div className="posts">
