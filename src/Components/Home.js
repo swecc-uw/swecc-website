@@ -9,16 +9,16 @@ function HomePage() {
       <div className="meetingsInfoSection">
         <h2 className="sweccMeetings">SWECC Meetings</h2>
         <p className="meetingInfo">Held in the EAC, these meeting feature topics in a vast number of areas, including professional development, resume building, and mentor circles</p>
-        <h3 className="meetingTime">Meeting Times/Location (Fall 23)</h3>
+        <h3 className="meetingTime">Meeting Times/Location (Winter 2024)</h3>
         <p className="meetingDetails">
           Every week on Wednesday, from 5:30-6:30pm
           <br />
-          Location: HUB 334
+          Location: Loew 216
         </p>
       </div>
       <div className="map-and-label">
         <img className="map" src={SWECCmap} alt="map" />
-        <p className="mapLabel">Location: HUB 334</p>
+        <p className="mapLabel">Location: Loew 216</p>
       </div>
     </div>
   );
