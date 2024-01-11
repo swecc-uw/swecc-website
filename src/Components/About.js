@@ -18,8 +18,7 @@ const About = () => {
           <ProfileCard info={teamMembers} />
         </div>
         <div>
-          <h1 className="team-members-title">Board Members</h1>
-          <p className="team-members-subtitle">2022-2023</p>
+          <h1 className="team-members-title">Past Board Members</h1>
           <ProfileCard info={pastOfficers} />
         </div>
       </div>
