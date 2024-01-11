@@ -7,13 +7,6 @@
         "email": "eyad2000@live.com"
     },
     {
-        "name": "Simon",
-        "imgSrc": "simons.jpg",
-        "position": "Outreach Manager",
-        "linkedin": "https://www.linkedin.com/in/simon-studen/",
-        "email": "simonstuden@gmail.com"
-    },
-    {
         "name": "Hawa",
         "imgSrc": "hawa.jpg",
         "position": "Mentorship Director, Advisor",
@@ -21,6 +14,12 @@
         "github": "https://github.com/hawad416",
         "portfolio": "https://medium.com/@hawaalid",
         "email": "hdram3@uw.edu"
+    },
+    {
+        "name": "Simon",
+        "imgSrc": "simons.jpg",
+        "position": "Outreach Manager",
+        "linkedin": "https://www.linkedin.com/in/simon-studen/",
+        "email": "simonstuden@gmail.com"
     }
-
 ]
