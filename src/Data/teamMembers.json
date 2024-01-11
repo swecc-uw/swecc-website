@@ -56,14 +56,6 @@
         "email": "aakhiles@uw.edu"
     },
     {
-        "name": "Hawa",
-        "imgSrc": "hawa.jpg",
-        "position": "Advisor",
-        "linkedin": "https://www.linkedin.com/in/hawadrammeh/",
-        "github": "https://github.com/hawad416",
-        "portfolio": "https://medium.com/@hawaalid"
-    },
-    {
         "name": "Elijah Melton",
         "imgSrc": "elijah.jpg",
         "position": "Resource Manager",
