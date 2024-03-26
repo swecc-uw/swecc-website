@@ -27,6 +27,38 @@ The website can be found at [swecc.org](swecc-url).
 [![][bootstrap-shield]][bootstrap-url]
 [![][css3-shield]][css3-url]
 
+## Getting Started
+
+### Prerequisites
+
+Before you begin, ensure you have the latest version of npm installed
+
+```bash
+npm install npm@latest -g
+```
+
+### Installation
+
+1. Clone the repo:
+
+```bash
+git clone https://github.com/swecc-uw/swecc-website
+```
+
+2. Install NPM packages:
+
+```bash
+npm install
+```
+
+3. Start the development server:
+
+```bash
+npm start
+```
+
+4. Open your browser and visit `http://localhost:3000/` to view the app.
+
 ## Contributors ✨
 
 <a href="https://github.com/swecc-uw/swecc-website/graphs/contributors">
