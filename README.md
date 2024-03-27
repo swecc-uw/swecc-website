@@ -59,6 +59,10 @@ npm start
 
 4. Open your browser and visit `http://localhost:3000/` to view the app.
 
+## Contributing 🤝
+
+We welcome contributions from all members of the community. To contribute, please fork this repository, create a new branch, and submit a pull request. For major changes, please open an issue first to discuss what you would like to change.
+
 ## Contributors ✨
 
 <a href="https://github.com/swecc-uw/swecc-website/graphs/contributors">
