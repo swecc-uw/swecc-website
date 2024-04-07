@@ -13,6 +13,9 @@ a {
   background-color: var(--bg);
   padding: 1rem 1.5rem 1.8rem;
   border-bottom: 2px solid var(--nav-bottom);
+  position: sticky;
+  top: 0;
+  z-index: 5;
 }
 
 .navbar-nav {
