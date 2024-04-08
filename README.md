@@ -64,6 +64,8 @@ npm start
 We welcome contributions from all members of the community. To contribute, please fork this repository, create a new branch, and submit a pull request. For major changes, please open an issue first to discuss what you would like to change.
 Please read the [contribution guidelines][contribution-url] for more details.
 
+For more help, watch this video of how to fork and make a PR: [How to fork](https://youtu.be/OvmZfK0wN2A)
+
 ## Contributors ✨
 
 <a href="https://github.com/swecc-uw/swecc-website/graphs/contributors">
