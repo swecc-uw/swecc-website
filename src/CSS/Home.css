@@ -1,16 +1,15 @@
 .clubTitleSection {
   position: relative;
   width: 100%;
-  height: 23vw;
+  height: 26vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), linear-gradient(0deg, rgba(190, 184, 235, 0.1), rgba(190, 184, 235, 0.1)), url(../Data/img/BackgroundImg.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  justify-content: space-between;
+  box-sizing: border-box;
   padding: 30px 0;
 }
+
 
 .uw-logo,
 .clubName,
@@ -22,11 +21,43 @@
 .uw-logo {
   width: 25%;
   margin-top: 20px;
+
+}
+
+.buttons-container {
+  position: absolute;
+  top: 50%;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.prevImgButton,
+.nextImgButton {
+  padding: 10px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--backgroundImg-buttom-background);
+  color: var(--backgroundImg-buttom);
+  font-size: 50px;
+  width:  60px;
+  height:  60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.prevImgButton:hover,
+.nextImgButton:hover {
+  color: var(--text-title-color);
 }
 
 .clubName {
   font-size: 4vw;
   color: var(--text-header-color);
+  text-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.5);
 }
 
 .whatWeDoSection {
