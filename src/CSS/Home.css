@@ -1,7 +1,7 @@
 .clubTitleSection {
   position: relative;
   width: 100%;
-  height: 26vw;
+  height: 30vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,12 +10,29 @@
   padding: 30px 0;
 }
 
+.background-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+  background-color: rgba(128, 128, 128, 0.5);
+  transition: opacity 2s ease-in-out;
+}
+
+.hide {
+  opacity: 0;
+  pointer-events: none;
+}
 
 .uw-logo,
 .clubName,
 .whatWeDoSection h2,
 .whatWeDoSection p {
   animation: slide-up 0.5s ease-out;
+  z-index: 1;
 }
 
 .uw-logo {
@@ -40,18 +57,22 @@
   border: none;
   background-color: var(--backgroundImg-buttom-background);
   color: var(--backgroundImg-buttom);
-  font-size: 50px;
   width:  60px;
   height:  60px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: background-color 0.5s ease;
 }
 
 .prevImgButton:hover,
 .nextImgButton:hover {
-  color: var(--text-title-color);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.material-symbols-outlined:hover{
+  opacity: 30%;
 }
 
 .clubName {
@@ -356,3 +377,5 @@ h3.meetingTime {
     color: var(--text-header-color);
   }
 }
+
+
