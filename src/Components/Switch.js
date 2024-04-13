@@ -19,7 +19,7 @@ function Switch({ toggleMode }) {
   };
 
   useEffect(() => {
-    if (interactionCount >= 15) {
+    if (interactionCount >= 10) {
       setShowImage(true);
     }
 
