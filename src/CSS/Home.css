@@ -17,8 +17,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.5;
-  background-color: rgba(128, 128, 128, 0.5);
+  opacity: var(--backgroundImg-cover-opacity);
   transition: opacity 2s ease-in-out;
 }
 
@@ -37,7 +36,7 @@
 
 .uw-logo {
   width: 25%;
-  margin-top: 20px;
+  margin-top: 55px;
 
 }
 
@@ -76,6 +75,7 @@
 }
 
 .clubName {
+  margin-bottom: 60px;
   font-size: 4vw;
   color: var(--text-header-color);
   text-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.5);
