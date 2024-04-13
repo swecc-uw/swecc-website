@@ -42,3 +42,58 @@
 .toggle-switch input[type="checkbox"]:checked+.switch {
   background-color: #9176f1;
 }
+
+.toggle-switch-stop-img-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.toggle-switch-stop-img{
+  max-height: 40vw;
+  width: auto;
+}
+
+.toggle-switch-stop-img.hide {
+  animation: popIn 0.3s ease-out backwards;
+}
+
+.toggle-switch-stop-img.show {
+  animation: popOut 0.5s ease-in forwards;
+}
+
+@keyframes popOut {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
