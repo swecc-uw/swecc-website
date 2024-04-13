@@ -26,7 +26,7 @@ function Switch({ toggleMode }) {
     const timeoutId = setTimeout(() => {
       setInteractionCount(0);
       setShowImage(false);
-    }, 5000);
+    }, 3000);
 
     return () => clearTimeout(timeoutId);
   }, [interactionCount]);
