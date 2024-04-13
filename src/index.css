@@ -13,6 +13,10 @@
   --speed: 300ms;
   --card-bg: #fff;
   --card-text: var(--text-subtitle-color);
+  --backgroundImg-buttom: #474a4d;
+  --backgroundImg-buttom-background: rgba(255, 255, 255, 30%);
+  --backgroundImg-cover-opacity: 0.5;
+
 }
 
 .dark-mode {
@@ -26,6 +30,10 @@
   --border: 1px solid #474a4d;
   --card-bg: var(--bg-accent);
   --card-text: #d4ccdd;
+  --backgroundImg-buttom: white;
+  --backgroundImg-buttom-background: rgba(0, 0, 0, 30%);
+  --backgroundImg-cover-opacity: 0.3;
+
 }
 
 * {
