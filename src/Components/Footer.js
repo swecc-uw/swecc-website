@@ -44,7 +44,9 @@ const Footer = () => {
             <img className="footer-logo" src={SWECClogo2} alt="SWECC logo" />
 
             <span className="copyright-message"> Copyright © UW SWECC {currentYr}</span>
-            <span className="collaboration-message">Collaboration with Dubvelopers</span>
+
+            <span className="collaboration-message"><a className="collaboration-message-link" href="https://webimpactuw.org/">Collaboration with Web Impact</a></span>
+
           </span>
         </div>
       </div>

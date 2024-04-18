@@ -16,7 +16,7 @@ export default function Footer() {
         </ul>
       </div>
       <div className="copyright">
-        <p>Copyright&copy;UW SWECC 2023 | Collaboration with Dubvelopers</p>
+        <p>Copyright&copy;UW SWECC 2023 | <a href="https://webimpactuw.org/">Collaboration with Web Impact</a></p>
       </div>
     </footer>
   )
