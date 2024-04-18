@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../CSS/Navbar.css";
 import { CSSTransition } from "react-transition-group";
-import SWECClogo from "../Data/img/SWECClogo.jpg";
+import logo24 from "../icons/logo24.png";
 import { NavLink } from "react-router-dom";
 
 import { ReactComponent as BellIcon } from "../icons/bell.svg";
@@ -64,7 +64,7 @@ function Navbar() {
       <NavItem
         icon={
           <NavLink to="/">
-            <img className="swecc-logo" src={SWECClogo} alt="SWECC Logo"></img>
+            <img className="swecc-logo" src={logo24} alt="SWECC Logo"></img>
           </NavLink>
         }
         route={"/"}

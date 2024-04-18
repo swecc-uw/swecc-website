@@ -4,6 +4,7 @@ import discordLogo from "../Data/img/discord-logo.jpg";
 import instaLogo from "../Data/img/insta-logo.jpg";
 import LinkedInLogo from "../Data/img/LinkedInLogo.jpg";
 import SWECClogo2 from "../Data/img/SWECClogo2.jpg";
+import logo24 from "../icons/logo24.png";
 
 const Footer = () => {
   const [currentYr, setCurrentYr] = React.useState("");
@@ -41,7 +42,7 @@ const Footer = () => {
           </span>
 
           <span className="copyright-section">
-            <img className="footer-logo" src={SWECClogo2} alt="SWECC logo" />
+            <img className="footer-logo" src={logo24} alt="SWECC logo" />
 
             <span className="copyright-message"> Copyright © UW SWECC {currentYr}</span>
             <span className="collaboration-message">Collaboration with Dubvelopers</span>
