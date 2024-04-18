@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import SWECClogo2 from "../Data/img/SWECClogo2.jpg";
 
 export default function Footer() {
+  const [currentYr, setCurrentYr] = React.useState("");
+
+  useEffect(() => {
+    const today = new Date();
+    setCurrentYr(today.getFullYear());
+  }, []);
   return (
     <footer className='hotfix'>
       <div>
@@ -16,7 +22,7 @@ export default function Footer() {
         </ul>
       </div>
       <div className="copyright">
-        <p>Copyright&copy;UW SWECC 2023 | <a href="https://webimpactuw.org/">Collaboration with Web Impact</a></p>
+        <p>Copyright&copy;UW SWECC {currentYr} | <a href="https://webimpactuw.org/">Collaboration with Web Impact</a></p>
       </div>
     </footer>
   )
