@@ -37,6 +37,7 @@
 .uw-logo {
   width: 25%;
   margin-top: 55px;
+  filter: brightness(130%) contrast(85%) drop-shadow(5px 4px 8px rgba(255, 255, 255, 1));
 
 }
 
@@ -78,7 +79,7 @@
   margin-bottom: 60px;
   font-size: 4vw;
   color: var(--text-header-color);
-  text-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 0.5px 0.5px 2px var(--text-header-shadow-color);
 }
 
 .whatWeDoSection {
