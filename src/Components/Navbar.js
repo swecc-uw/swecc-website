@@ -56,7 +56,7 @@ function Navbar() {
   };
 
   useEffect(() => {
-    if (darkMode) {
+    if (!darkMode) {
       document.body.classList.add("dark-mode");
     } else {
       document.body.classList.remove("dark-mode");
@@ -74,6 +74,9 @@ function Navbar() {
     setExpand(false);
   };
 
+  //I think maybe not every navitem need and closeExpand/expand property
+  //since only more button need it to expand menu
+
   return (
     <NavBar className={`${darkMode ? "dark-mode" : ""}`}>
       <NavItem
@@ -85,9 +88,11 @@ function Navbar() {
         route={"/"}
         closeExpand={closeExpand}
       />
+
       <NavToggle icon={<ImSun />} />
       <Switch toggleMode={toggleMode} />
       <NavToggle icon={<PiMoonBold />} />
+
       {!isMobile && (
         <>
           <NavItem
@@ -126,7 +131,6 @@ function Navbar() {
         icon={<CaretIcon />}
         expand={expand}
         togglExpand={togglExpand}
-        closeExpand={closeExpand}
         tooltip="More"
       >
         <DropdownMenu closeExpand={closeExpand} />
@@ -209,7 +213,7 @@ function DropdownMenu(props) {
       <CSSTransition
         in={activeMenu === "main"}
         unmountOnExit
-        timeout={500}
+        timeout={200}
         classNames="menu-primary"
         onEnter={getHeight}
       >

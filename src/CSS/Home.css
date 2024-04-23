@@ -8,6 +8,7 @@
   justify-content: space-between;
   box-sizing: border-box;
   padding: 30px 0;
+  margin-top: 105px;
 }
 
 .background-img {
@@ -19,6 +20,18 @@
   object-fit: cover;
   opacity: var(--backgroundImg-cover-opacity);
   transition: opacity 1.2s ease-in-out;
+}
+
+.preload-images {
+  display: none;
+}
+
+.preload-images img {
+  display: none;
+}
+
+.uw-logo {
+  transition: opacity 0.5s ease-in-out;
 }
 
 .hide {
@@ -302,6 +315,16 @@ h3.meetingTime {
 }
 
 @media only screen and (max-width: 768px) {
+
+  .uw-logo {
+    display: none;
+  }
+
+  .clubName {
+    font-size: 5vw;
+    color: var(--text-header-color);
+  }
+
   .goal-message-section {
     position: relative;
     align-items: center;
@@ -355,6 +378,12 @@ h3.meetingTime {
 }
 
 @media (max-width: 480px) {
+
+
+  .uw-logo {
+    display: none;
+  }
+
   .posts {
     padding: 1.5rem;
   }

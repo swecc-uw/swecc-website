@@ -2,6 +2,7 @@ import "../CSS/Home.css";
 import React, { useContext, useEffect, useState } from "react";
 import SWECCmap from "../Data/img/location.png";
 import UWlogo from "../Data/img/UW_logo.png";
+import UWlogo2 from "../Data/img/UW_logo2.png";
 import { InstagramEmbed } from "react-social-media-embed";
 
 import img1 from "../Data/img/backgroundImg/1.jpg";
@@ -16,6 +17,8 @@ function HomePage() {
   function Carousel() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const backGroundImgs = [img1, img2, img3, img4, img5, img6, img7];
+    const darkMode = JSON.parse(localStorage.getItem("isToggled"));
+    console.log(darkMode);
 
     useEffect(() => {
       const intervalId = setInterval(nextImg, 6000);
@@ -37,6 +40,11 @@ function HomePage() {
 
     return (
       <div className="clubTitleSection">
+        <div className="preload-images">
+          <img src={UWlogo} alt="UW logo" />
+          <img src={UWlogo2} alt="UW logo" />
+        </div>
+
         {backGroundImgs.map((img, index) => (
           <img
             key={index}
@@ -56,7 +64,11 @@ function HomePage() {
           </button>
         </div>
 
-        <img className="uw-logo" src={UWlogo} alt="UW logo" />
+        <img
+          className={`uw-logo ${darkMode ? "dark-mode" : ""}`}
+          src={darkMode ? UWlogo2 : UWlogo}
+          alt="UW logo"
+        />
         <h1 className="clubName" id={"clubName"}>
           Software Engineering Career Club
         </h1>
