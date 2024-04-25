@@ -8,8 +8,21 @@ import { ReactComponent as BellIcon } from "../icons/bell.svg";
 import { ReactComponent as MessengerIcon } from "../icons/messenger.svg";
 import { ReactComponent as CaretIcon } from "../icons/caret.svg";
 import { ReactComponent as ArrowIcon } from "../icons/arrow.svg";
-import { FaInstagram, FaLinkedin, FaDiscord, FaChevronRight, FaGithub } from "react-icons/fa";
-import { FcShare, FcCalendar, FcApproval, FcCheckmark, FcConferenceCall, FcHome } from "react-icons/fc";
+import {
+  FaInstagram,
+  FaLinkedin,
+  FaDiscord,
+  FaChevronRight,
+  FaGithub,
+} from "react-icons/fa";
+import {
+  FcShare,
+  FcCalendar,
+  FcApproval,
+  FcCheckmark,
+  FcConferenceCall,
+  FcHome,
+} from "react-icons/fc";
 import { ImSun } from "react-icons/im";
 import { PiMoonBold } from "react-icons/pi";
 
@@ -29,7 +42,9 @@ function Navbar() {
     };
   }, []);
 
-  const [darkMode, setDarkMode] = useState(JSON.parse(localStorage.getItem("darkMode")) || false);
+  const [darkMode, setDarkMode] = useState(
+    JSON.parse(localStorage.getItem("darkMode")) || false,
+  );
 
   const toggleMode = () => {
     if (darkMode) {
@@ -41,7 +56,7 @@ function Navbar() {
   };
 
   useEffect(() => {
-    if (darkMode) {
+    if (!darkMode) {
       document.body.classList.add("dark-mode");
     } else {
       document.body.classList.remove("dark-mode");
@@ -59,6 +74,9 @@ function Navbar() {
     setExpand(false);
   };
 
+  //I think maybe not every navitem need and closeExpand/expand property
+  //since only more button need it to expand menu
+
   return (
     <NavBar className={`${darkMode ? "dark-mode" : ""}`}>
       <NavItem
@@ -70,18 +88,51 @@ function Navbar() {
         route={"/"}
         closeExpand={closeExpand}
       />
+
       <NavToggle icon={<ImSun />} />
       <Switch toggleMode={toggleMode} />
       <NavToggle icon={<PiMoonBold />} />
+
       {!isMobile && (
         <>
-          <NavItem icon={<FcHome />} route={"/"} closeExpand={closeExpand} tooltip="Home" label="Home" />
-          <NavItem icon={<FcConferenceCall />} route={"/About"} expand={expand} closeExpand={closeExpand} tooltip="Officers" label="Officers" />
-          <NavItem icon={<FcCalendar />} route={"/Events"} closeExpand={closeExpand} tooltip="Events" label="Events"></NavItem>
-          <NavItem icon={<FcCheckmark />} route={"/Join-Now"} expand={expand} closeExpand={closeExpand} tooltip="Join" label="Join" />
+          <NavItem
+            icon={<FcHome />}
+            route={"/"}
+            closeExpand={closeExpand}
+            tooltip="Home"
+            label="Home"
+          />
+          <NavItem
+            icon={<FcConferenceCall />}
+            route={"/About"}
+            expand={expand}
+            closeExpand={closeExpand}
+            tooltip="Officers"
+            label="Officers"
+          />
+          <NavItem
+            icon={<FcCalendar />}
+            route={"/Events"}
+            closeExpand={closeExpand}
+            tooltip="Events"
+            label="Events"
+          ></NavItem>
+          <NavItem
+            icon={<FcCheckmark />}
+            route={"/Join-Now"}
+            expand={expand}
+            closeExpand={closeExpand}
+            tooltip="Join"
+            label="Join"
+          />
         </>
       )}
-      <NavExpandItem icon={<CaretIcon />} expand={expand} togglExpand={togglExpand} closeExpand={closeExpand} tooltip="More">
+      <NavExpandItem
+        icon={<CaretIcon />}
+        expand={expand}
+        togglExpand={togglExpand}
+        tooltip="More"
+      >
         <DropdownMenu closeExpand={closeExpand} />
       </NavExpandItem>
     </NavBar>
@@ -110,7 +161,10 @@ function NavItem(props) {
   return (
     <li className="nav-item" onClick={props.closeExpand}>
       <NavLink to={props.route}>
-        <div className={"icon-button" + (tooltip ? " tooltip" : "")} data-tooltip={tooltip}>
+        <div
+          className={"icon-button" + (tooltip ? " tooltip" : "")}
+          data-tooltip={tooltip}
+        >
           {props.icon}
         </div>
       </NavLink>
@@ -156,13 +210,21 @@ function DropdownMenu(props) {
 
   return (
     <div className="dropdown" style={{ height: menuHeight }}>
-      <CSSTransition in={activeMenu === "main"} unmountOnExit timeout={500} classNames="menu-primary" onEnter={getHeight}>
+      <CSSTransition
+        in={activeMenu === "main"}
+        unmountOnExit
+        timeout={200}
+        classNames="menu-primary"
+        onEnter={getHeight}
+      >
         <div className="menu">
           <NavLink to="/" onClick={props.closeExpand}>
             <DropdownItem leftIcon={<FcHome />}>Home</DropdownItem>
           </NavLink>
           <NavLink to="/About" onClick={props.closeExpand}>
-            <DropdownItem leftIcon={<FcConferenceCall />}>Officers</DropdownItem>
+            <DropdownItem leftIcon={<FcConferenceCall />}>
+              Officers
+            </DropdownItem>
           </NavLink>
           <NavLink to="/Events" onClick={props.closeExpand}>
             <DropdownItem leftIcon={<FcCalendar />}>Events</DropdownItem>
@@ -170,31 +232,63 @@ function DropdownMenu(props) {
           <NavLink to="/Join-Now" onClick={props.closeExpand}>
             <DropdownItem leftIcon={<FcApproval />}>Join Now</DropdownItem>
           </NavLink>
-          <DropdownItem leftIcon={<FcShare />} rightIcon={<FaChevronRight style={{ padding: 10 }} />} goToMenu="socials">
+          <DropdownItem
+            leftIcon={<FcShare />}
+            rightIcon={<FaChevronRight style={{ padding: 10 }} />}
+            goToMenu="socials"
+          >
             Social Media
           </DropdownItem>
         </div>
       </CSSTransition>
 
-      <CSSTransition in={activeMenu === "socials"} unmountOnExit timeout={500} classNames="menu-secondary" onEnter={getHeight}>
+      <CSSTransition
+        in={activeMenu === "socials"}
+        unmountOnExit
+        timeout={500}
+        classNames="menu-secondary"
+        onEnter={getHeight}
+      >
         <div className="menu">
           <DropdownItem leftIcon={<ArrowIcon />} goToMenu="main"></DropdownItem>
-          <DropdownItem leftIcon={<FaDiscord />} url={"https://discord.gg/Pbk4sCEWDY"}>
+          <DropdownItem
+            leftIcon={<FaDiscord />}
+            url={"https://discord.gg/Pbk4sCEWDY"}
+          >
             Discord
           </DropdownItem>
-          <DropdownItem leftIcon={<FaInstagram />} url={"https://www.instagram.com/swecc.uw/"}>
+          <DropdownItem
+            leftIcon={<FaInstagram />}
+            url={"https://www.instagram.com/swecc.uw/"}
+          >
             Instagram
           </DropdownItem>
-          <DropdownItem leftIcon={<FaLinkedin />} url={"https://www.linkedin.com/company/software-engineering-career-club-at-uw/"}>
+          <DropdownItem
+            leftIcon={<FaLinkedin />}
+            url={
+              "https://www.linkedin.com/company/software-engineering-career-club-at-uw/"
+            }
+          >
             LinkedIn
           </DropdownItem>
-          <DropdownItem leftIcon={<FaGithub />} url={"https://github.com/swecc-uw"}>
+          <DropdownItem
+            leftIcon={<FaGithub />}
+            url={"https://github.com/swecc-uw"}
+          >
             Github
           </DropdownItem>
-          <DropdownItem leftIcon={<MessengerIcon />} url={"mailto:swecc@uw.edu"}>
+          <DropdownItem
+            leftIcon={<MessengerIcon />}
+            url={"mailto:swecc@uw.edu"}
+          >
             Email
           </DropdownItem>
-          <DropdownItem leftIcon={<BellIcon />} url={"http://mailman11.u.washington.edu/mailman/listinfo/sweccmailinglist"}>
+          <DropdownItem
+            leftIcon={<BellIcon />}
+            url={
+              "http://mailman11.u.washington.edu/mailman/listinfo/sweccmailinglist"
+            }
+          >
             Newsletter
           </DropdownItem>
         </div>

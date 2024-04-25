@@ -9,14 +9,18 @@ a {
 }
 
 .navbar {
+  position: fixed;
+  width: 100%;
   height: var(--nav-size);
   background-color: var(--bg);
   padding: 1rem 1.5rem 1.8rem;
   border-bottom: 2px solid var(--nav-bottom);
+  z-index: 1000;
+  top:0;
 }
 
 .navbar-nav {
-  max-width: 100%;
+  max-width: 98%;
   height: 100%;
   display: flex;
   justify-content: flex-end;

@@ -7,6 +7,8 @@ function Switch({ toggleMode }) {
     JSON.parse(localStorage.getItem("isToggled")) || false,
   );
 
+  //warning img set up
+
   const [interactionCount, setInteractionCount] = useState(0);
   const [showImage, setShowImage] = useState(false);
 
@@ -42,6 +44,7 @@ function Switch({ toggleMode }) {
           />
         </div>
       )}
+
       <input type="checkbox" checked={isToggled} onChange={onToggle} />
       <span className="switch" />
     </label>
