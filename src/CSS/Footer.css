@@ -40,7 +40,7 @@ footer {
 .contact-text,
 .join-newsletter {
   display: flex;
-  color: #ffffff;
+  color: #000000;
   font-size: 1rem;
   font-family: "Roboto";
   font-weight: bold;
@@ -68,7 +68,7 @@ a {
 .copyright-message {
   display: flex;
   flex-basis: 45%;
-  color: #ffffff;
+  color: #000000;
   font-size: 1rem;
   font-family: "Roboto";
   padding-left: 5%;
@@ -78,7 +78,7 @@ a {
 .collaboration-message {
   flex-basis: 30%;
   display: flex;
-  color: #ffffff;
+  color: #000000;
   font-family: "Roboto";
   font-weight: bold;
   font-size: 1rem;
