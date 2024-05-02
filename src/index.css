@@ -2,9 +2,9 @@
   --bg: #fcfcfc;
   --bg-accent: #f0f0f0;
   --bg-hover: #dcdcdc;
-  --text-color: #754ec4;
-  --text-subtitle-color: #5d3a9e;
-  --text-title-color: #4e2b8e;
+  --text-color: #656FB3;
+  --text-subtitle-color: #565FB0;
+  --text-title-color: #4A4DA2;
   --text-header-color: #412675;
   --text-header-shadow-color: rgba(0, 0, 0, 0.5);
   --nav-bottom: #3e2076;
@@ -17,7 +17,6 @@
   --backgroundImg-buttom: #474a4d;
   --backgroundImg-buttom-background: rgba(255, 255, 255, 30%);
   --backgroundImg-cover-opacity: 0.5;
-
 }
 
 .dark-mode {
