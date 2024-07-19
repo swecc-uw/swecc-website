@@ -21,5 +21,12 @@
         "position": "Outreach Manager",
         "linkedin": "https://www.linkedin.com/in/simon-studen/",
         "email": "simonstuden@gmail.com"
+    },
+    {
+        "name": "Shiina Sugioka",
+        "imgSrc": "shiina.jpg",
+        "position": "President",
+        "linkedin": "https://www.linkedin.com/in/shiinas/",
+        "email": "shiina12@uw.edu"
     }
 ]

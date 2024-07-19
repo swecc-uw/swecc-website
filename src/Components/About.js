@@ -14,7 +14,7 @@ const About = () => {
         </div>
         <div>
           <h1 className="team-members-title">Board Members</h1>
-          <p className="team-members-subtitle">2023-2024</p>
+          <p className="team-members-subtitle">2024-2025</p>
           <ProfileCard info={teamMembers} />
         </div>
         <div>
