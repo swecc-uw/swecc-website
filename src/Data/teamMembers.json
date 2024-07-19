@@ -1,10 +1,12 @@
 [
     {
-        "name": "Shiina Sugioka",
-        "imgSrc": "shiina.jpg",
+        "name": "Elijah Melton",
+        "imgSrc": "elijah.jpg",
         "position": "President",
-        "linkedin": "https://www.linkedin.com/in/shiinas/",
-        "email": "shiina12@uw.edu"
+        "linkedin": "linkedin.com/in/elijah-melton/",
+        "github": "https://github.com/elimelt",
+        "email": "elimelt@uw.edu",
+        "portfolio": "https://elimelt.github.io/elijah-dot-com/"
     },
     {
         "name": "Deeksha Vatwani",
@@ -56,15 +58,6 @@
         "email": "aakhiles@uw.edu"
     },
     {
-        "name": "Elijah Melton",
-        "imgSrc": "elijah.jpg",
-        "position": "Resource Manager",
-        "linkedin": "linkedin.com/in/elijah-melton/",
-        "github": "https://github.com/elimelt",
-        "email": "elimelt@uw.edu",
-        "portfolio": "https://elimelt.github.io/elijah-dot-com/"
-    },
-    {
         "name": "David Pham",
         "imgSrc": "david.jpg",
         "position": "Mentorship Manager",
@@ -81,5 +74,13 @@
         "imgSrc": "bhavya.jpg",
         "position": "Opportunities Manager",
         "linkedin": "https://www.linkedin.com/in/bhavya-linga-4b274725b/"
+    },
+    {
+        "name": "Shawn Collinge",
+        "imgSrc": "shawn.jpg",
+        "position": "Mock interview manager",
+        "linkedin": "https://www.linkedin.com/in/s-collinge",
+        "github": "https://github.com/shawncollinge",
+        "portfolio": "https://shawnc.net"
     }
 ]
