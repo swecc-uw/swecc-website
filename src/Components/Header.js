@@ -1,8 +1,7 @@
 import React from 'react';
-import SWECClogo from '../Data/img/SWECClogo.jpg';
+import SWECClogo from '../icons/logo24.jpg';
 import '../CSS/Header.css'
 import { NavLink } from 'react-router-dom';
-
 
 const Header = () => {
   return (
