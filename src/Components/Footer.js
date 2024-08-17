@@ -24,7 +24,7 @@ const Footer = () => {
             <a href="https://instagram.com/swecc.uw?igshid=YmMyMTA2M2Y=" target="_blank" rel="noopener noreferrer">
               <img className="contact-images" src={instaLogo} alt="instalogo" />
             </a>
-            <a href="https://discord.com/invite/Pbk4sCEWDY" target="_blank" rel="noopener noreferrer">
+            <a href="https://swecc.org/discord" target="_blank" rel="noopener noreferrer">
               <img className="contact-images" src={discordLogo} alt="discord" />
             </a>
             <a href="https://www.linkedin.com/company/software-engineering-career-club-at-uw/" target="_blank" rel="noopener noreferrer">
