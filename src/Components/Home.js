@@ -18,7 +18,6 @@ function HomePage() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const backGroundImgs = [img1, img2, img3, img4, img5, img6, img7];
     const darkMode = JSON.parse(localStorage.getItem("isToggled"));
-    console.log(darkMode);
 
     useEffect(() => {
       const intervalId = setInterval(nextImg, 6000);
