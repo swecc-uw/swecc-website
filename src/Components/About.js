@@ -9,12 +9,12 @@ const About = () => {
     <div>
       <div>
         <div className="about-message-section">
-          <div className="about-title">About Us</div>
-          <div className="about-text">Learn the ways that SWECC can help you get started in Software Engineering!</div>
+          <div className="about-title">SWECC Officers</div>
+          <div className="about-text">Learn about the team behind SWECC.</div>
         </div>
         <div>
           <h1 className="team-members-title">Board Members</h1>
-          <p className="team-members-subtitle">2023-2024</p>
+          <p className="team-members-subtitle">2024-2025</p>
           <ProfileCard info={teamMembers} />
         </div>
         <div>

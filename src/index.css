@@ -2,10 +2,11 @@
   --bg: #fcfcfc;
   --bg-accent: #f0f0f0;
   --bg-hover: #dcdcdc;
-  --text-color: #754ec4;
-  --text-subtitle-color: #5d3a9e;
-  --text-title-color: #4e2b8e;
+  --text-color: #656FB3;
+  --text-subtitle-color: #565FB0;
+  --text-title-color: #4A4DA2;
   --text-header-color: #412675;
+  --text-header-shadow-color: rgba(0, 0, 0, 0.5);
   --nav-bottom: #3e2076;
   --nav-size: 60px;
   --border: 1.5px solid #474a4d;
@@ -13,19 +14,28 @@
   --speed: 300ms;
   --card-bg: #fff;
   --card-text: var(--text-subtitle-color);
+  --backgroundImg-buttom: #474a4d;
+  --backgroundImg-buttom-background: rgba(255, 255, 255, 30%);
+  --backgroundImg-cover-opacity: 0.5;
 }
 
 .dark-mode {
-  --bg: #242526;
+  --bg: #2c2d2e;
   --bg-accent: #484a4d;
   --bg-hover: #343435;
   --text-color: #d5cedc;
   --text-title-color: #d5c6f8;
   --text-subtitle-color: #beb8eb;
+  --text-header-color:#ffeaee;
+  --text-header-shadow-color: rgba(255, 255, 255, 1);
   --nav-bottom: #a277f4;
   --border: 1px solid #474a4d;
   --card-bg: var(--bg-accent);
   --card-text: #d4ccdd;
+  --backgroundImg-buttom: white;
+  --backgroundImg-buttom-background: rgba(0, 0, 0, 30%);
+  --backgroundImg-cover-opacity: 0.4;
+
 }
 
 * {
