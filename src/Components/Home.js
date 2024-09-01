@@ -4,6 +4,7 @@ import SWECCmap from "../Data/img/location.png";
 import UWlogo from "../Data/img/UW_logo.png";
 import UWlogo2 from "../Data/img/UW_logo2.png";
 import { InstagramEmbed } from "react-social-media-embed";
+import { Posts } from "./Posts.js";
 
 import img1 from "../Data/img/backgroundImg/1.jpg";
 import img2 from "../Data/img/backgroundImg/2.jpg";
@@ -141,7 +142,7 @@ function HomePage() {
         </p>
       </div>
       {meetingInfo}
-      {posts}
+      <Posts></Posts>
     </div>
   );
 }
