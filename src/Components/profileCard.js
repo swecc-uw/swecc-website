@@ -8,15 +8,24 @@ function ProfileCard(props) {
   const teamMembers = props.info;
   const Card = ({ member }) => (
     <div className="card">
-      <div className="card-image">
-        <img src={require(`../Data/officers/${member.imgSrc}`)} alt={member.name} />
+      <div
+        className={`card-image-container ${member.position.includes("President") ? "founder-card" : ""}`}
+      >
+        <img
+          src={require(`../Data/officers/${member.imgSrc}`)}
+          alt={member.name}
+        />
       </div>
       <p className="name">{member.name}</p>
       <p>{member.position}</p>
       <div className="socials">
         {member.portfolio && (
           <button className="portfolio">
-            <a href={member.portfolio} target="_blank" rel="noopener noreferrer">
+            <a
+              href={member.portfolio}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <AiOutlineLink />
             </a>
           </button>
@@ -37,7 +46,11 @@ function ProfileCard(props) {
         )}
         {member.email && (
           <button className="email">
-            <a href={`mailto:${member.email}`} target="_blank" rel="noopener noreferrer">
+            <a
+              href={`mailto:${member.email}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <MdOutlineEmail />
             </a>
           </button>

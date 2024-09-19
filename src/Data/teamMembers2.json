@@ -1,0 +1,88 @@
+[
+    {
+        "name": "Elijah Melton",
+        "imgSrc": "elijah.jpg",
+        "position": "President",
+        "linkedin": "linkedin.com/in/elijah-melton/",
+        "github": "https://github.com/elimelt",
+        "email": "elimelt@uw.edu",
+        "portfolio": "https://elimelt.github.io/elijah-dot-com/"
+    },
+    {
+        "name": "Deeksha Vatwani",
+        "imgSrc": "deeksha.jpg",
+        "position": "Alumni Network Manager",
+        "linkedin": "https://www.linkedin.com/in/deeksha-vatwani/",
+        "email": "vatwani2@uw.edu"
+    },
+    {
+        "name": "Ruhee Rajwani",
+        "imgSrc": "ruhee.jpg",
+        "position": "Marketing Manager",
+        "portfolio": "https://www.rrajwani.com/"
+    },
+    {
+        "name": "Trang Tran",
+        "imgSrc": "trang.jpg",
+        "position": "Design Manager",
+        "linkedin": "https://www.linkedin.com/in/trangtran10/",
+        "email": "trangt10@uw.edu"
+    },
+    {
+        "name": "Aditya Khowal",
+        "imgSrc": "adityak.jpg",
+        "position": "External Head",
+        "linkedin": "www.linkedin.com/in/aditya-khowal/"
+    },
+    {
+        "name": "Leah Jia",
+        "imgSrc": "leah.jpg",
+        "position": "External Outreach",
+        "portfolio": "https://leahjia.com/",
+        "linkedin": "https://www.linkedin.com/in/leahjia",
+        "github": "https://github.com/leahjia"
+    },
+    {
+        "name": "Eric Xiao",
+        "imgSrc": "eric.jpg",
+        "position": "External Outreach",
+        "linkedin": "https://www.linkedin.com/in/xiaoe5800/",
+        "github": "https://github.com/mathlord2",
+        "email": "exiao@uw.edu"
+    },
+    {
+        "name": "Aditya Akhileshwaran",
+        "imgSrc": "adityaa.jpg",
+        "position": "External Outreach",
+        "linkedin": "https://www.linkedin.com/in/adiakhil/",
+        "email": "aakhiles@uw.edu"
+    },
+    {
+        "name": "David Pham",
+        "imgSrc": "david.jpg",
+        "position": "Mentorship Manager",
+        "linkedin": "https://www.linkedin.com/in/phamdavid722/",
+        "email": "phamdavid722@gmail.com"
+
+    },
+    {
+        "name": "Daniel Bejar",
+        "imgSrc": "daniel.jpg",
+        "position": "Opportunities Manager",
+        "email": "danielbejar316@gmail.com"
+    },
+    {
+        "name": "Bhavya Linga",
+        "imgSrc": "bhavya.jpg",
+        "position": "Opportunities Manager",
+        "linkedin": "https://www.linkedin.com/in/bhavya-linga-4b274725b/"
+    },
+    {
+        "name": "Shawn Collinge",
+        "imgSrc": "shawn.jpg",
+        "position": "Software Engineer",
+        "linkedin": "https://www.linkedin.com/in/s-collinge",
+        "github": "https://github.com/shawncollinge",
+        "portfolio": "https://shawnc.net"
+    }
+]

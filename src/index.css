@@ -1,5 +1,5 @@
 :root {
-  --bg: #fcfcfc;
+  --bg: #fdfdfd;
   --bg-accent: #f0f0f0;
   --bg-hover: #dcdcdc;
   --text-color: #656FB3;
@@ -8,15 +8,22 @@
   --text-header-color: #412675;
   --text-header-shadow-color: rgba(0, 0, 0, 0.5);
   --nav-bottom: #3e2076;
+  --nav-toggle: #f38f07;
   --nav-size: 60px;
   --border: 1.5px solid #474a4d;
   --border-radius: 8px;
   --speed: 300ms;
   --card-bg: #fff;
   --card-text: var(--text-subtitle-color);
-  --backgroundImg-buttom: #474a4d;
-  --backgroundImg-buttom-background: rgba(255, 255, 255, 30%);
-  --backgroundImg-cover-opacity: 0.5;
+  --backgroundImg-buttom: #ffffff;
+  --backgroundImg-buttom-background: rgba(119, 119, 119, 0.3);
+  --backgroundImg-cover-opacity: 0.8;
+  --subtitle-color: var(--text-subtitle-color);
+  --og-footer-color: #2c2d2e;
+  --sun-color: rgba(255, 155, 12, 0.7);
+  --moon-color: #c0c0c0;
+  --sideBarTitle: rgb(0, 0, 0);
+  --sponsorText: rgb(91, 91, 91);
 }
 
 .dark-mode {
@@ -29,13 +36,17 @@
   --text-header-color:#ffeaee;
   --text-header-shadow-color: rgba(255, 255, 255, 1);
   --nav-bottom: #a277f4;
+  --nav-toggle: #d3d1d1;
   --border: 1px solid #474a4d;
   --card-bg: var(--bg-accent);
   --card-text: #d4ccdd;
   --backgroundImg-buttom: white;
-  --backgroundImg-buttom-background: rgba(0, 0, 0, 30%);
-  --backgroundImg-cover-opacity: 0.4;
-
+  --backgroundImg-buttom-background: rgba(224, 224, 224, 0.3);
+  --backgroundImg-cover-opacity: 0.5;
+  --subtitle-color: rgba(255, 255, 255, 0.86);
+  --og-footer-color: #2c2d2e;
+  --sideBarTitle: rgb(255, 255, 255);
+  --sponsorText: rgb(229, 229, 229);
 }
 
 * {
