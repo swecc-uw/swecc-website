@@ -26,7 +26,6 @@
   font-size: 15px;
   text-decoration: none;
   margin: 5px;
-  font-style: none;
   font-weight: bold;
   font-family: "Roboto";
   color: #7e6d90;
@@ -54,7 +53,8 @@
 }
 
 .nav-logo {
-  height: 40px;
+  height: 4000px;
+  color: white;
 }
 
 ul {

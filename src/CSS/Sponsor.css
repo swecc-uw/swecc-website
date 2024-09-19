@@ -1,0 +1,118 @@
+
+
+.sponsor-page-intro::before {
+    background-image: url(../Data/img/backgroundImg/4.jpg);
+}
+
+.sponsor-content {
+    display: block;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    margin: auto;
+    box-sizing: border-box;
+    padding-top: 5vw;
+    min-height: 100vh;
+}
+
+.Sponsors-Info,
+.WhyUs-Info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 2rem;
+    font-family: adobe-garamond-pro;
+    color: var(--sponsorText);
+}
+
+.HowToSponsor p {
+    margin-left: -15%;
+    font-weight: bolder;
+}
+
+.HowToSponsor ul {
+    list-style-type: disc;
+}
+
+.HowToSponsor li {
+    margin-bottom: 10px;
+}
+
+.HowToSponsor {
+    text-align: left;
+}
+
+.Sponsors-Info h3 {
+    margin: 0;
+}
+
+.Sponsors-Info p,
+#HowToSponsorIntro {
+    font-size: 1.3rem;
+    opacity: 0.8;
+}
+
+.Sponsors-Logo {
+    margin-top: 5vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+.Sponsors-Logo img {
+    max-width: 30vw;
+    height: auto;
+    object-fit: contain;
+}
+
+.contact-info {
+    width: 50%;
+    padding: 30px;
+    flex-direction: column;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.contact-form input,
+.contact-form textarea {
+    outline: none;
+    margin-bottom: 20px;
+    padding: 1rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    border: 1px solid rgba(44, 45, 46, 0.41);
+}
+
+
+.contact-form textarea {
+    min-height: 150px;
+    resize: none;
+}
+
+.contact-form button {
+    align-self: end;
+    background-color: rgba(103, 38, 213);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.contact-form button:hover {
+    opacity: 0.6;
+}

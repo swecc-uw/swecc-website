@@ -1,8 +1,10 @@
 import "../CSS/Home.css";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import SWECCmap from "../Data/img/location.png";
-import UWlogo from "../Data/img/UW_logo.png";
-import UWlogo2 from "../Data/img/UW_logo2.png";
+import {
+  ColFlexDoubleTextRightImageLeft,
+  TextLeftImageRight,
+} from "../Utils/CommonItems";
 import { InstagramEmbed } from "react-social-media-embed";
 
 import img1 from "../Data/img/backgroundImg/1.jpg";
@@ -13,7 +15,10 @@ import img5 from "../Data/img/backgroundImg/5.jpg";
 import img6 from "../Data/img/backgroundImg/6.jpg";
 import img7 from "../Data/img/backgroundImg/7.jpg";
 
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+
 function HomePage() {
+  const scrollContainerRef = useRef(null);
   function Carousel() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const backGroundImgs = [img1, img2, img3, img4, img5, img6, img7];
@@ -39,11 +44,6 @@ function HomePage() {
 
     return (
       <div className="clubTitleSection">
-        <div className="preload-images">
-          <img src={UWlogo} alt="UW logo" />
-          <img src={UWlogo2} alt="UW logo" />
-        </div>
-
         {backGroundImgs.map((img, index) => (
           <img
             key={index}
@@ -63,63 +63,56 @@ function HomePage() {
           </button>
         </div>
 
-        <img
-          className={`uw-logo ${darkMode ? "dark-mode" : ""}`}
-          src={darkMode ? UWlogo2 : UWlogo}
-          alt="UW logo"
-        />
-        <h1 className="clubName" id={"clubName"}>
-          Software Engineering Career Club
-        </h1>
+        <div className="club-introduction-container">
+          <h1>Software Engineering Career Club</h1>
+          <p>at the University of Washington</p>
+          <a
+            href="/src/Components/Officers"
+            className="club-introduction-container-button"
+          >
+            Learn More
+          </a>
+        </div>
       </div>
     );
   }
 
-  const meetingInfo = (
-    <div className="meetingsSection">
-      <div className="meetingsInfoSection">
-        <h2 className="sweccMeetings">SWECC Meetings</h2>
-        <p className="meetingInfo">
-          Held in the Loew 216, these meeting feature topics in a vast number of
-          areas, including professional development, resume building, and mentor
-          circles
-        </p>
-        <h3 className="meetingTime">Meeting Times/Location (Spring 2024)</h3>
-        <p className="meetingDetails">
-          Every week on Wednesday, from 5:30-6:30pm
-          <br />
-          Location: Loew 216
-        </p>
-      </div>
-      <div className="map-and-label">
-        <img className="map" src={SWECCmap} alt="map" />
-        <p className="mapLabel">Location: Loew 216</p>
-      </div>
-    </div>
-  );
+  const scroll = (direction) => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      console.log("scroll");
+      console.log(direction);
+      console.log(-container.offsetWidth);
+      const scrollAmount =
+        direction === "left" ? -container.offsetWidth : container.offsetWidth;
+      container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
+  };
 
   const posts = (
-    <div className="posts">
-      <InstagramEmbed
-        className="instaPost slide-up"
-        url="https://www.instagram.com/p/C2-o7roPbfN"
-      />
-      <InstagramEmbed
-        className="instaPost slide-up"
-        url="https://www.instagram.com/p/C23PyAWPYdW"
-      />
-      <InstagramEmbed
-        className="instaPost slide-up"
-        url="https://www.instagram.com/p/CyRondZPVVS"
-      />
-      <InstagramEmbed
-        className="instaPost slide-up"
-        url="https://www.instagram.com/p/Cxum20yOlkQ"
-      />
-      <InstagramEmbed
-        className="instaPost slide-up"
-        url="https://www.instagram.com/p/CxrxWcQLpSb"
-      />
+    <div className="posts-carousel">
+      <div className="posts" ref={scrollContainerRef}>
+        <InstagramEmbed
+          className="instaPost slide-up"
+          url="https://www.instagram.com/p/C7uRAftvEKV/?utm_source=ig_web_copy_link"
+        />
+        <InstagramEmbed
+          className="instaPost slide-up"
+          url="https://www.instagram.com/p/C23PyAWPYdW"
+        />
+        <InstagramEmbed
+          className="instaPost slide-up"
+          url="https://www.instagram.com/p/CyRondZPVVS"
+        />
+        <InstagramEmbed
+          className="instaPost slide-up"
+          url="https://www.instagram.com/p/Cxum20yOlkQ"
+        />
+        <InstagramEmbed
+          className="instaPost slide-up"
+          url="https://www.instagram.com/p/CxrxWcQLpSb"
+        />
+      </div>
     </div>
   );
 
@@ -127,21 +120,64 @@ function HomePage() {
     <div>
       <Carousel />
 
-      <div className="whatWeDoSection">
-        <h2 className="summaryTitle">Who we are</h2>
-        <p className="summary">
-          The Software Engineering Career Club (SWECC) is a student-led
-          organization at the University of Washington in Seattle. Our mission
-          is to support and empower individuals interested in pursuing a
-          successful career in software engineering. We offer a wide range of
-          activities and resources, including networking events, LeetCode
-          challenges, mentorship programs, and interview preparation, to help
-          our members thrive in the field. Join SWECC to jumpstart your software
-          engineering career with confidence and connections!
-        </p>
+      <div className="mainPage-body">
+        <TextLeftImageRight
+          summary="The Software Engineering Career Club (SWECC) is a student-led
+        organization at the University of Washington in Seattle. Our mission
+        is to support and empower individuals interested in pursuing a
+        successful career in software engineering. We offer a wide range of
+        activities and resources, including networking events, LeetCode
+        challenges, mentorship programs, and interview preparation, to help
+        our members thrive in the field. Join SWECC to jumpstart your
+        software engineering career with confidence and connections!"
+          summaryTitle="Who we are"
+          image={img3}
+        />
+        <ColFlexDoubleTextRightImageLeft
+          title1="SWECC Meetings"
+          title2="Meeting Times/Location (Autumn 2024)"
+          content1="SWECC Meeting feature topics in a vast number of
+          areas, including professional development, resume building, and mentor
+          circles"
+          content2="Weekly on Wednesday, 5:30-6:30pm, Loew Hall 216"
+          image={SWECCmap}
+        />
       </div>
-      {meetingInfo}
-      {posts}
+
+      <div className="whyJoinUs">
+        <div className="buttons-container">
+          <button
+            className="posts-carousel--left"
+            onClick={() => scroll("left")}
+          >
+            <FaChevronLeft />
+          </button>
+
+          <button
+            className="posts-carousel--right"
+            onClick={() => scroll("right")}
+          >
+            <FaChevronRight />
+          </button>
+        </div>
+        <h2>Why Join Us</h2>
+        <p>
+          We are a club with over 1000 members from CS-related departments.{" "}
+          <br />
+          We invite industry-professionals to share their experiences and we
+          host <br />
+          prize-awarding coding events to encourage student to build projects
+          and meet <br />
+          new peers
+        </p>
+        <a
+          href="https://discord.gg/HjeGCW4M"
+          className="club-introduction-container-button"
+        >
+          Join Us
+        </a>
+        {posts}
+      </div>
     </div>
   );
 }
