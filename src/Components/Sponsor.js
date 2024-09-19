@@ -6,7 +6,7 @@ import SponsorEmail from "./email/SponsorEmail";
 import { Resend } from "resend";
 
 function Sponsor() {
-  const resend = new Resend(process.env.RESEND_API_KEY);
+  const resend = new Resend(process.env.REACT_APP_RESEND_API_KEY);
   const [ContentSelected, setContentSelected] = useState("sponsor");
   const [contactData, setContactData] = useState({
     name: "",
