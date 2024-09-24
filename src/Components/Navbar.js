@@ -27,7 +27,7 @@ import {
 import { ImIcoMoon, ImSun } from "react-icons/im";
 import { PiMoonBold } from "react-icons/pi";
 
-import { NavBar, NavExpandItem, NavItem, NavToggle } from "../Utils/NavItems";
+import { NavBar, NavExpandItem, NavItem, NavToggle } from "./Utils/NavItems";
 import SWECCLogoWhite from "../Data/img/Logo/SWECCLogoWhite.png";
 
 function Navbar() {
@@ -195,7 +195,7 @@ function DropdownMenu(props) {
           <NavLink to="/" onClick={props.closeExpand}>
             <DropdownItem leftIcon={<FcHome />}>Home</DropdownItem>
           </NavLink>
-          <NavLink to="/About" onClick={props.closeExpand}>
+          <NavLink to="/Officers" onClick={props.closeExpand}>
             <DropdownItem leftIcon={<FcConferenceCall />}>
               Officers
             </DropdownItem>

@@ -1,11 +1,10 @@
 import React from "react";
 import Footer from "./Footer.js";
-import FooterHotfix from "./FooterMobile.js";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Home.js";
 import Events from "./Events.js";
 import Officers from "./Officers.js";
-import JoinNow from "./Join-now.js";
+import JoinNow from "./JoinNow.js";
 import Navbar from "./Navbar.js";
 import ExternalRedirect from "./Redirect.js";
 import Sponsor from "./Sponsor";
@@ -19,9 +18,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route index element={<Home />} />
-        <Route path="/Officers" element={<Officers />} />
-        <Route path="/Events" element={<Events />} />
-        <Route path="/Sponsor" element={<Sponsor />} />
+        <Route path="/officers" element={<Officers />} />
+        <Route path="/events" element={<Events />} />
+        <Route path="/sponsor" element={<Sponsor />} />
         <Route
           path="/discord"
           element={<ExternalRedirect to="https://discord.gg/Z8ZDcdRqrs" />}
@@ -41,14 +40,13 @@ function App() {
         <Route
           path="/mailing-list"
           element={
-            <ExternalRedirect to="http://mailman11.u.washington.edu/mailman/listinfo/sweccmailinglist" />
+            <ExternalRedirect to="https://mailman11.u.washington.edu/mailman/listinfo/sweccmailinglist" />
           }
         />
-        <Route path="/Join-Now" element={<JoinNow />} />
+        <Route path="/join-Now" element={<JoinNow />} />
         <Route path="*" element={<Home />} />
       </Routes>
       <Footer />
-      <FooterHotfix />
     </div>
   );
 }

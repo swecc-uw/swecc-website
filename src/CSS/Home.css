@@ -50,14 +50,23 @@
 
 }
 
+.title-buttons-container,
 .buttons-container {
   position: absolute;
-  top: 50%;
-  width: 95%;
   display: flex;
   justify-content: space-between;
   transform: translateY(-50%);
-  z-index: 1001;
+  z-index: 500;
+}
+
+.title-buttons-container{
+  top: 50%;
+  width: 90%;
+}
+
+.buttons-container {
+  top: 30%;
+  width: 100%;
 }
 
 .prevImgButton,
@@ -76,7 +85,6 @@
   align-items: center;
   cursor: pointer;
   transition: background-color 0.5s ease;
-  z-index: 1001;
 }
 
 .prevImgButton:hover,
@@ -124,7 +132,7 @@
   border-radius: 30px;
   transition: all 0.3s ease;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 500;
 }
 
 .club-introduction-container-button:hover {
@@ -218,10 +226,14 @@ h3 {
   margin-top: 5%;
   position: relative;
   overflow: hidden;
-  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
 }
 
 .posts {
+  width: 90%;
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
@@ -242,7 +254,7 @@ h3 {
 
 .whyJoinUs {
   position: relative;
-  margin: 0 15% 5% 15%;
+  margin: 0 15% 0 15%;
   padding: 2rem;
   border-top: 3px dotted rgba(115, 115, 115, 0.7);
   display: flex;
@@ -271,15 +283,44 @@ h3 {
   animation: slide-up 0.5s ease-out;
 }
 
+@media (max-width: 1500px) {
+
+  .instaPost {
+    width: calc((100% - 2rem) / 2);
+  }
+
+
+}
 
 @media (max-width: 1076px) {
+
+  .posts-carousel {
+    display: none;
+  }
+
+  .whyJoinUs {
+    margin: 10% 0 10% 0;
+    padding: 0;
+    width: 100%;
+  }
+
   .articleSection p.summary {
     font-size: 1.5rem;
   }
 
-  div.posts {
-    margin: 0;
+  .club-introduction-container p {
+    font-size: 4vw;
+    font-style: normal;
   }
+
+  .clubTitleSection {
+    height: 40vw;
+  }
+
+  .whyJoinUs p {
+    font-size: 1rem
+  }
+
 }
 
 @media (max-width: 976px) {
@@ -297,18 +338,12 @@ h3 {
   .map {
     width: 70%;
   }
-}
 
-@media (max-width: 830px) {
-  .posts {
-    flex-direction: column;
-    padding: 2rem 5rem;
+  .clubTitleSection {
+    height: 50vw;
   }
 
-  .instaPost {
-    margin: 20px 0;
-    width: 100%;
-  }
+
 }
 
 @media only screen and (max-width: 768px) {
@@ -317,9 +352,8 @@ h3 {
     display: none;
   }
 
-  .club-introduction-container h1 {
-    font-size: 5vw;
-    color: var(--text-header-color);
+  .clubTitleSection {
+    height: 70vw;
   }
 
   .goal-message-section {
@@ -360,24 +394,14 @@ h3 {
 
 @media (max-width: 480px) {
 
+  .club-introduction-container-button {
+    font-size: 3vw;
+  }
 
   .uw-logo {
     display: none;
   }
 
-  .posts {
-    padding: 1.5rem;
-  }
-
-  .instaPost {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .clubTitleSection {
-    height: 30vw;
-    padding: 1rem 0;
-  }
 
   .uw-logo {
     width: 30%;

@@ -21,7 +21,7 @@ const actions = [
       target="_blank"
       rel="noopener noreferrer"
     >
-      Subscribe to the mailing list
+      Subscribe mailing list
     </a>
   </div>,
   <div className="action-item">

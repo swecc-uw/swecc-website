@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../CSS/Officers.css";
-import ProfileCard from "./profileCard";
+import ProfileCard from "./ProfileCard";
 
 const Officers = () => {
   const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());

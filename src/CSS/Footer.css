@@ -33,3 +33,16 @@ footer svg {
   width: 2vw;
   color: #ffffff;
 }
+
+@media only screen and (max-width: 768px) {
+
+  .footer-contents-container {
+    flex-direction: column;
+  }
+
+  footer svg {
+    height: 7vw;
+    width: 7vw;
+    color: #ffffff;
+  }
+}

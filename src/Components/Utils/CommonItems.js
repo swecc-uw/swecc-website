@@ -1,5 +1,5 @@
 import React from "react";
-import "../CSS/CommonItems.css";
+import "../../CSS/CommonItems.css";
 
 const TextLeftImageRight = ({ summaryTitle, summary, image }) => (
   <div className="articleSection">

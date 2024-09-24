@@ -65,7 +65,7 @@
 }
 
 .name {
-  font-size: 1.4em;
+  font-size: 1rem;
   color: var(--card-text);
   font-weight: bold;
   letter-spacing: 0.8px;
@@ -100,7 +100,6 @@
 
 .card-container button svg {
   padding-top: 4px;
-  width: 20px;
   height: 20px;
 }
 
@@ -120,8 +119,18 @@
   background-color: #aa5738;
 }
 
-@media (max-width: 480px) {
+@media only screen and (max-width: 768px) {
   .card-container {
-    padding: 50px;
+    padding: 0;
+    gap: 15vw;
+  }
+  .card {
+    width:8rem;
+  }
+
+  .card-container button {
+    width: 30px;
+    height: 30px;
   }
 }
+

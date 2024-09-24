@@ -61,22 +61,22 @@ body {
 
 /* testing */
 
-.hotfix {
-  display: none;
-}
+/*.hotfix {*/
+/*  display: none;*/
+/*}*/
 
-footer {
-  text-align: center;
-  flex-direction: column;
-}
+/*footer {*/
+/*  text-align: center;*/
+/*  flex-direction: column;*/
+/*}*/
 
-.hotfix div {
-  padding-top: 1rem;
-}
+/*.hotfix div {*/
+/*  padding-top: 1rem;*/
+/*}*/
 
-footer h3 {
-  color: var(--bg-color);
-}
+/*footer h3 {*/
+/*  color: var(--bg-color);*/
+/*}*/
 
 .fa {
   padding: 20px;
@@ -147,14 +147,4 @@ a:hover {
 
 .copyright a:hover {
   transition: 0.3s;
-}
-
-@media (max-width: 768px) {
-  .og-footer {
-    display: none;
-  }
-
-  .hotfix {
-    display: flex;
-  }
 }

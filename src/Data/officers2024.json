@@ -16,12 +16,6 @@
         "email": "vatwani2@uw.edu"
     },
     {
-        "name": "Ruhee Rajwani",
-        "imgSrc": "ruhee.jpg",
-        "position": "Marketing Manager",
-        "portfolio": "https://www.rrajwani.com/"
-    },
-    {
         "name": "Trang Tran",
         "imgSrc": "trang.jpg",
         "position": "Design Manager",
@@ -35,12 +29,11 @@
         "linkedin": "www.linkedin.com/in/aditya-khowal/"
     },
     {
-        "name": "Leah Jia",
-        "imgSrc": "leah.jpg",
-        "position": "External Outreach",
-        "portfolio": "https://leahjia.com/",
-        "linkedin": "https://www.linkedin.com/in/leahjia",
-        "github": "https://github.com/leahjia"
+        "name": "Anthony Wen",
+        "imgSrc": "Anthony.png",
+        "position": "Marketing/Design",
+        "linkedin": "https://www.linkedin.com/in/anthony-wen-programmer/",
+        "github": "https://github.com/wena04"
     },
     {
         "name": "Eric Xiao",
@@ -51,25 +44,12 @@
         "email": "exiao@uw.edu"
     },
     {
-        "name": "Aditya Akhileshwaran",
-        "imgSrc": "adityaa.jpg",
-        "position": "External Outreach",
-        "linkedin": "https://www.linkedin.com/in/adiakhil/",
-        "email": "aakhiles@uw.edu"
-    },
-    {
         "name": "David Pham",
         "imgSrc": "david.jpg",
         "position": "Mentorship Manager",
         "linkedin": "https://www.linkedin.com/in/phamdavid722/",
         "email": "phamdavid722@gmail.com"
 
-    },
-    {
-        "name": "Daniel Bejar",
-        "imgSrc": "daniel.jpg",
-        "position": "Opportunities Manager",
-        "email": "danielbejar316@gmail.com"
     },
     {
         "name": "Bhavya Linga",
@@ -84,5 +64,24 @@
         "linkedin": "https://www.linkedin.com/in/s-collinge",
         "github": "https://github.com/shawncollinge",
         "portfolio": "https://shawnc.net"
+    },
+    {
+        "name": "Devina Tavathia",
+        "imgSrc": "Devina.png",
+        "position": "External Outreach",
+        "linkedin": "https://www.linkedin.com/in/devina-tavathia-40722b167/"
+    },
+    {
+        "name": "Hoang Nguyen",
+        "imgSrc": "Hoang.png",
+        "position": "Software Engineer",
+        "linkedin": "https://www.linkedin.com/in/kipiiler/",
+        "github": "https://github.com/nphoang1102"
+    },
+    {
+        "name": "Benjamin So",
+        "imgSrc": "Ben.png",
+        "position": "Marketing ",
+        "linkedin": "https://www.linkedin.com/in/benjaminsoyh/"
     }
 ]

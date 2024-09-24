@@ -18,12 +18,23 @@
 
 .Sponsors-Info,
 .WhyUs-Info {
-    display: flex;
+    display: inline-block;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     line-height: 2rem;
     font-family: adobe-garamond-pro;
     color: var(--sponsorText);
+    width: 80%;
+    margin-bottom: 2vw;
+}
+
+.WhyUs-Info > * {
+    margin-bottom: 2%;
+}
+
+.HowToSponsor {
+    font-size: 1.3rem;
 }
 
 .HowToSponsor p {
@@ -36,11 +47,15 @@
 }
 
 .HowToSponsor li {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .HowToSponsor {
+    display: flex;
+    flex-direction: column;
     text-align: left;
+    justify-content: center;
+    align-items: center;
 }
 
 .Sponsors-Info h3 {
@@ -55,6 +70,7 @@
 
 .Sponsors-Logo {
     margin-top: 5vw;
+    margin-bottom: 5vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -69,9 +85,10 @@
 }
 
 .contact-info {
-    width: 50%;
-    padding: 30px;
+
+    width: 75%;
     flex-direction: column;
+    display: inline-block;
     animation: fadeIn 0.5s ease-out;
 }
 
@@ -115,4 +132,13 @@
 
 .contact-form button:hover {
     opacity: 0.6;
+}
+
+@media (max-width: 976px) {
+
+    .sponsor-page-intro {
+        height: 40vh;
+    }
+
+
 }

@@ -67,6 +67,7 @@ function Events() {
 
       <div className="upcoming-events-section">
         <div align="center">
+          {/*TODO: switch to updated member calendar*/}
           <iframe
             title="calendar"
             className="calendar"

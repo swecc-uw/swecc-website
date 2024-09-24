@@ -50,6 +50,15 @@
     color: var(--text-color);
 }
 
+@media (max-width: 976px) {
+
+    .articleSection {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+}
+
 @media only screen and (max-width: 768px) {
 
     .articleSection {
@@ -58,6 +67,10 @@
 
     .articleSection p.summary {
         font-size: 1rem;
+    }
+
+    .articleSection-photo-info img {
+        width: 60vw;
     }
 
 }

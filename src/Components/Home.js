@@ -1,10 +1,10 @@
 import "../CSS/Home.css";
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import SWECCmap from "../Data/img/location.png";
 import {
   ColFlexDoubleTextRightImageLeft,
   TextLeftImageRight,
-} from "../Utils/CommonItems";
+} from "./Utils/CommonItems";
 import { InstagramEmbed } from "react-social-media-embed";
 
 import img1 from "../Data/img/backgroundImg/1.jpg";
@@ -14,7 +14,6 @@ import img4 from "../Data/img/backgroundImg/4.jpg";
 import img5 from "../Data/img/backgroundImg/5.jpg";
 import img6 from "../Data/img/backgroundImg/6.jpg";
 import img7 from "../Data/img/backgroundImg/7.jpg";
-
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 function HomePage() {
@@ -42,6 +41,13 @@ function HomePage() {
       );
     };
 
+    const scrollToSection = (sectionName) => {
+      const sections = document.getElementsByClassName(sectionName);
+      if (sections.length > 0) {
+        sections[0].scrollIntoView({ behavior: "smooth" });
+      }
+    };
+
     return (
       <div className="clubTitleSection">
         {backGroundImgs.map((img, index) => (
@@ -53,7 +59,7 @@ function HomePage() {
           />
         ))}
 
-        <div className="buttons-container">
+        <div className="title-buttons-container">
           <button onClick={prevImg} className="prevImgButton">
             <span className="material-symbols-outlined">navigate_before</span>
           </button>
@@ -66,12 +72,12 @@ function HomePage() {
         <div className="club-introduction-container">
           <h1>Software Engineering Career Club</h1>
           <p>at the University of Washington</p>
-          <a
-            href="/src/Components/Officers"
+          <button
             className="club-introduction-container-button"
+            onClick={() => scrollToSection("whyJoinUs")}
           >
             Learn More
-          </a>
+          </button>
         </div>
       </div>
     );
@@ -80,9 +86,6 @@ function HomePage() {
   const scroll = (direction) => {
     const container = scrollContainerRef.current;
     if (container) {
-      console.log("scroll");
-      console.log(direction);
-      console.log(-container.offsetWidth);
       const scrollAmount =
         direction === "left" ? -container.offsetWidth : container.offsetWidth;
       container.scrollBy({ left: scrollAmount, behavior: "smooth" });
@@ -91,6 +94,18 @@ function HomePage() {
 
   const posts = (
     <div className="posts-carousel">
+      <div className="buttons-container">
+        <button className="posts-carousel--left" onClick={() => scroll("left")}>
+          <FaChevronLeft />
+        </button>
+
+        <button
+          className="posts-carousel--right"
+          onClick={() => scroll("right")}
+        >
+          <FaChevronRight />
+        </button>
+      </div>
       <div className="posts" ref={scrollContainerRef}>
         <InstagramEmbed
           className="instaPost slide-up"
@@ -123,13 +138,11 @@ function HomePage() {
       <div className="mainPage-body">
         <TextLeftImageRight
           summary="The Software Engineering Career Club (SWECC) is a student-led
-        organization at the University of Washington in Seattle. Our mission
-        is to support and empower individuals interested in pursuing a
-        successful career in software engineering. We offer a wide range of
-        activities and resources, including networking events, LeetCode
-        challenges, mentorship programs, and interview preparation, to help
-        our members thrive in the field. Join SWECC to jumpstart your
-        software engineering career with confidence and connections!"
+organization at the University of Washington in Seattle. Our mission
+is to support and empower individuals interested in pursuing a
+career in software engineering. We offer a wide range of
+activities and resources, including networking events, resume reviews,
+mentorship programs, interview preparation, and more. Join us to jumpstart your software engineering career!"
           summaryTitle="Who we are"
           image={img3}
         />
@@ -145,33 +158,17 @@ function HomePage() {
       </div>
 
       <div className="whyJoinUs">
-        <div className="buttons-container">
-          <button
-            className="posts-carousel--left"
-            onClick={() => scroll("left")}
-          >
-            <FaChevronLeft />
-          </button>
-
-          <button
-            className="posts-carousel--right"
-            onClick={() => scroll("right")}
-          >
-            <FaChevronRight />
-          </button>
-        </div>
-        <h2>Why Join Us</h2>
+        <h2>Why Join?</h2>
         <p>
-          We are a club with over 1000 members from CS-related departments.{" "}
-          <br />
-          We invite industry-professionals to share their experiences and we
-          host <br />
-          prize-awarding coding events to encourage student to build projects
-          and meet <br />
-          new peers
+          Be part of a community of over 1000 people pursuing a career in
+          software engineering. <br />
+          Gain access to resources, including resume reviews, mock interviews,
+          mentorship programs, and more. <br />
+          Expand your network and connect with like-minded students and industry
+          professionals <br />
         </p>
         <a
-          href="https://discord.gg/HjeGCW4M"
+          href="https://discord.gg/BYg7UeMN2B"
           className="club-introduction-container-button"
         >
           Join Us

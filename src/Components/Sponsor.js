@@ -2,11 +2,8 @@ import "../CSS/Sponsor.css";
 import "../CSS/Officers.css";
 import React, { useState } from "react";
 import deloitteLogo from "../Data/img/Sponsors/Deloitte.png";
-import SponsorEmail from "./email/SponsorEmail";
-import { Resend } from "resend";
 
 function Sponsor() {
-  const resend = new Resend(process.env.REACT_APP_RESEND_API_KEY);
   const [ContentSelected, setContentSelected] = useState("sponsor");
   const [contactData, setContactData] = useState({
     name: "",
@@ -18,17 +15,15 @@ function Sponsor() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { name, email, company, message } = contactData;
-
-    try {
-      await resend.emails.send({
-        from: "tang1125@uw.edu",
-        to: "y031125k@gmail.com",
-        subject: `New Connection from ${name} at ${company}`,
-        react: SponsorEmail({ name, company, message }),
-      });
-    } catch (error) {
-      console.error("Error:", error);
-    }
+    window.location.href = `mailto:sweccmailinglist@u.washington.edu?subject=
+    New Contact from ${name}&body=Name: ${name} from ${company} %0D%0AEmail: ${email}%0D%0AMessage: ${message}`;
+    setTimeout(() => {
+      if (document.hasFocus()) {
+        alert(
+          "It seems your email client didn't open automatically. Please send an email to y031125k@gmail.com with your message.",
+        );
+      }
+    }, 500);
   };
 
   const handleChange = (e) => {
@@ -70,18 +65,20 @@ function Sponsor() {
   const WhyUs = () => (
     <div>
       <div className="WhyUs-Info">
-        <h2>Why Sponsor</h2>
-        <p id="HowToSponsorIntro">
-          Sponsoring SWECC to connect with 1,000+ UW CS students. Our <br />
-          industry-focused events offer prime recruitment opportunities and{" "}
-          <br />
-          exposure. We promote your products and services through weekly
-          seminars, <br />
-          large-scale hackathons, and more.
-        </p>
+        <div className="WhySponsor">
+          <h2>Why Sponsor</h2>
+          <p id="HowToSponsorIntro">
+            Sponsoring SWECC to connect with 1,000+ UW CS students. Our <br />
+            industry-focused events offer prime recruitment opportunities and{" "}
+            <br />
+            exposure. We promote your products and services through weekly
+            seminars, <br />
+            large-scale hackathons, and more.
+          </p>
+        </div>
 
-        <h2>How to Sponsor</h2>
         <div className="HowToSponsor">
+          <h2>How to Sponsor</h2>
           <p>
             We appreciate all forms of your supports, you can support us by:
           </p>
