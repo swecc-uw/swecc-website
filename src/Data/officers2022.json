@@ -11,5 +11,34 @@
     "position": "Outreach Manager",
     "linkedin": "https://www.linkedin.com/in/simon-studen/",
     "email": "simonstuden@gmail.com"
-}
+    },
+    {
+        "name": "Shiina Sugioka",
+        "imgSrc": "shiina.jpg",
+        "position": "Vice President",
+        "linkedin": "https://www.linkedin.com/in/shiinas/",
+        "email": "shiina12@uw.edu"
+    },
+    {
+        "name": "Hawa Drammeh",
+        "imgSrc": "hawa.jpg",
+        "position": "Officer",
+        "linkedin": "https://www.linkedin.com/in/hawadrammeh/",
+        "github": "https://github.com/hawad416",
+        "portfolio": "https://medium.com/@hawaalid",
+        "email": "hdram3@uw.edu"
+    },
+    {
+        "name": "William Dudarov",
+        "imgSrc": "william.png",
+        "position": "Officer",
+        "linkedin": "https://www.linkedin.com/in/william-dudarov/"
+    },
+    {
+        "name": "Deeksha Vatwani",
+        "imgSrc": "deeksha.jpg",
+        "position": "Alumni Network Manager",
+        "linkedin": "https://www.linkedin.com/in/deeksha-vatwani/",
+        "email": "vatwani2@uw.edu"
+    }
 ]

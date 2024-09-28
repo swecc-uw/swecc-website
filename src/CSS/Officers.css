@@ -142,6 +142,10 @@
   font-style: normal;
 }
 
+.officer-info h2 {
+  margin-bottom: 0;
+}
+
 .officer-sidebar li,
 .sponsor-sidebar li {
   align-items: center;

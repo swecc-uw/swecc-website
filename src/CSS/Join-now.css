@@ -35,7 +35,7 @@
 .js-white-box {
   display: flex;
   flex-direction: column;
-  margin: 10% 15%;
+  margin-top: 10vh;
   padding: 5rem;
   border-radius: 35px;
   justify-content: center;
@@ -347,9 +347,9 @@ table {
   }
 
   .js-white-box {
-    margin: 2rem;
-    width: 50vw;
-    height: 50vw;
+    margin-top: 15%;
+    width: 50%;
+    height: 50%;
   }
 
   /* testing */

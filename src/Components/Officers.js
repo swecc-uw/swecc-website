@@ -34,7 +34,7 @@ const Officers = () => {
           <nav className="officer-sidebar">
             <h2>Year</h2>
             <ul>
-              {[2024, 2023, 2022].map((year) => (
+              {[2024, 2023, 2022, 2021].map((year) => (
                 <li key={year}>
                   <button
                     onClick={() => handleYearChange(year)}
@@ -47,7 +47,9 @@ const Officers = () => {
             </ul>
           </nav>
           <div className="officer-info">
-            <h2>{selectedYear} Officers</h2>
+            <h2>
+              {selectedYear} - {selectedYear + 1} Officers
+            </h2>
             <ProfileCard info={teamMembers} />
           </div>
         </div>
