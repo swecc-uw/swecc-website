@@ -100,6 +100,8 @@
 
 .club-introduction-container {
   display: flex;
+  margin-top: 20rem;
+  margin-bottom: 15rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -133,6 +135,7 @@
   transition: all 0.3s ease;
   cursor: pointer;
   z-index: 500;
+  margin-bottom: 10vh;
 }
 
 .club-introduction-container-button:hover {
@@ -160,7 +163,10 @@ h3 {
   font-size: 1.5rem;
   color: var(--text-color);
   line-height: 1.5;
+  max-width: 100%;
+  padding: 10px;
 }
+
 .homepage p {
   font-size: 20px;
   color: var(--text-color);
@@ -395,6 +401,7 @@ h3 {
 @media (max-width: 480px) {
 
   .club-introduction-container-button {
+
     font-size: 3vw;
   }
 

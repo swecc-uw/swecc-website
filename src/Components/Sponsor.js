@@ -20,7 +20,7 @@ function Sponsor() {
     setTimeout(() => {
       if (document.hasFocus()) {
         alert(
-          "It seems your email client didn't open automatically. Please send an email to y031125k@gmail.com with your message.",
+          "It seems your email client didn't open automatically. Please send an email to sweccmailinglist@u.washington.edu with your message.",
         );
       }
     }, 500);
@@ -45,20 +45,16 @@ function Sponsor() {
         <h3>{new Date().getFullYear()}</h3>
         <p>
           We value the supports of our sponsors, and we are thankful for their{" "}
-          <br />
           supports that promotes many technical SWECC events which enables
-          thousands of <br />
-          students and professionals to communicate and share new insights. We
-          want more <br />
-          to know how those valuable partners have helped us and how they can
-          further support <br />
-          our community as well.
+          thousands of students and professionals to communicate and share new
+          insights. We want more to know how those valuable partners have helped
+          us and how they can further support our community as well.
         </p>
       </div>
 
-      <div className="Sponsors-Logo">
-        <img src={deloitteLogo} alt="Deloitte Img" />
-      </div>
+      {/*<div className="Sponsors-Logo">*/}
+      {/*  <img src={deloitteLogo} alt="Deloitte Img" />*/}
+      {/*</div>*/}
     </div>
   );
 
@@ -68,12 +64,11 @@ function Sponsor() {
         <div className="WhySponsor">
           <h2>Why Sponsor</h2>
           <p id="HowToSponsorIntro">
-            Sponsoring SWECC to connect with 1,000+ UW CS students. Our <br />
-            industry-focused events offer prime recruitment opportunities and{" "}
-            <br />
-            exposure. We promote your products and services through weekly
-            seminars, <br />
-            large-scale hackathons, and more.
+            "Sponsoring the Software Engineering Career Club gives you access to
+            over 1000 students, >70% of which are part of the Allen School, and
+            >90% in computing related majors. Partner with us to gain access to
+            our resume book, recruiting/promotional events, talent pool, and
+            more."
           </p>
         </div>
 
@@ -83,16 +78,15 @@ function Sponsor() {
             We appreciate all forms of your supports, you can support us by:
           </p>
           <ul>
+            <li>Hosting informational/promotional panels</li>
             <li>
-              Host a seminar sharing your valuable insights with UW members
+              Sponsoring our events, such as hackathons and programming
+              competitions
             </li>
-            <li>Sponsor our technical events such as Hackathon</li>
             <li>
               Sponsor coding competitions with company-specific challenges
             </li>
-            <li>
-              Provide mentorship opportunities or career coaching sessions
-            </li>
+            <li>Getting involved in our professional mentorship program</li>
             <li>
               Provide financial support for club operations and event costs
             </li>
