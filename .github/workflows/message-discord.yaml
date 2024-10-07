@@ -1,0 +1,39 @@
+name: Notify Discord on PR Events
+
+on:
+  pull_request:
+    types: [opened, closed]
+
+jobs:
+  notify-discord:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send Discord notification
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          if [[ "${{ github.event.action }}" == "opened" ]]; then
+            MESSAGE="📢 A new pull request has been opened in \`${{ github.repository }}\`"
+            MESSAGE+=" by \`${{ github.actor }}\`.\n"
+            MESSAGE+="🔗 [PR #${{ github.event.number }} - ${{ github.event.pull_request.title }}]"
+            MESSAGE+="(${{ github.event.pull_request.html_url }})"
+
+          elif [[ "${{ github.event.action }}" == "closed" && "${{ github.event.pull_request.merged }}" == "true" ]]; then
+            MESSAGE="✅ Pull request \`${{ github.event.pull_request.title }}\` in \`${{ github.repository }}\`"
+            MESSAGE+=" has been merged by \`${{ github.actor }}\`.\n"
+            MESSAGE+="🔗 [PR #${{ github.event.number }}]"
+            MESSAGE+="(${{ github.event.pull_request.html_url }})"
+
+          elif [[ "${{ github.event.action }}" == "closed" && "${{ github.event.pull_request.merged }}" != "true" ]]; then
+            MESSAGE="❌ Pull request \`${{ github.event.pull_request.title }}\` in \`${{ github.repository }}\`"
+            MESSAGE+=" has been closed without merging by \`${{ github.actor }}\`.\n"
+            MESSAGE+="🔗 [PR #${{ github.event.number }}]"
+            MESSAGE+="(${{ github.event.pull_request.html_url }})"
+          else
+            exit 0;  # Exit for any other PR events (not interested)
+          fi
+
+          curl -H "Content-Type: application/json" \
+              -d "{\"content\": \"$MESSAGE\"}" \
+              $DISCORD_WEBHOOK_URL
