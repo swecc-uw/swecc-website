@@ -13,17 +13,27 @@ jobs:
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
-          # Construct the message based on the type of PR event
           if [[ "${{ github.event.action }}" == "opened" ]]; then
-            MESSAGE="📢 A new pull request has been opened in \`${{ github.repository }}\` by \`${{ github.actor }}\`.\n🔗 [PR #${{ github.event.number }} - ${{ github.event.pull_request.title }}](${{ github.event.pull_request.html_url }})";
+            MESSAGE="📢 A new pull request has been opened in \`${{ github.repository }}\`"
+            MESSAGE+=" by \`${{ github.actor }}\`.\n"
+            MESSAGE+="🔗 [PR #${{ github.event.number }} - ${{ github.event.pull_request.title }}]"
+            MESSAGE+="(${{ github.event.pull_request.html_url }})"
+
           elif [[ "${{ github.event.action }}" == "closed" && "${{ github.event.pull_request.merged }}" == "true" ]]; then
-            MESSAGE="✅ Pull request \`${{ github.event.pull_request.title }}\` in \`${{ github.repository }}\` has been merged by \`${{ github.actor }}\`.\n🔗 [PR #${{ github.event.number }}](${{ github.event.pull_request.html_url }})";
+            MESSAGE="✅ Pull request \`${{ github.event.pull_request.title }}\` in \`${{ github.repository }}\`"
+            MESSAGE+=" has been merged by \`${{ github.actor }}\`.\n"
+            MESSAGE+="🔗 [PR #${{ github.event.number }}]"
+            MESSAGE+="(${{ github.event.pull_request.html_url }})"
+
           elif [[ "${{ github.event.action }}" == "closed" && "${{ github.event.pull_request.merged }}" != "true" ]]; then
-            MESSAGE="❌ Pull request \`${{ github.event.pull_request.title }}\` in \`${{ github.repository }}\` has been closed without merging by \`${{ github.actor }}\`.\n🔗 [PR #${{ github.event.number }}](${{ github.event.pull_request.html_url }})";
+            MESSAGE="❌ Pull request \`${{ github.event.pull_request.title }}\` in \`${{ github.repository }}\`"
+            MESSAGE+=" has been closed without merging by \`${{ github.actor }}\`.\n"
+            MESSAGE+="🔗 [PR #${{ github.event.number }}]"
+            MESSAGE+="(${{ github.event.pull_request.html_url }})"
           else
             exit 0;  # Exit for any other PR events (not interested)
           fi
 
           curl -H "Content-Type: application/json" \
-               -d "{\"content\": \"$MESSAGE\"}" \
-               $DISCORD_WEBHOOK_URL
+              -d "{\"content\": \"$MESSAGE\"}" \
+              $DISCORD_WEBHOOK_URL
