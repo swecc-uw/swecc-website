@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Eyad Alsilimy",
+    "imgSrc": "eyad.jpg",
+    "position": "Founder, President",
+    "linkedin": "https://www.linkedin.com/in/eyadalsilimy/",
+    "email": "eyad2000@live.com"
+  },
+  {
+    "name": "Shiina Sugioka",
+    "imgSrc": "shiina.jpg",
+    "position": "Internal Outreach, Social Media Manager",
+    "linkedin": "https://www.linkedin.com/in/shiinas/",
+    "email": "shiina12@uw.edu"
+  },
+  {
+    "name": "Thomas Emnetu",
+    "imgSrc": "thomas.png",
+    "position": "Marketing",
+    "linkedin": "https://www.linkedin.com/in/thomasemnetu/",
+    "portfolio": "https://www.thomasemnetu.com/"
+  }
+]
