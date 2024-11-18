@@ -19,7 +19,7 @@ const Footer = () => {
         <div className="row">
           <span className="links-section">
             <a href="mailto:swecc@uw.edu" className="contact-text" target="_blank" rel="noopener noreferrer">
-              CONTACT
+              Contact
             </a>
             <a href="/instagram" target="_blank" rel="noopener noreferrer">
               <img className="contact-images" src={instaLogo} alt="instalogo" />
