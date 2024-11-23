@@ -5,7 +5,7 @@ import {
   ColFlexDoubleTextRightImageLeft,
   TextLeftImageRight,
 } from "./Utils/CommonItems";
-import { InstagramEmbed } from "react-social-media-embed";
+import BeholdWidget from "@behold/react";
 
 import img1 from "../Data/img/backgroundImg/1.jpg";
 import img2 from "../Data/img/backgroundImg/2.jpg";
@@ -83,53 +83,14 @@ function HomePage() {
     );
   }
 
-  const scroll = (direction) => {
-    const container = scrollContainerRef.current;
-    if (container) {
-      const scrollAmount =
-        direction === "left" ? -container.offsetWidth : container.offsetWidth;
-      container.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    }
-  };
-
-  const posts = (
-    <div className="posts-carousel">
-      <div className="buttons-container">
-        <button className="posts-carousel--left" onClick={() => scroll("left")}>
-          <FaChevronLeft />
-        </button>
-
-        <button
-          className="posts-carousel--right"
-          onClick={() => scroll("right")}
-        >
-          <FaChevronRight />
-        </button>
-      </div>
-      <div className="posts" ref={scrollContainerRef}>
-        <InstagramEmbed
-          className="instaPost slide-up"
-          url="https://www.instagram.com/p/C7uRAftvEKV/?utm_source=ig_web_copy_link"
-        />
-        <InstagramEmbed
-          className="instaPost slide-up"
-          url="https://www.instagram.com/p/C23PyAWPYdW"
-        />
-        <InstagramEmbed
-          className="instaPost slide-up"
-          url="https://www.instagram.com/p/CyRondZPVVS"
-        />
-        <InstagramEmbed
-          className="instaPost slide-up"
-          url="https://www.instagram.com/p/Cxum20yOlkQ"
-        />
-        <InstagramEmbed
-          className="instaPost slide-up"
-          url="https://www.instagram.com/p/CxrxWcQLpSb"
-        />
-      </div>
-    </div>
-  );
+  function intPostsWidget() {
+    return (
+      <BeholdWidget
+        onLoad={() => console.log("Loaded!")}
+        feedId="5rAX7PhyjFjmyVfW4Plm"
+      />
+    );
+  }
 
   return (
     <div>
@@ -173,7 +134,7 @@ mentorship programs, interview preparation, and more. Join us to jumpstart your 
         >
           Join Us
         </a>
-        {posts}
+        {intPostsWidget()}
       </div>
     </div>
   );

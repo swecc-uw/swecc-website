@@ -66,17 +66,16 @@ Please read the [contribution guidelines][contribution-url] for more details.
 
 For more help, watch this video of how to fork and make a PR: [How to fork](https://youtu.be/OvmZfK0wN2A)
 
-
 ## Rules
+
 ### Branches:
 
 **`main`**: This branch is protected and requires merge request. Stand as where production code will live and will be use for deployment only. DO NOT PUSH TO THIS BRANCH
 
 **`name-<issue>-<description>`**: Personal branch for any contributors to open up for merge request.
+
 - `<issue>`: issue number of the branch. If this a feature/bug/anything, open an issue and write out a description as well as spec for the branch. This can potentially be empty then the name should be `name-<description>`
 - `<description>`: Make it short but descriptive
-
-
 
 ## Contributors ✨
 

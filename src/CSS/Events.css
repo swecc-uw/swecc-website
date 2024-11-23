@@ -1,6 +1,7 @@
 body {
   background-color: var(--bg);
-  font-family: "assistant", "Montserrat", "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+  font-family: "assistant", "Montserrat", "Lato", "Helvetica Neue", "Helvetica",
+    sans-serif;
 }
 
 .event-page h1,

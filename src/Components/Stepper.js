@@ -1,24 +1,52 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import { Stepper, Step, StepLabel, StepContent, Button, Paper, Typography } from "@mui/material";
+import {
+  Stepper,
+  Step,
+  StepLabel,
+  StepContent,
+  Button,
+  Paper,
+  Typography,
+} from "@mui/material";
 
 const actions = [
   <div className="action-item">
-    <a className="link-boxes" href="https://discord.com/invite/Pbk4sCEWDY" target="_blank" rel="noopener noreferrer">
+    <a
+      className="link-boxes"
+      href="https://discord.com/invite/Pbk4sCEWDY"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       Join the discord
     </a>
   </div>,
   <div className="action-item">
-    <a className="link-boxes" href="http://mailman11.u.washington.edu/mailman/listinfo/sweccmailinglist" target="_blank" rel="noopener noreferrer">
+    <a
+      className="link-boxes"
+      href="http://mailman11.u.washington.edu/mailman/listinfo/sweccmailinglist"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       Subscribe to the mailing list
     </a>
   </div>,
   <div className="action-item">
     <p>
-      <a className="separate-insta-linkedin link-boxes" href="https://instagram.com/swecc.uw" target="_blank" rel="noopener noreferrer">
+      <a
+        className="separate-insta-linkedin link-boxes"
+        href="https://instagram.com/swecc.uw"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         Instagram
       </a>
-      <a className="separate-insta-linkedin link-boxes" href="https://www.linkedin.com/company/software-engineering-career-club-at-uw/" target="_blank" rel="noopener noreferrer">
+      <a
+        className="separate-insta-linkedin link-boxes"
+        href="https://www.linkedin.com/company/software-engineering-career-club-at-uw/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         LinkedIn
       </a>
     </p>
@@ -42,7 +70,8 @@ const steps = [
   },
   {
     label: "Join out mailing list",
-    description: "An ad group contains one or more ads which target a shared set of keywords.",
+    description:
+      "An ad group contains one or more ads which target a shared set of keywords.",
   },
   {
     label: "Attend an event",
@@ -73,7 +102,15 @@ export default function VerticalLinearStepper() {
       <Stepper activeStep={activeStep} orientation="vertical">
         {steps.map((step, index) => (
           <Step key={step.label} className="step">
-            <StepLabel optional={index === 2 ? <Typography variant="caption">Last step</Typography> : null}>{step.label}</StepLabel>
+            <StepLabel
+              optional={
+                index === 2 ? (
+                  <Typography variant="caption">Last step</Typography>
+                ) : null
+              }
+            >
+              {step.label}
+            </StepLabel>
             <StepContent>
               {/* <Typography>{step.description}</Typography> */}
               <div className="actionsContainer">
@@ -82,10 +119,19 @@ export default function VerticalLinearStepper() {
               <div className="actionsContainer">{actions[index]}</div>
               <Box sx={{ mb: 2 }}>
                 <div>
-                  <Button variant="contained" onClick={handleNext} sx={{ mt: 1, mr: 1 }}>
+                  <Button
+                    variant="contained"
+                    onClick={handleNext}
+                    sx={{ mt: 1, mr: 1 }}
+                  >
                     {index === steps.length - 1 ? "Finish" : "Continue"}
                   </Button>
-                  <Button className="back-btn" disabled={index === 0} onClick={handleBack} sx={{ mt: 1, mr: 1 }}>
+                  <Button
+                    className="back-btn"
+                    disabled={index === 0}
+                    onClick={handleBack}
+                    sx={{ mt: 1, mr: 1 }}
+                  >
                     Back
                   </Button>
                 </div>

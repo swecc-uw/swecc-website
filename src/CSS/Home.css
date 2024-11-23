@@ -46,8 +46,8 @@
 .uw-logo {
   width: 25%;
   margin-top: 55px;
-  filter: brightness(130%) contrast(85%) drop-shadow(5px 4px 8px rgba(255, 255, 255, 1));
-
+  filter: brightness(130%) contrast(85%)
+    drop-shadow(5px 4px 8px rgba(255, 255, 255, 1));
 }
 
 .title-buttons-container,
@@ -59,7 +59,7 @@
   z-index: 500;
 }
 
-.title-buttons-container{
+.title-buttons-container {
   top: 50%;
   width: 90%;
 }
@@ -72,14 +72,14 @@
 .prevImgButton,
 .nextImgButton,
 .posts-carousel--left,
-.posts-carousel--right{
+.posts-carousel--right {
   padding: 10px;
   border-radius: 50%;
   border: none;
   background-color: var(--backgroundImg-buttom-background);
   color: var(--backgroundImg-buttom);
-  width:  40px;
-  height:  40px;
+  width: 40px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -94,7 +94,7 @@
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.material-symbols-outlined:hover{
+.material-symbols-outlined:hover {
   opacity: 30%;
 }
 
@@ -127,6 +127,7 @@
   color: #ffffff;
   border: none;
   padding: 0.6em 1em 0.6em 1em;
+  margin-bottom: 2rem;
   font-size: 1.3rem;
   font-weight: 300;
   border-radius: 30px;
@@ -156,7 +157,7 @@ h3 {
 }
 
 .summary,
-.whyJoinUs p{
+.whyJoinUs p {
   font-size: 1.5rem;
   color: var(--text-color);
   line-height: 1.5;
@@ -251,7 +252,6 @@ h3 {
   display: none;
 }
 
-
 .whyJoinUs {
   position: relative;
   margin: 0 15% 0 15%;
@@ -264,8 +264,6 @@ h3 {
   text-align: center;
   overflow-x: hidden;
 }
-
-
 
 @keyframes slide-up {
   0% {
@@ -284,16 +282,12 @@ h3 {
 }
 
 @media (max-width: 1500px) {
-
   .instaPost {
     width: calc((100% - 2rem) / 2);
   }
-
-
 }
 
 @media (max-width: 1076px) {
-
   .posts-carousel {
     display: none;
   }
@@ -318,14 +312,11 @@ h3 {
   }
 
   .whyJoinUs p {
-    font-size: 1rem
+    font-size: 1rem;
   }
-
 }
 
 @media (max-width: 976px) {
-
-
   .summaryTitle {
     font-size: 2rem;
     margin: 30px;
@@ -342,12 +333,9 @@ h3 {
   .clubTitleSection {
     height: 50vw;
   }
-
-
 }
 
 @media only screen and (max-width: 768px) {
-
   .uw-logo {
     display: none;
   }
@@ -389,11 +377,9 @@ h3 {
   .summaryTitle {
     font-size: 1.5rem;
   }
-
 }
 
 @media (max-width: 480px) {
-
   .club-introduction-container-button {
     font-size: 3vw;
   }
@@ -401,7 +387,6 @@ h3 {
   .uw-logo {
     display: none;
   }
-
 
   .uw-logo {
     width: 30%;
@@ -412,5 +397,3 @@ h3 {
     color: var(--text-header-color);
   }
 }
-
-

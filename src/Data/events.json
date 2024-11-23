@@ -1,20 +1,20 @@
 [
-    {
-        "title": "SWECC x NeetCode",
-        "timeAndPlace": "Oct 18, 2023 | 5:30pm - 6:30pm | Gowen Hall 201 | University of Washington",
-        "description": "🚀 Come meet YouTuber, ex-Google and ex-Amazon software engineer NEETCODE and his fellow software engineer from Tesla! Ask questions about software engineering careers, being a software YouTuber, and more!",
-        "image": "event-2.png",
-        "publish": true,
-        "end": true,
-        "rsvp": "https://forms.gle/a5BGaJE9dR7diPPL8"
-    },
-    {
-        "title": "Google @ UW : SWECC Tech Career Panel 2023",
-        "timeAndPlace": "Oct 4, 2023 | 6pm - 7:30pm | Gowen Hall 201 | University of Washington",
-        "description": "Come join us for a moderated career panel and hear stories about work and life at Google. Better understand how to prepare for interviews and listen to advice from folks in the tech industry. Be sure to bring your questions for the Q&A session!",
-        "image": "event-1.png",
-        "publish": true,
-        "end": true,
-        "rsvp": "https://rsvp.withgoogle.com/events/fall-2023-co-general-event-form_d87513_afeb36_6ef465/forms/registration"
-    }
+  {
+    "title": "SWECC x NeetCode",
+    "timeAndPlace": "Oct 18, 2023 | 5:30pm - 6:30pm | Gowen Hall 201 | University of Washington",
+    "description": "🚀 Come meet YouTuber, ex-Google and ex-Amazon software engineer NEETCODE and his fellow software engineer from Tesla! Ask questions about software engineering careers, being a software YouTuber, and more!",
+    "image": "event-2.png",
+    "publish": true,
+    "end": true,
+    "rsvp": "https://forms.gle/a5BGaJE9dR7diPPL8"
+  },
+  {
+    "title": "Google @ UW : SWECC Tech Career Panel 2023",
+    "timeAndPlace": "Oct 4, 2023 | 6pm - 7:30pm | Gowen Hall 201 | University of Washington",
+    "description": "Come join us for a moderated career panel and hear stories about work and life at Google. Better understand how to prepare for interviews and listen to advice from folks in the tech industry. Be sure to bring your questions for the Q&A session!",
+    "image": "event-1.png",
+    "publish": true,
+    "end": true,
+    "rsvp": "https://rsvp.withgoogle.com/events/fall-2023-co-general-event-form_d87513_afeb36_6ef465/forms/registration"
+  }
 ]
