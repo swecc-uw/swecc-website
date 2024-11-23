@@ -98,31 +98,6 @@ function HomePage() {
     </div>
   );
 
-  const posts = (
-    <div className="posts">
-      <InstagramEmbed
-        className="instaPost slide-up"
-        url="https://www.instagram.com/p/C2-o7roPbfN"
-      />
-      <InstagramEmbed
-        className="instaPost slide-up"
-        url="https://www.instagram.com/p/C23PyAWPYdW"
-      />
-      <InstagramEmbed
-        className="instaPost slide-up"
-        url="https://www.instagram.com/p/CyRondZPVVS"
-      />
-      <InstagramEmbed
-        className="instaPost slide-up"
-        url="https://www.instagram.com/p/Cxum20yOlkQ"
-      />
-      <InstagramEmbed
-        className="instaPost slide-up"
-        url="https://www.instagram.com/p/CxrxWcQLpSb"
-      />
-    </div>
-  );
-
   return (
     <div>
       <Carousel />
@@ -141,7 +116,6 @@ function HomePage() {
         </p>
       </div>
       {meetingInfo}
-      {posts}
     </div>
   );
 }

@@ -23,7 +23,14 @@
 }
 
 .background-image {
-  background: linear-gradient(0deg, rgba(190, 184, 235, 0.8), rgba(190, 184, 235, 0.8)), linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), linear-gradient(0deg, rgba(190, 184, 235, 0.1), rgba(190, 184, 235, 0.1)), url(../Data/img/man-on-computer.jpg);
+  background: linear-gradient(
+      0deg,
+      rgba(190, 184, 235, 0.8),
+      rgba(190, 184, 235, 0.8)
+    ),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)),
+    linear-gradient(0deg, rgba(190, 184, 235, 0.1), rgba(190, 184, 235, 0.1)),
+    url(../Data/img/man-on-computer.jpg);
   background-size: cover;
   background-attachment: fixed;
   display: flex;

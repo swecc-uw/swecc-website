@@ -1,32 +1,32 @@
 [
-    {
-        "name": "Eyad Alsilimy",
-        "imgSrc": "eyad.jpg",
-        "position": "Founder, President",
-        "linkedin": "https://www.linkedin.com/in/eyadalsilimy/",
-        "email": "eyad2000@live.com"
-    },
-    {
-        "name": "Hawa Drammeh",
-        "imgSrc": "hawa.jpg",
-        "position": "Director of Mentorship, Advisor",
-        "linkedin": "https://www.linkedin.com/in/hawadrammeh/",
-        "github": "https://github.com/hawad416",
-        "portfolio": "https://medium.com/@hawaalid",
-        "email": "hdram3@uw.edu"
-    },
-    {
-        "name": "Simon Studen",
-        "imgSrc": "simons.jpg",
-        "position": "Outreach Manager",
-        "linkedin": "https://www.linkedin.com/in/simon-studen/",
-        "email": "simonstuden@gmail.com"
-    },
-    {
-        "name": "Shiina Sugioka",
-        "imgSrc": "shiina.jpg",
-        "position": "President",
-        "linkedin": "https://www.linkedin.com/in/shiinas/",
-        "email": "shiina12@uw.edu"
-    }
+  {
+    "name": "Eyad Alsilimy",
+    "imgSrc": "eyad.jpg",
+    "position": "Founder, President",
+    "linkedin": "https://www.linkedin.com/in/eyadalsilimy/",
+    "email": "eyad2000@live.com"
+  },
+  {
+    "name": "Hawa Drammeh",
+    "imgSrc": "hawa.jpg",
+    "position": "Director of Mentorship, Advisor",
+    "linkedin": "https://www.linkedin.com/in/hawadrammeh/",
+    "github": "https://github.com/hawad416",
+    "portfolio": "https://medium.com/@hawaalid",
+    "email": "hdram3@uw.edu"
+  },
+  {
+    "name": "Simon Studen",
+    "imgSrc": "simons.jpg",
+    "position": "Outreach Manager",
+    "linkedin": "https://www.linkedin.com/in/simon-studen/",
+    "email": "simonstuden@gmail.com"
+  },
+  {
+    "name": "Shiina Sugioka",
+    "imgSrc": "shiina.jpg",
+    "position": "President",
+    "linkedin": "https://www.linkedin.com/in/shiinas/",
+    "email": "shiina12@uw.edu"
+  }
 ]

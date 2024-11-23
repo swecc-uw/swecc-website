@@ -50,8 +50,8 @@
 .uw-logo {
   width: 25%;
   margin-top: 55px;
-  filter: brightness(130%) contrast(85%) drop-shadow(5px 4px 8px rgba(255, 255, 255, 1));
-
+  filter: brightness(130%) contrast(85%)
+    drop-shadow(5px 4px 8px rgba(255, 255, 255, 1));
 }
 
 .buttons-container {
@@ -70,8 +70,8 @@
   border: none;
   background-color: var(--backgroundImg-buttom-background);
   color: var(--backgroundImg-buttom);
-  width:  60px;
-  height:  60px;
+  width: 60px;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,7 +84,7 @@
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.material-symbols-outlined:hover{
+.material-symbols-outlined:hover {
   opacity: 30%;
 }
 
@@ -315,7 +315,6 @@ h3.meetingTime {
 }
 
 @media only screen and (max-width: 768px) {
-
   .uw-logo {
     display: none;
   }
@@ -378,8 +377,6 @@ h3.meetingTime {
 }
 
 @media (max-width: 480px) {
-
-
   .uw-logo {
     display: none;
   }
@@ -407,5 +404,3 @@ h3.meetingTime {
     color: var(--text-header-color);
   }
 }
-
-

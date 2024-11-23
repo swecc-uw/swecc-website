@@ -31,7 +31,9 @@
   top: 0;
   left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 15px 35px -15px rgba(0, 0, 0, 0.4), 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 15px 35px -15px rgba(0, 0, 0, 0.4),
+    0 5px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
 .card-image img {
