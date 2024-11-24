@@ -84,12 +84,7 @@ function HomePage() {
   }
 
   function intPostsWidget() {
-    return (
-      <BeholdWidget
-        onLoad={() => console.log("Loaded!")}
-        feedId="5rAX7PhyjFjmyVfW4Plm"
-      />
-    );
+    return <BeholdWidget feedId="5rAX7PhyjFjmyVfW4Plm" />;
   }
 
   return (

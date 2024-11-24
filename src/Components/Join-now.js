@@ -90,6 +90,27 @@ export default function JoinNow() {
     }
   }
 
+  const getStepperItemClass = (currentStep, stepIndex) => {
+    return `stepper-item ${
+      currentStep > stepIndex
+        ? "completed"
+        : currentStep === stepIndex
+          ? "active"
+          : ""
+    }`;
+  };
+
+  const StepperItem = ({ step, index, currentStep }) => {
+    return (
+      <div
+        className={`stepper-item ${currentStep > index ? "completed" : currentStep === index ? "active" : ""}`}
+      >
+        <div className="step-counter">{index + 1}</div>
+        <div className="step-name">{step}</div>
+      </div>
+    );
+  };
+
   return (
     <div className="entire">
       <div className="background-image">
@@ -106,24 +127,21 @@ export default function JoinNow() {
             </p>
             <p className="join-message"></p>
             <div className="stepper-wrapper">
-              <div
-                className={`stepper-item ${count > 0 ? "completed" : count === 0 ? "active" : ""}`}
-              >
-                <div className="step-counter">1</div>
-                <div className="step-name">Join our discord</div>
-              </div>
-              <div
-                className={`stepper-item ${count > 1 ? "completed" : count === 1 ? "active" : ""}`}
-              >
-                <div className="step-counter">2</div>
-                <div className="step-name">Join our mailing list</div>
-              </div>
-              <div
-                className={`stepper-item ${count > 2 ? "completed" : count === 2 ? "active" : ""}`}
-              >
-                <div className="step-counter">3</div>
-                <div className="step-name">Attend an event</div>
-              </div>
+              <StepperItem
+                step="Join our discord"
+                index={0}
+                currentStep={count}
+              />
+              <StepperItem
+                step="Join our mailing list"
+                index={1}
+                currentStep={count}
+              />
+              <StepperItem
+                step="Attend an event"
+                index={2}
+                currentStep={count}
+              />
             </div>
             <p>{actions[count]}</p>
           </div>
