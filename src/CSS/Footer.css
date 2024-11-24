@@ -36,10 +36,10 @@ footer svg {
   .footer-contents-container {
     flex-direction: column;
   }
-.collaboration-message-link {
-  flex-basis: 40%;
-  display: flex;
-}
+  .collaboration-message-link {
+    flex-basis: 40%;
+    display: flex;
+  }
 
   footer svg {
     height: 7vw;

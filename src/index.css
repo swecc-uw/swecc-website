@@ -17,6 +17,7 @@
   --og-footer-color: #2c2d2e;
   --card-bg: #fff;
   --card-text: var(--text-subtitle-color);
+  --sun-color: rgba(255, 155, 12, 0.7);
   --backgroundImg-buttom: #474a4d;
   --backgroundImg-buttom-background: rgba(255, 255, 255, 30%);
   --backgroundImg-cover-opacity: 0.5;
