@@ -1,12 +1,9 @@
 import React, { useEffect } from "react";
 import SWECClogo2 from "../Data/img/SWECClogo2.jpg";
+import { links } from "./Utils";
 
 export default function Footer() {
   const [currentYr, setCurrentYr] = React.useState("");
-  const discordRedirect = "https://discord.gg/Z8ZDcdRqrs";
-  const linkedinRedirect = "https://www.linkedin.com/company/swecc-uw/";
-  const instagramRedirect = "https://www.instagram.com/swecc.uw/";
-  const githubLink = "https://github.com/swecc-uw";
 
   useEffect(() => {
     const today = new Date();
@@ -29,7 +26,7 @@ export default function Footer() {
           </li>
           <li>
             <a
-              href={linkedinRedirect}
+              href={links.social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -37,13 +34,17 @@ export default function Footer() {
             </a>
           </li>
           <li>
-            <a href={githubLink} target="_blank" rel="noopener noreferrer">
+            <a
+              href={links.social.github}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <span className="fa fa-github"></span>
             </a>
           </li>
           <li>
             <a
-              href={instagramRedirect}
+              href={links.social.instagram}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -51,7 +52,11 @@ export default function Footer() {
             </a>
           </li>
           <li>
-            <a href={discordRedirect} target="_blank" rel="noopener noreferrer">
+            <a
+              href={links.social.discord}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <span className="fab fa-discord"></span>
             </a>
           </li>

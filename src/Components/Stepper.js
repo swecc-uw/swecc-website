@@ -9,12 +9,13 @@ import {
   Paper,
   Typography,
 } from "@mui/material";
+import { links } from "./Utils";
 
 const actions = [
   <div className="action-item">
     <a
       className="link-boxes"
-      href="https://discord.com/invite/Pbk4sCEWDY"
+      href={links.social.discord}
       target="_blank"
       rel="noopener noreferrer"
     >
@@ -24,7 +25,7 @@ const actions = [
   <div className="action-item">
     <a
       className="link-boxes"
-      href="http://mailman11.u.washington.edu/mailman/listinfo/sweccmailinglist"
+      href={links.resources.mailingList}
       target="_blank"
       rel="noopener noreferrer"
     >
@@ -35,7 +36,7 @@ const actions = [
     <p>
       <a
         className="separate-insta-linkedin link-boxes"
-        href="https://instagram.com/swecc.uw"
+        href={links.social.instagram}
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -43,7 +44,7 @@ const actions = [
       </a>
       <a
         className="separate-insta-linkedin link-boxes"
-        href="https://www.linkedin.com/company/software-engineering-career-club-at-uw/"
+        href={links.social.linkedin}
         target="_blank"
         rel="noopener noreferrer"
       >

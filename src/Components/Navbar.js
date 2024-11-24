@@ -27,6 +27,7 @@ import { ImSun } from "react-icons/im";
 import { PiMoonBold } from "react-icons/pi";
 
 import Switch from "./Switch.js";
+import { links } from "./Utils";
 
 function Navbar() {
   const [isMobile, setIsMobile] = useState(false);
@@ -186,12 +187,6 @@ function NavExpandItem(props) {
 function DropdownMenu(props) {
   const [activeMenu, setActiveMenu] = useState("main");
   const [menuHeight, setMenuHeight] = useState(null);
-  const discordRedirect = "https://discord.gg/Z8ZDcdRqrs";
-  const linkedinRedirect = "https://www.linkedin.com/company/swecc-uw/";
-  const githubRedirect = "https://github.com/swecc-uw";
-  const mailingList =
-    "http://mailman11.u.washington.edu/mailman/listinfo/sweccmailinglist";
-  const instagramRedirect = "https://www.instagram.com/swecc.uw/";
 
   function getHeight(elem) {
     const height = elem.offsetHeight;
@@ -257,19 +252,22 @@ function DropdownMenu(props) {
       >
         <div className="menu">
           <DropdownItem leftIcon={<ArrowIcon />} goToMenu="main"></DropdownItem>
-          <DropdownItem leftIcon={<FaDiscord />} url={discordRedirect}>
+          <DropdownItem leftIcon={<FaDiscord />} url={links.social.discord}>
             Discord
           </DropdownItem>
-          <DropdownItem leftIcon={<FaInstagram />} url={instagramRedirect}>
+          <DropdownItem leftIcon={<FaInstagram />} url={links.social.instagram}>
             Instagram
           </DropdownItem>
-          <DropdownItem leftIcon={<FaLinkedin />} url={linkedinRedirect}>
+          <DropdownItem leftIcon={<FaLinkedin />} url={links.social.linkedin}>
             LinkedIn
           </DropdownItem>
-          <DropdownItem leftIcon={<FaGithub />} url={githubRedirect}>
+          <DropdownItem leftIcon={<FaGithub />} url={links.social.github}>
             Github
           </DropdownItem>
-          <DropdownItem leftIcon={<BellIcon />} url={mailingList}>
+          <DropdownItem
+            leftIcon={<BellIcon />}
+            url={links.resources.mailingList}
+          >
             Newsletter
           </DropdownItem>
         </div>

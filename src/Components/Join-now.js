@@ -8,18 +8,13 @@ import communityDarkmode from "../Data/img/community-darkmode.svg";
 import networking from "../Data/img/networking.svg";
 import networkingDarkmode from "../Data/img/networking-darkmode.svg";
 import Stepper from "./Stepper";
-
-const discordRedirect = "https://discord.gg/Z8ZDcdRqrs";
-const linkedinRedirect = "https://www.linkedin.com/company/swecc-uw/";
-const mailingList =
-  "http://mailman11.u.washington.edu/mailman/listinfo/sweccmailinglist";
-const instagramRedirect = "https://www.instagram.com/swecc.uw/";
+import { links } from "./Utils";
 
 const actions = [
   <div className="action-item">
     <a
       className="link-boxes"
-      href={discordRedirect}
+      href={links.social.discord}
       target="_blank"
       rel="noopener noreferrer"
     >
@@ -29,7 +24,7 @@ const actions = [
   <div className="action-item">
     <a
       className="link-boxes"
-      href={mailingList}
+      href={links.resources.mailingList}
       target="_blank"
       rel="noopener noreferrer"
     >
@@ -40,7 +35,7 @@ const actions = [
     <p>
       <a
         className="separate-insta-linkedin link-boxes"
-        href={instagramRedirect}
+        href={links.social.instagram}
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -48,7 +43,7 @@ const actions = [
       </a>
       <a
         className="separate-insta-linkedin link-boxes"
-        href={linkedinRedirect}
+        href={links.social.linkedin}
         target="_blank"
         rel="noopener noreferrer"
       >

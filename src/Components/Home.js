@@ -6,7 +6,6 @@ import {
   TextLeftImageRight,
 } from "./Utils/CommonItems";
 import BeholdWidget from "@behold/react";
-
 import img1 from "../Data/img/backgroundImg/1.jpg";
 import img2 from "../Data/img/backgroundImg/2.jpg";
 import img3 from "../Data/img/backgroundImg/3.jpg";
@@ -15,10 +14,9 @@ import img5 from "../Data/img/backgroundImg/5.jpg";
 import img6 from "../Data/img/backgroundImg/6.jpg";
 import img7 from "../Data/img/backgroundImg/7.jpg";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { links } from "./Utils";
 
 function HomePage() {
-  const discordRedirect = "https://discord.gg/Z8ZDcdRqrs";
-  const beholdFeedId = "5rAX7PhyjFjmyVfW4Plm";
   function Carousel() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const backGroundImgs = [img1, img2, img3, img4, img5, img6, img7];
@@ -85,7 +83,7 @@ function HomePage() {
   }
 
   function InstagramPostsWidget() {
-    return <BeholdWidget feedId={beholdFeedId} />;
+    return <BeholdWidget feedId={links.config.beholdFeedId} />;
   }
 
   return (
@@ -125,7 +123,7 @@ mentorship programs, interview preparation, and more. Join us to jumpstart your 
           professionals <br />
         </p>
         <a
-          href={discordRedirect}
+          href={links.social.discord}
           className="club-introduction-container-button"
         >
           Join Us

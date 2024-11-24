@@ -8,14 +8,10 @@ import About from "./About.js";
 import JoinNow from "./Join-now.js";
 import Navbar from "./Navbar.js";
 import ExternalRedirect from "./Redirect.js";
+import { links } from "../Components/Utils/Utils";
 
 function App() {
   const link = document.querySelector("link[rel~='icon']");
-  const discordRedirect = "https://discord.gg/Z8ZDcdRqrs";
-  const linkedinRedirect = "https://www.linkedin.com/company/swecc-uw/";
-  const mailingList =
-    "http://mailman11.u.washington.edu/mailman/listinfo/sweccmailinglist";
-  const instagramRedirect = "https://www.instagram.com/swecc.uw/";
   link.href = require("../icons/logo-23.png");
 
   return (
@@ -27,19 +23,19 @@ function App() {
         <Route path="/Events" element={<Events />} />
         <Route
           path="/discord"
-          element={<ExternalRedirect to={discordRedirect} />}
+          element={<ExternalRedirect to={links.social.discord} />}
         />
         <Route
           path="/linkedin"
-          element={<ExternalRedirect to={linkedinRedirect} />}
+          element={<ExternalRedirect to={links.social.linkedin} />}
         />
         <Route
           path="/instagram"
-          element={<ExternalRedirect to={instagramRedirect} />}
+          element={<ExternalRedirect to={links.social.instagram} />}
         />
         <Route
           path="/mailing-list"
-          element={<ExternalRedirect to={mailingList} />}
+          element={<ExternalRedirect to={links.resources.mailingList} />}
         />
         <Route path="/Join-Now" element={<JoinNow />} />
         <Route path="*" element={<Home />} />

@@ -4,6 +4,7 @@ import discordLogo from "../Data/img/discord-logo.jpg";
 import instaLogo from "../Data/img/insta-logo.jpg";
 import LinkedInLogo from "../Data/img/LinkedInLogo.jpg";
 import SWECClogo2 from "../Data/img/SWECClogo2.jpg";
+import { links } from "./Utils";
 
 const Footer = () => {
   const [currentYr, setCurrentYr] = React.useState("");
@@ -19,7 +20,7 @@ const Footer = () => {
         <div className="row">
           <span className="links-section">
             <a
-              href="mailto:swecc@uw.edu"
+              href={links.resources.mailingList}
               className="contact-text"
               target="_blank"
               rel="noopener noreferrer"
