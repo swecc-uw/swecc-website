@@ -16,7 +16,7 @@ a {
   padding: 1rem 1.5rem 1.8rem;
   border-bottom: 2px solid var(--nav-bottom);
   z-index: 1000;
-  top:0;
+  top: 0;
 }
 
 .navbar-nav {

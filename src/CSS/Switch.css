@@ -34,12 +34,12 @@
   transition: transform 0.3s ease;
 }
 
-.toggle-switch input[type="checkbox"]:checked+.switch::before {
+.toggle-switch input[type="checkbox"]:checked + .switch::before {
   transform: translateX(25px);
   background-color: #333;
 }
 
-.toggle-switch input[type="checkbox"]:checked+.switch {
+.toggle-switch input[type="checkbox"]:checked + .switch {
   background-color: #9176f1;
 }
 
@@ -51,7 +51,7 @@
   z-index: 2;
 }
 
-.toggle-switch-stop-img{
+.toggle-switch-stop-img {
   max-height: 40vw;
   width: auto;
 }

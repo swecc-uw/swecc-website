@@ -2,9 +2,9 @@
   --bg: #fcfcfc;
   --bg-accent: #f0f0f0;
   --bg-hover: #dcdcdc;
-  --text-color: #656FB3;
-  --text-subtitle-color: #565FB0;
-  --text-title-color: #4A4DA2;
+  --text-color: #656fb3;
+  --text-subtitle-color: #565fb0;
+  --text-title-color: #4a4da2;
   --text-header-color: #412675;
   --text-header-shadow-color: rgba(0, 0, 0, 0.5);
   --nav-bottom: #3e2076;
@@ -26,7 +26,7 @@
   --text-color: #d5cedc;
   --text-title-color: #d5c6f8;
   --text-subtitle-color: #beb8eb;
-  --text-header-color:#ffeaee;
+  --text-header-color: #ffeaee;
   --text-header-shadow-color: rgba(255, 255, 255, 1);
   --nav-bottom: #a277f4;
   --border: 1px solid #474a4d;
@@ -35,11 +35,17 @@
   --backgroundImg-buttom: white;
   --backgroundImg-buttom-background: rgba(0, 0, 0, 30%);
   --backgroundImg-cover-opacity: 0.4;
-
 }
 
 * {
-  font-family: "Roboto", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "Droid Sans", "Helvetica Neue";
+  font-family:
+    "Roboto",
+    sans-serif,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Droid Sans",
+    "Helvetica Neue";
 }
 
 body {

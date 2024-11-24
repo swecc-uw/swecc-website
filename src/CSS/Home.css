@@ -4,17 +4,14 @@
   height: 30vw;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
   box-sizing: border-box;
-  padding: 30px 0;
-  margin-top: 105px;
+  background-color: rgba(0, 0, 0, 0.87);
 }
 
 .background-img {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -40,9 +37,8 @@
 }
 
 .uw-logo,
-.clubName,
-.whatWeDoSection h2,
-.whatWeDoSection p {
+.club-introduction-container h1,
+.club-introduction-container p {
   animation: slide-up 0.5s ease-out;
   z-index: 1;
 }
@@ -50,28 +46,40 @@
 .uw-logo {
   width: 25%;
   margin-top: 55px;
-  filter: brightness(130%) contrast(85%) drop-shadow(5px 4px 8px rgba(255, 255, 255, 1));
-
+  filter: brightness(130%) contrast(85%)
+    drop-shadow(5px 4px 8px rgba(255, 255, 255, 1));
 }
 
+.title-buttons-container,
 .buttons-container {
   position: absolute;
-  top: 50%;
-  width: 95%;
   display: flex;
   justify-content: space-between;
   transform: translateY(-50%);
+  z-index: 500;
+}
+
+.title-buttons-container {
+  top: 50%;
+  width: 90%;
+}
+
+.buttons-container {
+  top: 30%;
+  width: 100%;
 }
 
 .prevImgButton,
-.nextImgButton {
+.nextImgButton,
+.posts-carousel--left,
+.posts-carousel--right {
   padding: 10px;
   border-radius: 50%;
   border: none;
   background-color: var(--backgroundImg-buttom-background);
   color: var(--backgroundImg-buttom);
-  width:  60px;
-  height:  60px;
+  width: 40px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,26 +88,56 @@
 }
 
 .prevImgButton:hover,
-.nextImgButton:hover {
+.nextImgButton:hover,
+.posts-carousel--left:hover,
+.posts-carousel--right:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.material-symbols-outlined:hover{
+.material-symbols-outlined:hover {
   opacity: 30%;
 }
 
-.clubName {
-  margin-bottom: 60px;
-  font-size: 4vw;
-  color: var(--text-header-color);
-  text-shadow: 0.5px 0.5px 2px var(--text-header-shadow-color);
+.club-introduction-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.whatWeDoSection {
-  background-color: var(--bg);
-  padding: 5rem 100px;
+.club-introduction-container h1 {
+  margin-bottom: 10px;
+  font-size: 5vw;
+  color: white;
+  font-style: italic;
+  text-shadow: 1px 1px 2px var(--text-header-shadow-color);
+}
+
+.club-introduction-container p {
+  font-size: 2vw;
+  color: white;
+  font-family: "Bell MT";
+  font-style: italic;
+  text-shadow: 1px 1px 2px var(--text-header-shadow-color);
+}
+
+.club-introduction-container-button {
   text-align: center;
-  margin: 20px 30px;
+  background-color: rgba(103, 38, 213);
+  color: #ffffff;
+  border: none;
+  padding: 0.6em 1em 0.6em 1em;
+  margin-bottom: 2rem;
+  font-size: 1.3rem;
+  font-weight: 300;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  z-index: 500;
+}
+
+.club-introduction-container-button:hover {
+  opacity: 0.6;
 }
 
 h3 {
@@ -107,58 +145,34 @@ h3 {
 }
 
 .summaryTitle,
-h2.sweccMeetings {
+.whyJoinUs h2 {
   color: var(--text-title-color);
   margin: 10px 0;
 }
 
-.summaryTitle {
-  font-size: 2.5rem;
-  margin: 30px;
+.summaryTitle,
+.whyJoinUs h1 {
+  font-size: 2rem;
+  margin: 10px;
 }
 
 .summary,
-.meetingsSection p.meetingInfo,
-.meetingsSection p.meetingDetails {
+.whyJoinUs p {
   font-size: 1.5rem;
   color: var(--text-color);
   line-height: 1.5;
 }
-
-.whatWeDoSection p.summary {
-  font-size: 2rem;
-  font-weight: 100;
-  color: var(--text-color);
-}
-
 .homepage p {
   font-size: 20px;
   color: var(--text-color);
 }
 
-.meetingsSection {
-  padding: 4rem 10rem;
-  display: flex;
-  justify-content: center;
-  background-color: var(--bg-accent);
-}
-
-.meetingsInfoSection {
-  flex: 1;
-  padding: 20px;
-  margin: 30px;
+.mainPage-body {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: center;
-}
-
-.sweccMeetings {
-  font-size: 1.8rem;
-}
-h3.meetingTime {
-  font-size: 1.6rem;
-  margin: 10px 0;
+  align-items: center;
+  margin: 5% 18% 0 18%;
 }
 
 .map-and-label {
@@ -178,17 +192,6 @@ h3.meetingTime {
 .mapLabel {
   color: var(--text-color);
   font-size: 16px;
-}
-
-.sweccMeetings,
-.meetingInfo,
-.meetingDetails {
-  margin: 0;
-}
-
-.meetingTime {
-  margin: 0;
-  padding-top: 2vw;
 }
 
 .goal-message-section {
@@ -220,22 +223,46 @@ h3.meetingTime {
   color: var(--text-subtitle-color);
 }
 
-.posts {
-  margin: 50px 35px;
-  padding: 30px;
+.posts-carousel {
+  margin-top: 5%;
+  position: relative;
+  overflow: hidden;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  background-color: var(--bg);
+  align-items: center;
+  width: 95%;
+}
+
+.posts {
+  width: 90%;
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 2rem;
 }
 
 .instaPost {
-  margin: 15px 25px;
-  transition: transform 0.3s ease-in-out;
+  flex: 0 0 auto;
+  width: calc((100% - 2rem) / 3);
+  justify-content: flex-start;
+  scroll-snap-align: start;
 }
 
-.instaPost:hover {
-  transform: scale(1.05);
+.posts::-webkit-scrollbar {
+  display: none;
+}
+
+.whyJoinUs {
+  position: relative;
+  margin: 0 15% 0 15%;
+  padding: 2rem;
+  border-top: 3px dotted rgba(115, 115, 115, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow-x: hidden;
 }
 
 @keyframes slide-up {
@@ -254,43 +281,45 @@ h3.meetingTime {
   animation: slide-up 0.5s ease-out;
 }
 
-@media (max-width: 1276px) {
-  .meetingsSection {
-    padding: 3rem 5rem;
+@media (max-width: 1500px) {
+  .instaPost {
+    width: calc((100% - 2rem) / 2);
   }
 }
 
 @media (max-width: 1076px) {
-  .whatWeDoSection p.summary {
+  .posts-carousel {
+    display: none;
+  }
+
+  .whyJoinUs {
+    margin: 10% 0 10% 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .articleSection p.summary {
     font-size: 1.5rem;
   }
 
-  div.posts {
-    margin: 0;
+  .club-introduction-container p {
+    font-size: 4vw;
+    font-style: normal;
+  }
+
+  .clubTitleSection {
+    height: 40vw;
+  }
+
+  .whyJoinUs p {
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 976px) {
-  .meetingsSection {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .summaryTitle {
     font-size: 2rem;
     margin: 30px;
-  }
-
-  .meetingsInfoSection {
-    align-items: center;
-    margin: 10px;
-  }
-
-  .meetingsSection p.meetingInfo,
-  .meetingsSection p.meetingDetails {
-    text-align: center;
-    font-size: 1.3rem;
-    padding: 0 20px;
   }
 
   .map-and-label {
@@ -300,29 +329,19 @@ h3.meetingTime {
   .map {
     width: 70%;
   }
-}
 
-@media (max-width: 830px) {
-  .posts {
-    flex-direction: column;
-    padding: 2rem 5rem;
-  }
-
-  .instaPost {
-    margin: 20px 0;
-    width: 100%;
+  .clubTitleSection {
+    height: 50vw;
   }
 }
 
 @media only screen and (max-width: 768px) {
-
   .uw-logo {
     display: none;
   }
 
-  .clubName {
-    font-size: 5vw;
-    color: var(--text-header-color);
+  .clubTitleSection {
+    height: 70vw;
   }
 
   .goal-message-section {
@@ -355,47 +374,18 @@ h3.meetingTime {
     color: var(--text-color);
   }
 
-  .whatWeDoSection,
-  .meetingsSection {
-    padding: 1rem;
-  }
-
-  .summaryTitle,
-  .sweccMeetings,
-  .meetingsInfoSection .meetingTime {
+  .summaryTitle {
     font-size: 1.5rem;
-  }
-
-  .whatWeDoSection p.summary,
-  .meetingsInfoSection p.meetingInfo,
-  .meetingsInfoSection p.meetingDetails {
-    font-size: 1rem;
-  }
-
-  h3.meetingTime {
-    text-align: center;
   }
 }
 
 @media (max-width: 480px) {
-
+  .club-introduction-container-button {
+    font-size: 3vw;
+  }
 
   .uw-logo {
     display: none;
-  }
-
-  .posts {
-    padding: 1.5rem;
-  }
-
-  .instaPost {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .clubTitleSection {
-    height: 30vw;
-    padding: 1rem 0;
   }
 
   .uw-logo {
@@ -407,5 +397,3 @@ h3.meetingTime {
     color: var(--text-header-color);
   }
 }
-
-

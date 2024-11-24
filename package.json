@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@behold/react": "^0.1.10",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.8",
@@ -21,6 +22,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "start": "react-scripts start",
     "predeploy": "npm i; npm run build",
     "deploy": "gh-pages -d build",
@@ -52,7 +54,7 @@
   "license": "ISC",
   "devDependencies": {
     "gh-pages": "^5.0.0",
-    "prettier": "3.2.5",
+    "prettier": "^3.2.5",
     "webpack": "^5.88.2"
   }
 }
