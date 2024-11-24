@@ -1,8 +1,24 @@
 [
   {
+    "name": "Hawa Drammeh",
+    "imgSrc": "hawa.jpg",
+    "position": "Director of Mentorship, Advisor",
+    "linkedin": "https://www.linkedin.com/in/hawadrammeh/",
+    "github": "https://github.com/hawad416",
+    "portfolio": "https://medium.com/@hawaalid",
+    "email": "hdram3@uw.edu"
+  },
+  {
+    "name": "Shiina Sugioka",
+    "imgSrc": "shiina.jpg",
+    "position": "President",
+    "linkedin": "https://www.linkedin.com/in/shiinas/",
+    "email": "shiina12@uw.edu"
+  },
+  {
     "name": "Elijah Melton",
     "imgSrc": "elijah.jpg",
-    "position": "President",
+    "position": "Mentorship Manager",
     "linkedin": "linkedin.com/in/elijah-melton/",
     "github": "https://github.com/elimelt",
     "email": "elimelt@uw.edu",
@@ -75,13 +91,5 @@
     "imgSrc": "bhavya.jpg",
     "position": "Opportunities Manager",
     "linkedin": "https://www.linkedin.com/in/bhavya-linga-4b274725b/"
-  },
-  {
-    "name": "Shawn Collinge",
-    "imgSrc": "shawn.jpg",
-    "position": "Software Engineer",
-    "linkedin": "https://www.linkedin.com/in/s-collinge",
-    "github": "https://github.com/shawncollinge",
-    "portfolio": "https://shawnc.net"
   }
 ]

@@ -8,7 +8,9 @@ function ProfileCard(props) {
   const teamMembers = props.info;
   const Card = ({ member }) => (
     <div className="card">
-      <div className="card-image">
+      <div
+        className={`card-image-container ${member.position.includes("President") ? "founder-card" : ""}`}
+      >
         <img
           src={require(`../Data/officers/${member.imgSrc}`)}
           alt={member.name}

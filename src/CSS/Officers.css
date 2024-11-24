@@ -1,0 +1,288 @@
+.about-message-section,
+.sponsor-page-intro {
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 20vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.about-message-section::before,
+.sponsor-page-intro::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(80%);
+  z-index: -1;
+}
+
+.about-message-section::before {
+  background-image: url(../Data/img/Officers/officerGroupPic.png);
+}
+
+.about-message-section h1,
+.sponsor-page-intro h1 {
+  margin-bottom: 10px;
+  font-size: 5vw;
+  color: white;
+  text-shadow: 1px 1px 2px var(--text-header-shadow-color);
+  animation: slide-up 0.5s ease-out;
+  z-index: 2;
+}
+
+.about-title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: calc(var(--nav-size) * 0.8);
+  line-height: calc(var(--nav-size) * 0.8);
+  color: var(--text-header-color);
+}
+
+.about-text {
+  text-align: center;
+  font-weight: 600;
+  font-size: 2.5em;
+  line-height: 47px;
+  color: var(--text-header-color);
+  margin: 3rem;
+}
+
+.team-members-title {
+  padding-top: 30px;
+  font-style: normal;
+  text-align: center;
+  font-weight: 700;
+  font-size: 3rem;
+  color: var(--text-title-color);
+}
+
+.team-members-subtitle {
+  font-style: normal;
+  text-align: center;
+  font-weight: 700;
+  font-size: 2em;
+  color: var(--text-subtitle-color);
+}
+
+.team-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Officer-content {
+  display: block;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  margin: auto;
+  box-sizing: border-box;
+  padding-top: 2vw;
+}
+
+.officer-sidebar,
+.sponsor-sidebar {
+  text-align: right;
+  width: 20%;
+  padding-right: 1vw;
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  animation: fadeIn 0.5s ease-out;
+  margin-top: 5vw;
+}
+
+.officer-sidebar h2,
+.sponsor-sidebar h2 {
+  font-size: 2rem;
+  font-family: "Arial Rounded MT Bold";
+  font-weight: 300;
+  border: none;
+  font-style: italic;
+  letter-spacing: 2px;
+  text-decoration: none;
+  color: var(--sideBarTitle);
+}
+
+.officer-info,
+.sponsorConnectionContent {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: inline-block;
+  flex-direction: column;
+  width: 80%;
+  animation: fadeIn 0.5s ease-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.officer-info h2,
+.sponsorConnectionContent h2 {
+  font-size: 3rem;
+  font-family: adobe-garamond-pro;
+  font-weight: 400;
+  color: var(--text-color);
+  font-style: normal;
+}
+
+.officer-sidebar li,
+.sponsor-sidebar li {
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.officer-sidebar button,
+.sponsor-sidebar button {
+  font-family: "Arial Rounded MT Bold";
+  font-weight: 300;
+  font-style: normal;
+  font-size: 2rem;
+  background: transparent;
+  border: none;
+  letter-spacing: 2px;
+  text-decoration: none;
+  color: #a4a4a4;
+  line-height: 2em;
+  transition: all 0.3s ease;
+}
+
+.officer-sidebar button.selected,
+.sponsor-sidebar button.selected {
+  color: var(--text-color);
+}
+
+.officer-sidebar button:hover,
+.sponsor-sidebar button:hover {
+  color: var(--text-color);
+}
+
+@media (max-width: 976px) {
+  .about-title,
+  .team-members-title {
+    font-size: 2rem;
+    line-height: 50px;
+  }
+
+  .about-text,
+  .team-members-subtitle {
+    font-size: 1.5rem;
+    margin: 1rem 1.5rem;
+    line-height: 30px;
+  }
+
+  .about-message-section {
+    height: 250px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .about-message-section {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(
+        0deg,
+        rgba(190, 184, 235, 0.8),
+        rgba(190, 184, 235, 0.8)
+      ),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)),
+      linear-gradient(0deg, rgba(190, 184, 235, 0.1), rgba(190, 184, 235, 0.1)),
+      url(../Data/img/about.svg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 20%;
+  }
+
+  .about-message-section h1 {
+    font-size: 10vw;
+  }
+
+  .Officer-content {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
+    margin: 10% 0 10% 0;
+  }
+
+  .about-title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3em;
+    line-height: 105px;
+    color: var(--text-header-color);
+  }
+
+  .about-text {
+    text-align: center;
+    font-weight: 700;
+    font-size: 2em;
+    color: var(--text-header-color);
+  }
+
+  @media only screen and (max-width: 768px) {
+    .officer-info {
+      width: 85%;
+    }
+    .about-title,
+    .team-members-title {
+      font-size: 2rem;
+      line-height: 50px;
+    }
+    .about-text,
+    .team-members-subtitle {
+      font-size: 1.5rem;
+      margin: 1rem 1.5rem;
+      line-height: 30px;
+    }
+
+    .about-message-section {
+      height: 250px;
+    }
+
+    .officer-sidebar {
+      display: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .about-title,
+    .team-members-title {
+      font-size: 1.5rem;
+      line-height: 50px;
+    }
+    .about-text,
+    .team-members-subtitle {
+      font-size: 1rem;
+      margin: 0.5rem 1rem;
+      line-height: 30px;
+    }
+    .about-message-section {
+      height: 200px;
+    }
+  }
+}
