@@ -91,16 +91,6 @@ export default function JoinNow() {
     }
   }
 
-  const getStepperItemClass = (currentStep, stepIndex) => {
-    return `stepper-item ${
-      currentStep > stepIndex
-        ? "completed"
-        : currentStep === stepIndex
-          ? "active"
-          : ""
-    }`;
-  };
-
   const StepperItem = ({ step, index, currentStep }) => {
     return (
       <div
