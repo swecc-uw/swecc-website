@@ -4,7 +4,6 @@ import { CSSTransition } from "react-transition-group";
 import { NavLink } from "react-router-dom";
 
 import { ReactComponent as BellIcon } from "../icons/bell.svg";
-import { ReactComponent as MessengerIcon } from "../icons/messenger.svg";
 import { ReactComponent as CaretIcon } from "../icons/caret.svg";
 import { ReactComponent as ArrowIcon } from "../icons/arrow.svg";
 import {
@@ -28,7 +27,6 @@ import { ImIcoMoon, ImSun } from "react-icons/im";
 import { PiMoonBold } from "react-icons/pi";
 import { NavBar, NavExpandItem, NavItem, NavToggle } from "./Utils/NavItems";
 import SWECCLogoWhite from "../Data/img/Logo/SWECCLogoWhite.png";
-import Switch from "./Switch.js";
 import { links } from "./Utils";
 
 function Navbar() {

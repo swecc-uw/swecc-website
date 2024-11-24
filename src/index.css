@@ -21,6 +21,7 @@
   --backgroundImg-buttom: #474a4d;
   --backgroundImg-buttom-background: rgba(255, 255, 255, 30%);
   --backgroundImg-cover-opacity: 0.5;
+  --sponsorText: rgb(91, 91, 91);
 }
 
 .dark-mode {
@@ -41,6 +42,7 @@
   --backgroundImg-buttom: white;
   --backgroundImg-buttom-background: rgba(0, 0, 0, 30%);
   --backgroundImg-cover-opacity: 0.4;
+  --sponsorText: rgb(229, 229, 229);
 }
 
 * {
