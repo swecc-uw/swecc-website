@@ -9,11 +9,17 @@ import networking from "../Data/img/networking.svg";
 import networkingDarkmode from "../Data/img/networking-darkmode.svg";
 import Stepper from "./Stepper";
 
+const discordRedirect = "https://discord.gg/Z8ZDcdRqrs";
+const linkedinRedirect = "https://www.linkedin.com/company/swecc-uw/";
+const mailingList =
+  "http://mailman11.u.washington.edu/mailman/listinfo/sweccmailinglist";
+const instagramRedirect = "https://www.instagram.com/swecc.uw/";
+
 const actions = [
   <div className="action-item">
     <a
       className="link-boxes"
-      href="https://discord.com/invite/Pbk4sCEWDY"
+      href={discordRedirect}
       target="_blank"
       rel="noopener noreferrer"
     >
@@ -23,7 +29,7 @@ const actions = [
   <div className="action-item">
     <a
       className="link-boxes"
-      href="http://mailman11.u.washington.edu/mailman/listinfo/sweccmailinglist"
+      href={mailingList}
       target="_blank"
       rel="noopener noreferrer"
     >
@@ -34,7 +40,7 @@ const actions = [
     <p>
       <a
         className="separate-insta-linkedin link-boxes"
-        href="https://instagram.com/swecc.uw"
+        href={instagramRedirect}
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -42,7 +48,7 @@ const actions = [
       </a>
       <a
         className="separate-insta-linkedin link-boxes"
-        href="https://www.linkedin.com/company/software-engineering-career-club-at-uw/"
+        href={linkedinRedirect}
         target="_blank"
         rel="noopener noreferrer"
       >

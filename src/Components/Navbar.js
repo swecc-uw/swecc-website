@@ -186,6 +186,12 @@ function NavExpandItem(props) {
 function DropdownMenu(props) {
   const [activeMenu, setActiveMenu] = useState("main");
   const [menuHeight, setMenuHeight] = useState(null);
+  const discordRedirect = "https://discord.gg/Z8ZDcdRqrs";
+  const linkedinRedirect = "https://www.linkedin.com/company/swecc-uw/";
+  const githubRedirect = "https://github.com/swecc-uw";
+  const mailingList =
+    "http://mailman11.u.washington.edu/mailman/listinfo/sweccmailinglist";
+  const instagramRedirect = "https://www.instagram.com/swecc.uw/";
 
   function getHeight(elem) {
     const height = elem.offsetHeight;
@@ -251,44 +257,19 @@ function DropdownMenu(props) {
       >
         <div className="menu">
           <DropdownItem leftIcon={<ArrowIcon />} goToMenu="main"></DropdownItem>
-          <DropdownItem
-            leftIcon={<FaDiscord />}
-            url={"https://discord.gg/Pbk4sCEWDY"}
-          >
+          <DropdownItem leftIcon={<FaDiscord />} url={discordRedirect}>
             Discord
           </DropdownItem>
-          <DropdownItem
-            leftIcon={<FaInstagram />}
-            url={"https://www.instagram.com/swecc.uw/"}
-          >
+          <DropdownItem leftIcon={<FaInstagram />} url={instagramRedirect}>
             Instagram
           </DropdownItem>
-          <DropdownItem
-            leftIcon={<FaLinkedin />}
-            url={
-              "https://www.linkedin.com/company/software-engineering-career-club-at-uw/"
-            }
-          >
+          <DropdownItem leftIcon={<FaLinkedin />} url={linkedinRedirect}>
             LinkedIn
           </DropdownItem>
-          <DropdownItem
-            leftIcon={<FaGithub />}
-            url={"https://github.com/swecc-uw"}
-          >
+          <DropdownItem leftIcon={<FaGithub />} url={githubRedirect}>
             Github
           </DropdownItem>
-          <DropdownItem
-            leftIcon={<MessengerIcon />}
-            url={"mailto:swecc@uw.edu"}
-          >
-            Email
-          </DropdownItem>
-          <DropdownItem
-            leftIcon={<BellIcon />}
-            url={
-              "http://mailman11.u.washington.edu/mailman/listinfo/sweccmailinglist"
-            }
-          >
+          <DropdownItem leftIcon={<BellIcon />} url={mailingList}>
             Newsletter
           </DropdownItem>
         </div>

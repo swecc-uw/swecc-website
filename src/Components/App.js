@@ -11,6 +11,11 @@ import ExternalRedirect from "./Redirect.js";
 
 function App() {
   const link = document.querySelector("link[rel~='icon']");
+  const discordRedirect = "https://discord.gg/Z8ZDcdRqrs";
+  const linkedinRedirect = "https://www.linkedin.com/company/swecc-uw/";
+  const mailingList =
+    "http://mailman11.u.washington.edu/mailman/listinfo/sweccmailinglist";
+  const instagramRedirect = "https://www.instagram.com/swecc.uw/";
   link.href = require("../icons/logo-23.png");
 
   return (
@@ -22,25 +27,19 @@ function App() {
         <Route path="/Events" element={<Events />} />
         <Route
           path="/discord"
-          element={<ExternalRedirect to="https://discord.gg/Z8ZDcdRqrs" />}
+          element={<ExternalRedirect to={discordRedirect} />}
         />
         <Route
           path="/linkedin"
-          element={
-            <ExternalRedirect to="https://www.linkedin.com/company/swecc-uw/" />
-          }
+          element={<ExternalRedirect to={linkedinRedirect} />}
         />
         <Route
           path="/instagram"
-          element={
-            <ExternalRedirect to="https://www.instagram.com/swecc.uw/" />
-          }
+          element={<ExternalRedirect to={instagramRedirect} />}
         />
         <Route
           path="/mailing-list"
-          element={
-            <ExternalRedirect to="http://mailman11.u.washington.edu/mailman/listinfo/sweccmailinglist" />
-          }
+          element={<ExternalRedirect to={mailingList} />}
         />
         <Route path="/Join-Now" element={<JoinNow />} />
         <Route path="*" element={<Home />} />

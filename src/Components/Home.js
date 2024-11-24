@@ -17,7 +17,8 @@ import img7 from "../Data/img/backgroundImg/7.jpg";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 function HomePage() {
-  const scrollContainerRef = useRef(null);
+  const discordRedirect = "https://discord.gg/Z8ZDcdRqrs";
+  const beholdFeedId = "5rAX7PhyjFjmyVfW4Plm";
   function Carousel() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const backGroundImgs = [img1, img2, img3, img4, img5, img6, img7];
@@ -83,8 +84,8 @@ function HomePage() {
     );
   }
 
-  function intPostsWidget() {
-    return <BeholdWidget feedId="5rAX7PhyjFjmyVfW4Plm" />;
+  function InstagramPostsWidget() {
+    return <BeholdWidget feedId={beholdFeedId} />;
   }
 
   return (
@@ -124,12 +125,12 @@ mentorship programs, interview preparation, and more. Join us to jumpstart your 
           professionals <br />
         </p>
         <a
-          href="https://discord.gg/BYg7UeMN2B"
+          href={discordRedirect}
           className="club-introduction-container-button"
         >
           Join Us
         </a>
-        {intPostsWidget()}
+        {InstagramPostsWidget()}
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 body {
   background-color: var(--bg);
-  font-family: "assistant", "Montserrat", "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+  font-family: "assistant", "Montserrat", "Lato", "Helvetica Neue", "Helvetica",
+    sans-serif;
 }
 
 .event-page h1,
@@ -47,8 +48,8 @@ p.event-status {
   color: var(--nav-bottom);
 }
 
-.event-page-intro{
-  top:0;
+.event-page-intro {
+  top: 0;
   left: 0;
   right: 0;
   width: 100%;
@@ -62,7 +63,7 @@ p.event-status {
 }
 
 .event-page-intro::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -230,17 +231,12 @@ p.event-status {
 }
 
 @media (max-width: 976px) {
-
   .event-page-intro {
     height: 40vh;
   }
-
-
 }
 
 @media (max-width: 572px) {
-
-
   .upcoming-event-image {
     width: 80%;
     margin: 0 16rem;
@@ -266,10 +262,7 @@ p.event-status {
   }
 }
 
-
-
 @media (max-width: 470px) {
-
   .upcoming-event-image {
     width: 85%;
     margin: 0 5%;
