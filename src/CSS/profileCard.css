@@ -16,7 +16,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 
 .card-image-container {
@@ -28,25 +27,24 @@
   align-items: center;
 }
 
-
 .card-image-container::before {
   padding: 70%;
   height: auto;
   content: "";
   position: relative;
-  background-image: url('../Data/img/frameProfileCard.png');
+  background-image: url("../Data/img/frameProfileCard.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   justify-content: center;
   align-items: center;
   display: flex;
-  filter: drop-shadow(2px 5px rgba(0,0,0,0.3));
+  filter: drop-shadow(2px 5px rgba(0, 0, 0, 0.3));
   z-index: 1;
 }
 
 .founder-card::before {
-  filter: invert(1) drop-shadow(2px 5px rgba(0,0,0,0.3));
+  filter: invert(1) drop-shadow(2px 5px rgba(0, 0, 0, 0.3));
 }
 
 .card-image-container img {
@@ -125,7 +123,7 @@
     gap: 15vw;
   }
   .card {
-    width:8rem;
+    width: 8rem;
   }
 
   .card-container button {
@@ -133,4 +131,3 @@
     height: 30px;
   }
 }
-
