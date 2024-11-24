@@ -17,7 +17,6 @@ function Events() {
             src="https://calendar.google.com/calendar/embed?src=swecc%40uw.edu&ctz=America%2FLos_Angeles"
           ></iframe>
         </div>
-        {/*<div className="upcoming-events">{upcomingEventsList}</div>*/}
       </div>
     </div>
   );
