@@ -4,11 +4,11 @@ import FooterHotfix from "./FooterMobile.js";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Home.js";
 import Events from "./Events.js";
-import About from "./About.js";
 import JoinNow from "./Join-now.js";
 import Navbar from "./Navbar.js";
 import ExternalRedirect from "./Redirect.js";
 import { links } from "./Utils";
+import Officers from "./Officers";
 
 function App() {
   const link = document.querySelector("link[rel~='icon']");
@@ -19,8 +19,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route index element={<Home />} />
-        <Route path="/About" element={<About />} />
         <Route path="/Events" element={<Events />} />
+        <Route path="/Officers" element={<Officers />} />
         <Route
           path="/discord"
           element={<ExternalRedirect to={links.social.discord} />}

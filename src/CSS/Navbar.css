@@ -17,7 +17,6 @@ a {
   height: var(--nav-size);
   margin-top: 1rem;
   z-index: 1000;
-  top: 0;
 }
 
 .navbar-nav {
@@ -54,6 +53,7 @@ a {
   margin: 8px 8px 8px 8px;
 }
 
+
 .nav-Logo-Item {
   height: 50px;
   width: 10vw;
@@ -61,8 +61,10 @@ a {
   margin: 8px 8px 8px 0;
 }
 
+
 .icon-button,
-.toggle-button {
+.toggle-button
+{
   --button-size: calc(var(--nav-size) * 0.5);
   width: var(--button-size);
   height: var(--button-size);
@@ -138,11 +140,11 @@ a {
 }
 
 .icon-button.tooltip:hover::before,
-.toggle-button.tooltip:hover::before {
+.toggle-button.tooltip:hover::before{
   opacity: 1;
 }
 
-.icon-button svg {
+.icon-button svg{
   fill: var(--text-color);
   width: 22px;
   height: 22px;
@@ -243,11 +245,13 @@ a {
 }
 
 @media only screen and (max-width: 768px) {
+
+
   .navbar {
     margin: 0;
   }
 
-  .nav-Logo-Item {
+  .nav-Logo-Item{
     margin: 0;
   }
 
@@ -256,4 +260,5 @@ a {
     height: 20vw;
     object-fit: cover;
   }
+
 }

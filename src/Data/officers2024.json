@@ -1,0 +1,87 @@
+[
+    {
+        "name": "Elijah Melton",
+        "imgSrc": "elijah.jpg",
+        "position": "President",
+        "linkedin": "linkedin.com/in/elijah-melton/",
+        "github": "https://github.com/elimelt",
+        "email": "elimelt@uw.edu",
+        "portfolio": "https://elimelt.github.io/elijah-dot-com/"
+    },
+    {
+        "name": "Deeksha Vatwani",
+        "imgSrc": "deeksha.jpg",
+        "position": "Alumni Network Manager",
+        "linkedin": "https://www.linkedin.com/in/deeksha-vatwani/",
+        "email": "vatwani2@uw.edu"
+    },
+    {
+        "name": "Trang Tran",
+        "imgSrc": "trang.jpg",
+        "position": "Design Manager",
+        "linkedin": "https://www.linkedin.com/in/trangtran10/",
+        "email": "trangt10@uw.edu"
+    },
+    {
+        "name": "Aditya Khowal",
+        "imgSrc": "adityak.jpg",
+        "position": "External Head",
+        "linkedin": "www.linkedin.com/in/aditya-khowal/"
+    },
+    {
+        "name": "Anthony Wen",
+        "imgSrc": "Anthony.png",
+        "position": "Marketing/Design",
+        "linkedin": "https://www.linkedin.com/in/anthony-wen-programmer/",
+        "github": "https://github.com/wena04"
+    },
+    {
+        "name": "Eric Xiao",
+        "imgSrc": "eric.jpg",
+        "position": "External Outreach",
+        "linkedin": "https://www.linkedin.com/in/xiaoe5800/",
+        "github": "https://github.com/mathlord2",
+        "email": "exiao@uw.edu"
+    },
+    {
+        "name": "David Pham",
+        "imgSrc": "david.jpg",
+        "position": "Mentorship Manager",
+        "linkedin": "https://www.linkedin.com/in/phamdavid722/",
+        "email": "phamdavid722@gmail.com"
+
+    },
+    {
+        "name": "Bhavya Linga",
+        "imgSrc": "bhavya.jpg",
+        "position": "Opportunities Manager",
+        "linkedin": "https://www.linkedin.com/in/bhavya-linga-4b274725b/"
+    },
+    {
+        "name": "Shawn Collinge",
+        "imgSrc": "shawn.jpg",
+        "position": "Software Engineer",
+        "linkedin": "https://www.linkedin.com/in/s-collinge",
+        "github": "https://github.com/shawncollinge",
+        "portfolio": "https://shawnc.net"
+    },
+    {
+        "name": "Devina Tavathia",
+        "imgSrc": "Devina.png",
+        "position": "External Outreach",
+        "linkedin": "https://www.linkedin.com/in/devina-tavathia-40722b167/"
+    },
+    {
+        "name": "Hoang Nguyen",
+        "imgSrc": "Hoang.png",
+        "position": "Software Engineer",
+        "linkedin": "https://www.linkedin.com/in/kipiiler/",
+        "github": "https://github.com/nphoang1102"
+    },
+    {
+        "name": "Benjamin So",
+        "imgSrc": "Ben.png",
+        "position": "Marketing ",
+        "linkedin": "https://www.linkedin.com/in/benjaminsoyh/"
+    }
+]
