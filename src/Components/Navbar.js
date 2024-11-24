@@ -26,9 +26,10 @@ import {
 } from "react-icons/fc";
 import { ImIcoMoon, ImSun } from "react-icons/im";
 import { PiMoonBold } from "react-icons/pi";
-
 import { NavBar, NavExpandItem, NavItem, NavToggle } from "./Utils/NavItems";
 import SWECCLogoWhite from "../Data/img/Logo/SWECCLogoWhite.png";
+import Switch from "./Switch.js";
+import { links } from "./Utils";
 
 function Navbar() {
   const [isMobile, setIsMobile] = useState(false);
@@ -225,43 +226,21 @@ function DropdownMenu(props) {
       >
         <div className="menu">
           <DropdownItem leftIcon={<ArrowIcon />} goToMenu="main"></DropdownItem>
-          <DropdownItem
-            leftIcon={<FaDiscord />}
-            url={"https://discord.gg/Pbk4sCEWDY"}
-          >
+          <DropdownItem leftIcon={<FaDiscord />} url={links.social.discord}>
             Discord
           </DropdownItem>
-          <DropdownItem
-            leftIcon={<FaInstagram />}
-            url={"https://www.instagram.com/swecc.uw/"}
-          >
+          <DropdownItem leftIcon={<FaInstagram />} url={links.social.instagram}>
             Instagram
           </DropdownItem>
-          <DropdownItem
-            leftIcon={<FaLinkedin />}
-            url={
-              "https://www.linkedin.com/company/software-engineering-career-club-at-uw/"
-            }
-          >
+          <DropdownItem leftIcon={<FaLinkedin />} url={links.social.linkedin}>
             LinkedIn
           </DropdownItem>
-          <DropdownItem
-            leftIcon={<FaGithub />}
-            url={"https://github.com/swecc-uw"}
-          >
+          <DropdownItem leftIcon={<FaGithub />} url={links.social.github}>
             Github
           </DropdownItem>
           <DropdownItem
-            leftIcon={<MessengerIcon />}
-            url={"mailto:swecc@uw.edu"}
-          >
-            Email
-          </DropdownItem>
-          <DropdownItem
             leftIcon={<BellIcon />}
-            url={
-              "http://mailman11.u.washington.edu/mailman/listinfo/sweccmailinglist"
-            }
+            url={links.resources.mailingList}
           >
             Newsletter
           </DropdownItem>

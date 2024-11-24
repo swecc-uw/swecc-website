@@ -8,12 +8,13 @@ import communityDarkmode from "../Data/img/community-darkmode.svg";
 import networking from "../Data/img/networking.svg";
 import networkingDarkmode from "../Data/img/networking-darkmode.svg";
 import Stepper from "./Stepper";
+import { links } from "./Utils";
 
 const actions = [
   <div className="action-item">
     <a
       className="link-boxes"
-      href="https://discord.com/invite/Pbk4sCEWDY"
+      href={links.social.discord}
       target="_blank"
       rel="noopener noreferrer"
     >
@@ -23,7 +24,7 @@ const actions = [
   <div className="action-item">
     <a
       className="link-boxes"
-      href="http://mailman11.u.washington.edu/mailman/listinfo/sweccmailinglist"
+      href={links.resources.mailingList}
       target="_blank"
       rel="noopener noreferrer"
     >
@@ -34,7 +35,7 @@ const actions = [
     <p>
       <a
         className="separate-insta-linkedin link-boxes"
-        href="https://instagram.com/swecc.uw"
+        href={links.social.instagram}
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -42,7 +43,7 @@ const actions = [
       </a>
       <a
         className="separate-insta-linkedin link-boxes"
-        href="https://www.linkedin.com/company/software-engineering-career-club-at-uw/"
+        href={links.social.linkedin}
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -90,6 +91,17 @@ export default function JoinNow() {
     }
   }
 
+  const StepperItem = ({ step, index, currentStep }) => {
+    return (
+      <div
+        className={`stepper-item ${currentStep > index ? "completed" : currentStep === index ? "active" : ""}`}
+      >
+        <div className="step-counter">{index + 1}</div>
+        <div className="step-name">{step}</div>
+      </div>
+    );
+  };
+
   return (
     <div className="entire">
       <div className="background-image">
@@ -106,24 +118,21 @@ export default function JoinNow() {
             </p>
             <p className="join-message"></p>
             <div className="stepper-wrapper">
-              <div
-                className={`stepper-item ${count > 0 ? "completed" : count === 0 ? "active" : ""}`}
-              >
-                <div className="step-counter">1</div>
-                <div className="step-name">Join our discord</div>
-              </div>
-              <div
-                className={`stepper-item ${count > 1 ? "completed" : count === 1 ? "active" : ""}`}
-              >
-                <div className="step-counter">2</div>
-                <div className="step-name">Join our mailing list</div>
-              </div>
-              <div
-                className={`stepper-item ${count > 2 ? "completed" : count === 2 ? "active" : ""}`}
-              >
-                <div className="step-counter">3</div>
-                <div className="step-name">Attend an event</div>
-              </div>
+              <StepperItem
+                step="Join our discord"
+                index={0}
+                currentStep={count}
+              />
+              <StepperItem
+                step="Join our mailing list"
+                index={1}
+                currentStep={count}
+              />
+              <StepperItem
+                step="Attend an event"
+                index={2}
+                currentStep={count}
+              />
             </div>
             <p>{actions[count]}</p>
           </div>

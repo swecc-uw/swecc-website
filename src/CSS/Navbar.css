@@ -17,6 +17,7 @@ a {
   height: var(--nav-size);
   margin-top: 1rem;
   z-index: 1000;
+  top: 0;
 }
 
 .navbar-nav {

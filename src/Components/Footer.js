@@ -1,6 +1,11 @@
 import React, { useEffect } from "react";
 import "../CSS/Footer.css";
 import { FaInstagram, FaDiscord, FaLinkedinIn } from "react-icons/fa";
+import discordLogo from "../Data/img/discord-logo.jpg";
+import instaLogo from "../Data/img/insta-logo.jpg";
+import LinkedInLogo from "../Data/img/LinkedInLogo.jpg";
+import SWECClogo2 from "../Data/img/SWECClogo2.jpg";
+import { links } from "./Utils";
 
 const Footer = () => {
   const [currentYr, setCurrentYr] = React.useState("");

@@ -6,10 +6,12 @@ body {
 
 .event-page h1,
 .event-page h2 {
-  font-size: 2.5rem;
-  text-align: center;
-  margin: 5rem 0;
-  color: var(--text-title-color);
+  margin-bottom: 10px;
+  font-size: 5vw;
+  color: white;
+  text-shadow: 1px 1px 2px var(--text-header-shadow-color);
+  animation: slide-up 0.5s ease-out;
+  z-index: 2;
 }
 
 .event-page h2 {
@@ -46,21 +48,61 @@ p.event-status {
   color: var(--nav-bottom);
 }
 
-.calendar-section {
-  padding: 20px 10px 50px 10px;
+.event-page-intro {
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 20vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.event-page-intro::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(../Data/img/backgroundImg/2.jpg);
+  background-size: cover;
+  background-position: center;
+  filter: brightness(70%);
+  z-index: -1;
+}
+
+.calendar-container {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(145deg, #f3f4f6, #ffffff);
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .calendar {
-  width: 73%;
-  height: 45vw;
+  width: 70%;
+  height: 700px;
+  min-height: 20rem;
+  border: none;
   border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.calendar:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
 }
 
 .upcoming-events-section {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  background-color: var(--bg-accent);
+  flex-direction: column;
+  background-color: var(--bg);
   padding: 50px 10px;
 }
 
@@ -167,6 +209,11 @@ p.event-status {
     margin-top: 4rem;
   }
 
+  .calendar {
+    width: 90%;
+    height: auto;
+  }
+
   .upcoming-event {
     flex-direction: column;
     align-items: center;
@@ -183,18 +230,13 @@ p.event-status {
   }
 }
 
-@media (max-width: 768px) {
-  .calendar {
-    width: 85%;
-    height: 400px;
+@media (max-width: 976px) {
+  .event-page-intro {
+    height: 40vh;
   }
 }
 
 @media (max-width: 572px) {
-  .calendar {
-    height: 350px;
-  }
-
   .upcoming-event-image {
     width: 80%;
     margin: 0 16rem;
@@ -221,10 +263,6 @@ p.event-status {
 }
 
 @media (max-width: 470px) {
-  .calendar {
-    height: 280px;
-  }
-
   .upcoming-event-image {
     width: 85%;
     margin: 0 5%;
@@ -234,6 +272,6 @@ p.event-status {
 
   .event-page h1,
   .event-page h2 {
-    font-size: 1.8rem;
+    font-size: 4rem;
   }
 }

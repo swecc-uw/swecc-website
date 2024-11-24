@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import SWECClogo2 from "../Data/img/SWECClogo2.jpg";
+import { links } from "./Utils";
 
 export default function Footer() {
   const [currentYr, setCurrentYr] = React.useState("");
@@ -25,7 +26,7 @@ export default function Footer() {
           </li>
           <li>
             <a
-              href="https://www.linkedin.com/company/software-engineering-career-club-at-uw/"
+              href={links.social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -34,7 +35,7 @@ export default function Footer() {
           </li>
           <li>
             <a
-              href="https://github.com/swecc-uw"
+              href={links.social.github}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -43,7 +44,7 @@ export default function Footer() {
           </li>
           <li>
             <a
-              href="https://instagram.com/swecc.uw?igshid=YmMyMTA2M2Y="
+              href={links.social.instagram}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -52,7 +53,7 @@ export default function Footer() {
           </li>
           <li>
             <a
-              href="https://discord.com/invite/Pbk4sCEWDY"
+              href={links.social.discord}
               target="_blank"
               rel="noopener noreferrer"
             >
