@@ -79,8 +79,8 @@ function Navbar() {
 
   return (
     <NavBar className={`${darkMode ? "dark-mode" : ""}`}>
-      <li className={`nav-Logo-Item`} onClick={closeExpand}>
-        <NavLink to={"/"}>
+      <li className="nav-Logo-Item" onClick={closeExpand}>
+        <NavLink to="/">
           <img className="swecc-logo" src={SWECCLogoWhite} alt="SWECC Logo" />
         </NavLink>
       </li>
@@ -88,45 +88,38 @@ function Navbar() {
       {!isMobile && (
         <>
           <NavItem
-            icon={<FcHome />}
-            route={"/"}
+            icon=<FcHome />
+            route="/"
             closeExpand={closeExpand}
             tooltip="Home"
             label="Home"
           />
-          {/*<NavItem*/}
-          {/*  icon={<FcViewDetails />}*/}
-          {/*  route={"/About"}*/}
-          {/*  closeExpand={closeExpand}*/}
-          {/*  tooltip="About"*/}
-          {/*  label="About"*/}
-          {/*/>*/}
           <NavItem
-            icon={<FcConferenceCall />}
-            route={"/Officers"}
+            icon=<FcConferenceCall />
+            route="/Officers"
             expand={expand}
             closeExpand={closeExpand}
             tooltip="Officers"
             label="Officers"
           />
           <NavItem
-            icon={<FaHeart />}
-            route={"/Sponsor"}
+            icon=<FaHeart />
+            route="/Sponsor"
             expand={expand}
             closeExpand={closeExpand}
             tooltip="Sponsor"
             label="Sponsors"
           />
           <NavItem
-            icon={<FcCalendar />}
-            route={"/Events"}
+            icon=<FcCalendar />
+            route="/Events"
             closeExpand={closeExpand}
             tooltip="Events"
             label="Events"
           />
           <NavItem
-            icon={<FcCheckmark />}
-            route={"/Join-Now"}
+            icon=<FcCheckmark />
+            route="/Join-Now"
             expand={expand}
             closeExpand={closeExpand}
             tooltip="Join"
