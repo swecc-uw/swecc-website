@@ -8,7 +8,7 @@ import About from "./About.js";
 import JoinNow from "./Join-now.js";
 import Navbar from "./Navbar.js";
 import ExternalRedirect from "./Redirect.js";
-import { links } from "../Components/Utils/Utils";
+import { links } from "./Utils";
 
 function App() {
   const link = document.querySelector("link[rel~='icon']");

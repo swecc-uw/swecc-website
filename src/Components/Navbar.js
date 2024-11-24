@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../CSS/Navbar.css";
 import { CSSTransition } from "react-transition-group";
-import SWECClogo from "../Data/img/SWECClogo.jpg";
 import { NavLink } from "react-router-dom";
 
 import { ReactComponent as BellIcon } from "../icons/bell.svg";
@@ -14,6 +13,7 @@ import {
   FaDiscord,
   FaChevronRight,
   FaGithub,
+  FaHeart,
 } from "react-icons/fa";
 import {
   FcShare,
@@ -22,10 +22,12 @@ import {
   FcCheckmark,
   FcConferenceCall,
   FcHome,
+  FcViewDetails,
 } from "react-icons/fc";
-import { ImSun } from "react-icons/im";
+import { ImIcoMoon, ImSun } from "react-icons/im";
 import { PiMoonBold } from "react-icons/pi";
-
+import { NavBar, NavExpandItem, NavItem, NavToggle } from "./Utils/NavItems";
+import SWECCLogoWhite from "../Data/img/Logo/SWECCLogoWhite.png";
 import Switch from "./Switch.js";
 import { links } from "./Utils";
 
@@ -75,112 +77,77 @@ function Navbar() {
     setExpand(false);
   };
 
-  //I think maybe not every navitem need and closeExpand/expand property
-  //since only more button need it to expand menu
-
   return (
     <NavBar className={`${darkMode ? "dark-mode" : ""}`}>
-      <NavItem
-        icon={
-          <NavLink to="/">
-            <img className="swecc-logo" src={SWECClogo} alt="SWECC Logo"></img>
-          </NavLink>
-        }
-        route={"/"}
-        closeExpand={closeExpand}
-      />
-
-      <NavToggle icon={<ImSun />} />
-      <Switch toggleMode={toggleMode} />
-      <NavToggle icon={<PiMoonBold />} />
+      <li className="nav-Logo-Item" onClick={closeExpand}>
+        <NavLink to="/">
+          <img className="swecc-logo" src={SWECCLogoWhite} alt="SWECC Logo" />
+        </NavLink>
+      </li>
 
       {!isMobile && (
         <>
           <NavItem
-            icon={<FcHome />}
-            route={"/"}
+            icon=<FcHome />
+            route="/"
             closeExpand={closeExpand}
             tooltip="Home"
             label="Home"
           />
           <NavItem
-            icon={<FcConferenceCall />}
-            route={"/About"}
+            icon=<FcConferenceCall />
+            route="/Officers"
             expand={expand}
             closeExpand={closeExpand}
             tooltip="Officers"
             label="Officers"
           />
           <NavItem
-            icon={<FcCalendar />}
-            route={"/Events"}
+            icon=<FaHeart />
+            route="/Sponsor"
+            expand={expand}
+            closeExpand={closeExpand}
+            tooltip="Sponsor"
+            label="Sponsors"
+          />
+          <NavItem
+            icon=<FcCalendar />
+            route="/Events"
             closeExpand={closeExpand}
             tooltip="Events"
             label="Events"
-          ></NavItem>
+          />
           <NavItem
-            icon={<FcCheckmark />}
-            route={"/Join-Now"}
+            icon=<FcCheckmark />
+            route="/Join-Now"
             expand={expand}
             closeExpand={closeExpand}
             tooltip="Join"
             label="Join"
           />
+          <NavToggle
+            icon={darkMode ? <ImSun /> : <PiMoonBold />}
+            expand={expand}
+            closeExpand={closeExpand}
+            tooltip={darkMode ? "ON" : "OFF"}
+            label="ToggleMode"
+            toggleMode={toggleMode}
+            isDarkMode={darkMode}
+          />
         </>
       )}
-      <NavExpandItem
-        icon={<CaretIcon />}
-        expand={expand}
-        togglExpand={togglExpand}
-        tooltip="More"
-      >
-        <DropdownMenu closeExpand={closeExpand} />
-      </NavExpandItem>
-    </NavBar>
-  );
-}
 
-function NavBar(props) {
-  return (
-    <nav className="navbar">
-      <ul className="navbar-nav">{props.children}</ul>
-    </nav>
-  );
-}
-
-function NavToggle(props) {
-  return (
-    <li className="nav-item no-action" onClick={props.closeExpand}>
-      <div className="icon-button no-action">{props.icon}</div>
-    </li>
-  );
-}
-
-function NavItem(props) {
-  const { tooltip } = props;
-
-  return (
-    <li className="nav-item" onClick={props.closeExpand}>
-      <NavLink to={props.route}>
-        <div
-          className={"icon-button" + (tooltip ? " tooltip" : "")}
-          data-tooltip={tooltip}
+      {isMobile && (
+        <NavExpandItem
+          icon={<CaretIcon />}
+          expand={expand}
+          togglExpand={togglExpand}
+          tooltip="More"
         >
-          {props.icon}
-        </div>
-      </NavLink>
-    </li>
-  );
-}
-
-function NavExpandItem(props) {
-  return (
-    <li className="nav-item nav-expand">
-      <div className="icon-button" onClick={props.togglExpand}>
-        {props.icon}
-      </div>
-      {props.expand && props.children}
-    </li>
+          <DropdownMenu closeExpand={closeExpand} />
+        </NavExpandItem>
+      )}
+    </NavBar>
   );
 }
 
@@ -222,7 +189,7 @@ function DropdownMenu(props) {
           <NavLink to="/" onClick={props.closeExpand}>
             <DropdownItem leftIcon={<FcHome />}>Home</DropdownItem>
           </NavLink>
-          <NavLink to="/About" onClick={props.closeExpand}>
+          <NavLink to="/Officers" onClick={props.closeExpand}>
             <DropdownItem leftIcon={<FcConferenceCall />}>
               Officers
             </DropdownItem>

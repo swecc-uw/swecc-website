@@ -9,12 +9,13 @@ a {
 }
 
 .navbar {
-  position: fixed;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   height: var(--nav-size);
-  background-color: var(--bg);
-  padding: 1rem 1.5rem 1.8rem;
-  border-bottom: 2px solid var(--nav-bottom);
+  margin-top: 1rem;
   z-index: 1000;
   top: 0;
 }
@@ -31,22 +32,37 @@ a {
 }
 
 .swecc-logo {
-  height: calc(var(--button-size) * 1.4);
-  border-radius: 0.6rem;
-  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.nav-item {
+.nav-item,
+.nav-toggle {
   width: calc(var(--nav-size) * 0.8);
   align-items: center;
   display: flex;
   justify-content: center;
-  margin: 8px;
   text-align: center;
   flex-direction: column;
 }
 
-.icon-button {
+.nav-item {
+  margin: 8px 20px 8px 8px;
+}
+.nav-toggle {
+  margin: 8px 8px 8px 8px;
+}
+
+.nav-Logo-Item {
+  height: 50px;
+  width: 10vw;
+  box-sizing: border-box;
+  margin: 8px 8px 8px 0;
+}
+
+.icon-button,
+.toggle-button {
   --button-size: calc(var(--nav-size) * 0.5);
   width: var(--button-size);
   height: var(--button-size);
@@ -61,45 +77,68 @@ a {
   border: 2px solid var(--bg-hover);
 }
 
+.toggle-button {
+  box-shadow: 0 0 40px 15px var(--nav-toggle);
+  transition: all 0.8s ease;
+}
+
+.toggle-button svg {
+  width: 22px;
+  height: 22px;
+}
+
+.toggle-button.dark-mode svg {
+  color: var(--moon-color);
+}
+
+.toggle-button.light-mode svg {
+  color: var(--sun-color);
+}
+
 .nav-page {
   margin-top: 23px;
 }
 
-.nav-expand .icon-button {
+.nav-expand {
   margin: 0;
 }
 
-.icon-button:hover {
+.icon-button:hover,
+.toggle-button:hover {
   background-color: var(--bg-hover);
   transition: all var(--speed) ease;
   cursor: pointer;
 }
 
-.icon-button.no-action {
+.icon-button.no-action,
+.toggle-button.no-action {
   cursor: default;
   pointer-events: none;
   border: none;
   background-color: var(--bg);
 }
 
-.icon-button.tooltip {
+.icon-button.tooltip,
+.toggle-button.tooltip {
   position: relative;
 }
 
-.icon-button.tooltip::before {
+.icon-button.tooltip::before,
+.toggle-button.tooltip::before {
   content: attr(data-tooltip);
   position: absolute;
   top: calc(100% + 5px);
   left: 50%;
   transform: translateX(-50%);
-  color: var(--subtitle-color);
+  color: white;
   padding: 3px 8px;
   font-size: 15px;
-  font-weight: 800;
+  font-weight: 500;
   border-radius: 5px;
 }
 
-.icon-button.tooltip:hover::before {
+.icon-button.tooltip:hover::before,
+.toggle-button.tooltip:hover::before {
   opacity: 1;
 }
 
@@ -128,13 +167,11 @@ a {
   transform: translateX(-45%);
   transition: all 0.2s ease;
   background-color: var(--bg);
-  border: var(--border);
   border-radius: var(--border-radius);
   padding: 1rem;
   overflow: hidden;
-  transition: height var(--speed) ease;
   box-shadow: 0 10px 10px #00000033;
-  z-index: 6;
+  z-index: 1000;
   animation: slideDown 0.3s ease;
 }
 
@@ -153,6 +190,7 @@ a {
 }
 
 .menu-item .icon-button {
+  transition: all 0.5s ease;
   margin-right: 0.5rem;
 }
 
@@ -202,4 +240,20 @@ a {
 .menu-secondary-exit-active {
   transform: translateX(110%);
   transition: all var(--speed) ease;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+    margin: 0;
+  }
+
+  .nav-Logo-Item {
+    margin: 0;
+  }
+
+  .swecc-logo {
+    width: 20vw;
+    height: 20vw;
+    object-fit: cover;
+  }
 }
