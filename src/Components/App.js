@@ -13,7 +13,7 @@ import Sponsor from "./Sponsor";
 
 function App() {
   const link = document.querySelector("link[rel~='icon']");
-  link.href = require("../icons/logo-23.png");
+  link.href = require("../Data/img/Logo/SWECCLogoBackground.png");
 
   return (
     <div>
