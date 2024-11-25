@@ -19,7 +19,7 @@ function Sponsor() {
     setTimeout(() => {
       if (document.hasFocus()) {
         alert(
-          "It seems your email client didn't open automatically. Please send an email to y031125k@gmail.com with your message.",
+          "It seems your email client didn't open automatically. Please send an email to sweccmailinglist@u.washington.edu with your message.",
         );
       }
     }, 500);
@@ -44,14 +44,10 @@ function Sponsor() {
         <h3>{new Date().getFullYear()}</h3>
         <p>
           We value the supports of our sponsors, and we are thankful for their{" "}
-          <br />
           supports that promotes many technical SWECC events which enables
-          thousands of <br />
-          students and professionals to communicate and share new insights. We
-          want more <br />
-          to know how those valuable partners have helped us and how they can
-          further support <br />
-          our community as well.
+          thousands of students and professionals to communicate and share new
+          insights. We want more to know how those valuable partners have helped
+          us and how they can further support our community as well.
         </p>
       </div>
 
@@ -67,12 +63,10 @@ function Sponsor() {
         <div className="WhySponsor">
           <h2>Why Sponsor</h2>
           <p id="HowToSponsorIntro">
-            Sponsoring SWECC to connect with 1,000+ UW CS students. Our <br />
+            Sponsoring SWECC to connect with 1K+ UW CS students. Our
             industry-focused events offer prime recruitment opportunities and{" "}
-            <br />
             exposure. We promote your products and services through weekly
-            seminars, <br />
-            large-scale hackathons, and more.
+            seminars, large-scale hackathons, and more.
           </p>
         </div>
 
@@ -147,7 +141,6 @@ function Sponsor() {
 
         <div className="sponsor-content">
           <nav className="sponsor-sidebar">
-            <h2>Fundraising</h2>
             <ul>
               {["sponsor", "why us"].map((content) => (
                 <li>

@@ -8,10 +8,17 @@
   justify-content: center;
   align-items: center;
   width: auto;
+  cursor: pointer;
   margin: auto;
   box-sizing: border-box;
   padding-top: 5vw;
   min-height: 100vh;
+}
+
+.sponsor-content p {
+  margin-left: 10rem;
+  margin-right: 10rem;
+  text-align: left;
 }
 
 .Sponsors-Info,
