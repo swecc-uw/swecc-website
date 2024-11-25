@@ -150,48 +150,6 @@ export default function JoinNow() {
           </div>
         </div>
       </div>
-      <div className="join join-section info-message-section info-table">
-        <table>
-          <tbody className="community-benefits">
-            <tr>
-              <td>
-                <img
-                  className="example-images"
-                  src={darkMode ? networkingDarkmode : networking}
-                  alt="Networking"
-                />
-                <div className="info-title">networking</div>
-                <div className="info-text">
-                  make connections in a network of future and current software
-                  engineers
-                </div>
-              </td>
-              <td>
-                <img
-                  className="example-images"
-                  src={darkMode ? communityDarkmode : community}
-                  alt="Community"
-                />
-                <div className="info-title">community</div>
-                <div className="info-text">
-                  Join a vibrant community of future software engineers
-                </div>
-              </td>
-              <td>
-                <img
-                  className="example-images"
-                  src={darkMode ? careerDarkmode : career}
-                  alt="Career"
-                />
-                <div className="info-title">career</div>
-                <div className="info-text">
-                  Gain access to career talks, and more opportunities
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
     </div>
   );
 }

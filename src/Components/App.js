@@ -9,10 +9,11 @@ import Navbar from "./Navbar.js";
 import ExternalRedirect from "./Redirect.js";
 import { links } from "./Utils";
 import Officers from "./Officers";
+import Sponsor from "./Sponsor";
 
 function App() {
   const link = document.querySelector("link[rel~='icon']");
-  link.href = require("../icons/logo-23.png");
+  link.href = require("../Data/img/Logo/SWECCLogoBackground.png");
 
   return (
     <div>
@@ -21,6 +22,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="/Events" element={<Events />} />
         <Route path="/Officers" element={<Officers />} />
+        <Route path="/sponsor" element={<Sponsor />} />
         <Route
           path="/discord"
           element={<ExternalRedirect to={links.social.discord} />}
