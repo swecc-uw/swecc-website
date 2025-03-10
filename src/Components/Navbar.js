@@ -77,9 +77,19 @@ function Navbar() {
     setExpand(false);
   };
 
+  const [animate, setAnimate] = useState(false);
+
+  const handleLogoClick = () => {
+    // maintain previous functionality
+    closeExpand();
+    // animation part
+    setAnimate(true);
+    setTimeout(() => setAnimate(false), 500)
+  }
+
   return (
     <NavBar className={`${darkMode ? "dark-mode" : ""}`}>
-      <li className="nav-Logo-Item" onClick={closeExpand}>
+      <li className={`nav-Logo-Item ${animate ? 'pulse' : ''}`} onClick={handleLogoClick}>
         <NavLink to="/">
           <img className="swecc-logo" src={SWECCLogoWhite} alt="SWECC Logo" />
         </NavLink>
