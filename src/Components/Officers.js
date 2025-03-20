@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "../CSS/Officers.css";
 import ProfileCard from "./profileCard";
 
@@ -31,6 +32,11 @@ const Officers = () => {
           <h1>Our Officers</h1>
         </div>
         <div className="Officer-content">
+        <div className="officer-application-link">
+          <Link to="/OfficerApplication">
+            <button className="apply-button">Apply to be an Officer for 2025-2026!</button>
+          </Link>
+        </div>
           <nav className="officer-sidebar">
             <h2>Year</h2>
             <ul>

@@ -10,6 +10,7 @@ export const links = {
       "http://mailman11.u.washington.edu/mailman/listinfo/sweccmailinglist",
     calendar:
       "https://calendar.google.com/calendar/embed?src=swecc%40uw.edu&ctz=America%2FLos_Angeles",
+    officerApp: "https://forms.gle/1JaS7iSeJK6CFW329",
   },
   config: {
     beholdFeedId: "5rAX7PhyjFjmyVfW4Plm",
