@@ -3,7 +3,9 @@ import "../CSS/Officers.css";
 import ProfileCard from "./profileCard";
 
 const Officers = () => {
-  const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
+  const recentYear = 2024;
+
+  const [selectedYear, setSelectedYear] = useState(recentYear);
   const [teamMembers, setTeamMembers] = useState([]);
 
   useEffect(() => {
