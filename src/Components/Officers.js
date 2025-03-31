@@ -14,7 +14,7 @@ const Officers = () => {
       const availableYears = [];
 
       // officer data will be out at the end of June, this will update beginning of July
-      const defaultToThisYear = currentDate.getMonth() > 5; 
+      const defaultToThisYear = currentDate.getMonth() > 0; 
 
       // check if officer json data for the current year exists first
       if (defaultToThisYear) {
@@ -27,7 +27,7 @@ const Officers = () => {
       }
 
       // add previous years back to 2022
-      for (let year = currentDate.getFullYear(); year >= 2022; year--) {
+      for (let year = currentDate.getFullYear() - 1; year >= 2022; year--) {
         try {
           await import(`../Data/officers${year}.json`);
           availableYears.push(year);
