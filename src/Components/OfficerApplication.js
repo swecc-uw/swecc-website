@@ -33,29 +33,25 @@ function OfficerApplication() {
                             <td>Applications Open</td>
                         </tr>
                         <tr>
-                            <td>April 21st</td>
+                            <td>April 4th</td>
                             <td>Applications Close</td>
                         </tr>
                         <tr>
-                            <td>April 22nd - May 8st</td>
+                            <td>April 1st - April 14th</td>
                             <td>Interviews</td>
                         </tr>
                         <tr>
-                            <td>May 10th</td>
+                            <td>April 17th</td>
                             <td>Offers Extended</td>
                         </tr>
                         <tr>
-                            <td>May 14th</td>
-                            <td>Officer Team Announced</td>
+                            <td>April 24th</td>
+                            <td>Officer Mixer</td>
                         </tr>
                     </tbody>
                 </table>
                 <h2>Roles</h2>
                 <ul>
-                    <li>
-                        <strong>President:</strong> Leads the officer team,
-                        determines the club's direction
-                    </li>
                     <li>
                         <strong>Events:</strong> Organizes club events and
                         workshops
@@ -77,8 +73,19 @@ function OfficerApplication() {
                         <strong>Software Engineering:</strong> Builds on top of
                         and maintains the club's various software projects
                     </li>
+                    <li>
+                        <strong>Community and Diversity:</strong> Help build and
+                        foster community and diversity within the club
+                    </li>
+                    <li>
+                        <strong>Finance:</strong> Manage club finances and
+                        spending
+                    </li>
                 </ul>
-                <p>No experience required for any of the roles!</p>
+                <p>
+                    No experience required for any of the roles! We strongly
+                    encourage underclassmen to apply!
+                </p>
 
                 <h2>Application</h2>
                 <a href={links.resources.officerapp} target="_blank">
@@ -86,16 +93,12 @@ function OfficerApplication() {
                 </a>
                 <h2>Interview Process</h2>
                 <p>
-                    For those applying to be an officer, there is only one
-                    30-minute interview. When answering questions, you'll want
+                    Interviews will be 30-45 min and scheduled on a rolling
+                    basis (so apply early!). During the interview, you'll want
                     to highlight what you specifically want to do in the role
-                    you're applying for.
-                </p>
-                <p>
-                    For those applying for president, there will be two
-                    interview rounds. The first will be a 20-minute interview
-                    with the current president, and the second will be a
-                    30-minute interview with a panel of current officers.
+                    you're applying for. After offers are extended, you'll have
+                    until April 25th to accept or decline the offer. Potential
+                    start dates will be discussed during the interview.
                 </p>
             </div>
         </div>
