@@ -41,7 +41,7 @@ function App() {
         />
         <Route 
           path="/officer-application" 
-          element={<ExternalRedirect to={links.resources.officerapp} />}
+          element={<ExternalRedirect to={links.resources.officerApp} />}
         />
         <Route path="/Join-Now" element={<JoinNow />} />
         <Route path="*" element={<Home />} />
