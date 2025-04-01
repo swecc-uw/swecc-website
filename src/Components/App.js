@@ -9,6 +9,7 @@ import Navbar from "./Navbar.js";
 import ExternalRedirect from "./Redirect.js";
 import { links } from "./Utils";
 import Officers from "./Officers";
+import OfficerApplication from "./OfficerApplication.js";
 
 function App() {
   const link = document.querySelector("link[rel~='icon']");
@@ -21,6 +22,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="/Events" element={<Events />} />
         <Route path="/Officers" element={<Officers />} />
+        <Route path="/OfficerApplication" element={<OfficerApplication/>}/>
         <Route
           path="/discord"
           element={<ExternalRedirect to={links.social.discord} />}
@@ -36,6 +38,10 @@ function App() {
         <Route
           path="/mailing-list"
           element={<ExternalRedirect to={links.resources.mailingList} />}
+        />
+        <Route 
+          path="/officer-application" 
+          element={<ExternalRedirect to={links.resources.officerApp} />}
         />
         <Route path="/Join-Now" element={<JoinNow />} />
         <Route path="*" element={<Home />} />
