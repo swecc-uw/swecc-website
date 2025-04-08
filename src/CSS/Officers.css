@@ -177,6 +177,26 @@
   color: var(--text-color);
 }
 
+.officer-application-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.apply-button {
+  background-color: #656fb3;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.apply-button:hover {
+  background-color: #5f68a1;
+}
+
 @media (max-width: 976px) {
   .about-title,
   .team-members-title {
