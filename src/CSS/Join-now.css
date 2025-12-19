@@ -131,6 +131,11 @@ a.link-boxes {
   color: var(--text-header-color);
 }
 
+/* Dark mode: fix button contrast - dark text on light background */
+.dark-mode a.link-boxes {
+  color: #000;
+}
+
 .join-message {
   color: var(--text-subtitle-color);
   font-size: 150%;
@@ -304,7 +309,7 @@ table {
 }
 
 .stepper-item.completed .step-counter {
-  color: #fff;
+  color: #000;
 }
 
 @media only screen and (max-width: 768px) {
