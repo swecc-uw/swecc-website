@@ -121,21 +121,24 @@ button.click-button.next-button {
   transition: all 0.2s ease;
 }
 
-.click-button:hover {
-  cursor: pointer;
-  background-color: var(--text-header-color);
-  transition: all 0.2s ease;
-}
-
 /* Dark mode: Next button - black text for ADA compliance */
 .dark-mode .click-button {
   color: #000000;
 }
 
-/* Dark mode: Next button hover - lighter color for readability */
-.dark-mode .click-button:hover {
-  background-color: #c6a3ff;
-  color: #000000;
+/* Light mode hover - only when NOT in dark mode */
+body:not(.dark-mode) .click-button:hover {
+  cursor: pointer;
+  background-color: var(--text-header-color);
+  transition: all 0.2s ease;
+}
+
+/* Dark mode: Next button hover - same as base color with white text for contrast */
+body.dark-mode .click-button:hover {
+  cursor: pointer;
+  background-color: #9c7ef3 !important;
+  color: #ffffff !important;
+  transition: all 0.2s ease !important;
 }
 
 a.link-boxes {
@@ -145,6 +148,13 @@ a.link-boxes {
 /* Dark mode: fix button contrast - dark text on light background */
 .dark-mode a.link-boxes {
   color: #000;
+}
+
+/* Dark mode: fix link-boxes hover contrast */
+body.dark-mode .link-boxes:hover,
+body.dark-mode a.link-boxes:hover {
+  background-color: #2a1f4a !important;
+  color: #f5eaff !important;
 }
 
 .join-message {
@@ -171,6 +181,12 @@ a.link-boxes {
   text-align: center;
   color: var(--text-text-color);
   max-width: 30rem;
+}
+
+/* Dark mode: fix thanks-box - darker background with step text color */
+.dark-mode .thanks-box {
+  background-color: #3d3061;
+  color: var(--text-subtitle-color);
 }
 
 div.info-title {
