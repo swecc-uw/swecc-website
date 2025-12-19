@@ -133,10 +133,10 @@ body:not(.dark-mode) .click-button:hover {
   transition: all 0.2s ease;
 }
 
-/* Dark mode: Next button hover - same as base color with white text for contrast */
+/* Dark mode: Next button hover - darker background like light mode, white text for contrast */
 body.dark-mode .click-button:hover {
   cursor: pointer;
-  background-color: #9c7ef3 !important;
+  background-color: #7a5bd9 !important;
   color: #ffffff !important;
   transition: all 0.2s ease !important;
 }
@@ -154,7 +154,7 @@ a.link-boxes {
 body.dark-mode .link-boxes:hover,
 body.dark-mode a.link-boxes:hover {
   background-color: #2a1f4a !important;
-  color: #f5eaff !important;
+  color: #ffffff !important;
 }
 
 .join-message {
