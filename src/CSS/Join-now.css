@@ -288,14 +288,17 @@ table {
 
 .stepper-item .step-counter {
   background-color: var(--none);
+  color: #000;
 }
 
 .stepper-item.active .step-counter {
   background-color: var(--active);
+  color: #000;
 }
 
 .stepper-item.completed .step-counter {
   background-color: var(--completed);
+  color: #000;
 }
 
 .stepper-item.completed::after {
@@ -319,9 +322,6 @@ table {
   color: var(--text-subtitle-color);
 }
 
-.stepper-item.completed .step-counter {
-  color: #000;
-}
 
 @media only screen and (max-width: 768px) {
   .about-title,
