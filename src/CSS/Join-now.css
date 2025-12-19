@@ -127,6 +127,17 @@ button.click-button.next-button {
   transition: all 0.2s ease;
 }
 
+/* Dark mode: Next button - black text for ADA compliance */
+.dark-mode .click-button {
+  color: #000000;
+}
+
+/* Dark mode: Next button hover - lighter color for readability */
+.dark-mode .click-button:hover {
+  background-color: #c6a3ff;
+  color: #000000;
+}
+
 a.link-boxes {
   color: var(--text-header-color);
 }
