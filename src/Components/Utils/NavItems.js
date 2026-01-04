@@ -9,12 +9,13 @@ const NavBar = ({ children }) => (
   </nav>
 );
 
-const NavItem = ({ closeExpand, route, tooltip, icon, LogoName }) => (
+const NavItem = ({ closeExpand, route, tooltip, icon, LogoName, label }) => (
   <li className={`nav-item ${LogoName ? LogoName : ""}`} onClick={closeExpand}>
-    <NavLink to={route}>
+    <NavLink to={route} aria-label={label || tooltip}>
       <div
         className={`icon-button ${tooltip ? "tooltip" : ""}`}
         data-tooltip={tooltip}
+        aria-hidden="true"
       >
         {icon}
       </div>
@@ -30,28 +31,34 @@ const NavToggle = ({
   LogoName,
   route,
   isDarkMode,
+  label,
 }) => (
   <li
     className={`nav-toggle ${LogoName ? LogoName : ""}`}
     onClick={closeExpand}
   >
-    <NavLink to={route}>
-      <div
-        onClick={toggleMode}
-        className={`toggle-button ${tooltip ? "tooltip" : ""} ${isDarkMode ? "light-mode" : "dark-mode"}`}
-        data-tooltip={tooltip}
-      >
-        {icon}
-      </div>
-    </NavLink>
+    <button
+      onClick={toggleMode}
+      className={`toggle-button ${tooltip ? "tooltip" : ""} ${isDarkMode ? "light-mode" : "dark-mode"}`}
+      data-tooltip={tooltip}
+      aria-label={isDarkMode ? "Switch to dark mode" : "Switch to light mode"}
+      aria-pressed={isDarkMode}
+    >
+      {icon}
+    </button>
   </li>
 );
 
-const NavExpandItem = ({ togglExpand, icon, expand, children }) => (
+const NavExpandItem = ({ togglExpand, icon, expand, children, tooltip }) => (
   <li className="nav-item nav-expand">
-    <div className="icon-button" onClick={togglExpand}>
+    <button
+      className="icon-button"
+      onClick={togglExpand}
+      aria-label={tooltip || "Toggle menu"}
+      aria-expanded={expand}
+    >
       {icon}
-    </div>
+    </button>
     {expand && children}
   </li>
 );

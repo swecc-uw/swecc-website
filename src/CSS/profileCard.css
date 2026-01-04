@@ -76,7 +76,10 @@
   justify-content: center;
 }
 
-.card-container button {
+.card-container .social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin: 12px 8px;
   width: 44px;
   height: 44px;
@@ -84,36 +87,33 @@
   border-radius: 50%;
   cursor: pointer;
   transition: opacity 0.4s;
+  color: #fff;
+  font-size: 1.4em;
+  text-decoration: none;
 }
 
-.card-container button:hover {
+.card-container .social-link:hover {
   opacity: 0.8;
   transition: 200ms;
 }
 
-.card-container button a {
-  color: #fff;
-  font-size: 1.4em;
-}
-
-.card-container button svg {
-  padding-top: 4px;
+.card-container .social-link svg {
   height: 20px;
 }
 
-.card-container button.portfolio {
+.card-container .social-link.portfolio {
   background-color: #3c8c2d;
 }
 
-.card-container button.github {
+.card-container .social-link.github {
   background-color: #24292e;
 }
 
-.card-container button.linkedin {
+.card-container .social-link.linkedin {
   background-color: #2d64bc;
 }
 
-.card-container button.email {
+.card-container .social-link.email {
   background-color: #aa5738;
 }
 
@@ -126,7 +126,7 @@
     width: 8rem;
   }
 
-  .card-container button {
+  .card-container .social-link {
     width: 30px;
     height: 30px;
   }

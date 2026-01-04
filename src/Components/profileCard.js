@@ -20,40 +20,48 @@ function ProfileCard(props) {
       <p>{member.position}</p>
       <div className="socials">
         {member.portfolio && (
-          <button className="portfolio">
-            <a
-              href={member.portfolio}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <AiOutlineLink />
-            </a>
-          </button>
+          <a
+            className="social-link portfolio"
+            href={member.portfolio}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${member.name}'s portfolio`}
+          >
+            <AiOutlineLink aria-hidden="true" />
+          </a>
         )}
         {member.github && (
-          <button className="github">
-            <a href={member.github} target="_blank" rel="noopener noreferrer">
-              <FaGithub />
-            </a>
-          </button>
+          <a
+            className="social-link github"
+            href={member.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${member.name}'s GitHub profile`}
+          >
+            <FaGithub aria-hidden="true" />
+          </a>
         )}
         {member.linkedin && (
-          <button className="linkedin">
-            <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
-              <FaLinkedin />
-            </a>
-          </button>
+          <a
+            className="social-link linkedin"
+            href={member.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${member.name}'s LinkedIn profile`}
+          >
+            <FaLinkedin aria-hidden="true" />
+          </a>
         )}
         {member.email && (
-          <button className="email">
-            <a
-              href={`mailto:${member.email}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <MdOutlineEmail />
-            </a>
-          </button>
+          <a
+            className="social-link email"
+            href={`mailto:${member.email}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Email ${member.name}`}
+          >
+            <MdOutlineEmail aria-hidden="true" />
+          </a>
         )}
       </div>
     </div>

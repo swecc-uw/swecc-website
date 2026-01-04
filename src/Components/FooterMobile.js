@@ -20,8 +20,9 @@ export default function Footer() {
               href="mailto:swecc@uw.edu"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Email SWECC"
             >
-              <span className="fa fa-envelope"></span>
+              <span className="fa fa-envelope" aria-hidden="true"></span>
             </a>
           </li>
           <li>
@@ -29,8 +30,9 @@ export default function Footer() {
               href={links.social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="SWECC LinkedIn"
             >
-              <span className="fa fa-linkedin"></span>
+              <span className="fa fa-linkedin" aria-hidden="true"></span>
             </a>
           </li>
           <li>
@@ -38,8 +40,9 @@ export default function Footer() {
               href={links.social.github}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="SWECC GitHub"
             >
-              <span className="fa fa-github"></span>
+              <span className="fa fa-github" aria-hidden="true"></span>
             </a>
           </li>
           <li>
@@ -47,8 +50,9 @@ export default function Footer() {
               href={links.social.instagram}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="SWECC Instagram"
             >
-              <span className="fa fa-instagram"></span>
+              <span className="fa fa-instagram" aria-hidden="true"></span>
             </a>
           </li>
           <li>
@@ -56,8 +60,9 @@ export default function Footer() {
               href={links.social.discord}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="SWECC Discord"
             >
-              <span className="fab fa-discord"></span>
+              <span className="fab fa-discord" aria-hidden="true"></span>
             </a>
           </li>
         </ul>
