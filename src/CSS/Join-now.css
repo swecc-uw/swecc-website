@@ -111,11 +111,11 @@ button.click-button.next-button {
 .click-button {
   display: flex;
   border-radius: 15px;
-  border-color: #9c7ef3;
-  background-color: #9c7ef3;
+  border-color: #7856d6;
+  background-color: #7856d6;
   padding: 10px 20px;
   margin: 5px 15px;
-  color: #e5e2ed;
+  color: #ffffff;
   border: 0;
   animation: slide-up 0.5s ease;
   transition: all 0.2s ease;

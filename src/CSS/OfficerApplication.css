@@ -48,7 +48,7 @@
     font-size: 1.5rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
-    color: #0056b3;
+    color: var(--heading-accent);
     animation: fadeIn 0.5s ease-out;
 }
 

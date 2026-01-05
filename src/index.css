@@ -21,6 +21,8 @@
   --backgroundImg-buttom: #474a4d;
   --backgroundImg-buttom-background: rgba(255, 255, 255, 30%);
   --backgroundImg-cover-opacity: 0.5;
+  --sideBarTitle: #3d4785;
+  --heading-accent: #003d82;
 }
 
 .dark-mode {
@@ -41,6 +43,8 @@
   --backgroundImg-buttom: white;
   --backgroundImg-buttom-background: rgba(0, 0, 0, 30%);
   --backgroundImg-cover-opacity: 0.4;
+  --sideBarTitle: #b8b0d4;
+  --heading-accent: #8eb4e3;
 }
 
 * {
