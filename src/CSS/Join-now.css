@@ -121,14 +121,40 @@ button.click-button.next-button {
   transition: all 0.2s ease;
 }
 
-.click-button:hover {
+/* Dark mode: Next button - black text for ADA compliance */
+.dark-mode .click-button {
+  color: #000000;
+}
+
+/* Light mode hover - only when NOT in dark mode */
+body:not(.dark-mode) .click-button:hover {
   cursor: pointer;
   background-color: var(--text-header-color);
   transition: all 0.2s ease;
 }
 
+/* Dark mode: Next button hover - darker background like light mode, white text for contrast */
+body.dark-mode .click-button:hover {
+  cursor: pointer;
+  background-color: #7a5bd9 !important;
+  color: #ffffff !important;
+  transition: all 0.2s ease !important;
+}
+
 a.link-boxes {
   color: var(--text-header-color);
+}
+
+/* Dark mode: fix button contrast - dark text on light background */
+.dark-mode a.link-boxes {
+  color: #000;
+}
+
+/* Dark mode: fix link-boxes hover contrast */
+body.dark-mode .link-boxes:hover,
+body.dark-mode a.link-boxes:hover {
+  background-color: #2a1f4a !important;
+  color: #ffffff !important;
 }
 
 .join-message {
@@ -155,6 +181,12 @@ a.link-boxes {
   text-align: center;
   color: var(--text-text-color);
   max-width: 30rem;
+}
+
+/* Dark mode: fix thanks-box - darker background with step text color */
+.dark-mode .thanks-box {
+  background-color: #3d3061;
+  color: var(--text-subtitle-color);
 }
 
 div.info-title {
@@ -272,14 +304,17 @@ table {
 
 .stepper-item .step-counter {
   background-color: var(--none);
+  color: #000;
 }
 
 .stepper-item.active .step-counter {
   background-color: var(--active);
+  color: #000;
 }
 
 .stepper-item.completed .step-counter {
   background-color: var(--completed);
+  color: #000;
 }
 
 .stepper-item.completed::after {
@@ -303,9 +338,6 @@ table {
   color: var(--text-subtitle-color);
 }
 
-.stepper-item.completed .step-counter {
-  color: #fff;
-}
 
 @media only screen and (max-width: 768px) {
   .about-title,
