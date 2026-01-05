@@ -113,7 +113,7 @@
   font-style: italic;
   letter-spacing: 2px;
   text-decoration: none;
-  color: var(--sideBarTitle);
+  color: var(--text-title-color);
 }
 
 .officer-info,
@@ -142,7 +142,7 @@
   font-size: 3rem;
   font-family: adobe-garamond-pro;
   font-weight: 400;
-  color: var(--text-color);
+  color: var(--text-title-color);
   font-style: normal;
 }
 
