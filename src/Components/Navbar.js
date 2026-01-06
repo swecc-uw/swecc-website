@@ -112,14 +112,7 @@ function Navbar() {
             tooltip="Officers"
             label="Officers"
           />
-          <NavItem
-            icon=<FaHeart />
-            route="/Sponsor"
-            expand={expand}
-            closeExpand={closeExpand}
-            tooltip="Sponsor"
-            label="Sponsors"
-          />
+          
           <NavItem
             icon=<FcCalendar />
             route="/Events"
