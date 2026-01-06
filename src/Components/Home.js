@@ -13,7 +13,6 @@ import img4 from "../Data/img/backgroundImg/4.jpg";
 import img5 from "../Data/img/backgroundImg/5.jpg";
 import img6 from "../Data/img/backgroundImg/6.jpg";
 import img7 from "../Data/img/backgroundImg/7.jpg";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { links } from "./Utils";
 
 function HomePage() {

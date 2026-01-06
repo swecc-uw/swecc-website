@@ -1,7 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { PiMoonBold } from "react-icons/pi";
-import { ImSun } from "react-icons/im";
 
 const NavBar = ({ children }) => (
   <nav className="navbar">
