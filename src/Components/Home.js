@@ -102,11 +102,11 @@ mentorship programs, interview preparation, and more. Join us to jumpstart your 
         />
         <ColFlexDoubleTextRightImageLeft
           title1="SWECC Meetings"
-          title2="Meeting Times/Location (Autumn 2024)"
+          title2={<>Meeting Times/Location <br/> {links.config.currentQuarter}</>}
           content1="SWECC Meeting feature topics in a vast number of
           areas, including professional development, resume building, and mentor
           circles"
-          content2="Weekly on Wednesday, 5:30-6:30pm, Loew Hall 216"
+          content2={<>Weekly on {links.config.meetingDay}, {links.config.meetingTime}, {links.config.meetingLocation}</>}
           image={SWECCmap}
         />
       </div>
