@@ -1,8 +1,8 @@
 const ApiConfig = {
-  meta_developer_key: "insert developer key here",
-  number_of_instagram_post: 10,
-  base_url: "https://graph.instagram.com/{user-id}/media",
-  // 5 minutes
+  access_token: process.env.META_DEVELOPER_API_KEY,
+  number_of_instagram_post: 6,
+  base_url: process.env.SWECC_INSTAGRAM_META_API_URL,
+  // 5 minutes in seconds
   cache_timeout: 60 * 5,
   cache_key: "instagram_cache_data"
 }
@@ -25,38 +25,39 @@ const cached_api_response = {
       "caption": "New video live! 🎥",
       "media_type": "VIDEO",
       "media_url": "https://sample-videos.com/video123.mp4",
-      "thumbnail_url": "https://images.unsplash.com/photo-1536240478700-b869070f9279", 
+      "thumbnail_url": "https://images.unsplash.com/photo-1536240478700-b869070f9279",
       "permalink": "https://www.instagram.com/p/Abc987/",
       "timestamp": "2025-11-06T15:30:00+0000"
     }
-    // ... plus 8 more posts
+    // ...
   ],
 
   // 2. The Timestamp (Seconds)
-  "timestamp": 1762419283 
+  "timestamp": 1762419283
 };
 
 /**
   * Main function that grabs the top n instagram posts.
   *
   * RETURNS:
-  * returns a json of cache_obj if the posts are cached or pulled from the api
+  * returns a promise json of cache_obj if the posts are cached or pulled from the api
   * if the api fails then it returns null
   */
 async function fetch_top_n_instagram_post() {
-  // check the cache
+  // 1. Check cache
   const cached_post = check_cache();
   if (cached_post) {
     return cached_post;
   }
-  // if cache is not valid we call the api
-  // there is also the case where the localStorage returned null
+
+  /// 2. If cache is not valid/empty then call the API
   const fresh_data = await fetch_from_instagram_api();
   if (fresh_data) {
     set_cache(fresh_data);
     return fresh_data;
   }
-  // the api call failed
+
+  // 3. API failed
   return null;
 }
 
@@ -67,9 +68,9 @@ async function fetch_top_n_instagram_post() {
  * if the api returned it will return a json of the data
  * else it will return null
  */
-async fetch_from_instagram_api() {
+async function fetch_from_instagram_api() {
   const fields = "id,caption,media_type,media_url,permalink,thumbnail_url,timestamp";
-  
+
   // 2. Build the full URL
   // NOTE: If using a Business account, the base URL is usually:
   // https://graph.instagram.com/{user-id}/media
@@ -77,6 +78,14 @@ async fetch_from_instagram_api() {
   const url = `${ApiConfig.base_url}?fields=${fields}&limit=${ApiConfig.number_of_instagram_post}&access_token=${ApiConfig.access_token}`;
   try {
     const response = await fetch(url);
+
+    // Check content type to ensure we got JSON
+    const contentType = response.headers.get("content-type");
+    if (!contentType || !contentType.includes("application/json")) {
+      console.error("Instagram API returned non-JSON response. Content-Type:", contentType);
+      console.error("This usually means the API endpoint or credentials are incorrect.");
+      return null;
+    }
 
     if (!response.ok) {
       const error_details = await response.json();
@@ -86,7 +95,7 @@ async fetch_from_instagram_api() {
       }
       return null;
     }
-    const json = await repsonse.json();
+    const json = await response.json();
     return json.data;
   } catch (error) {
     console.error("Network Error while fetching instagram:", error)
@@ -102,11 +111,11 @@ async fetch_from_instagram_api() {
   */
 function check_cache() {
   // converts from milliseconds to seconds
-   const jsonString = localStorage.getItem(ApiConfig.cache_key);
+  const jsonString = localStorage.getItem(ApiConfig.cache_key);
   if (!jsonString) return null;
 
   const cacheObj = JSON.parse(jsonString);
-  const now = Math.floor(Date.now() / 1000);
+  const now = Math.floor(Date.now() / 1000); // seconds
 
   if (is_cache_still_valid(cacheObj.timestamp, now)) {
     return cacheObj.data;
@@ -121,7 +130,7 @@ function check_cache() {
   * boolean in which if true the cache is still valid, else returns false
   */
 function is_cache_still_valid(last_fetch, now) {
-return last_fetch || (now - last_fetch) < ApiConfig.cache_timeout;
+  return last_fetch && (now - last_fetch) < ApiConfig.cache_timeout;
 }
 
 /**
@@ -145,7 +154,9 @@ function get_cache() {
 function set_cache(data) {
   const cacheObj = {
     data: data,
-    timestamp: Date.now()
+    timestamp: Math.floor(Date.now() / 1000)
   };
   localStorage.setItem(ApiConfig.cache_key, JSON.stringify(cacheObj));
 }
+
+export { fetch_top_n_instagram_post };
