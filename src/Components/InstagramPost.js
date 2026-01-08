@@ -1,29 +1,28 @@
 import React, { useEffect, useState } from "react";
 import BeholdWidget from "@behold/react";
-import { fetch_top_n_instagram_post } from "./Utils/InstagramFetcher";
 import { links } from "./Utils";
+import { fetch_top_n_instagram_post } from "./Utils/InstagramFetcher";
 
 function InstagramPost({ post }) {
+  const isVideo = post.media_type === "VIDEO";
+  const isCarousel = post.media_type === "CAROUSEL_ALBUM";
+
+  const postType = isVideo ? 'video' : isCarousel ? 'album' : 'image';
+
   return (
-    <div className="instaPost">
-      <a href={post.permalink} target="_blank" rel="noopener noreferrer" className="instaPost-link">
-        <div className="instaPost-media">
-          <img
-            src={post.media_type === "VIDEO" ? (post.thumbnail_url || post.media_url) : post.media_url}
-            alt={post.caption || "Instagram post"}
-            className="instaPost-image"
-          />
-          {post.media_type === "VIDEO" && (
-            <div className="instaPost-play-overlay">
-              <span className="material-symbols-outlined instaPost-play-icon">play_circle</span>
-            </div>
-          )}
-        </div>
-        {post.caption && (
-          <p className="instaPost-caption">
-            {post.caption.substring(0, 100)}{post.caption.length > 100 ? '...' : ''}
-          </p>
-        )}
+    <div className={`post post--hover-icon post--${postType}`}>
+      <a
+        href={post.permalink}
+        target="_blank"
+        rel="noopener noreferrer"
+        draggable="false"
+        aria-label={`${post.media_type.toLowerCase()}, Instagram post`}
+      >
+        <img
+          src={isVideo ? (post.thumbnail_url || post.media_url) : post.media_url}
+          alt={post.caption || "Instagram post"}
+          draggable="false"
+        />
       </a>
     </div>
   );
@@ -56,8 +55,8 @@ function InstagramPostsWidget() {
 
   // Render custom Instagram posts
   return (
-    <div className="posts-carousel">
-      <div className="posts">
+    <div className="instagram-grid">
+      <div className="instagram-grid__posts">
         {instagramPosts.map((post) => (
           <InstagramPost key={post.id} post={post} />
         ))}
