@@ -1,11 +1,10 @@
 import "../CSS/Home.css";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import SWECCmap from "../Data/img/location.png";
 import {
   ColFlexDoubleTextRightImageLeft,
   TextLeftImageRight,
 } from "./Utils/CommonItems";
-import BeholdWidget from "@behold/react";
 import img1 from "../Data/img/backgroundImg/1.jpg";
 import img2 from "../Data/img/backgroundImg/2.jpg";
 import img3 from "../Data/img/backgroundImg/3.jpg";
@@ -14,6 +13,7 @@ import img5 from "../Data/img/backgroundImg/5.jpg";
 import img6 from "../Data/img/backgroundImg/6.jpg";
 import img7 from "../Data/img/backgroundImg/7.jpg";
 import { links } from "./Utils";
+import InstagramPostsWidget from "./InstagramPost";
 
 function HomePage() {
   function Carousel() {
@@ -81,9 +81,6 @@ function HomePage() {
     );
   }
 
-  function InstagramPostsWidget() {
-    return <BeholdWidget feedId={links.config.beholdFeedId} />;
-  }
 
   return (
     <div>
@@ -127,7 +124,7 @@ mentorship programs, interview preparation, and more. Join us to jumpstart your 
         >
           Join Us
         </a>
-        {InstagramPostsWidget()}
+        <InstagramPostsWidget />
       </div>
     </div>
   );
