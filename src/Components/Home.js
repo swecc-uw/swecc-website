@@ -14,6 +14,7 @@ import img5 from "../Data/img/backgroundImg/5.jpg";
 import img6 from "../Data/img/backgroundImg/6.jpg";
 import img7 from "../Data/img/backgroundImg/7.jpg";
 import { links } from "./Utils";
+import Countdown from "./Countdown";
 
 function HomePage() {
   function Carousel() {
@@ -88,6 +89,7 @@ function HomePage() {
   return (
     <div>
       <Carousel />
+      <Countdown eventDate="2026-05-05T15:00:00Z" eventName="Sweccathon 2026" />
 
       <div className="mainPage-body">
         <TextLeftImageRight
