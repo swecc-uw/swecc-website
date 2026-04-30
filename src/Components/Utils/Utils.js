@@ -21,6 +21,6 @@ export const links = {
   },
   event:{
     eventName:"Sweccathon 2026",
-    eventDate:"2026-05-05T15:00:00Z"
+    eventDate:"2026-05-15T15:00:00Z"
   },
 };
