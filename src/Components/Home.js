@@ -89,7 +89,7 @@ function HomePage() {
   return (
     <div>
       <Carousel />
-      <Countdown eventDate="2026-05-05T15:00:00Z" eventName="Sweccathon 2026" />
+      <Countdown eventDate={links.event.eventDate} eventName={links.event.eventName} />
 
       <div className="mainPage-body">
         <TextLeftImageRight
