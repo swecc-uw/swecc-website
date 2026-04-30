@@ -15,7 +15,7 @@ const Countdown = ({ eventName, eventDate }) => {
     useEffect(() =>{
             const countdown = setInterval(() => {
                 setTimeLeft(calculateTimeLeft());
-            })
+            }, 1000)
             return () => clearInterval(countdown);
     },[eventDate]);
 
