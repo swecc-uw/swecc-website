@@ -14,9 +14,13 @@ export const links = {
   },
   config: {
     beholdFeedId: "5rAX7PhyjFjmyVfW4Plm",
-    currentQuarter: "(Winter 2026)",
+    currentQuarter: "(Spring 2026)",
     meetingTime: "5:30-6:30PM",
     meetingDay: "Wednesday",
     meetingLocation: "Loew Hall 216"
+  },
+  event:{
+    eventName:"Sweccathon 2026",
+    eventDate:"2026-05-15T15:00:00Z"
   },
 };
