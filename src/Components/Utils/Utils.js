@@ -19,8 +19,4 @@ export const links = {
     meetingDay: "Wednesday",
     meetingLocation: "Loew Hall 216"
   },
-  event:{
-    eventName:"Sweccathon 2026",
-    eventDate:"2026-05-15T15:00:00Z"
-  },
 };
