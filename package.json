@@ -23,6 +23,9 @@
   },
   "scripts": {
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "sync-calendar": "node scripts/sync-calendar.js",
+    "prestart": "node scripts/sync-calendar.js",
+    "prebuild": "node scripts/sync-calendar.js",
     "start": "react-scripts start",
     "predeploy": "npm i; npm run build",
     "deploy": "gh-pages -d build",

@@ -10,6 +10,10 @@ export const links = {
       "http://mailman11.u.washington.edu/mailman/listinfo/sweccmailinglist",
     calendar:
       "https://calendar.google.com/calendar/embed?src=swecc%40uw.edu&ctz=America%2FLos_Angeles",
+    calendarIcs:
+      "https://calendar.google.com/calendar/ical/swecc%40uw.edu/public/basic.ics",
+    calendarSubscribe:
+      "https://calendar.google.com/calendar/r?cid=swecc%40uw.edu",
     officerApp: "https://forms.gle/1JaS7iSeJK6CFW329",
   },
   config: {
@@ -18,9 +22,5 @@ export const links = {
     meetingTime: "5:30-6:30PM",
     meetingDay: "Wednesday",
     meetingLocation: "Loew Hall 216"
-  },
-  event:{
-    eventName:"Sweccathon 2026",
-    eventDate:"2026-05-15T15:00:00Z"
   },
 };
