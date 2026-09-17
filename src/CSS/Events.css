@@ -5,7 +5,7 @@
 .event-page-intro h1,
 .event-page-intro h2 {
   margin-bottom: 10px;
-  font-size: min(5vw, 75px);
+  font-size: min(5vw, 50px);
   color: white;
   text-shadow: 1px 1px 2px var(--text-header-shadow-color);
   animation: slide-up 0.5s ease-out;
