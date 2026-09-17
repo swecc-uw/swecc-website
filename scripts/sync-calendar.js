@@ -50,5 +50,5 @@ download(ICS_URL)
       process.exit(0);
     }
     console.error(error.message);
-    process.exit(0);
+    process.exit(1);
   });

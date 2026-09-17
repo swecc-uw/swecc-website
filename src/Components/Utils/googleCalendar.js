@@ -103,14 +103,44 @@ function parseIcsDate(property) {
   };
 }
 
-function getLine(block, key) {
+function getLines(block, key) {
   const lines = block.split(/\r?\n/);
   const prefix = `${key}:`;
   const prefixParam = `${key};`;
-  const line = lines.find(
-    (l) => l.startsWith(prefix) || l.startsWith(prefixParam),
+  return lines.filter(
+    (line) => line.startsWith(prefix) || line.startsWith(prefixParam),
   );
-  return line || "";
+}
+
+function getLine(block, key) {
+  return getLines(block, key)[0] || "";
+}
+
+function parseExdates(block) {
+  const dates = [];
+  getLines(block, "EXDATE").forEach((line) => {
+    const sep = line.indexOf(":");
+    if (sep === -1) return;
+    const meta = line.slice(0, sep);
+    line
+      .slice(sep + 1)
+      .split(",")
+      .forEach((value) => {
+        const trimmed = value.trim();
+        if (!trimmed) return;
+        const parsed = parseIcsDate(`${meta}:${trimmed}`);
+        if (!Number.isNaN(parsed.date.getTime())) {
+          dates.push(parsed.date);
+        }
+      });
+  });
+  return dates;
+}
+
+function recurrenceRangeEnd(from = new Date()) {
+  const end = new Date(from.getTime());
+  end.setFullYear(end.getFullYear() + 1);
+  return end;
 }
 
 function parseVEvent(block) {
@@ -130,6 +160,7 @@ function parseVEvent(block) {
   const description = stripHtml(getLine(block, "DESCRIPTION").split(/:(.+)/)[1] || "");
   const uid = (getLine(block, "UID").split(/:(.+)/)[1] || "").trim();
   const rrule = (getLine(block, "RRULE").split(/:(.+)/)[1] || "").trim();
+  const exdates = parseExdates(block);
 
   return {
     uid,
@@ -140,19 +171,19 @@ function parseVEvent(block) {
     end: end.date,
     allDay: start.allDay,
     rrule,
+    exdates,
   };
 }
 
-function expandWeekly(event) {
+function expandWeekly(event, rangeEnd) {
   if (!event.rrule || !event.rrule.includes("FREQ=WEEKLY")) {
     return [event];
   }
 
+  let until = rangeEnd;
   const untilMatch = event.rrule.match(/UNTIL=(\d{8}T\d{6}Z|\d{8})/);
-  let until = new Date(event.start);
-  until.setFullYear(until.getFullYear() + 1);
   if (untilMatch) {
-    until = untilMatch[1].includes("T")
+    const ruleUntil = untilMatch[1].includes("T")
       ? parseIcsUtc(untilMatch[1])
       : zonedLocalToUtc(
           +untilMatch[1].slice(0, 4),
@@ -163,6 +194,7 @@ function expandWeekly(event) {
           59,
           TZ,
         );
+    if (ruleUntil < until) until = ruleUntil;
   }
 
   const duration = event.end - event.start;
@@ -211,7 +243,8 @@ export function laNoon(year, month, day) {
   return zonedLocalToUtc(year, month, day, 12, 0, 0, TZ);
 }
 
-export function parseIcsEvents(icsText) {
+export function parseIcsEvents(icsText, options = {}) {
+  const rangeEnd = options.rangeEnd || recurrenceRangeEnd();
   const unfolded = unfoldIcs(icsText);
   const blocks = unfolded.split("BEGIN:VEVENT").slice(1);
   const parsed = blocks
@@ -223,6 +256,9 @@ export function parseIcsEvents(icsText) {
   const singles = [];
 
   parsed.forEach((event) => {
+    (event.exdates || []).forEach((date) => {
+      exceptions.add(`${event.uid}|${dateKey(date)}`);
+    });
     if (event.rrule) {
       recurring.push(event);
     } else {
@@ -231,9 +267,9 @@ export function parseIcsEvents(icsText) {
     }
   });
 
-  const expanded = recurring.flatMap(expandWeekly).filter((event) => {
-    return !exceptions.has(`${event.uid}|${dateKey(event.start)}`);
-  });
+  const expanded = recurring
+    .flatMap((event) => expandWeekly(event, rangeEnd))
+    .filter((event) => !exceptions.has(`${event.uid}|${dateKey(event.start)}`));
 
   return [...expanded, ...singles].sort((a, b) => a.start - b.start);
 }
