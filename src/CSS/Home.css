@@ -5,7 +5,7 @@
   --home-title: clamp(1.75rem, 1.2vw + 1.2rem, 3rem);
   --home-pad-x: clamp(1.25rem, 5vw, 6rem);
   --home-pad-y: clamp(3rem, 7vw, 7rem);
-  --home-photo: clamp(220px, 32vw, 560px);
+  --home-photo: clamp(148px, 21vw, 375px);
   background: var(--home-grey);
   color: var(--color-text);
   overflow-x: hidden;
@@ -170,7 +170,7 @@
 
 .home-initiatives__grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 329px));
+  grid-template-columns: repeat(4, minmax(0, 220px));
   justify-content: center;
   gap: clamp(1.5rem, 3vw, 3rem) clamp(1rem, 2vw, 1.5rem);
   max-width: 1512px;
@@ -209,12 +209,12 @@
   }
 
   .home-initiatives__grid {
-    grid-template-columns: repeat(2, minmax(0, 329px));
+    grid-template-columns: repeat(2, minmax(0, 220px));
   }
 }
 
 @media (max-width: 600px) {
   .home-initiatives__grid {
-    grid-template-columns: minmax(0, 329px);
+    grid-template-columns: minmax(0, 220px);
   }
 }

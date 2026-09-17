@@ -105,6 +105,10 @@
   font-family: var(--font-sans);
 }
 
+html {
+  font-size: 67%;
+}
+
 body {
   margin: 0;
   font-family: var(--font-sans);
@@ -215,16 +219,16 @@ p {
 .type-hero-mono {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 75px;
-  line-height: 82px;
+  font-size: 50px;
+  line-height: 55px;
   color: var(--color-text);
 }
 
 .type-hero-sans {
   font-family: var(--font-ui);
   font-weight: 700;
-  font-size: 75px;
-  line-height: 82px;
+  font-size: 50px;
+  line-height: 55px;
   color: var(--color-text-accent);
 }
 
@@ -261,7 +265,7 @@ p {
 
   .type-hero-mono,
   .type-hero-sans {
-    font-size: 40px;
+    font-size: 27px;
     line-height: 1.15;
   }
 }

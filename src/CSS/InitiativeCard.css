@@ -1,7 +1,7 @@
 .initiative-card {
   position: relative;
   width: 100%;
-  max-width: 329px;
+  max-width: 220px;
   aspect-ratio: 329 / 491;
   height: auto;
 }
