@@ -12,17 +12,15 @@ import {
   FaDiscord,
   FaChevronRight,
   FaGithub,
-  FaHeart,
 } from "react-icons/fa";
 import {
   FcShare,
   FcCalendar,
   FcApproval,
-  FcCheckmark,
   FcConferenceCall,
   FcHome,
 } from "react-icons/fc";
-import { ImIcoMoon, ImSun } from "react-icons/im";
+import { ImSun } from "react-icons/im";
 import { PiMoonBold } from "react-icons/pi";
 import { NavBar, NavExpandItem, NavItem, NavToggle } from "./Utils/NavItems";
 import SWECCLogoWhite from "../Data/img/Logo/SWECCLogoWhite.png";
@@ -95,35 +93,28 @@ function Navbar() {
       {!isMobile && (
         <>
           <NavItem
-            icon=<FcHome />
             route="/"
             closeExpand={closeExpand}
             tooltip="Home"
-            label="Home"
+            label="HOME"
           />
           <NavItem
-            icon=<FcConferenceCall />
             route="/Officers"
-            expand={expand}
             closeExpand={closeExpand}
             tooltip="Officers"
-            label="Officers"
+            label="OFFICERS"
           />
-          
           <NavItem
-            icon=<FcCalendar />
             route="/Events"
             closeExpand={closeExpand}
             tooltip="Events"
-            label="Events"
+            label="EVENTS"
           />
           <NavItem
-            icon=<FcCheckmark />
             route="/Join-Now"
-            expand={expand}
             closeExpand={closeExpand}
             tooltip="Join"
-            label="Join"
+            label="JOIN"
           />
           <NavToggle
             icon={darkMode ? <ImSun /> : <PiMoonBold />}
