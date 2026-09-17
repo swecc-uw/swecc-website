@@ -7,21 +7,18 @@ import { AiOutlineLink } from "react-icons/ai";
 function ProfileCard(props) {
   const teamMembers = props.info;
   const Card = ({ member }) => (
-    <div className="card">
-      <div
-        className={`card-image-container ${member.position.includes("President") ? "founder-card" : ""}`}
-      >
-        <img
-          src={require(`../Data/officers/${member.imgSrc}`)}
-          alt={member.name}
-        />
-      </div>
-      <p className="name">{member.name}</p>
-      <p>{member.position}</p>
-      <div className="socials">
+    <div className="officer-card">
+      <img
+        className="officer-card__photo"
+        src={require(`../Data/officers/${member.imgSrc}`)}
+        alt={member.name}
+      />
+      <p className="officer-card__name">{member.name}</p>
+      <p className="officer-card__role">{member.position}</p>
+      <div className="officer-card__socials">
         {member.portfolio && (
           <a
-            className="social-link portfolio"
+            className="officer-card__social"
             href={member.portfolio}
             target="_blank"
             rel="noopener noreferrer"
@@ -32,7 +29,7 @@ function ProfileCard(props) {
         )}
         {member.github && (
           <a
-            className="social-link github"
+            className="officer-card__social"
             href={member.github}
             target="_blank"
             rel="noopener noreferrer"
@@ -43,7 +40,7 @@ function ProfileCard(props) {
         )}
         {member.linkedin && (
           <a
-            className="social-link linkedin"
+            className="officer-card__social"
             href={member.linkedin}
             target="_blank"
             rel="noopener noreferrer"
@@ -54,7 +51,7 @@ function ProfileCard(props) {
         )}
         {member.email && (
           <a
-            className="social-link email"
+            className="officer-card__social"
             href={`mailto:${member.email}`}
             target="_blank"
             rel="noopener noreferrer"
@@ -68,7 +65,7 @@ function ProfileCard(props) {
   );
 
   return (
-    <div className="card-container">
+    <div className="officer-card-grid">
       {teamMembers.map((member) => (
         <Card key={member.name} member={member} />
       ))}
