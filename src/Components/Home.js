@@ -1,134 +1,138 @@
 import "../CSS/Home.css";
-import React, { useEffect, useRef, useState } from "react";
-import SWECCmap from "../Data/img/location.png";
-import {
-  ColFlexDoubleTextRightImageLeft,
-  TextLeftImageRight,
-} from "./Utils/CommonItems";
-import BeholdWidget from "@behold/react";
-import img1 from "../Data/img/backgroundImg/1.jpg";
-import img2 from "../Data/img/backgroundImg/2.jpg";
-import img3 from "../Data/img/backgroundImg/3.jpg";
-import img4 from "../Data/img/backgroundImg/4.jpg";
-import img5 from "../Data/img/backgroundImg/5.jpg";
-import img6 from "../Data/img/backgroundImg/6.jpg";
-import img7 from "../Data/img/backgroundImg/7.jpg";
+import React, { useRef } from "react";
+import Button from "./Button";
+import TerminalWindow from "./TerminalWindow";
+import ClusterShell from "./ClusterShell";
+import InitiativeCard from "./InitiativeCard";
+import whoWeAreImg from "../Data/img/backgroundImg/1.jpg";
+import meetingsImg from "../Data/img/backgroundImg/4.jpg";
 import { links } from "./Utils";
 
 function HomePage() {
-  function Carousel() {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const backGroundImgs = [img1, img2, img3, img4, img5, img6, img7];
-    const darkMode = JSON.parse(localStorage.getItem("isToggled"));
+  const heroRef = useRef(null);
 
-    useEffect(() => {
-      const intervalId = setInterval(nextImg, 6000);
-
-      return () => clearInterval(intervalId);
-    }, [backGroundImgs]);
-
-    const nextImg = () => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === backGroundImgs.length - 1 ? 0 : prevIndex + 1,
-      );
-    };
-
-    const prevImg = () => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === 0 ? backGroundImgs.length - 1 : prevIndex - 1,
-      );
-    };
-
-    const scrollToSection = (sectionName) => {
-      const sections = document.getElementsByClassName(sectionName);
-      if (sections.length > 0) {
-        sections[0].scrollIntoView({ behavior: "smooth" });
-      }
-    };
-
-    return (
-      <div className="clubTitleSection">
-        {backGroundImgs.map((img, index) => (
-          <img
-            key={index}
-            src={img}
-            alt={`Background ${index}`}
-            className={`background-img ${index === currentIndex ? "" : "hide"}`}
-          />
-        ))}
-
-        <div className="title-buttons-container">
-          <button onClick={prevImg} className="prevImgButton">
-            <span className="material-symbols-outlined">navigate_before</span>
-          </button>
-
-          <button onClick={nextImg} className="nextImgButton">
-            <span className="material-symbols-outlined">navigate_next</span>
-          </button>
-        </div>
-
-        <div className="club-introduction-container">
-          <h1>Software Engineering Career Club</h1>
-          <p>at the University of Washington</p>
-          <button
-            className="club-introduction-container-button"
-            onClick={() => scrollToSection("whyJoinUs")}
-          >
-            Learn More
-          </button>
-        </div>
-      </div>
-    );
-  }
-
-  function InstagramPostsWidget() {
-    return <BeholdWidget feedId={links.config.beholdFeedId} />;
-  }
+  const scrollTo = (id) => {
+    const section = document.getElementById(id);
+    if (section) section.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
-    <div>
-      <Carousel />
-
-      <div className="mainPage-body">
-        <TextLeftImageRight
-          summary="The Software Engineering Career Club (SWECC) is a student-led
-organization at the University of Washington in Seattle. Our mission
-is to support and empower individuals interested in pursuing a
-career in software engineering. We offer a wide range of
-activities and resources, including networking events, resume reviews,
-mentorship programs, interview preparation, and more. Join us to jumpstart your software engineering career!"
-          summaryTitle="Who we are"
-          image={img3}
-        />
-        <ColFlexDoubleTextRightImageLeft
-          title1="SWECC Meetings"
-          title2={<>Meeting Times/Location <br/> {links.config.currentQuarter}</>}
-          content1="SWECC Meeting feature topics in a vast number of
-          areas, including professional development, resume building, and mentor
-          circles"
-          content2={<>Weekly on {links.config.meetingDay}, {links.config.meetingTime}, {links.config.meetingLocation}</>}
-          image={SWECCmap}
-        />
-      </div>
-
-      <div className="whyJoinUs">
-        <h2>Why Join?</h2>
-        <p>
-          Be part of a community of over 1000 people pursuing a career in
-          software engineering. <br />
-          Gain access to resources, including resume reviews, mock interviews,
-          mentorship programs, and more. <br />
-          Expand your network and connect with like-minded students and industry
-          professionals <br />
-        </p>
-        <a
-          href={links.social.discord}
-          className="club-introduction-container-button"
+    <div className="home-page">
+      <section className="home-hero home-band home-band--black">
+        <div className="home-band__inner home-hero__inner" ref={heroRef}>
+        <div className="home-hero__copy">
+          <h1 className="home-hero__title">
+            <span className="type-hero-mono">Software</span>
+            <span className="type-hero-mono">Engineering</span>
+            <span className="type-hero-sans">CAREER CLUB</span>
+          </h1>
+          <p className="home-hero__kicker">
+            AT THE <em>UNIVERSITY OF WASHINGTON</em>
+          </p>
+          <div className="home-hero__actions">
+            <Button variant="primary" size="md" to="/Join-Now">
+              Join Us
+            </Button>
+            <Button
+              variant="outline"
+              size="md"
+              onClick={() => scrollTo("initiatives")}
+            >
+              Explore Programs +
+            </Button>
+          </div>
+        </div>
+        <TerminalWindow
+          className="home-hero__terminal"
+          draggable
+          boundsRef={heroRef}
         >
-          Join Us
-        </a>
-        {InstagramPostsWidget()}
-      </div>
+          <ClusterShell />
+        </TerminalWindow>
+        </div>
+      </section>
+
+      <section className="home-about home-band home-band--grey">
+        <div className="home-band__inner home-about__row">
+          <div className="home-about__text">
+            <h2 className="type-display mono">Who we are</h2>
+            <p className="type-body">
+              SWECC is a student-led community dedicated to helping aspiring
+              software engineers build the skills, experience, and connections
+              needed to succeed in tech. Through hands-on projects, mentorship,
+              workshops, and a supportive network of ambitious peers, we create
+              opportunities for students to grow as engineers and launch
+              meaningful careers in software. Our mission is simple: help
+              students become exceptional builders and confident problem-solvers.
+            </p>
+          </div>
+          <img
+            className="home-about__photo"
+            src={whoWeAreImg}
+            alt="SWECC members in a club meeting"
+          />
+        </div>
+      </section>
+
+      <section className="home-about home-band home-band--grey">
+        <div className="home-band__inner home-about__row home-about__row--reverse">
+          <img
+            className="home-about__photo"
+            src={meetingsImg}
+            alt="SWECC general meeting in a lecture classroom"
+          />
+          <div className="home-about__text">
+            <h2 className="type-display mono">Meetings</h2>
+            <p className="type-body">
+              SWECC Meetings feature topics in a vast number of areas, including
+              professional development, resume building, and mentor circles
+            </p>
+            <h3 className="home-about__subhead mono">
+              Meeting Times &amp; Location
+            </h3>
+            <p className="home-about__meta type-body">
+              {links.config.currentQuarter.replace(/[()]/g, "")}: Weekly on{" "}
+              {links.config.meetingDay}
+              <br />
+              Time: {links.config.meetingTime}
+              <br />
+              Location: {links.config.meetingLocation}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="home-initiatives home-band home-band--black" id="initiatives">
+        <h2 className="type-display mono home-initiatives__title">
+          Other Initiatives
+        </h2>
+        <div className="home-initiatives__grid">
+          <InitiativeCard
+            title="SWECC LABS"
+            accent="sage"
+            actionLabel="details"
+            actionHref={links.social.discord}
+          />
+          <InitiativeCard
+            title="MOCK INTERVIEWS"
+            accent="mentorship"
+            actionLabel="details"
+            actionTo="/Events"
+          />
+          <InitiativeCard
+            title="MENTORSHIP PROGRAM"
+            accent="sage"
+            actionLabel="details"
+            actionTo="/Join-Now"
+          />
+          <InitiativeCard
+            title="COHORT PROGRAM"
+            accent="mentorship"
+            actionLabel="details"
+            actionTo="/Join-Now"
+          />
+        </div>
+      </section>
     </div>
   );
 }

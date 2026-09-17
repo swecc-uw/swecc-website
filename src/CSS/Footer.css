@@ -1,7 +1,7 @@
 footer {
   bottom: 0;
   display: flex;
-  background-color: var(--og-footer-color);
+  background-color: #2e2f33;
   padding: 20px;
 }
 
@@ -27,8 +27,8 @@ a {
 }
 
 footer svg {
-  height: 2vw;
-  width: 2vw;
+  height: clamp(1.35rem, 2.4vw, 1.75rem);
+  width: clamp(1.35rem, 2.4vw, 1.75rem);
   color: var(--neutral-50);
 }
 
