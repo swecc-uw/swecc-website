@@ -46,7 +46,7 @@
 }
 
 .initiative-card__title {
-  font-family: var(--font-display);
+  font-family: var(--font-accent);
   font-weight: 700;
   font-size: clamp(1rem, 1.5vw, 1.5625rem);
   line-height: 1.2;

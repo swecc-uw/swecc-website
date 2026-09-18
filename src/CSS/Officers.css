@@ -62,7 +62,7 @@
 }
 
 .officers-years button {
-  font-family: var(--font-display);
+  font-family: var(--font-accent);
   font-weight: 700;
   font-size: var(--officers-body);
   background: transparent;

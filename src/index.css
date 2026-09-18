@@ -50,11 +50,13 @@
   --color-primary: #7ea266;
   --color-secondary: #7ea266;
 
-  --font-sans: "IBM Plex Sans", sans-serif, -apple-system, BlinkMacSystemFont,
+  --font-sans: "Roboto", sans-serif, -apple-system, BlinkMacSystemFont,
     "Segoe UI";
   --font-mono: "IBM Plex Mono", monospace, "SFMono-Regular", Menlo, Consolas;
+  --font-hero: "Manrope", var(--font-sans);
+  --font-accent: "Roboto", var(--font-sans);
   --font-body: var(--font-sans);
-  --font-ui: var(--font-sans);
+  --font-ui: var(--font-accent);
   --font-display: var(--font-mono);
 
   --text-h1: 2.5rem;
@@ -210,25 +212,31 @@ p {
   color: var(--color-text);
 }
 
-.type-display {
-  font-family: var(--font-display);
+.type-display,
+h1.type-display,
+h2.type-display,
+h3.type-display,
+.type-display.mono {
+  font-family: var(--font-accent);
   font-weight: 700;
   color: var(--color-text-accent);
+  letter-spacing: 0.01em;
+}
+
+.type-hero-mono,
+.type-hero-sans {
+  font-family: var(--font-hero);
+  font-weight: 800;
+  font-size: 50px;
+  line-height: 55px;
+  letter-spacing: -0.03em;
 }
 
 .type-hero-mono {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 50px;
-  line-height: 55px;
   color: var(--color-text);
 }
 
 .type-hero-sans {
-  font-family: var(--font-ui);
-  font-weight: 700;
-  font-size: 50px;
-  line-height: 55px;
   color: var(--color-text-accent);
 }
 
