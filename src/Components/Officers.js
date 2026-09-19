@@ -59,43 +59,50 @@ const Officers = () => {
   };
 
   return (
-    <div>
-      <div>
-        <div className="about-message-section">
-          <h1>Our Officers</h1>
+    <div className="officers-page">
+      <section className="officers-hero">
+        <div className="officers-hero__inner">
+          <h1 className="type-display mono">Our Officers</h1>
         </div>
-        <div className="Officer-content">
-          {/* CONTROLLED BY FLAG ABOVE */}
-          {SHOW_OFFICER_APPLICATION && (
-            <div className="officer-application-link">
-              <Link to="/OfficerApplication">
-                <button className="apply-button">
-                  Apply to be an Officer for {APPLICATION_YEAR}!
-                </button>
-              </Link>
-            </div>
-          )}
+      </section>
+
+      <section className="officers-body">
+        {SHOW_OFFICER_APPLICATION && (
+          <div className="officer-application-link">
+            <Link to="/OfficerApplication">
+              <button className="apply-button">
+                Apply to be an Officer for {APPLICATION_YEAR}!
+              </button>
+            </Link>
+          </div>
+        )}
+
+        <div className="officers-layout">
+          <nav className="officers-years" aria-label="Officer years">
+            <h2 className="type-display mono">Year</h2>
+            <ul>
+              {yearOptions.map((year) => (
+                <li key={year}>
+                  <button
+                    type="button"
+                    onClick={() => handleYearChange(year)}
+                    className={selectedYear === year ? "selected" : ""}
+                  >
+                    {year}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div className="officers-roster">
+            <h2 className="type-display mono">
+              {selectedYear} Officers
+            </h2>
+            <ProfileCard info={teamMembers} />
+          </div>
         </div>
-        <nav className="officer-sidebar">
-          <h2>Year</h2>
-          <ul>
-            {yearOptions.map((year) => (
-              <li key={year}>
-                <button
-                  onClick={() => handleYearChange(year)}
-                  className={selectedYear === year ? "selected" : ""}
-                >
-                  {year}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </nav>
-        <div className="officer-info">
-          <h2>{selectedYear} Officers</h2>
-          <ProfileCard info={teamMembers} />
-        </div>
-      </div>
+      </section>
     </div>
   );
 };

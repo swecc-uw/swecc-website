@@ -7,16 +7,17 @@ const NavBar = ({ children }) => (
   </nav>
 );
 
-const NavItem = ({ closeExpand, route, tooltip, icon, LogoName, label }) => (
+const NavItem = ({ closeExpand, route, tooltip, LogoName, label }) => (
   <li className={`nav-item ${LogoName ? LogoName : ""}`} onClick={closeExpand}>
-    <NavLink to={route} aria-label={label || tooltip}>
-      <div
-        className={`icon-button ${tooltip ? "tooltip" : ""}`}
-        data-tooltip={tooltip}
-        aria-hidden="true"
-      >
-        {icon}
-      </div>
+    <NavLink
+      to={route}
+      end={route === "/"}
+      className={({ isActive }) =>
+        `nav-link type-nav${isActive ? " nav-link--active" : ""}`
+      }
+      aria-label={label || tooltip}
+    >
+      {label || tooltip}
     </NavLink>
   </li>
 );

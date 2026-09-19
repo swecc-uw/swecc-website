@@ -1,308 +1,131 @@
-.about-message-section,
-.sponsor-page-intro {
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 20vw;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
+.officers-page {
+  --officers-black: #1f1d20;
+  --officers-grey: #2e2f33;
+  --officers-body: clamp(1.125rem, 0.9vw + 0.75rem, 2rem);
+  --officers-title: clamp(1.75rem, 1.2vw + 1.2rem, 3rem);
+  --officers-pad-x: clamp(1.25rem, 5vw, 6rem);
+  --officers-pad-y: clamp(3rem, 7vw, 7rem);
+  background: var(--officers-grey);
+  color: var(--color-text);
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
-.about-message-section::before,
-.sponsor-page-intro::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-size: cover;
-  background-position: center;
-  filter: brightness(80%);
-  z-index: -1;
+.officers-hero {
+  background: var(--officers-black);
 }
 
-.about-message-section::before {
-  background-image: url(../Data/img/Officers/officerGroupPic.png);
-}
-
-.about-message-section h1,
-.sponsor-page-intro h1 {
-  margin-bottom: 10px;
-  font-size: 5vw;
-  color: white;
-  text-shadow: 1px 1px 2px var(--text-header-shadow-color);
-  animation: slide-up 0.5s ease-out;
-  z-index: 2;
-}
-
-.about-title {
-  font-style: normal;
-  font-weight: bold;
-  font-size: calc(var(--nav-size) * 0.8);
-  line-height: calc(var(--nav-size) * 0.8);
-  color: var(--text-header-color);
-}
-
-.about-text {
-  text-align: center;
-  font-weight: 600;
-  font-size: 2.5em;
-  line-height: 47px;
-  color: var(--text-header-color);
-  margin: 3rem;
-}
-
-.team-members-title {
-  padding-top: 30px;
-  font-style: normal;
-  text-align: center;
-  font-weight: 700;
-  font-size: 3rem;
-  color: var(--text-title-color);
-}
-
-.team-members-subtitle {
-  font-style: normal;
-  text-align: center;
-  font-weight: 700;
-  font-size: 2em;
-  color: var(--text-subtitle-color);
-}
-
-.team-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.Officer-content {
-  display: block;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: auto;
-  margin: auto;
+.officers-hero__inner {
+  max-width: 1512px;
+  margin: 0 auto;
   box-sizing: border-box;
-  padding-top: 2vw;
+  padding: calc(clamp(4rem, 8vw, 6.25rem) + var(--officers-pad-y))
+    var(--officers-pad-x) var(--officers-pad-y);
+  text-align: center;
 }
 
-.officer-sidebar,
-.sponsor-sidebar {
+.officers-hero h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 4vw + 1rem, 5rem);
+  color: var(--color-text-accent);
+}
+
+.officers-body {
+  max-width: 1512px;
+  margin: 0 auto;
+  padding: var(--officers-pad-y) var(--officers-pad-x)
+    calc(var(--officers-pad-y) * 1.4);
+}
+
+.officers-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+.officers-years {
+  flex: 0 0 auto;
+  min-width: 6.5rem;
   text-align: right;
-  width: 20%;
-  padding-right: 1vw;
-  display: inline-block;
-  vertical-align: top;
-  box-sizing: border-box;
-  animation: fadeIn 0.5s ease-out;
-  margin-top: 5vw;
 }
 
-.officer-sidebar h2,
-.sponsor-sidebar h2 {
-  font-size: 2rem;
-  font-family: "Arial Rounded MT Bold";
-  font-weight: 300;
-  border: none;
-  font-style: italic;
-  letter-spacing: 2px;
-  text-decoration: none;
-  color: var(--text-title-color);
+.officers-years h2,
+.officers-roster h2 {
+  margin: 0 0 1rem;
+  font-size: var(--officers-title);
 }
 
-.officer-info,
-.sponsorConnectionContent {
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  display: inline-block;
-  flex-direction: column;
-  width: 80%;
-  animation: fadeIn 0.5s ease-out;
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.officers-years ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.officer-info h2,
-.sponsorConnectionContent h2 {
-  font-size: 3rem;
-  font-family: adobe-garamond-pro;
-  font-weight: 400;
-  color: var(--text-title-color);
-  font-style: normal;
-}
-
-.officer-sidebar li,
-.sponsor-sidebar li {
-  align-items: center;
-  transition: all 0.3s ease;
-}
-
-.officer-sidebar button,
-.sponsor-sidebar button {
-  font-family: "Arial Rounded MT Bold";
-  font-weight: 300;
-  font-style: normal;
-  font-size: 2rem;
+.officers-years button {
+  font-family: var(--font-accent);
+  font-weight: 700;
+  font-size: var(--officers-body);
   background: transparent;
   border: none;
-  letter-spacing: 2px;
-  text-decoration: none;
-  color: #a4a4a4;
-  line-height: 2em;
-  transition: all 0.3s ease;
+  padding: 0.15em 0;
+  color: #a7aab1;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+  transition: color 0.2s ease;
 }
 
-.officer-sidebar button.selected,
-.sponsor-sidebar button.selected {
-  color: var(--text-color);
+.officers-years button.selected {
+  color: #d5c6f8;
 }
 
-.officer-sidebar button:hover,
-.sponsor-sidebar button:hover {
-  color: var(--text-color);
+.officers-years button:hover {
+  color: #d5c6f8;
+}
+
+.officers-roster {
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: center;
 }
 
 .officer-application-link {
   text-align: center;
-  margin-top: 20px;
+  margin-bottom: var(--officers-pad-y);
 }
 
 .apply-button {
-  background-color: #656fb3;
-  color: white;
-  font-size: 16px;
-  padding: 10px 20px;
+  background-color: var(--color-primary);
+  color: var(--neutral-900);
+  font-family: var(--font-sans);
+  font-size: clamp(0.875rem, 0.6vw + 0.7rem, 1rem);
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .apply-button:hover {
-  background-color: #5f68a1;
+  opacity: 0.85;
 }
 
-@media (max-width: 976px) {
-  .about-title,
-  .team-members-title {
-    font-size: 2rem;
-    line-height: 50px;
-  }
-
-  .about-text,
-  .team-members-subtitle {
-    font-size: 1.5rem;
-    margin: 1rem 1.5rem;
-    line-height: 30px;
-  }
-
-  .about-message-section {
-    height: 250px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .about-message-section {
-    position: relative;
+@media (max-width: 768px) {
+  .officers-layout {
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    background: linear-gradient(
-        0deg,
-        rgba(190, 184, 235, 0.8),
-        rgba(190, 184, 235, 0.8)
-      ),
-      linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)),
-      linear-gradient(0deg, rgba(190, 184, 235, 0.1), rgba(190, 184, 235, 0.1)),
-      url(../Data/img/about.svg);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: 20%;
   }
 
-  .about-message-section h1 {
-    font-size: 10vw;
-  }
-
-  .Officer-content {
-    display: flex;
-    flex-direction: column;
-    padding-top: 0;
-    margin: 10% 0 10% 0;
-  }
-
-  .about-title {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 3em;
-    line-height: 105px;
-    color: var(--text-header-color);
-  }
-
-  .about-text {
+  .officers-years {
     text-align: center;
-    font-weight: 700;
-    font-size: 2em;
-    color: var(--text-header-color);
+    min-width: 0;
+    width: 100%;
   }
 
-  @media only screen and (max-width: 768px) {
-    .officer-info {
-      width: 85%;
-    }
-    .about-title,
-    .team-members-title {
-      font-size: 2rem;
-      line-height: 50px;
-    }
-    .about-text,
-    .team-members-subtitle {
-      font-size: 1.5rem;
-      margin: 1rem 1.5rem;
-      line-height: 30px;
-    }
-
-    .about-message-section {
-      height: 250px;
-    }
-
-    .officer-sidebar {
-      display: none;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .about-title,
-    .team-members-title {
-      font-size: 1.5rem;
-      line-height: 50px;
-    }
-    .about-text,
-    .team-members-subtitle {
-      font-size: 1rem;
-      margin: 0.5rem 1rem;
-      line-height: 30px;
-    }
-    .about-message-section {
-      height: 200px;
-    }
+  .officers-years ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.25rem;
   }
 }
