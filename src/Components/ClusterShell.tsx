@@ -36,9 +36,9 @@ function ClusterShell() {
   const inputRef = useRef<HTMLInputElement>(null);
   const [cwd, setCwd] = useState(CLUSTER_HOME);
   const [lines, setLines] = useState<ShellLine[]>(() =>
-    motdLines(session).map((line) => ({
+    motdLines(session).map((line, index) => ({
       ...line,
-      id: `l-${idRef.current++}`,
+      id: `motd-${index}`,
     }))
   );
   const [value, setValue] = useState("");

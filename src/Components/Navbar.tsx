@@ -13,14 +13,15 @@ import {
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { pathname } = useLocation();
+  const [menuPathname, setMenuPathname] = useState(pathname);
+  if (menuPathname !== pathname) {
+    setMenuPathname(pathname);
+    setMenuOpen(false);
+  }
 
   useEffect(() => {
     document.body.classList.add("dark-mode");
   }, []);
-
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [pathname]);
 
   useEffect(() => {
     if (!menuOpen) return;
