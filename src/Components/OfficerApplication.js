@@ -88,7 +88,11 @@ function OfficerApplication() {
                 </p>
 
                 <h2>Application</h2>
-                <a href={links.resources.officerapp} target="_blank">
+                <a
+                    href={links.resources.officerApp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     Apply here
                 </a>
                 <h2>Interview Process</h2>
