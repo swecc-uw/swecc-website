@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-function ExternalRedirect({ to }) {
+function ExternalRedirect({ to }: { to: string }) {
   useEffect(() => {
     window.location.href = to;
   }, [to]);

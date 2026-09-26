@@ -1,37 +1,73 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, {
+  type MouseEvent as ReactMouseEvent,
+  type ReactNode,
+  type RefObject,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import "../CSS/TerminalWindow.css";
+
+type Offset = { x: number; y: number };
+
+type Metrics = {
+  width: number;
+  height: number;
+  layoutLeft: number;
+  layoutTop: number;
+  bounds: { left: number; top: number; right: number; bottom: number };
+};
+
+type DragState = {
+  startX: number;
+  startY: number;
+  originX: number;
+  originY: number;
+  metrics: Metrics;
+  cleanup: () => void;
+};
+
+type TerminalWindowProps = {
+  children: ReactNode;
+  className?: string;
+  draggable?: boolean;
+  boundsRef?: RefObject<HTMLElement>;
+};
 
 function TerminalWindow({
   children,
   className = "",
   draggable = false,
   boundsRef,
-}) {
-  const windowRef = useRef(null);
-  const dragRef = useRef(null);
-  const offsetRef = useRef({ x: 0, y: 0 });
-  const [offset, setOffset] = useState({ x: 0, y: 0 });
+}: TerminalWindowProps) {
+  const windowRef = useRef<HTMLDivElement>(null);
+  const dragRef = useRef<DragState | null>(null);
+  const offsetRef = useRef<Offset>({ x: 0, y: 0 });
+  const [offset, setOffset] = useState<Offset>({ x: 0, y: 0 });
   const [dragging, setDragging] = useState(false);
 
-  const applyOffset = useCallback((next) => {
+  const applyOffset = useCallback((next: Offset) => {
     offsetRef.current = next;
     setOffset(next);
   }, []);
 
-  const clampToBounds = useCallback((x, y, metrics) => {
-    if (!metrics) return { x, y };
-    const { layoutLeft, layoutTop, width, height, bounds } = metrics;
-    const minX = bounds.left - layoutLeft;
-    const minY = bounds.top - layoutTop;
-    const maxX = bounds.right - width - layoutLeft;
-    const maxY = bounds.bottom - height - layoutTop;
-    return {
-      x: Math.min(Math.max(x, minX), Math.max(minX, maxX)),
-      y: Math.min(Math.max(y, minY), Math.max(minY, maxY)),
-    };
-  }, []);
+  const clampToBounds = useCallback(
+    (x: number, y: number, metrics: Metrics): Offset => {
+      const { layoutLeft, layoutTop, width, height, bounds } = metrics;
+      const minX = bounds.left - layoutLeft;
+      const minY = bounds.top - layoutTop;
+      const maxX = bounds.right - width - layoutLeft;
+      const maxY = bounds.bottom - height - layoutTop;
+      return {
+        x: Math.min(Math.max(x, minX), Math.max(minX, maxX)),
+        y: Math.min(Math.max(y, minY), Math.max(minY, maxY)),
+      };
+    },
+    [],
+  );
 
-  const readMetrics = useCallback(() => {
+  const readMetrics = useCallback((): Metrics | null => {
     const winEl = windowRef.current;
     const boundsEl = boundsRef?.current;
     if (!winEl || !boundsEl) return null;
@@ -55,17 +91,17 @@ function TerminalWindow({
   const stopDrag = useCallback(() => {
     const drag = dragRef.current;
     if (!drag) return;
-    if (drag.cleanup) drag.cleanup();
+    drag.cleanup();
     dragRef.current = null;
     setDragging(false);
   }, []);
 
   const startDrag = useCallback(
-    (clientX, clientY) => {
+    (clientX: number, clientY: number) => {
       const metrics = readMetrics();
       if (!metrics) return false;
 
-      const onMove = (event) => {
+      const onMove = (event: MouseEvent) => {
         const drag = dragRef.current;
         if (!drag) return;
         applyOffset(
@@ -105,9 +141,13 @@ function TerminalWindow({
     [applyOffset, clampToBounds, readMetrics, stopDrag]
   );
 
-  const onPointerDown = (event) => {
+  const onPointerDown = (event: ReactMouseEvent<HTMLDivElement>) => {
     if (!draggable || event.button !== 0) return;
-    if (event.type === "mousedown" && event.nativeEvent.pointerId != null) {
+    if (
+      event.type === "mousedown" &&
+      "pointerId" in event.nativeEvent &&
+      event.nativeEvent.pointerId != null
+    ) {
       return;
     }
     if (!startDrag(event.clientX, event.clientY)) return;

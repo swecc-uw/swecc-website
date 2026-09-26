@@ -55,7 +55,7 @@ export const communityLinks = [
   { href: "mailto:swecc@uw.edu", label: "swecc@uw.edu", Icon: FaEnvelope },
 ];
 
-export const externalLinkProps = (href) =>
+export const externalLinkProps = (href: string) =>
   href.startsWith("mailto:")
     ? {}
     : { target: "_blank", rel: "noopener noreferrer" };

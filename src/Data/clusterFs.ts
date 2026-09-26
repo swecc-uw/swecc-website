@@ -2,7 +2,23 @@ import { links } from "../Components/Utils";
 
 const HOME = "/home/ec2-user";
 
-const FILES = {
+export type OutputLine = { tone: "white" | "lavender"; text: string };
+
+export type VimBuffer = {
+  name: string;
+  content: string;
+  lines: number;
+  bytes: number;
+};
+
+export type CommandResult =
+  | { cwd: string; lines: OutputLine[] }
+  | { cwd: string; clear: true }
+  | { cwd: string; vim: VimBuffer };
+
+export type ClusterSession = ReturnType<typeof createClusterSession>;
+
+const FILES: Record<string, string> = {
   "faq.md": `SWECC FAQ
 ==========
 Software Engineering Career Club at the University of Washington.
@@ -106,7 +122,7 @@ Want to collab or sponsor compute? Email swecc@uw.edu
 `,
 };
 
-function byteLen(text) {
+function byteLen(text: string) {
   return new TextEncoder().encode(text).length;
 }
 
@@ -114,10 +130,10 @@ function fileNames() {
   return Object.keys(FILES).sort();
 }
 
-export function resolveFile(name, cwd = HOME) {
+export function resolveFile(name: string, cwd = HOME) {
   if (!name) return null;
   const trimmed = name.replace(/^\.\//, "").replace(/^~\//, "");
-  const base = trimmed.split("/").pop().toLowerCase();
+  const base = trimmed.slice(trimmed.lastIndexOf("/") + 1).toLowerCase();
   const withMd = base.endsWith(".md") ? base : `${base}.md`;
   if (FILES[withMd]) {
     return { name: withMd, content: FILES[withMd], cwd };
@@ -155,7 +171,7 @@ export function createClusterSession() {
   };
 }
 
-export function motdLines(session) {
+export function motdLines(session: ClusterSession): OutputLine[] {
   return [
     {
       tone: "white",
@@ -215,11 +231,11 @@ we do not have a GPU. we have discord, vibes, and a google calendar.
 pls sponsor us. we will put your logo in collaborators.md and also cry less.`;
 }
 
-function notFound(cmd, arg) {
+function notFound(cmd: string, arg: string) {
   return `${cmd}: ${arg}: No such file or directory`;
 }
 
-export function runClusterCommand(raw, cwd) {
+export function runClusterCommand(raw: string, cwd: string): CommandResult {
   const line = raw.replace(/\s+/g, " ").trim();
   if (!line) return { cwd, lines: [] };
 
@@ -246,7 +262,7 @@ export function runClusterCommand(raw, cwd) {
   }
 
   if (cmd === "clear") {
-    return { cwd, clear: true, lines: [] };
+    return { cwd, clear: true };
   }
 
   if (cmd === "pwd") {
@@ -342,7 +358,6 @@ export function runClusterCommand(raw, cwd) {
         lines: content.split("\n").length,
         bytes: byteLen(file.content),
       },
-      lines: [],
     };
   }
 

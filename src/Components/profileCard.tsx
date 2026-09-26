@@ -3,10 +3,11 @@ import "../CSS/profileCard.css";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { AiOutlineLink } from "react-icons/ai";
+import type { Officer } from "../Data/officers";
 
-function ProfileCard(props) {
+function ProfileCard(props: { info: Officer[] }) {
   const teamMembers = props.info;
-  const Card = ({ member }) => (
+  const Card = ({ member }: { member: Officer }) => (
     <div className="officer-card">
       <img
         className="officer-card__photo"

@@ -7,12 +7,19 @@ import community from "../Data/img/community.svg";
 import communityDarkmode from "../Data/img/community-darkmode.svg";
 import networking from "../Data/img/networking.svg";
 import networkingDarkmode from "../Data/img/networking-darkmode.svg";
-import Button from "./Button";
+import Button, { type ButtonProps } from "./Button";
 import { links } from "./Utils";
 
 const { meetingDay, meetingTime, meetingLocation } = links.config;
 
-const joinSteps = [
+type JoinAction = {
+  label: string;
+  variant?: ButtonProps["variant"];
+} & ({ to: string } | { href: string });
+
+type JoinStep = { title: string; blurb: string; actions: JoinAction[] };
+
+const joinSteps: JoinStep[] = [
   {
     title: "Join the Discord",
     blurb:
@@ -54,19 +61,20 @@ export default function JoinNow() {
                 <h2 className="join-step__title">{step.title}</h2>
                 <p className="join-step__blurb">{step.blurb}</p>
                 <div className="join-step__actions">
-                  {step.actions.map(({ label, href, to, variant }) => (
+                  {step.actions.map((action) => (
                     <Button
-                      key={label}
-                      variant={variant || "primary"}
+                      key={action.label}
+                      variant={action.variant || "primary"}
                       size="md"
-                      to={to}
-                      href={href}
-                      {...(href && {
-                        target: "_blank",
-                        rel: "noopener noreferrer",
-                      })}
+                      {...("to" in action
+                        ? { to: action.to }
+                        : {
+                            href: action.href,
+                            target: "_blank",
+                            rel: "noopener noreferrer",
+                          })}
                     >
-                      {label}
+                      {action.label}
                     </Button>
                   ))}
                 </div>

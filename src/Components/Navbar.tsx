@@ -24,7 +24,7 @@ function Navbar() {
 
   useEffect(() => {
     if (!menuOpen) return;
-    const closeOnEscape = (e) => {
+    const closeOnEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") setMenuOpen(false);
     };
     document.addEventListener("keydown", closeOnEscape);

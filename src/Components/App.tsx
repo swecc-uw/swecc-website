@@ -1,18 +1,19 @@
 import React from "react";
-import Footer from "./Footer.js";
+import Footer from "./Footer";
 import { Route, Routes } from "react-router-dom";
-import Home from "./Home.js";
-import Events from "./Events.js";
-import JoinNow from "./Join-now.js";
-import Navbar from "./Navbar.js";
-import ExternalRedirect from "./Redirect.js";
+import Home from "./Home";
+import Events from "./Events";
+import JoinNow from "./Join-now";
+import Navbar from "./Navbar";
+import ExternalRedirect from "./Redirect";
 import { links } from "./Utils";
+import favicon from "../icons/logo-23.png";
 import Officers from "./Officers";
-import OfficerApplication from "./OfficerApplication.js";
+import OfficerApplication from "./OfficerApplication";
 
 function App() {
-  const link = document.querySelector("link[rel~='icon']");
-  link.href = require("../icons/logo-23.png");
+  const link = document.querySelector<HTMLLinkElement>("link[rel~='icon']");
+  if (link) link.href = favicon;
 
   return (
     <div>

@@ -9,9 +9,9 @@ import meetingsImg from "../Data/img/backgroundImg/4.jpg";
 import { links } from "./Utils";
 
 function HomePage() {
-  const heroRef = useRef(null);
+  const heroRef = useRef<HTMLDivElement>(null);
 
-  const scrollTo = (id) => {
+  const scrollTo = (id: string) => {
     const section = document.getElementById(id);
     if (section) section.scrollIntoView({ behavior: "smooth" });
   };
@@ -110,26 +110,22 @@ function HomePage() {
           <InitiativeCard
             title="SWECC LABS"
             accent="sage"
-            actionLabel="details"
-            actionHref={links.social.discord}
+            action={{ label: "details", href: links.social.discord }}
           />
           <InitiativeCard
             title="MOCK INTERVIEWS"
             accent="mentorship"
-            actionLabel="details"
-            actionTo="/Events"
+            action={{ label: "details", to: "/Events" }}
           />
           <InitiativeCard
             title="MENTORSHIP PROGRAM"
             accent="sage"
-            actionLabel="details"
-            actionTo="/Join-Now"
+            action={{ label: "details", to: "/Join-Now" }}
           />
           <InitiativeCard
             title="COHORT PROGRAM"
             accent="mentorship"
-            actionLabel="details"
-            actionTo="/Join-Now"
+            action={{ label: "details", to: "/Join-Now" }}
           />
         </div>
       </section>

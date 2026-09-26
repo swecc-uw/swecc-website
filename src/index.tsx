@@ -1,9 +1,9 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 
 import "./index.css";
-import App from "./Components/App.js";
+import App from "./Components/App";
 
 /*import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
@@ -23,7 +23,10 @@ const analytics = getAnalytics(app);*/
 
 document.body.classList.add("dark-mode");
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const container = document.getElementById("root");
+if (!container) throw new Error("Missing #root element");
+
+const root = ReactDOM.createRoot(container);
 root.render(
   <BrowserRouter>
     <App />

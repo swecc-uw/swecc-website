@@ -6,11 +6,25 @@ export const GOOGLE_CALENDAR_OPEN_URL = `https://calendar.google.com/calendar/r?
 
 const TZ = "America/Los_Angeles";
 
-function unfoldIcs(text) {
+export type CalendarEvent = {
+  uid: string;
+  title: string;
+  location: string;
+  description: string;
+  start: Date;
+  end: Date;
+  allDay: boolean;
+  rrule: string;
+  exdates: Date[];
+};
+
+type IcsDate = { date: Date; allDay: boolean };
+
+function unfoldIcs(text: string) {
   return text.replace(/\r\n[ \t]/g, "").replace(/\n[ \t]/g, "");
 }
 
-function unescapeIcs(value) {
+function unescapeIcs(value: string) {
   return value
     .replace(/\\n/gi, "\n")
     .replace(/\\,/g, ",")
@@ -18,7 +32,7 @@ function unescapeIcs(value) {
     .replace(/\\\\/g, "\\");
 }
 
-function stripHtml(html) {
+function stripHtml(html: string) {
   return unescapeIcs(html)
     .replace(/<br\s*\/?>/gi, "\n")
     .replace(/<\/p>/gi, "\n")
@@ -31,7 +45,7 @@ function stripHtml(html) {
     .trim();
 }
 
-function parseIcsUtc(stamp) {
+function parseIcsUtc(stamp: string) {
   const m = stamp.match(/^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})Z$/);
   if (!m) return new Date(NaN);
   return new Date(
@@ -39,7 +53,15 @@ function parseIcsUtc(stamp) {
   );
 }
 
-function zonedLocalToUtc(year, month, day, hour, minute, second, timeZone) {
+function zonedLocalToUtc(
+  year: number,
+  month: number,
+  day: number,
+  hour: number,
+  minute: number,
+  second: number,
+  timeZone: string,
+) {
   const utcGuess = Date.UTC(year, month - 1, day, hour, minute, second);
   const formatter = new Intl.DateTimeFormat("en-US", {
     timeZone,
@@ -66,7 +88,7 @@ function zonedLocalToUtc(year, month, day, hour, minute, second, timeZone) {
   return new Date(utcGuess - (asShown - utcGuess));
 }
 
-function parseIcsDate(property) {
+function parseIcsDate(property: string): IcsDate {
   const [meta, raw] = property.split(/:(.+)/);
   const params = meta;
   const value = (raw || "").trim();
@@ -103,7 +125,7 @@ function parseIcsDate(property) {
   };
 }
 
-function getLines(block, key) {
+function getLines(block: string, key: string) {
   const lines = block.split(/\r?\n/);
   const prefix = `${key}:`;
   const prefixParam = `${key};`;
@@ -112,12 +134,12 @@ function getLines(block, key) {
   );
 }
 
-function getLine(block, key) {
+function getLine(block: string, key: string) {
   return getLines(block, key)[0] || "";
 }
 
-function parseExdates(block) {
-  const dates = [];
+function parseExdates(block: string) {
+  const dates: Date[] = [];
   getLines(block, "EXDATE").forEach((line) => {
     const sep = line.indexOf(":");
     if (sep === -1) return;
@@ -143,11 +165,11 @@ function recurrenceRangeEnd(from = new Date()) {
   return end;
 }
 
-function parseVEvent(block) {
+function parseVEvent(block: string): CalendarEvent {
   const startLine = getLine(block, "DTSTART");
   const endLine = getLine(block, "DTEND");
   const start = parseIcsDate(startLine);
-  const end = endLine
+  const end: IcsDate = endLine
     ? parseIcsDate(endLine)
     : { date: start.date, allDay: start.allDay };
   if (start.allDay && end.date <= start.date) {
@@ -175,7 +197,7 @@ function parseVEvent(block) {
   };
 }
 
-function expandWeekly(event, rangeEnd) {
+function expandWeekly(event: CalendarEvent, rangeEnd: Date): CalendarEvent[] {
   if (!event.rrule || !event.rrule.includes("FREQ=WEEKLY")) {
     return [event];
   }
@@ -197,8 +219,8 @@ function expandWeekly(event, rangeEnd) {
     if (ruleUntil < until) until = ruleUntil;
   }
 
-  const duration = event.end - event.start;
-  const instances = [];
+  const duration = event.end.getTime() - event.start.getTime();
+  const instances: CalendarEvent[] = [];
   const cursor = new Date(event.start);
   while (cursor.getTime() <= until.getTime()) {
     instances.push({
@@ -212,7 +234,7 @@ function expandWeekly(event, rangeEnd) {
   return instances;
 }
 
-export function dateKey(date, timeZone = TZ) {
+export function dateKey(date: Date, timeZone = TZ) {
   const formatter = new Intl.DateTimeFormat("en-CA", {
     timeZone,
     year: "numeric",
@@ -222,7 +244,7 @@ export function dateKey(date, timeZone = TZ) {
   return formatter.format(date);
 }
 
-export function laParts(date) {
+export function laParts(date: Date) {
   const formatter = new Intl.DateTimeFormat("en-US", {
     timeZone: TZ,
     year: "numeric",
@@ -239,11 +261,14 @@ export function laParts(date) {
   };
 }
 
-export function laNoon(year, month, day) {
+export function laNoon(year: number, month: number, day: number) {
   return zonedLocalToUtc(year, month, day, 12, 0, 0, TZ);
 }
 
-export function parseIcsEvents(icsText, options = {}) {
+export function parseIcsEvents(
+  icsText: string,
+  options: { rangeEnd?: Date } = {},
+): CalendarEvent[] {
   const rangeEnd = options.rangeEnd || recurrenceRangeEnd();
   const unfolded = unfoldIcs(icsText);
   const blocks = unfolded.split("BEGIN:VEVENT").slice(1);
@@ -251,9 +276,9 @@ export function parseIcsEvents(icsText, options = {}) {
     .map((block) => parseVEvent(block.split("END:VEVENT")[0]))
     .filter((event) => !Number.isNaN(event.start.getTime()));
 
-  const exceptions = new Set();
-  const recurring = [];
-  const singles = [];
+  const exceptions = new Set<string>();
+  const recurring: CalendarEvent[] = [];
+  const singles: CalendarEvent[] = [];
 
   parsed.forEach((event) => {
     (event.exdates || []).forEach((date) => {
@@ -271,17 +296,17 @@ export function parseIcsEvents(icsText, options = {}) {
     .flatMap((event) => expandWeekly(event, rangeEnd))
     .filter((event) => !exceptions.has(`${event.uid}|${dateKey(event.start)}`));
 
-  return [...expanded, ...singles].sort((a, b) => a.start - b.start);
+  return [...expanded, ...singles].sort((a, b) => a.start.getTime() - b.start.getTime());
 }
 
 export async function loadGoogleCalendarEvents() {
-  const urls = [];
+  const urls: string[] = [];
   if (process.env.NODE_ENV === "development") {
     urls.push("/api/google-calendar.ics");
   }
   urls.push("/calendar.ics");
 
-  let lastError;
+  let lastError: unknown;
   for (const url of urls) {
     try {
       const response = await fetch(url);
@@ -298,7 +323,7 @@ export async function loadGoogleCalendarEvents() {
   throw lastError || new Error("Could not load Google Calendar");
 }
 
-export function eventsOnDay(events, day) {
+export function eventsOnDay(events: CalendarEvent[], day: Date) {
   const key = dateKey(day);
   return events.filter((event) => {
     if (event.allDay) {
@@ -308,7 +333,7 @@ export function eventsOnDay(events, day) {
   });
 }
 
-export function formatEventTime(event, timeZone = TZ) {
+export function formatEventTime(event: CalendarEvent, timeZone = TZ) {
   if (event.allDay) return "All day";
   return new Intl.DateTimeFormat("en-US", {
     timeZone,
@@ -317,7 +342,7 @@ export function formatEventTime(event, timeZone = TZ) {
   }).format(event.start);
 }
 
-export function formatEventRange(event, timeZone = TZ) {
+export function formatEventRange(event: CalendarEvent, timeZone = TZ) {
   if (event.allDay) return "All day";
   const fmt = new Intl.DateTimeFormat("en-US", {
     timeZone,

@@ -1,12 +1,24 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, {
+  type FormEvent,
+  type KeyboardEvent,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import {
   CLUSTER_HOME,
+  type OutputLine,
+  type VimBuffer,
   createClusterSession,
   motdLines,
   runClusterCommand,
 } from "../Data/clusterFs";
 
-function Prompt({ cwd }) {
+type PromptLine = { tone: "prompt"; cwd: string; text: string };
+type ShellLine = (OutputLine | PromptLine) & { id: string };
+
+function Prompt({ cwd }: { cwd: string }) {
   const dir = cwd === CLUSTER_HOME ? "~" : cwd;
   return (
     <span className="cluster-shell__prompt">
@@ -20,19 +32,19 @@ function Prompt({ cwd }) {
 function ClusterShell() {
   const session = useMemo(() => createClusterSession(), []);
   const idRef = useRef(0);
-  const bodyRef = useRef(null);
-  const inputRef = useRef(null);
+  const bodyRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const [cwd, setCwd] = useState(CLUSTER_HOME);
-  const [lines, setLines] = useState(() =>
+  const [lines, setLines] = useState<ShellLine[]>(() =>
     motdLines(session).map((line) => ({
       ...line,
       id: `l-${idRef.current++}`,
     }))
   );
   const [value, setValue] = useState("");
-  const [vim, setVim] = useState(null);
-  const [cmdHistory, setCmdHistory] = useState([]);
-  const [histIndex, setHistIndex] = useState(null);
+  const [vim, setVim] = useState<VimBuffer | null>(null);
+  const [cmdHistory, setCmdHistory] = useState<string[]>([]);
+  const [histIndex, setHistIndex] = useState<number | null>(null);
 
   const focusInput = () => {
     if (!vim) inputRef.current?.focus();
@@ -47,7 +59,7 @@ function ClusterShell() {
     if (node) node.scrollTop = node.scrollHeight;
   }, [lines, vim, value]);
 
-  const pushLines = (next) => {
+  const pushLines = (next: (OutputLine | PromptLine)[]) => {
     setLines((prev) => [
       ...prev,
       ...next.map((line) => ({
@@ -57,7 +69,7 @@ function ClusterShell() {
     ]);
   };
 
-  const run = (raw) => {
+  const run = (raw: string) => {
     const typed = raw.replace(/\s+$/, "");
     pushLines([
       {
@@ -72,26 +84,25 @@ function ClusterShell() {
     setHistIndex(null);
 
     const result = runClusterCommand(typed, cwd);
-    if (result.clear) {
+    setCwd(result.cwd);
+    if ("clear" in result) {
       setLines([]);
-      setCwd(result.cwd);
       return;
     }
-    if (result.cwd) setCwd(result.cwd);
-    if (result.vim) {
+    if ("vim" in result) {
       setVim(result.vim);
       return;
     }
-    if (result.lines?.length) pushLines(result.lines);
+    if (result.lines.length) pushLines(result.lines);
   };
 
-  const onSubmit = (event) => {
+  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     run(value);
     setValue("");
   };
 
-  const onKeyDown = (event) => {
+  const onKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
       event.preventDefault();
       run(value);
@@ -121,7 +132,7 @@ function ClusterShell() {
 
   useEffect(() => {
     if (!vim) return undefined;
-    const onVimKey = (event) => {
+    const onVimKey = (event: globalThis.KeyboardEvent) => {
       if (event.key === "q" || event.key === "Escape") {
         event.preventDefault();
         setVim(null);

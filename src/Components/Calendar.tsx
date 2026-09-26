@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import Button from "./Button";
 import {
+  type CalendarEvent,
   GOOGLE_CALENDAR_OPEN_URL,
   dateKey,
   eventsOnDay,
@@ -14,21 +15,21 @@ import "../CSS/Calendar.css";
 
 const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-function startOfMonth(date) {
+function startOfMonth(date: Date) {
   const { year, month } = laParts(date);
   return laNoon(year, month, 1);
 }
 
-function addMonths(date, count) {
+function addMonths(date: Date, count: number) {
   const { year, month } = laParts(date);
   return laNoon(year, month + count, 1);
 }
 
-function isSameDay(a, b) {
+function isSameDay(a: Date, b: Date) {
   return dateKey(a) === dateKey(b);
 }
 
-function monthCells(visibleMonth) {
+function monthCells(visibleMonth: Date) {
   const { year, month } = laParts(visibleMonth);
   const first = laNoon(year, month, 1);
   const weekday = new Intl.DateTimeFormat("en-US", {
@@ -41,7 +42,13 @@ function monthCells(visibleMonth) {
   );
 }
 
-function EventCard({ event, open, onToggle }) {
+type EventCardProps = {
+  event: CalendarEvent;
+  open: boolean;
+  onToggle: () => void;
+};
+
+function EventCard({ event, open, onToggle }: EventCardProps) {
   return (
     <li>
       <button
@@ -66,8 +73,10 @@ function Calendar() {
   const today = useMemo(() => new Date(), []);
   const [visibleMonth, setVisibleMonth] = useState(() => startOfMonth(today));
   const [selectedDay, setSelectedDay] = useState(today);
-  const [events, setEvents] = useState([]);
-  const [status, setStatus] = useState("loading");
+  const [events, setEvents] = useState<CalendarEvent[]>([]);
+  const [status, setStatus] = useState<"loading" | "ready" | "error">(
+    "loading",
+  );
   const [openEventId, setOpenEventId] = useState("");
 
   useEffect(() => {
