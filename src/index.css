@@ -107,10 +107,6 @@
   font-family: var(--font-sans);
 }
 
-html {
-  font-size: 67%;
-}
-
 body {
   margin: 0;
   font-family: var(--font-sans);
@@ -118,6 +114,7 @@ body {
   font-weight: 400;
   line-height: var(--leading-body);
   color: var(--color-text);
+  background-color: var(--color-background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
