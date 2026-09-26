@@ -1,141 +1,80 @@
 import "../CSS/App.css";
 import "../CSS/Join-now.css";
-import React, { useState } from "react";
+import React from "react";
 import career from "../Data/img/career.svg";
 import careerDarkmode from "../Data/img/career-darkmode.svg";
 import community from "../Data/img/community.svg";
 import communityDarkmode from "../Data/img/community-darkmode.svg";
 import networking from "../Data/img/networking.svg";
 import networkingDarkmode from "../Data/img/networking-darkmode.svg";
-import Stepper from "./Stepper";
+import Button from "./Button";
 import { links } from "./Utils";
 
-const actions = [
-  <div className="action-item">
-    <a
-      className="link-boxes"
-      href={links.social.discord}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Join the discord
-    </a>
-  </div>,
-  <div className="action-item">
-    <a
-      className="link-boxes"
-      href={links.resources.mailingList}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Subscribe to the mailing list
-    </a>
-  </div>,
-  <div className="action-item">
-    <p>
-      <a
-        className="separate-insta-linkedin link-boxes"
-        href={links.social.instagram}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Instagram
-      </a>
-      <a
-        className="separate-insta-linkedin link-boxes"
-        href={links.social.linkedin}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        LinkedIn
-      </a>
-    </p>
-  </div>,
-  <div className="action-item">
-    <div className="thanks-box">
-      <p className="thanks-message">
-        <strong>Thanks for Joining! </strong>
-        We're looking forward to seeing you at our next meeting :)
-      </p>
-    </div>
-  </div>,
+const { meetingDay, meetingTime, meetingLocation } = links.config;
+
+const joinSteps = [
+  {
+    title: "Join the Discord",
+    blurb:
+      "Where everything happens: announcements, interview prep, job postings, and people to study with.",
+    actions: [{ label: "Join Discord", href: links.social.discord }],
+  },
+  {
+    title: "Get on the mailing list",
+    blurb: "A short email each week with upcoming events and opportunities.",
+    actions: [{ label: "Subscribe", href: links.resources.mailingList }],
+  },
+  {
+    title: "Come to a meeting",
+    blurb: `General meetings are ${meetingDay}s, ${meetingTime}, in ${meetingLocation}. No sign-up needed.`,
+    actions: [
+      { label: "See events", to: "/Events" },
+      { label: "Instagram", href: links.social.instagram, variant: "outline" },
+    ],
+  },
 ];
 
 export default function JoinNow() {
-  const [count, setCount] = useState(0);
   const darkMode = true;
-
-  function increment() {
-    if (count < 3) {
-      setCount(count + 1);
-    }
-  }
-
-  function decrement() {
-    if (count > 0) {
-      setCount(count - 1);
-    }
-  }
-
-  const StepperItem = ({ step, index, currentStep }) => {
-    return (
-      <div
-        className={`stepper-item ${currentStep > index ? "completed" : currentStep === index ? "active" : ""}`}
-      >
-        <div className="step-counter">{index + 1}</div>
-        <div className="step-name">{step}</div>
-      </div>
-    );
-  };
 
   return (
     <div className="entire">
-      <div className="background-image">
-        <div className="js-white-box">
-          <div className="content-flex-small">
-            <p className="join-message">
-              <strong>Join SWECC </strong>
-              <Stepper className="stepper" />
-            </p>
-          </div>
-          <div className="content-flex">
-            <p className="join-message">
-              <strong>Join SWECC </strong>
-            </p>
-            <p className="join-message"></p>
-            <div className="stepper-wrapper">
-              <StepperItem
-                step="Join our discord"
-                index={0}
-                currentStep={count}
-              />
-              <StepperItem
-                step="Join our mailing list"
-                index={1}
-                currentStep={count}
-              />
-              <StepperItem
-                step="Attend an event"
-                index={2}
-                currentStep={count}
-              />
-            </div>
-            <p>{actions[count]}</p>
-          </div>
-          <div className="button-container">
-            {count > 0 && (
-              <button className="click-button back-button" onClick={decrement}>
-                Back
-              </button>
-            )}
-            {count < 3 && (
-              <button className="click-button next-button" onClick={increment}>
-                Next
-              </button>
-            )}
-          </div>
-        </div>
-      </div>
+      <section className="join-timeline">
+        <header className="join-timeline__header">
+          <p className="join-timeline__kicker">three steps</p>
+          <h1 className="join-timeline__title">Join SWECC</h1>
+        </header>
+        <ol className="join-timeline__steps">
+          {joinSteps.map((step, index) => (
+            <li className="join-step" key={step.title}>
+              <span className="join-step__marker" aria-hidden="true">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <div className="join-step__body">
+                <h2 className="join-step__title">{step.title}</h2>
+                <p className="join-step__blurb">{step.blurb}</p>
+                <div className="join-step__actions">
+                  {step.actions.map(({ label, href, to, variant }) => (
+                    <Button
+                      key={label}
+                      variant={variant || "primary"}
+                      size="md"
+                      to={to}
+                      href={href}
+                      {...(href && {
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                      })}
+                    >
+                      {label}
+                    </Button>
+                  ))}
+                </div>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
       <div className="join join-section info-message-section info-table">
         <table>
           <tbody className="community-benefits">
