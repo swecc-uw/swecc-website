@@ -4,21 +4,10 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "@behold/react": "^0.1.10",
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@mui/material": "^5.14.8",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "firebase": "^10.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
-    "react-router-dom": "^6.10.0",
-    "react-social-media-embed": "^2.3.5",
-    "react-transition-group": "^4.4.5",
-    "web-vitals": "^2.1.4"
+    "react-router-dom": "^6.10.0"
   },
   "scripts": {
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
