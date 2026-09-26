@@ -107,10 +107,6 @@
   font-family: var(--font-sans);
 }
 
-html {
-  font-size: 67%;
-}
-
 body {
   margin: 0;
   font-family: var(--font-sans);
