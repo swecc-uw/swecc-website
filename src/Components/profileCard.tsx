@@ -5,13 +5,18 @@ import { MdOutlineEmail } from "react-icons/md";
 import { AiOutlineLink } from "react-icons/ai";
 import type { Officer } from "../Data/officers";
 
+const photos = import.meta.glob<string>("../Data/officers/*", {
+  eager: true,
+  import: "default",
+});
+
 function ProfileCard(props: { info: Officer[] }) {
   const teamMembers = props.info;
   const Card = ({ member }: { member: Officer }) => (
     <div className="officer-card">
       <img
         className="officer-card__photo"
-        src={require(`../Data/officers/${member.imgSrc}`)}
+        src={photos[`../Data/officers/${member.imgSrc}`]}
         alt={member.name}
       />
       <p className="officer-card__name">{member.name}</p>

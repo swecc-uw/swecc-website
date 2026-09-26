@@ -301,7 +301,7 @@ export function parseIcsEvents(
 
 export async function loadGoogleCalendarEvents() {
   const urls: string[] = [];
-  if (process.env.NODE_ENV === "development") {
+  if (import.meta.env.DEV) {
     urls.push("/api/google-calendar.ics");
   }
   urls.push("/calendar.ics");
