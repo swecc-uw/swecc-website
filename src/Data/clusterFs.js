@@ -151,8 +151,6 @@ export function createClusterSession() {
   return {
     lastLogin: formatLoginStamp(),
     from: `128.95.${oct3}.${oct4}`,
-    sessionsToday: 28 + Math.floor(Math.random() * 160),
-    visitorsWeek: 180 + Math.floor(Math.random() * 640),
     cwd: HOME,
   };
 }
@@ -169,14 +167,6 @@ export function motdLines(session) {
     },
     { tone: "white", text: "Welcome to swecc.org  (Ubuntu 22.04 LTS)" },
     { tone: "lavender", text: "" },
-    {
-      tone: "lavender",
-      text: ` * Sessions today:          ${session.sessionsToday}`,
-    },
-    {
-      tone: "lavender",
-      text: ` * Unique visitors (week):  ${session.visitorsWeek}`,
-    },
     {
       tone: "lavender",
       text: " * Type `help` or `ls` to look around. `vim faq.md` works.",
