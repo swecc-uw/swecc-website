@@ -1,30 +1,27 @@
-const fs = require("fs");
-const https = require("https");
-const path = require("path");
+import fs from "node:fs";
+import https from "node:https";
+import path from "node:path";
 
 const ICS_URL =
   "https://calendar.google.com/calendar/ical/swecc%40uw.edu/public/basic.ics";
-const DEST = path.join(__dirname, "..", "public", "calendar.ics");
+const DEST = path.join(import.meta.dirname, "..", "public", "calendar.ics");
 
-function download(url) {
+function download(url: string): Promise<string> {
   return new Promise((resolve, reject) => {
     const request = https.get(url, { timeout: 10000 }, (response) => {
-      if (
-        response.statusCode >= 300 &&
-        response.statusCode < 400 &&
-        response.headers.location
-      ) {
+      const status = response.statusCode ?? 0;
+      if (status >= 300 && status < 400 && response.headers.location) {
         response.resume();
         download(response.headers.location).then(resolve, reject);
         return;
       }
-      if (response.statusCode !== 200) {
+      if (status !== 200) {
         reject(new Error(`Calendar sync failed: HTTP ${response.statusCode}`));
         response.resume();
         return;
       }
-      const chunks = [];
-      response.on("data", (chunk) => chunks.push(chunk));
+      const chunks: Buffer[] = [];
+      response.on("data", (chunk: Buffer) => chunks.push(chunk));
       response.on("end", () => resolve(Buffer.concat(chunks).toString("utf8")));
     });
     request.on("error", reject);
@@ -44,7 +41,7 @@ download(ICS_URL)
     fs.writeFileSync(DEST, text);
     console.log(`Synced Google Calendar ICS to ${path.relative(process.cwd(), DEST)}`);
   })
-  .catch((error) => {
+  .catch((error: Error) => {
     if (fs.existsSync(DEST)) {
       console.warn(`${error.message}. Using existing ${path.relative(process.cwd(), DEST)}`);
       process.exit(0);

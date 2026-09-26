@@ -22,27 +22,31 @@
   },
   "scripts": {
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
-    "sync-calendar": "node scripts/sync-calendar.cjs",
-    "prestart": "node scripts/sync-calendar.cjs",
-    "prebuild": "node scripts/sync-calendar.cjs",
+    "sync-calendar": "node scripts/sync-calendar.ts",
+    "prestart": "node scripts/sync-calendar.ts",
+    "prebuild": "node scripts/sync-calendar.ts",
     "start": "vite",
     "predeploy": "npm i; npm run build",
     "deploy": "gh-pages -d build",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "build": "npm run typecheck && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -p tsconfig.json && tsc -p tsconfig.node.json"
   },
   "description": "SWECC",
   "main": "index.js",
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^20.19.43",
+    "@types/node": "^24.19.0",
     "@types/react": "^18.2.79",
     "@types/react-dom": "^18.2.25",
     "@vitejs/plugin-react": "^6.1.1",
     "gh-pages": "^5.0.0",
     "prettier": "^3.2.5",
-    "typescript": "^4.9.5",
+    "typescript": "^7.0.2",
     "vite": "^8.3.1"
+  },
+  "engines": {
+    "node": ">=22.18"
   }
 }

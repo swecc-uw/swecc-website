@@ -39,6 +39,8 @@ npm install npm@latest -g
 
 ### Installation
 
+You need Node.js 22.18 or newer, which runs the TypeScript calendar sync script directly.
+
 1. Clone the repo:
 
 ```bash
