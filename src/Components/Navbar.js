@@ -12,19 +12,14 @@ import {
   FaDiscord,
   FaChevronRight,
   FaGithub,
-  FaHeart,
 } from "react-icons/fa";
 import {
   FcShare,
   FcCalendar,
-  FcApproval,
-  FcCheckmark,
   FcConferenceCall,
   FcHome,
 } from "react-icons/fc";
-import { ImIcoMoon, ImSun } from "react-icons/im";
-import { PiMoonBold } from "react-icons/pi";
-import { NavBar, NavExpandItem, NavItem, NavToggle } from "./Utils/NavItems";
+import { NavBar, NavExpandItem, NavItem } from "./Utils/NavItems";
 import SWECCLogoWhite from "../Data/img/Logo/SWECCLogoWhite.png";
 import { links } from "./Utils";
 
@@ -32,6 +27,7 @@ function Navbar() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    document.body.classList.add("dark-mode");
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 576);
     };
@@ -41,28 +37,6 @@ function Navbar() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
-  const [darkMode, setDarkMode] = useState(
-    JSON.parse(localStorage.getItem("darkMode")) || false,
-  );
-
-  const toggleMode = () => {
-    if (darkMode) {
-      document.body.classList.remove("dark-mode");
-    } else {
-      document.body.classList.add("dark-mode");
-    }
-    setDarkMode(!darkMode);
-  };
-
-  useEffect(() => {
-    if (!darkMode) {
-      document.body.classList.add("dark-mode");
-    } else {
-      document.body.classList.remove("dark-mode");
-    }
-    localStorage.setItem("darkMode", JSON.stringify(darkMode));
-  }, [darkMode]);
 
   const [expand, setExpand] = useState(false);
 
@@ -85,7 +59,7 @@ function Navbar() {
   }
 
   return (
-    <NavBar className={`${darkMode ? "dark-mode" : ""}`}>
+    <NavBar>
       <li className={`nav-Logo-Item ${animate ? 'pulse' : ''}`} onClick={handleLogoClick}>
         <NavLink to="/">
           <img className="swecc-logo" src={SWECCLogoWhite} alt="SWECC Logo" />
@@ -95,44 +69,22 @@ function Navbar() {
       {!isMobile && (
         <>
           <NavItem
-            icon=<FcHome />
             route="/"
             closeExpand={closeExpand}
             tooltip="Home"
-            label="Home"
+            label="HOME"
           />
           <NavItem
-            icon=<FcConferenceCall />
             route="/Officers"
-            expand={expand}
             closeExpand={closeExpand}
             tooltip="Officers"
-            label="Officers"
+            label="OFFICERS"
           />
-          
           <NavItem
-            icon=<FcCalendar />
             route="/Events"
             closeExpand={closeExpand}
             tooltip="Events"
-            label="Events"
-          />
-          <NavItem
-            icon=<FcCheckmark />
-            route="/Join-Now"
-            expand={expand}
-            closeExpand={closeExpand}
-            tooltip="Join"
-            label="Join"
-          />
-          <NavToggle
-            icon={darkMode ? <ImSun /> : <PiMoonBold />}
-            expand={expand}
-            closeExpand={closeExpand}
-            tooltip={darkMode ? "ON" : "OFF"}
-            label="ToggleMode"
-            toggleMode={toggleMode}
-            isDarkMode={darkMode}
+            label="EVENTS"
           />
         </>
       )}
@@ -196,9 +148,6 @@ function DropdownMenu(props) {
           </NavLink>
           <NavLink to="/Events" onClick={props.closeExpand}>
             <DropdownItem leftIcon={<FcCalendar />}>Events</DropdownItem>
-          </NavLink>
-          <NavLink to="/Join-Now" onClick={props.closeExpand}>
-            <DropdownItem leftIcon={<FcApproval />}>Join Now</DropdownItem>
           </NavLink>
           <DropdownItem
             leftIcon={<FcShare />}

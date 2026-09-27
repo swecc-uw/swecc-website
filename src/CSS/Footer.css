@@ -1,7 +1,7 @@
 footer {
   bottom: 0;
   display: flex;
-  background-color: var(--og-footer-color);
+  background-color: #2e2f33;
   padding: 20px;
 }
 
@@ -16,9 +16,9 @@ footer {
 
 .copyright-message {
   display: flex;
-  color: #ffffff;
+  color: var(--neutral-50);
   font-size: 1rem;
-  font-family: "Roboto";
+  font-family: var(--font-ui);
   font-weight: bold;
 }
 
@@ -27,9 +27,9 @@ a {
 }
 
 footer svg {
-  height: 2vw;
-  width: 2vw;
-  color: #ffffff;
+  height: clamp(1.35rem, 2.4vw, 1.75rem);
+  width: clamp(1.35rem, 2.4vw, 1.75rem);
+  color: var(--neutral-50);
 }
 
 @media only screen and (max-width: 768px) {
@@ -44,6 +44,6 @@ footer svg {
   footer svg {
     height: 7vw;
     width: 7vw;
-    color: #ffffff;
+    color: var(--neutral-50);
   }
 }

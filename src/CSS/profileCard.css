@@ -1,133 +1,84 @@
-.card-container {
-  padding: 80px;
+.officer-card-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  gap: 5vw;
+  align-items: flex-start;
+  gap: clamp(2rem, 4.5vw, 4rem) clamp(1.5rem, 3.5vw, 3rem);
+  padding: clamp(1rem, 3vw, 2.5rem) 0 0;
 }
 
-.card {
+.officer-card {
   box-sizing: border-box;
-  width: 15em;
-  height: 100%;
-  background-color: transparent;
+  width: clamp(11rem, 20vw, 16.5rem);
+  background: transparent;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
-.card-image-container {
-  display: flex;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-}
-
-.card-image-container::before {
-  padding: 70%;
-  height: auto;
-  content: "";
-  position: relative;
-  background-image: url("../Data/img/frameProfileCard.png");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  filter: drop-shadow(2px 5px rgba(0, 0, 0, 0.3));
-  z-index: 1;
-}
-
-.founder-card::before {
-  filter: invert(1) drop-shadow(2px 5px rgba(0, 0, 0, 0.3));
-}
-
-.card-image-container img {
-  width: 58%;
-  height: 58%;
+.officer-card__photo {
+  width: clamp(9.5rem, 18vw, 15rem);
+  height: clamp(9.5rem, 18vw, 15rem);
   object-fit: cover;
-  position: absolute;
-  margin: 10%;
-  border-radius: 8px;
+  border-radius: 50%;
+  border: clamp(3px, 0.4vw, 6px) solid #fafafa;
+  box-sizing: border-box;
+  display: block;
 }
 
-.card p {
-  color: var(--card-text);
-  letter-spacing: 0.5px;
+.officer-card__name {
+  margin: 1rem 0 0.2rem;
+  font-family: var(--font-sans);
+  font-size: clamp(1.05rem, 0.7vw + 0.85rem, 1.3125rem);
+  font-weight: 700;
+  color: #fafafa;
+  letter-spacing: 0.02em;
   text-align: center;
 }
 
-.name {
-  font-size: 1rem;
-  color: var(--card-text);
-  font-weight: bold;
-  letter-spacing: 0.8px;
+.officer-card__role {
   margin: 0;
+  font-family: var(--font-sans);
+  font-size: clamp(0.9rem, 0.45vw + 0.75rem, 1.125rem);
+  font-weight: 500;
+  color: var(--color-text-accent);
+  text-align: center;
 }
 
-.socials {
+.officer-card__socials {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 0.55rem;
+  margin-top: 0.8rem;
 }
 
-.card-container .social-link {
+.officer-card__social {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin: 12px 8px;
-  width: 44px;
-  height: 44px;
-  border: none;
+  width: clamp(2.25rem, 2.8vw, 2.875rem);
+  height: clamp(2.25rem, 2.8vw, 2.875rem);
+  border: 1.5px solid #7ea266;
   border-radius: 50%;
-  cursor: pointer;
-  transition: opacity 0.4s;
-  color: #fff;
-  font-size: 1.4em;
+  color: #fafafa;
+  background: transparent;
   text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.card-container .social-link:hover {
-  opacity: 0.8;
-  transition: 200ms;
+.officer-card__social:hover {
+  background: #7ea266;
+  color: #1f1d20;
 }
 
-.card-container .social-link svg {
-  height: 20px;
-}
-
-.card-container .social-link.portfolio {
-  background-color: #3c8c2d;
-}
-
-.card-container .social-link.github {
-  background-color: #24292e;
-}
-
-.card-container .social-link.linkedin {
-  background-color: #2d64bc;
-}
-
-.card-container .social-link.email {
-  background-color: #aa5738;
+.officer-card__social svg {
+  width: 1.05em;
+  height: 1.05em;
 }
 
 @media only screen and (max-width: 768px) {
-  .card-container {
-    padding: 0;
-    gap: 15vw;
-  }
-  .card {
-    width: 8rem;
-  }
-
-  .card-container .social-link {
-    width: 30px;
-    height: 30px;
+  .officer-card {
+    width: clamp(8.5rem, 42vw, 12.5rem);
   }
 }

@@ -1,6 +1,6 @@
 import "../CSS/App.css";
 import "../CSS/Join-now.css";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import career from "../Data/img/career.svg";
 import careerDarkmode from "../Data/img/career-darkmode.svg";
 import community from "../Data/img/community.svg";
@@ -63,21 +63,7 @@ const actions = [
 
 export default function JoinNow() {
   const [count, setCount] = useState(0);
-  const [darkMode, setDarkMode] = useState(
-    JSON.parse(localStorage.getItem("darkMode")) || false,
-  );
-
-  useEffect(() => {
-    const handleStorageChange = (e) => {
-      if (e.key === "darkMode") {
-        setDarkMode(JSON.parse(e.newValue));
-      }
-    };
-    window.addEventListener("storage", handleStorageChange);
-    return () => {
-      window.removeEventListener("storage", handleStorageChange);
-    };
-  }, []);
+  const darkMode = true;
 
   function increment() {
     if (count < 3) {

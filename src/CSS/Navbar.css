@@ -5,7 +5,7 @@ ul {
 }
 
 a {
-  color: var(--text-color);
+  color: var(--color-text);
 }
 
 .navbar {
@@ -14,15 +14,16 @@ a {
   left: 0;
   right: 0;
   width: 100%;
-  height: var(--nav-size);
-  margin-top: 1rem;
+  height: clamp(4rem, 8vw, 6.25rem);
   z-index: 1000;
+  background-color: #2e2f33;
 }
 
 .navbar-nav {
   max-width: 98%;
   height: 100%;
   display: flex;
+  align-items: center;
   justify-content: flex-end;
 }
 
@@ -38,24 +39,43 @@ a {
 
 .nav-item,
 .nav-toggle {
-  width: calc(var(--nav-size) * 0.8);
   align-items: center;
   display: flex;
   justify-content: center;
   text-align: center;
-  flex-direction: column;
 }
 
 .nav-item {
-  margin: 8px 20px 8px 8px;
+  width: auto;
+  margin: 0 18px;
 }
+
 .nav-toggle {
+  width: calc(var(--nav-size) * 0.8);
   margin: 8px 8px 8px 8px;
 }
 
+.nav-link {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: clamp(0.875rem, 1.1vw + 0.4rem, 1.25rem);
+  line-height: var(--leading-heading);
+  color: var(--neutral-50);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.nav-link:hover,
+.nav-link--active {
+  color: var(--color-primary);
+  opacity: 1;
+}
+
 .nav-Logo-Item {
-  height: 50px;
-  width: 10vw;
+  height: clamp(3.5rem, 5.5vw, 4.5rem);
+  width: clamp(8rem, 13vw, 12rem);
   box-sizing: border-box;
   margin: 8px 8px 8px 0;
 }
@@ -259,9 +279,20 @@ a {
   }
 }
 
+@media (max-width: 900px) {
+  .nav-link {
+    font-size: var(--text-h5);
+  }
+
+  .nav-item {
+    margin: 0 10px;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .navbar {
     margin: 0;
+    height: var(--nav-size);
   }
 
   .nav-Logo-Item {

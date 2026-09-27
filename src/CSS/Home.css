@@ -1,399 +1,220 @@
-.clubTitleSection {
-  position: relative;
-  width: 100%;
-  height: 30vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0.87);
-}
-
-.background-img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: var(--backgroundImg-cover-opacity);
-  transition: opacity 1.2s ease-in-out;
-}
-
-.preload-images {
-  display: none;
-}
-
-.preload-images img {
-  display: none;
-}
-
-.uw-logo {
-  transition: opacity 0.5s ease-in-out;
-}
-
-.hide {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.uw-logo,
-.club-introduction-container h1,
-.club-introduction-container p {
-  animation: slide-up 0.5s ease-out;
-  z-index: 1;
-}
-
-.uw-logo {
-  width: 25%;
-  margin-top: 55px;
-  filter: brightness(130%) contrast(85%)
-    drop-shadow(5px 4px 8px rgba(255, 255, 255, 1));
-}
-
-.title-buttons-container,
-.buttons-container {
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  transform: translateY(-50%);
-  z-index: 500;
-}
-
-.title-buttons-container {
-  top: 50%;
-  width: 90%;
-}
-
-.buttons-container {
-  top: 30%;
-  width: 100%;
-}
-
-.prevImgButton,
-.nextImgButton,
-.posts-carousel--left,
-.posts-carousel--right {
-  padding: 10px;
-  border-radius: 50%;
-  border: none;
-  background-color: var(--backgroundImg-buttom-background);
-  color: var(--backgroundImg-buttom);
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: background-color 0.5s ease;
-}
-
-.prevImgButton:hover,
-.nextImgButton:hover,
-.posts-carousel--left:hover,
-.posts-carousel--right:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.material-symbols-outlined:hover {
-  opacity: 30%;
-}
-
-.club-introduction-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.club-introduction-container h1 {
-  margin-bottom: 10px;
-  font-size: 5vw;
-  color: white;
-  font-style: italic;
-  text-shadow: 1px 1px 2px var(--text-header-shadow-color);
-}
-
-.club-introduction-container p {
-  font-size: 2vw;
-  color: white;
-  font-family: "Bell MT";
-  font-style: italic;
-  text-shadow: 1px 1px 2px var(--text-header-shadow-color);
-}
-
-.club-introduction-container-button {
-  text-align: center;
-  background-color: rgba(103, 38, 213);
-  color: #ffffff;
-  border: none;
-  padding: 0.6em 1em 0.6em 1em;
-  margin-bottom: 2rem;
-  font-size: 1.3rem;
-  font-weight: 300;
-  border-radius: 30px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  z-index: 500;
-}
-
-.club-introduction-container-button:hover {
-  opacity: 0.6;
-}
-
-h3 {
-  color: var(--text-title-color);
-}
-
-.summaryTitle,
-.whyJoinUs h2 {
-  color: var(--text-title-color);
-  margin: 10px 0;
-}
-
-.summaryTitle,
-.whyJoinUs h1 {
-  font-size: 2rem;
-  margin: 10px;
-}
-
-.summary,
-.whyJoinUs p {
-  font-size: 1.5rem;
-  color: var(--text-color);
-  line-height: 1.5;
-}
-.homepage p {
-  font-size: 20px;
-  color: var(--text-color);
-}
-
-.mainPage-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 5% 18% 0 18%;
-}
-
-.map-and-label {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.map {
-  width: 400px;
-  height: auto;
-  margin: 30px 30px 0 30px;
-  border-radius: 8px;
-}
-
-.mapLabel {
-  color: var(--text-color);
-  font-size: 16px;
-}
-
-.goal-message-section {
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--bg);
-}
-
-.goal-title {
-  font-size: 3em;
-  transform: translate(0%, -70%);
-  color: var(--text-title-color);
-}
-
-.goal-text {
-  text-align: center;
-  min-width: 10%;
-  max-width: 1000px;
-  max-height: 50%;
-  min-height: 20%;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 30px;
-  line-height: 52px;
-  transform: translate(0%, 10%);
-  color: var(--text-subtitle-color);
-}
-
-.posts-carousel {
-  margin-top: 5%;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 95%;
-}
-
-.posts {
-  width: 90%;
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  gap: 2rem;
-}
-
-.instaPost {
-  flex: 0 0 auto;
-  width: calc((100% - 2rem) / 3);
-  justify-content: flex-start;
-  scroll-snap-align: start;
-}
-
-.posts::-webkit-scrollbar {
-  display: none;
-}
-
-.whyJoinUs {
-  position: relative;
-  margin: 0 15% 0 15%;
-  padding: 2rem;
-  border-top: 3px dotted rgba(115, 115, 115, 0.7);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+.home-page {
+  --home-black: #1f1d20;
+  --home-grey: #2e2f33;
+  --home-body: clamp(1.125rem, 0.9vw + 0.75rem, 2rem);
+  --home-title: clamp(1.75rem, 1.2vw + 1.2rem, 3rem);
+  --home-pad-x: clamp(1.25rem, 5vw, 6rem);
+  --home-pad-y: clamp(3rem, 7vw, 7rem);
+  --home-photo: clamp(148px, 21vw, 375px);
+  background: var(--home-grey);
+  color: var(--color-text);
   overflow-x: hidden;
 }
 
-@keyframes slide-up {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.home-band--black {
+  background: var(--home-black);
 }
 
-.slide-up {
-  animation: slide-up 0.5s ease-out;
+.home-band--grey {
+  background: var(--home-grey);
 }
 
-@media (max-width: 1500px) {
-  .instaPost {
-    width: calc((100% - 2rem) / 2);
-  }
+.home-band__inner {
+  max-width: 1512px;
+  margin: 0 auto;
 }
 
-@media (max-width: 1076px) {
-  .posts-carousel {
-    display: none;
+.home-hero {
+  position: relative;
+  min-height: clamp(36rem, 90vh, 61.375rem);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.home-hero__inner {
+  position: relative;
+  min-height: clamp(36rem, 90vh, 61.375rem);
+  box-sizing: border-box;
+  padding: calc(clamp(4rem, 8vw, 6.25rem) + var(--home-pad-y)) var(--home-pad-x)
+    var(--home-pad-y);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+.home-hero__copy {
+  min-width: 0;
+  max-width: 36rem;
+  position: relative;
+  z-index: 1;
+}
+
+.home-hero__title {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 16px;
+}
+
+.home-hero__title .type-hero-mono,
+.home-hero__title .type-hero-sans {
+  display: block;
+  font-size: clamp(2.25rem, 2.4vw + 1rem, 4.5rem);
+  line-height: 1.1;
+  overflow-wrap: break-word;
+}
+
+.home-hero__kicker {
+  margin: 0 0 36px;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: var(--home-body);
+  letter-spacing: 0.04em;
+  color: #fafafa;
+  font-style: normal;
+}
+
+.home-hero__kicker em {
+  color: #d5c6f8;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.home-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.home-hero__terminal,
+.home-hero__terminal.terminal-window {
+  width: 100%;
+  max-width: 42rem;
+  height: min(34rem, 64vh);
+  min-width: 0;
+  min-height: 0;
+  justify-self: stretch;
+  position: relative;
+  z-index: 1;
+}
+
+.home-hero__terminal .terminal-window__body {
+  white-space: normal;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: #fafafa;
+  font-size: clamp(0.85rem, 0.55vw + 0.7rem, 1.0625rem);
+  line-height: 1.45;
+  padding: 12px 16px 8px;
+}
+
+.home-about .home-band__inner {
+  padding: var(--home-pad-y) var(--home-pad-x);
+}
+
+.home-about__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(1.5rem, 5vw, 4rem);
+}
+
+.home-about__text {
+  flex: 1 1 28rem;
+  text-align: center;
+}
+
+.home-about__text h2 {
+  margin-bottom: 16px;
+  font-size: var(--home-title);
+}
+
+.home-about__text .type-body {
+  font-size: var(--home-body);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.home-about__photo {
+  width: var(--home-photo);
+  height: auto;
+  aspect-ratio: 432 / 281;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: clamp(3px, 0.4vw, 5px) solid #fafafa;
+  border-radius: clamp(12px, 1.2vw, 18px);
+  box-sizing: border-box;
+}
+
+.home-about__subhead {
+  margin: 24px 0 8px;
+  color: #d5c6f8;
+  font-size: var(--home-title);
+}
+
+.home-about__meta {
+  color: #fafafa;
+}
+
+.home-initiatives {
+  padding: var(--home-pad-y) var(--home-pad-x) calc(var(--home-pad-y) * 1.4);
+  text-align: center;
+  scroll-margin-top: 120px;
+}
+
+.home-initiatives__title {
+  margin-bottom: clamp(2rem, 5vw, 4rem);
+  font-size: var(--home-title);
+}
+
+.home-initiatives__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 220px));
+  justify-content: center;
+  gap: clamp(1.5rem, 3vw, 3rem) clamp(1rem, 2vw, 1.5rem);
+  max-width: 1512px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1100px) {
+  .home-hero,
+  .home-hero__inner {
+    min-height: 0;
   }
 
-  .whyJoinUs {
-    margin: 10% 0 10% 0;
-    padding: 0;
+  .home-hero__inner {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .home-hero__copy {
+    max-width: none;
+  }
+
+  .home-hero__terminal,
+  .home-hero__terminal.terminal-window {
     width: 100%;
+    max-width: none;
+    height: min(28rem, 70vh);
   }
 
-  .articleSection p.summary {
-    font-size: 1.5rem;
-  }
-
-  .club-introduction-container p {
-    font-size: 4vw;
-    font-style: normal;
-  }
-
-  .clubTitleSection {
-    height: 40vw;
-  }
-
-  .whyJoinUs p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 976px) {
-  .summaryTitle {
-    font-size: 2rem;
-    margin: 30px;
-  }
-
-  .map-and-label {
-    padding-right: 0;
-  }
-
-  .map {
-    width: 70%;
-  }
-
-  .clubTitleSection {
-    height: 50vw;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .uw-logo {
-    display: none;
-  }
-
-  .clubTitleSection {
-    height: 70vw;
-  }
-
-  .goal-message-section {
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 500px;
-    display: flex;
+  .home-about__row,
+  .home-about__row--reverse {
     flex-direction: column;
-    background: var(--bg);
   }
 
-  .goal-title {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 2.45em;
-    line-height: 78px;
-    padding-bottom: 40px;
-    color: var(--text-title-color);
+  .home-about__photo {
+    width: min(var(--home-photo), 100%);
   }
 
-  .goal-text {
-    text-align: center;
-    max-width: 500px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1em;
-    line-height: 30px;
-    color: var(--text-color);
-  }
-
-  .summaryTitle {
-    font-size: 1.5rem;
+  .home-initiatives__grid {
+    grid-template-columns: repeat(2, minmax(0, 220px));
   }
 }
 
-@media (max-width: 480px) {
-  .club-introduction-container-button {
-    font-size: 3vw;
-  }
-
-  .uw-logo {
-    display: none;
-  }
-
-  .uw-logo {
-    width: 30%;
-  }
-
-  .clubName {
-    font-size: 5vw;
-    color: var(--text-header-color);
+@media (max-width: 600px) {
+  .home-initiatives__grid {
+    grid-template-columns: minmax(0, 220px);
   }
 }
