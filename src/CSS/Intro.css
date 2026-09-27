@@ -20,7 +20,7 @@
 }
 
 .intro--exit::before {
-  animation: intro-curtain 900ms var(--ease-handoff) both;
+  animation: intro-curtain var(--handoff) var(--ease-handoff) both;
 }
 
 .intro__stage {
@@ -86,12 +86,10 @@
   color: rgba(250, 250, 250, 0.6);
 }
 
-/* intro-clock changes nothing visible; its end is the cue to hand off to the hero. */
 .intro__brand {
   display: flex;
   align-items: center;
   gap: calc(var(--title-size) * 0.4);
-  animation: intro-clock 2500ms linear both;
 }
 
 .intro__mark {
@@ -120,7 +118,7 @@
 }
 
 .intro--flip .intro__title {
-  animation: intro-flip 900ms var(--ease-handoff) both;
+  animation: intro-flip var(--handoff) var(--ease-handoff) both;
 }
 
 .intro__mask {
@@ -215,12 +213,6 @@
   }
   to {
     stroke-dashoffset: 0;
-  }
-}
-
-@keyframes intro-clock {
-  to {
-    visibility: visible;
   }
 }
 

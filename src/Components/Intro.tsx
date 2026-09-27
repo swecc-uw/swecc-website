@@ -1,5 +1,6 @@
 import "../CSS/Intro.css";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
 declare module "react" {
   interface CSSProperties {
@@ -7,6 +8,7 @@ declare module "react" {
     "--flip-x"?: string;
     "--flip-y"?: string;
     "--flip-scale"?: number;
+    "--handoff"?: string;
   }
 }
 
@@ -24,6 +26,7 @@ const BOOT_LINES = [
 ] as const;
 const CHEVRON_OUTLINE = "37.5,0 37.5,8.7 8.3,19 37.5,29 37.5,37.8 0,24 0,13.3";
 const CHEVRON_X = [0, 46.7] as const;
+const PHASE_MS = { play: 2500, exit: 900 } as const;
 const HERO_REVEAL = [
   ".home-hero__kicker",
   ".home-hero__actions",
@@ -31,11 +34,11 @@ const HERO_REVEAL = [
 ] as const;
 
 function initialState(): IntroState {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches)
+    return { phase: "done" };
   if (new URLSearchParams(window.location.search).has("intro"))
     return { phase: "play" };
   if (window.location.pathname !== "/") return { phase: "done" };
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches)
-    return { phase: "done" };
   return { phase: "play" };
 }
 
@@ -68,13 +71,38 @@ function revealHero(easing: string) {
   });
 }
 
+async function handoff(title: HTMLElement | null): Promise<IntroState> {
+  await document.fonts.ready;
+  const flip = title ? measureFlip(title) : null;
+  if (title && flip)
+    revealHero(getComputedStyle(title).getPropertyValue("--ease-handoff"));
+  return { phase: "exit", flip };
+}
+
 function Intro() {
   const [state, setState] = useState<IntroState>(initialState);
   const titleRef = useRef<HTMLDivElement>(null);
   const { phase } = state;
 
+  useEffect(() => {
+    if (phase === "done") return;
+    let cancelled = false;
+    // Timers, not animationend, drive the phases so the overlay still leaves when animations are disabled.
+    const timer = window.setTimeout(async () => {
+      const next: IntroState =
+        phase === "play" ? await handoff(titleRef.current) : { phase: "done" };
+      if (!cancelled) setState(next);
+    }, PHASE_MS[phase]);
+    return () => {
+      cancelled = true;
+      window.clearTimeout(timer);
+    };
+  }, [phase]);
+
   useLayoutEffect(() => {
     const root = document.documentElement;
+    const app = document.getElementById("root");
+    if (app) app.inert = phase !== "done";
     if (phase === "done") {
       delete root.dataset.intro;
       return;
@@ -92,14 +120,6 @@ function Intro() {
 
   if (phase === "done") return null;
 
-  const beginExit = () => {
-    const title = titleRef.current;
-    const flip = title ? measureFlip(title) : null;
-    if (title && flip)
-      revealHero(getComputedStyle(title).getPropertyValue("--ease-handoff"));
-    setState({ phase: "exit", flip });
-  };
-
   const flip = state.phase === "exit" ? state.flip : null;
   const exitClass =
     phase === "exit"
@@ -108,13 +128,11 @@ function Intro() {
         : " intro--exit"
       : "";
 
-  return (
+  return createPortal(
     <div
       aria-hidden="true"
       className={`intro${exitClass}`}
-      onAnimationEnd={(e) => {
-        if (e.animationName === "intro-curtain") setState({ phase: "done" });
-      }}
+      style={{ "--handoff": `${PHASE_MS.exit}ms` }}
     >
       <div className="intro__stage">
         <div className="intro__term mono">
@@ -129,13 +147,7 @@ function Intro() {
             </p>
           ))}
         </div>
-        <div
-          className="intro__brand"
-          onAnimationEnd={(e) => {
-            if (e.animationName === "intro-clock" && phase === "play")
-              beginExit();
-          }}
-        >
+        <div className="intro__brand">
           <svg className="intro__mark" viewBox="0 0 84.2 37.8">
             <clipPath id="intro-chevron">
               <polygon points={CHEVRON_OUTLINE} />
@@ -177,7 +189,8 @@ function Intro() {
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
 
