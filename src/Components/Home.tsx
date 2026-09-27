@@ -7,6 +7,8 @@ import InitiativeCard from "./InitiativeCard";
 import whoWeAreImg from "../Data/img/backgroundImg/1.jpg";
 import meetingsImg from "../Data/img/backgroundImg/4.jpg";
 import { links } from "./Utils";
+import { FaDiscord } from "react-icons/fa";
+import { FiArrowDown } from "react-icons/fi";
 
 function HomePage() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -32,19 +34,21 @@ function HomePage() {
           <div className="home-hero__actions">
             <Button
               variant="primary"
-              size="md"
+              size="lg"
               href={links.social.discord}
               target="_blank"
               rel="noopener noreferrer"
             >
-              Join Us
+              <FaDiscord aria-hidden />
+              Join the Discord
             </Button>
             <Button
-              variant="outline"
-              size="md"
+              variant="ghost"
+              size="lg"
               onClick={() => scrollTo("initiatives")}
             >
-              Explore Programs +
+              Explore programs
+              <FiArrowDown aria-hidden className="swecc-button__nudge" />
             </Button>
           </div>
         </div>

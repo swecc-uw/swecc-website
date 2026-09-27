@@ -9,8 +9,8 @@ type ButtonTarget =
 
 export type ButtonProps = ButtonTarget & {
   children: ReactNode;
-  variant?: "primary" | "outline";
-  size?: "sm" | "md";
+  variant?: "primary" | "outline" | "ghost";
+  size?: "sm" | "md" | "lg";
   className?: string;
   onClick?: MouseEventHandler<HTMLElement>;
 };
