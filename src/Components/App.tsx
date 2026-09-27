@@ -3,7 +3,6 @@ import Footer from "./Footer";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Home";
 import Events from "./Events";
-import JoinNow from "./Join-now";
 import Navbar from "./Navbar";
 import ExternalRedirect from "./Redirect";
 import { links } from "./Utils";
@@ -43,7 +42,10 @@ function App() {
           path="/officer-application" 
           element={<ExternalRedirect to={links.resources.officerApp} />}
         />
-        <Route path="/Join-Now" element={<JoinNow />} />
+        <Route
+          path="/Join-Now"
+          element={<ExternalRedirect to={links.social.discord} />}
+        />
         <Route path="*" element={<Home />} />
       </Routes>
       <Footer />

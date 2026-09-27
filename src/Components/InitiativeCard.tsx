@@ -1,5 +1,6 @@
 import React, { type ReactNode } from "react";
 import Button from "./Button";
+import { externalLinkProps } from "./Utils";
 import "../CSS/InitiativeCard.css";
 
 type InitiativeCardProps = {
@@ -30,7 +31,9 @@ function InitiativeCard({
             <Button
               size="sm"
               variant="primary"
-              {...("to" in action ? { to: action.to } : { href: action.href })}
+              {...("to" in action
+                ? { to: action.to }
+                : { href: action.href, ...externalLinkProps(action.href) })}
             >
               {action.label}
             </Button>

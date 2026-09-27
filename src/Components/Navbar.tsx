@@ -6,7 +6,7 @@ import SWECCWordmark from "../Data/img/Logo/SWECCWordmarkWhite.png";
 import {
   communityLinks,
   externalLinkProps,
-  joinLink,
+  links,
   siteLinks,
 } from "./Utils";
 
@@ -51,9 +51,14 @@ function Navbar() {
               </li>
             ))}
           </ul>
-          <Link to={joinLink.to} className="site-nav__cta" onClick={closeMenu}>
-            {joinLink.label}
-          </Link>
+          <a
+            href={links.social.discord}
+            className="site-nav__cta"
+            {...externalLinkProps(links.social.discord)}
+            onClick={closeMenu}
+          >
+            Join SWECC
+          </a>
           <button
             type="button"
             className="site-nav__toggle"

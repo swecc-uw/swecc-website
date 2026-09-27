@@ -40,8 +40,6 @@ export const siteLinks = [
   { to: "/Events", label: "Events" },
 ];
 
-export const joinLink = { to: "/Join-Now", label: "Join SWECC" };
-
 export const communityLinks = [
   { href: links.social.discord, label: "Discord", Icon: FaDiscord },
   { href: links.social.instagram, label: "Instagram", Icon: FaInstagram },

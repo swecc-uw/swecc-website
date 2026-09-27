@@ -5,7 +5,6 @@ import SWECCWordmark from "../Data/img/Logo/SWECCWordmarkWhite.png";
 import {
   communityLinks,
   externalLinkProps,
-  joinLink,
   siteLinks,
 } from "./Utils";
 
@@ -29,7 +28,7 @@ function Footer() {
             <div className="site-footer__col">
               <h2 className="site-footer__heading">Site</h2>
               <ul className="site-footer__list">
-                {[...siteLinks, joinLink].map(({ to, label }) => (
+                {siteLinks.map(({ to, label }) => (
                   <li key={to}>
                     <Link to={to} className="site-footer__link">
                       {label}

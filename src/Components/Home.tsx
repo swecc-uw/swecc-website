@@ -30,7 +30,13 @@ function HomePage() {
             AT THE <em>UNIVERSITY OF WASHINGTON</em>
           </p>
           <div className="home-hero__actions">
-            <Button variant="primary" size="md" to="/Join-Now">
+            <Button
+              variant="primary"
+              size="md"
+              href={links.social.discord}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Join Us
             </Button>
             <Button
@@ -120,12 +126,12 @@ function HomePage() {
           <InitiativeCard
             title="MENTORSHIP PROGRAM"
             accent="sage"
-            action={{ label: "details", to: "/Join-Now" }}
+            action={{ label: "details", href: links.social.discord }}
           />
           <InitiativeCard
             title="COHORT PROGRAM"
             accent="mentorship"
-            action={{ label: "details", to: "/Join-Now" }}
+            action={{ label: "details", href: links.social.discord }}
           />
         </div>
       </section>
