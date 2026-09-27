@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./Home";
 import Events from "./Events";
 import Navbar from "./Navbar";
+import Intro from "./Intro";
 import ExternalRedirect from "./Redirect";
 import { links } from "./Utils";
 import favicon from "../icons/logo-23.png";
@@ -16,6 +17,7 @@ function App() {
 
   return (
     <div>
+      <Intro />
       <Navbar />
       <Routes>
         <Route index element={<Home />} />
