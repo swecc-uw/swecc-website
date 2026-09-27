@@ -1,38 +1,37 @@
 .intro {
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
-  --ease-in-out: cubic-bezier(0.87, 0, 0.13, 1);
+  --ease-handoff: cubic-bezier(0.33, 0, 0.1, 1);
+  --title-size: clamp(2.5rem, 5vw + 1rem, 6rem);
 
   position: fixed;
   inset: 0;
   z-index: 1100;
   display: grid;
   place-items: center;
-  background: #1f1d20;
 }
 
-.intro::after {
+.intro::before {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 2px;
-  background: #7ea266;
+  inset: 0;
+  background: #1f1d20;
+  border-bottom: 2px solid #7ea266;
 }
 
-.intro--exit {
-  animation: intro-curtain 800ms var(--ease-in-out) both;
+.intro--exit::before {
+  animation: intro-curtain 900ms var(--ease-handoff) both;
 }
 
 .intro__stage {
+  position: relative;
   display: grid;
   width: max-content;
   max-width: 90vw;
 }
 
-.intro--exit .intro__stage {
-  animation: intro-stage-out 600ms var(--ease-in-out) both;
+.intro--exit:not(.intro--flip) .intro__stage {
+  animation: intro-stage-out 600ms var(--ease-handoff) both;
 }
 
 .intro__term,
@@ -87,9 +86,41 @@
   color: rgba(250, 250, 250, 0.6);
 }
 
+/* intro-clock changes nothing visible; its end is the cue to hand off to the hero. */
+.intro__brand {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--title-size) * 0.4);
+  animation: intro-clock 2500ms linear both;
+}
+
+.intro__mark {
+  flex-shrink: 0;
+  height: var(--title-size);
+}
+
+.intro--exit .intro__mark {
+  transform-origin: left center;
+  animation: intro-mark-out 280ms var(--ease-out) both;
+}
+
+.intro__chevron {
+  fill: none;
+  stroke: #7ea266;
+  stroke-width: 14;
+  stroke-dasharray: 1;
+  animation: intro-draw 800ms var(--ease-out) calc(1950ms + var(--i) * 140ms)
+    both;
+}
+
 .intro__title {
   display: flex;
   flex-direction: column;
+  transform-origin: top left;
+}
+
+.intro--flip .intro__title {
+  animation: intro-flip 900ms var(--ease-handoff) both;
 }
 
 .intro__mask {
@@ -97,13 +128,13 @@
   overflow: hidden;
   padding-bottom: 0.12em;
   margin-bottom: -0.12em;
-  font-size: clamp(2.5rem, 5vw + 1rem, 6rem);
+  font-size: var(--title-size);
 }
 
 .intro__title .intro__word {
   display: block;
   font-size: inherit;
-  line-height: 1.02;
+  line-height: 1.1;
   transform-origin: left bottom;
   animation: intro-word-up 900ms var(--ease-out) both;
 }
@@ -120,28 +151,26 @@
   animation-delay: 2030ms;
 }
 
-.intro__kicker {
-  margin: 1rem 0 0;
-  font-family: var(--font-ui);
-  font-weight: 700;
-  font-size: clamp(0.85rem, 0.6vw + 0.6rem, 1.125rem);
-  color: #fafafa;
-  animation: intro-kicker 1100ms var(--ease-out) 2250ms both;
+[data-intro] .home-hero__title {
+  visibility: hidden;
 }
 
-.intro__kicker em {
-  color: #d5c6f8;
-  font-style: italic;
+[data-intro="play"] .home-hero__kicker,
+[data-intro="play"] .home-hero__actions,
+[data-intro="play"] .home-hero__terminal {
+  opacity: 0;
 }
 
-.intro__rule {
-  display: block;
-  width: 100%;
-  height: 2px;
-  margin-top: 1.25rem;
-  background: linear-gradient(90deg, #7ea266, #d5c6f8);
-  transform-origin: left;
-  animation: intro-rule 700ms var(--ease-in-out) 2250ms both;
+@media (max-width: 768px) {
+  .intro__brand {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: calc(var(--title-size) * 0.3);
+  }
+
+  .intro__mark {
+    height: calc(var(--title-size) * 0.72);
+  }
 }
 
 @keyframes intro-blink {
@@ -180,22 +209,31 @@
   }
 }
 
-/* The held tail (70% to 100%) is the pause before the curtain, so the exit has one trigger. */
-@keyframes intro-kicker {
+@keyframes intro-draw {
   from {
-    opacity: 0;
-    letter-spacing: 0.3em;
+    stroke-dashoffset: 1;
   }
-  70%,
   to {
-    opacity: 1;
-    letter-spacing: 0.04em;
+    stroke-dashoffset: 0;
   }
 }
 
-@keyframes intro-rule {
-  from {
-    transform: scaleX(0);
+@keyframes intro-clock {
+  to {
+    visibility: visible;
+  }
+}
+
+@keyframes intro-flip {
+  to {
+    transform: translate(var(--flip-x), var(--flip-y)) scale(var(--flip-scale));
+  }
+}
+
+@keyframes intro-mark-out {
+  to {
+    opacity: 0;
+    transform: translate(-25%, -60%) scale(0.4);
   }
 }
 

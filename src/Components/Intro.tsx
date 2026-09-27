@@ -1,30 +1,83 @@
 import "../CSS/Intro.css";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 
-type IntroPhase = "play" | "exit" | "done";
+declare module "react" {
+  interface CSSProperties {
+    "--i"?: number;
+    "--flip-x"?: string;
+    "--flip-y"?: string;
+    "--flip-scale"?: number;
+  }
+}
+
+type Flip = { x: number; y: number; scale: number };
+
+type IntroState =
+  | { phase: "play" }
+  | { phase: "exit"; flip: Flip | null }
+  | { phase: "done" };
 
 const BOOT_LINES = [
   "mounting community",
   "linking mentors",
   "compiling careers",
 ] as const;
+const CHEVRON_OUTLINE = "37.5,0 37.5,8.7 8.3,19 37.5,29 37.5,37.8 0,24 0,13.3";
+const CHEVRON_X = [0, 46.7] as const;
 const SEEN_KEY = "swecc:intro-seen";
+const HERO_REVEAL = [
+  ".home-hero__kicker",
+  ".home-hero__actions",
+  ".home-hero__terminal",
+] as const;
 
-function shouldPlay(): IntroPhase {
-  if (new URLSearchParams(window.location.search).has("intro")) return "play";
-  if (window.location.pathname !== "/") return "done";
+function initialState(): IntroState {
+  if (new URLSearchParams(window.location.search).has("intro"))
+    return { phase: "play" };
+  if (window.location.pathname !== "/") return { phase: "done" };
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches)
-    return "done";
+    return { phase: "done" };
   try {
-    if (localStorage.getItem(SEEN_KEY)) return "done";
+    if (localStorage.getItem(SEEN_KEY)) return { phase: "done" };
   } catch {
-    return "done";
+    return { phase: "done" };
   }
-  return "play";
+  return { phase: "play" };
+}
+
+function measureFlip(title: HTMLElement): Flip | null {
+  const hero = document.querySelector(".home-hero__title");
+  if (!hero) return null;
+  const from = title.getBoundingClientRect();
+  const to = hero.getBoundingClientRect();
+  return {
+    x: to.left - from.left,
+    y: to.top - from.top,
+    scale: to.height / from.height,
+  };
+}
+
+function revealHero(easing: string) {
+  HERO_REVEAL.forEach((selector, i) => {
+    document.querySelector(selector)?.animate(
+      [
+        { opacity: 0, translate: "0 1.5rem" },
+        { opacity: 1, translate: "0 0" },
+      ],
+      {
+        duration: 800,
+        delay: 450 + i * 110,
+        easing,
+        fill: "backwards",
+      },
+    );
+  });
 }
 
 function Intro() {
-  const [phase, setPhase] = useState<IntroPhase>(shouldPlay);
+  const [state, setState] = useState<IntroState>(initialState);
+  const titleRef = useRef<HTMLDivElement>(null);
+  const { phase } = state;
 
   useEffect(() => {
     // Mark seen at start, not at completion, so a reload mid-intro doesn't replay it.
@@ -36,28 +89,47 @@ function Intro() {
     }
   }, [phase]);
 
-  useEffect(() => {
-    if (phase === "done") return;
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+  useLayoutEffect(() => {
+    const root = document.documentElement;
+    if (phase === "done") {
+      delete root.dataset.intro;
+      return;
+    }
+    root.dataset.intro = phase;
+    const { overflow, scrollbarGutter } = root.style;
+    // The gutter keeps the hero where it was measured once the scrollbar returns.
+    root.style.overflow = "hidden";
+    root.style.scrollbarGutter = "stable";
     return () => {
-      document.body.style.overflow = prev;
+      root.style.overflow = overflow;
+      root.style.scrollbarGutter = scrollbarGutter;
     };
   }, [phase]);
 
   if (phase === "done") return null;
 
+  const beginExit = () => {
+    const title = titleRef.current;
+    const flip = title ? measureFlip(title) : null;
+    if (title && flip)
+      revealHero(getComputedStyle(title).getPropertyValue("--ease-handoff"));
+    setState({ phase: "exit", flip });
+  };
+
+  const flip = state.phase === "exit" ? state.flip : null;
+  const exitClass =
+    phase === "exit"
+      ? flip
+        ? " intro--exit intro--flip"
+        : " intro--exit"
+      : "";
+
   return (
     <div
       aria-hidden="true"
-      className={`intro${phase === "exit" ? " intro--exit" : ""}`}
+      className={`intro${exitClass}`}
       onAnimationEnd={(e) => {
-        if (
-          e.target === e.currentTarget &&
-          e.animationName === "intro-curtain"
-        ) {
-          setPhase("done");
-        }
+        if (e.animationName === "intro-curtain") setState({ phase: "done" });
       }}
     >
       <div className="intro__stage">
@@ -68,17 +140,47 @@ function Intro() {
             <span className="intro__cursor" />
           </p>
           {BOOT_LINES.map((line, i) => (
-            <p
-              key={line}
-              className="intro__line"
-              style={{ "--i": i } as React.CSSProperties}
-            >
+            <p key={line} className="intro__line" style={{ "--i": i }}>
               <span className="intro__ok">[ok]</span> {line}
             </p>
           ))}
         </div>
-        <div className="intro__brand">
-          <div className="intro__title">
+        <div
+          className="intro__brand"
+          onAnimationEnd={(e) => {
+            if (e.animationName === "intro-clock" && phase === "play")
+              beginExit();
+          }}
+        >
+          <svg className="intro__mark" viewBox="0 0 84.2 37.8">
+            <clipPath id="intro-chevron">
+              <polygon points={CHEVRON_OUTLINE} />
+            </clipPath>
+            {CHEVRON_X.map((x, i) => (
+              <path
+                key={x}
+                className="intro__chevron"
+                transform={`translate(${x} 0)`}
+                clipPath="url(#intro-chevron)"
+                d="M42 4.3 L4 18.9 L42 33.5"
+                pathLength={1}
+                style={{ "--i": i }}
+              />
+            ))}
+          </svg>
+          <div
+            ref={titleRef}
+            className="intro__title"
+            style={
+              flip
+                ? {
+                    "--flip-x": `${flip.x}px`,
+                    "--flip-y": `${flip.y}px`,
+                    "--flip-scale": flip.scale,
+                  }
+                : undefined
+            }
+          >
             <span className="intro__mask">
               <span className="intro__word type-hero-mono">Software</span>
             </span>
@@ -89,16 +191,6 @@ function Intro() {
               <span className="intro__word type-hero-sans">CAREER CLUB</span>
             </span>
           </div>
-          <p
-            className="intro__kicker"
-            onAnimationEnd={(e) => {
-              if (e.animationName === "intro-kicker" && phase === "play")
-                setPhase("exit");
-            }}
-          >
-            AT THE <em>UNIVERSITY OF WASHINGTON</em>
-          </p>
-          <span className="intro__rule" />
         </div>
       </div>
     </div>
