@@ -1,5 +1,5 @@
 import "../CSS/Intro.css";
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 
 declare module "react" {
   interface CSSProperties {
@@ -24,7 +24,6 @@ const BOOT_LINES = [
 ] as const;
 const CHEVRON_OUTLINE = "37.5,0 37.5,8.7 8.3,19 37.5,29 37.5,37.8 0,24 0,13.3";
 const CHEVRON_X = [0, 46.7] as const;
-const SEEN_KEY = "swecc:intro-seen";
 const HERO_REVEAL = [
   ".home-hero__kicker",
   ".home-hero__actions",
@@ -37,11 +36,6 @@ function initialState(): IntroState {
   if (window.location.pathname !== "/") return { phase: "done" };
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches)
     return { phase: "done" };
-  try {
-    if (localStorage.getItem(SEEN_KEY)) return { phase: "done" };
-  } catch {
-    return { phase: "done" };
-  }
   return { phase: "play" };
 }
 
@@ -78,16 +72,6 @@ function Intro() {
   const [state, setState] = useState<IntroState>(initialState);
   const titleRef = useRef<HTMLDivElement>(null);
   const { phase } = state;
-
-  useEffect(() => {
-    // Mark seen at start, not at completion, so a reload mid-intro doesn't replay it.
-    if (phase !== "play") return;
-    try {
-      localStorage.setItem(SEEN_KEY, "1");
-    } catch {
-      /* privacy mode: nothing to persist */
-    }
-  }, [phase]);
 
   useLayoutEffect(() => {
     const root = document.documentElement;
