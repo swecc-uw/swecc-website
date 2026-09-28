@@ -26,12 +26,6 @@
   opacity: 1;
 }
 
-.site-nav a:focus-visible,
-.site-nav button:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 3px;
-}
-
 .site-nav__brand {
   display: flex;
   align-items: center;

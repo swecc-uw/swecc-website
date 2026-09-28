@@ -44,11 +44,6 @@
   opacity: 0.85;
 }
 
-.swecc-button:focus-visible {
-  outline: 2px solid var(--color-secondary);
-  outline-offset: 2px;
-}
-
 .swecc-button--lg {
   gap: 0.6rem;
   height: 3.25rem;
