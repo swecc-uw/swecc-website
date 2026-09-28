@@ -46,22 +46,68 @@
 }
 
 .initiative-card__title {
-  font-family: var(--font-accent);
+  font-family: var(--font-sans);
   font-weight: 700;
   font-size: clamp(1rem, 1.5vw, 1.5625rem);
   line-height: 1.2;
   color: #fafafa;
   text-align: center;
-  margin: 0 0 12px;
+  margin: 0 0 10px;
   text-transform: uppercase;
 }
 
 .initiative-card__body {
   flex: 1;
   width: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: left;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.45;
   color: #fafafa;
+}
+
+.initiative-card__prompt,
+.initiative-card__output {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: #fafafa;
+}
+
+.initiative-card__prompt {
+  margin-bottom: 0.55em;
+}
+
+.initiative-card__prompt-host {
+  color: #d5c6f8;
+}
+
+.initiative-card__output {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.4em;
+  flex: 1;
+}
+
+.initiative-card__gt {
+  color: #d5c6f8;
 }
 
 .initiative-card__action {
   margin-top: auto;
+}
+
+.initiative-card__action .swecc-button--lg {
+  max-width: 100%;
+  height: 2.03125rem;
+  padding: 0 0.9375rem;
+  border-radius: 7.5px;
+  font-size: 0.8125rem;
 }

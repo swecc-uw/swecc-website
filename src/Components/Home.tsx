@@ -120,23 +120,39 @@ function HomePage() {
           <InitiativeCard
             title="SWECC LABS"
             accent="sage"
-            action={{ label: "details", href: links.social.discord }}
-          />
+            command="cat labs.md"
+            action={{ label: "Join Labs", href: links.programs.labs }}
+          >
+            A program for fostering an open source community for career
+            development.
+          </InitiativeCard>
           <InitiativeCard
             title="MOCK INTERVIEWS"
             accent="mentorship"
-            action={{ label: "details", to: "/Events" }}
-          />
+            command="cat interviews.md"
+            action={{ label: "Book a slot", href: links.programs.interviews }}
+          >
+            Prepare for technical and non-technical interviews through
+            scheduled mock interviews.
+          </InitiativeCard>
           <InitiativeCard
             title="MENTORSHIP PROGRAM"
             accent="sage"
-            action={{ label: "details", href: links.social.discord }}
-          />
+            command="cat mentorship.md"
+            action={{ label: "Join the Discord", href: links.social.discord }}
+          >
+            Connect with upperclassmen and alumni and get a chance to learn
+            from their experiences.
+          </InitiativeCard>
           <InitiativeCard
             title="COHORT PROGRAM"
             accent="mentorship"
-            action={{ label: "details", href: links.social.discord }}
-          />
+            command="cat cohort.md"
+            action={{ label: "Join a cohort", href: links.programs.cohort }}
+          >
+            A smaller community to help keep you accountable for interview
+            prep and job applications.
+          </InitiativeCard>
         </div>
       </section>
     </div>
