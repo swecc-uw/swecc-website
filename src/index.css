@@ -12,7 +12,7 @@
   --nav-height: 4.5rem;
   --page-gutter: clamp(1.25rem, 5vw, 6rem);
   --border: 1.5px solid #474a4d;
-  --border-radius: 8px;
+  --border-radius: 0.5rem;
   --speed: 300ms;
   --moon-color: #c0c0c0;
   --nav-toggle: #f38f07;
@@ -107,6 +107,10 @@
 
 * {
   font-family: var(--font-sans);
+}
+
+html {
+  font-size: clamp(100%, min(100vw / 120, 100vh / 67.5), 200%);
 }
 
 body {
@@ -226,8 +230,8 @@ h3.type-display,
 .type-hero-sans {
   font-family: var(--font-hero);
   font-weight: 800;
-  font-size: 50px;
-  line-height: 55px;
+  font-size: 3.125rem;
+  line-height: 3.4375rem;
   letter-spacing: -0.03em;
 }
 
@@ -272,7 +276,7 @@ h3.type-display,
 
   .type-hero-mono,
   .type-hero-sans {
-    font-size: 27px;
+    font-size: 1.6875rem;
     line-height: 1.15;
   }
 }
@@ -291,4 +295,30 @@ a {
 a:hover {
   opacity: 0.7;
   transition: 0.2s;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+main:focus {
+  outline: none;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 1200;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  background: var(--color-primary);
+  color: var(--neutral-900);
+  font-weight: 700;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus-visible {
+  transform: none;
 }

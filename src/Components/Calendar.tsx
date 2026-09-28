@@ -25,6 +25,15 @@ function addMonths(date: Date, count: number) {
   return laNoon(year, month + count, 1);
 }
 
+function dayLabel(date: Date) {
+  return date.toLocaleDateString("en-US", {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+    timeZone: "America/Los_Angeles",
+  });
+}
+
 function isSameDay(a: Date, b: Date) {
   return dateKey(a) === dateKey(b);
 }
@@ -55,6 +64,7 @@ function EventCard({ event, open, onToggle }: EventCardProps) {
         type="button"
         className={`calendar-event-card${open ? " calendar-event-card--open" : ""}`}
         onClick={onToggle}
+        aria-expanded={event.description ? open : undefined}
       >
         <span className="calendar-event-time">{formatEventRange(event)}</span>
         <span className="calendar-event-title">{event.title}</span>
@@ -110,16 +120,7 @@ function Calendar() {
     year: "numeric",
     timeZone: "America/Los_Angeles",
   });
-  const selectedLabel = selectedDay.toLocaleDateString("en-US", {
-    weekday: "long",
-    month: "long",
-    day: "numeric",
-    timeZone: "America/Los_Angeles",
-  });
-
-  if (status === "loading") {
-    return <div className="swecc-calendar--message">Loading calendar…</div>;
-  }
+  const selectedLabel = dayLabel(selectedDay);
 
   if (status === "error") {
     return (
@@ -178,11 +179,12 @@ function Calendar() {
           ))}
         </div>
 
-        <div className="calendar-grid" role="grid">
+        <div className="calendar-grid">
           {cells.map((day) => {
             const dayEvents = eventsOnDay(events, day);
             const extra = Math.max(0, dayEvents.length - 2);
             const inMonth = laParts(day).month === laParts(visibleMonth).month;
+            const label = `${dayLabel(day)}, ${dayEvents.length === 1 ? "1 event" : `${dayEvents.length} events`}`;
             const classes = [
               "calendar-day",
               inMonth ? "" : "calendar-day--muted",
@@ -198,6 +200,9 @@ function Calendar() {
                 type="button"
                 className={classes}
                 onClick={() => setSelectedDay(day)}
+                aria-label={label}
+                aria-pressed={isSameDay(day, selectedDay)}
+                aria-current={isSameDay(day, today) ? "date" : undefined}
               >
                 <span className="calendar-day-number">{laParts(day).day}</span>
                 {dayEvents.slice(0, 2).map((event) => (
@@ -218,30 +223,34 @@ function Calendar() {
       </section>
 
       <aside className="calendar-agenda">
-        <h2 className="sans">{selectedLabel}</h2>
-        {selectedEvents.length === 0 ? (
-          <p className="calendar-empty">No events on this day.</p>
-        ) : (
-          <ul className="calendar-event-list">
-            {selectedEvents.map((event) => {
-              const id = `${event.uid}-${event.start.toISOString()}`;
-              return (
-                <EventCard
-                  key={id}
-                  event={event}
-                  open={openEventId === id}
-                  onToggle={() =>
-                    setOpenEventId((current) => (current === id ? "" : id))
-                  }
-                />
-              );
-            })}
-          </ul>
-        )}
+        <div aria-live="polite">
+          <h2 className="sans">{selectedLabel}</h2>
+          {status === "loading" ? (
+            <p className="calendar-empty">Loading events…</p>
+          ) : selectedEvents.length === 0 ? (
+            <p className="calendar-empty">No events on this day.</p>
+          ) : (
+            <ul className="calendar-event-list">
+              {selectedEvents.map((event) => {
+                const id = `${event.uid}-${event.start.toISOString()}`;
+                return (
+                  <EventCard
+                    key={id}
+                    event={event}
+                    open={openEventId === id}
+                    onToggle={() =>
+                      setOpenEventId((current) => (current === id ? "" : id))
+                    }
+                  />
+                );
+              })}
+            </ul>
+          )}
+        </div>
 
         <div className="calendar-upcoming">
           <h3 className="sans">Upcoming</h3>
-          {upcoming.length === 0 ? (
+          {status === "loading" ? null : upcoming.length === 0 ? (
             <p className="calendar-empty">No upcoming events on the SWECC calendar.</p>
           ) : (
             <ul className="calendar-event-list">

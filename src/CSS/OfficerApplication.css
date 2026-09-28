@@ -9,6 +9,7 @@
 }
 
 .header {
+    box-sizing: border-box;
     width: 100%;
     background-image: url(../Data/img/Officers/officerGroupPic.png);
     margin: 0 auto;
@@ -37,10 +38,9 @@
     margin: 50px auto 0 auto;
     max-width: 800px;
     margin-bottom: 10px;
-    font-size: 5vw;
-    color: white;
-    font-style: italic;
-    text-shadow: 1px 1px 2px var(--text-header-shadow-color);
+    font-size: clamp(1.75rem, 3vw + 1rem, 4rem);
+    color: var(--neutral-50);
+    text-shadow: 0 2px 16px rgb(31 29 32 / 0.8);
     animation: fadeIn 0.5s ease-out;
 }
 
@@ -66,7 +66,7 @@
 
 .application-page table th,
 .application-page table td {
-    border: 1px solid #ccc;
+    border: 1px solid var(--neutral-700);
     padding: 0.75rem;
     text-align: left;
 
@@ -89,8 +89,9 @@
 
 .application-page a {
     display: inline-block;
-    background-color: #656fb3;
-    color: #fff;
+    background-color: var(--color-primary);
+    color: var(--neutral-900);
+    font-weight: 700;
     padding: 0.75rem 1.5rem;
     text-decoration: none;
     border-radius: 4px;
@@ -99,5 +100,6 @@
 }
 
 .application-page a:hover {
-    background-color: #5f68a1;
+    filter: brightness(1.07);
+    opacity: 1;
 }

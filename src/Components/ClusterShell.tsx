@@ -51,10 +51,6 @@ function ClusterShell() {
   };
 
   useEffect(() => {
-    inputRef.current?.focus();
-  }, []);
-
-  useEffect(() => {
     const node = bodyRef.current;
     if (node) node.scrollTop = node.scrollHeight;
   }, [lines, vim, value]);

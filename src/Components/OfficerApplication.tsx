@@ -9,11 +9,11 @@ function OfficerApplication() {
                 <h1>SWECC Leadership Applications 2025-2026</h1>
             </div>
             <div className="content">
+                <h2>
+                    Applications for the 2025-2026 SWECC officer team are now
+                    open!
+                </h2>
                 <p>
-                    <h2>
-                        Applications for the 2025-2026 SWECC officer team are
-                        now open!
-                    </h2>
                     Are you passionate about software engineering and helping
                     others succeed in their careers? Do you want to be part of a
                     team that organizes events/workshops, builds software for

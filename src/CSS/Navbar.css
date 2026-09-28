@@ -12,7 +12,7 @@
 }
 
 .site-nav__inner {
-  max-width: 1512px;
+  max-width: 94.5rem;
   box-sizing: border-box;
   height: 100%;
   margin: 0 auto;
@@ -26,13 +26,8 @@
   opacity: 1;
 }
 
-.site-nav a:focus-visible,
-.site-nav button:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 3px;
-}
-
 .site-nav__brand {
+  min-height: 2.75rem;
   display: flex;
   align-items: center;
 }
@@ -86,7 +81,7 @@
 
 .site-nav__cta {
   padding: 0.5rem 1rem;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   background: var(--color-primary);
   color: var(--neutral-900);
   font-size: 0.9375rem;
@@ -103,14 +98,14 @@
 
 .site-nav__toggle {
   display: none;
-  width: 44px;
-  height: 44px;
-  margin-right: -10px;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-right: -0.625rem;
   padding: 0;
   align-items: center;
   justify-content: center;
   border: 0;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   background: none;
   color: var(--neutral-50);
   cursor: pointer;
@@ -195,12 +190,12 @@
   .site-nav__social {
     display: flex;
     flex-wrap: wrap;
-    margin: 0.5rem 0 0 -12px;
+    margin: 0.5rem 0 0 -0.75rem;
   }
 
   .site-nav__social-link {
-    width: 44px;
-    height: 44px;
+    width: 2.75rem;
+    height: 2.75rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -215,6 +210,16 @@
   .site-nav__social-link svg {
     width: 1.25rem;
     height: 1.25rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-nav__logo {
+    height: 1.4rem;
+  }
+
+  .site-nav__actions {
+    gap: 0.5rem;
   }
 }
 
