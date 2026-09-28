@@ -185,9 +185,6 @@ function TerminalWindow({
         className="terminal-window__chrome"
         onPointerDown={onPointerDown}
         onMouseDown={onPointerDown}
-        role={draggable ? "button" : undefined}
-        aria-label={draggable ? "Move terminal window" : undefined}
-        tabIndex={draggable ? 0 : undefined}
       >
         <span className="terminal-window__dot terminal-window__dot--close" />
         <span className="terminal-window__dot terminal-window__dot--minimize" />

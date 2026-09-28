@@ -109,6 +109,13 @@
   padding: 12px 16px 8px;
 }
 
+/* iOS zooms the page when a focused input is under 16px. */
+@media (pointer: coarse) {
+  .home-hero__terminal .terminal-window__body {
+    font-size: 1rem;
+  }
+}
+
 .home-about .home-band__inner {
   padding: var(--home-pad-y) var(--home-pad-x);
 }
