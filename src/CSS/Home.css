@@ -139,9 +139,11 @@
 }
 
 .home-about__text .type-body {
+  max-width: 42rem;
+  margin-inline: auto;
   font-size: var(--home-body);
-  font-weight: 700;
-  line-height: 1.35;
+  font-weight: 500;
+  line-height: 1.5;
 }
 
 .home-about__photo {
@@ -230,6 +232,6 @@
 
 @media (max-width: 600px) {
   .home-initiatives__grid {
-    grid-template-columns: minmax(0, 13.75rem);
+    grid-template-columns: minmax(0, 22rem);
   }
 }

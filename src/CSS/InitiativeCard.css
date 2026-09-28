@@ -111,3 +111,35 @@
   border-radius: 0.4688rem;
   font-size: 0.8125rem;
 }
+
+@media (max-width: 600px) {
+  .initiative-card {
+    max-width: none;
+    aspect-ratio: auto;
+    padding: 0.45rem;
+    box-sizing: border-box;
+  }
+
+  .initiative-card__front {
+    position: relative;
+    inset: auto;
+    width: auto;
+    height: auto;
+    padding: 1rem 1.25rem 1.25rem;
+  }
+
+  .initiative-card__title {
+    font-size: 1.25rem;
+  }
+
+  .initiative-card__body {
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+  }
+
+  .initiative-card__action .swecc-button--lg {
+    height: 2.75rem;
+    padding: 0 1.25rem;
+    font-size: 0.9375rem;
+  }
+}
