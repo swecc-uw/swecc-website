@@ -47,6 +47,7 @@ const Officers = () => {
                     type="button"
                     onClick={() => handleYearChange(year)}
                     className={selectedYear === year ? "selected" : ""}
+                    aria-pressed={selectedYear === year}
                   >
                     {year}
                   </button>
