@@ -1,7 +1,7 @@
 [
   {
     "name": "Hawa Drammeh",
-    "imgSrc": "hawa.jpg",
+    "imgSrc": "hawa.webp",
     "position": "Director of Mentorship, Advisor",
     "linkedin": "https://www.linkedin.com/in/hawadrammeh/",
     "github": "https://github.com/hawad416",
@@ -10,14 +10,14 @@
   },
   {
     "name": "Shiina Sugioka",
-    "imgSrc": "shiina.jpg",
+    "imgSrc": "shiina.webp",
     "position": "President",
     "linkedin": "https://www.linkedin.com/in/shiinas/",
     "email": "shiina12@uw.edu"
   },
   {
     "name": "Elijah Melton",
-    "imgSrc": "elijah.jpg",
+    "imgSrc": "elijah.webp",
     "position": "Mentorship Manager",
     "linkedin": "linkedin.com/in/elijah-melton/",
     "github": "https://github.com/elimelt",
@@ -26,33 +26,33 @@
   },
   {
     "name": "Deeksha Vatwani",
-    "imgSrc": "deeksha.jpg",
+    "imgSrc": "deeksha.webp",
     "position": "Alumni Network Manager",
     "linkedin": "https://www.linkedin.com/in/deeksha-vatwani/",
     "email": "vatwani2@uw.edu"
   },
   {
     "name": "Ruhee Rajwani",
-    "imgSrc": "ruhee.jpg",
+    "imgSrc": "ruhee.webp",
     "position": "Marketing Manager",
     "portfolio": "https://www.rrajwani.com/"
   },
   {
     "name": "Trang Tran",
-    "imgSrc": "trang.jpg",
+    "imgSrc": "trang.webp",
     "position": "Design Manager",
     "linkedin": "https://www.linkedin.com/in/trangtran10/",
     "email": "trangt10@uw.edu"
   },
   {
     "name": "Aditya Khowal",
-    "imgSrc": "adityak.jpg",
+    "imgSrc": "adityak.webp",
     "position": "External Head",
     "linkedin": "www.linkedin.com/in/aditya-khowal/"
   },
   {
     "name": "Leah Jia",
-    "imgSrc": "leah.jpg",
+    "imgSrc": "leah.webp",
     "position": "External Outreach",
     "portfolio": "https://leahjia.com/",
     "linkedin": "https://www.linkedin.com/in/leahjia",
@@ -60,7 +60,7 @@
   },
   {
     "name": "Eric Xiao",
-    "imgSrc": "eric.jpg",
+    "imgSrc": "eric.webp",
     "position": "External Outreach",
     "linkedin": "https://www.linkedin.com/in/xiaoe5800/",
     "github": "https://github.com/mathlord2",
@@ -68,27 +68,27 @@
   },
   {
     "name": "Aditya Akhileshwaran",
-    "imgSrc": "adityaa.jpg",
+    "imgSrc": "adityaa.webp",
     "position": "External Outreach",
     "linkedin": "https://www.linkedin.com/in/adiakhil/",
     "email": "aakhiles@uw.edu"
   },
   {
     "name": "David Pham",
-    "imgSrc": "david.jpg",
+    "imgSrc": "david.webp",
     "position": "Mentorship Manager",
     "linkedin": "https://www.linkedin.com/in/phamdavid722/",
     "email": "phamdavid722@gmail.com"
   },
   {
     "name": "Daniel Bejar",
-    "imgSrc": "daniel.jpg",
+    "imgSrc": "daniel.webp",
     "position": "Opportunities Manager",
     "email": "danielbejar316@gmail.com"
   },
   {
     "name": "Bhavya Linga",
-    "imgSrc": "bhavya.jpg",
+    "imgSrc": "bhavya.webp",
     "position": "Opportunities Manager",
     "linkedin": "https://www.linkedin.com/in/bhavya-linga-4b274725b/"
   }

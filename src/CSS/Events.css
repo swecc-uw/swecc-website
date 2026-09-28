@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url(../Data/img/backgroundImg/2.jpg) center / cover;
+  background: url(../Data/img/backgroundImg/2.webp) center / cover;
 }
 
 .event-page-intro::before {
