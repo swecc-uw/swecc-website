@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
 import "../CSS/Navbar.css";
-import SWECCWordmark from "../Data/img/Logo/SWECCWordmarkWhite.png";
+import SWECCWordmark from "../Data/img/Logo/SWECCWordmarkWhite.webp";
 import {
   communityLinks,
   externalLinkProps,

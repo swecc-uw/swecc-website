@@ -3,10 +3,10 @@ import React, { useEffect, useRef, type CSSProperties } from "react";
 import { FiArrowUpRight, FiCalendar } from "react-icons/fi";
 import Button from "./Button";
 import { links } from "./Utils";
-import workshopImg from "../Data/img/backgroundImg/1.jpg";
-import generalMeetingImg from "../Data/img/backgroundImg/2.jpg";
-import pairingImg from "../Data/img/backgroundImg/3.jpg";
-import mentorImg from "../Data/img/backgroundImg/7.jpg";
+import workshopImg from "../Data/img/backgroundImg/1.webp";
+import generalMeetingImg from "../Data/img/backgroundImg/2.webp";
+import pairingImg from "../Data/img/backgroundImg/3.webp";
+import mentorImg from "../Data/img/backgroundImg/7.webp";
 
 const { currentQuarter, meetingDay, meetingTime, meetingLocation } =
   links.config;

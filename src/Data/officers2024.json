@@ -1,7 +1,7 @@
 [
   {
     "name": "Elijah Melton",
-    "imgSrc": "elijah.jpg",
+    "imgSrc": "elijah.webp",
     "position": "President",
     "linkedin": "linkedin.com/in/elijah-melton/",
     "github": "https://github.com/elimelt",
@@ -10,7 +10,7 @@
   },
   {
     "name": "Shawn Collinge",
-    "imgSrc": "shawn.jpg",
+    "imgSrc": "shawn.webp",
     "position": "Software Engineer",
     "linkedin": "https://www.linkedin.com/in/s-collinge",
     "github": "https://github.com/shawncollinge",
@@ -18,48 +18,48 @@
   },
   {
     "name": "Deeksha Vatwani",
-    "imgSrc": "deeksha.jpg",
+    "imgSrc": "deeksha.webp",
     "position": "Alumni Network Manager",
     "linkedin": "https://www.linkedin.com/in/deeksha-vatwani/",
     "email": "vatwani2@uw.edu"
   },
   {
     "name": "Hoang Nguyen",
-    "imgSrc": "Hoang.png",
+    "imgSrc": "Hoang.webp",
     "position": "Software Engineer",
     "linkedin": "https://www.linkedin.com/in/kipiiler/",
     "github": "https://github.com/nphoang1102"
   },
   {
     "name": "Randolph Jenkins",
-    "imgSrc": "randolph.jpeg",
+    "imgSrc": "randolph.webp",
     "position": "developer",
     "linkedin": "https://www.linkedin.com/in/randolph-jenkins-tang/",
     "email": "y031125k@gmail.com"
   },
   {
     "name": "Trang Tran",
-    "imgSrc": "trang.jpg",
+    "imgSrc": "trang.webp",
     "position": "Design Manager",
     "linkedin": "https://www.linkedin.com/in/trangtran10/",
     "email": "trangt10@uw.edu"
   },
   {
     "name": "Aditya Khowal",
-    "imgSrc": "adityak.jpg",
+    "imgSrc": "adityak.webp",
     "position": "External Head",
     "linkedin": "www.linkedin.com/in/aditya-khowal/"
   },
   {
     "name": "Anthony Wen",
-    "imgSrc": "Anthony.png",
+    "imgSrc": "Anthony.webp",
     "position": "Marketing/Design",
     "linkedin": "https://www.linkedin.com/in/anthony-wen-programmer/",
     "github": "https://github.com/wena04"
   },
   {
     "name": "Eric Xiao",
-    "imgSrc": "eric.jpg",
+    "imgSrc": "eric.webp",
     "position": "External Outreach",
     "linkedin": "https://www.linkedin.com/in/xiaoe5800/",
     "github": "https://github.com/mathlord2",
@@ -67,20 +67,20 @@
   },
   {
     "name": "David Pham",
-    "imgSrc": "david.jpg",
+    "imgSrc": "david.webp",
     "position": "Mentorship Manager",
     "linkedin": "https://www.linkedin.com/in/phamdavid722/",
     "email": "phamdavid722@gmail.com"
   },
   {
     "name": "Devina Tavathia",
-    "imgSrc": "Devina.png",
+    "imgSrc": "Devina.webp",
     "position": "External Outreach",
     "linkedin": "https://www.linkedin.com/in/devina-tavathia-40722b167/"
   },
   {
     "name": "Benjamin So",
-    "imgSrc": "Ben.png",
+    "imgSrc": "Ben.webp",
     "position": "Marketing ",
     "linkedin": "https://www.linkedin.com/in/benjaminsoyh/"
   }
