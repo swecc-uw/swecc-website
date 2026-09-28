@@ -4,8 +4,7 @@ import Button from "./Button";
 import TerminalWindow from "./TerminalWindow";
 import ClusterShell from "./ClusterShell";
 import InitiativeCard from "./InitiativeCard";
-import whoWeAreImg from "../Data/img/backgroundImg/1.webp";
-import meetingsImg from "../Data/img/backgroundImg/4.webp";
+import HomeAbout from "./HomeAbout";
 import { links } from "./Utils";
 import { FaDiscord } from "react-icons/fa";
 import { FiArrowDown } from "react-icons/fi";
@@ -65,55 +64,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="home-about home-band home-band--grey">
-        <div className="home-band__inner home-about__row">
-          <div className="home-about__text">
-            <h2 className="type-display mono">Who we are</h2>
-            <p className="type-body">
-              SWECC is a student-led community dedicated to helping aspiring
-              software engineers build the skills, experience, and connections
-              needed to succeed in tech. Through hands-on projects, mentorship,
-              workshops, and a supportive network of ambitious peers, we create
-              opportunities for students to grow as engineers and launch
-              meaningful careers in software. Our mission is simple: help
-              students become exceptional builders and confident problem-solvers.
-            </p>
-          </div>
-          <img
-            className="home-about__photo"
-            src={whoWeAreImg}
-            alt="SWECC members in a club meeting"
-          />
-        </div>
-      </section>
-
-      <section className="home-about home-band home-band--grey">
-        <div className="home-band__inner home-about__row home-about__row--reverse">
-          <img
-            className="home-about__photo"
-            src={meetingsImg}
-            alt="SWECC general meeting in a lecture classroom"
-          />
-          <div className="home-about__text">
-            <h2 className="type-display mono">Meetings</h2>
-            <p className="type-body">
-              SWECC Meetings feature topics in a vast number of areas, including
-              professional development, resume building, and mentor circles
-            </p>
-            <h3 className="home-about__subhead mono">
-              Meeting Times &amp; Location
-            </h3>
-            <p className="home-about__meta type-body">
-              {links.config.currentQuarter.replace(/[()]/g, "")}: Weekly on{" "}
-              {links.config.meetingDay}
-              <br />
-              Time: {links.config.meetingTime}
-              <br />
-              Location: {links.config.meetingLocation}
-            </p>
-          </div>
-        </div>
-      </section>
+      <HomeAbout />
 
       <section
         className="home-initiatives home-band home-band--black"
@@ -125,7 +76,7 @@ function HomePage() {
           id="initiatives-title"
           className="type-display mono home-initiatives__title"
         >
-          Other Initiatives
+          Build your future in software
         </h2>
         <div className="home-initiatives__grid">
           <InitiativeCard
@@ -134,8 +85,9 @@ function HomePage() {
             command="cat labs.md"
             action={{ label: "Join Labs", href: links.programs.labs }}
           >
-            A program for fostering an open source community for career
-            development.
+            Build software with other students through hands-on, open source
+            projects. Gain practical engineering experience and grow as a
+            problem-solver.
           </InitiativeCard>
           <InitiativeCard
             title="MOCK INTERVIEWS"
@@ -143,8 +95,9 @@ function HomePage() {
             command="cat interviews.md"
             action={{ label: "Book a slot", href: links.programs.interviews }}
           >
-            Prepare for technical and non-technical interviews through
-            scheduled mock interviews.
+            Practice technical and non-technical interviews with peers. Build
+            confidence explaining your approach and prepare for the next step
+            in your software career.
           </InitiativeCard>
           <InitiativeCard
             title="MENTORSHIP PROGRAM"
@@ -152,8 +105,9 @@ function HomePage() {
             command="cat mentorship.md"
             action={{ label: "Join the Discord", href: links.social.discord }}
           >
-            Connect with upperclassmen and alumni and get a chance to learn
-            from their experiences.
+            Learn from upperclassmen and alumni who have been in your shoes.
+            Get guidance as you grow as an engineer and explore careers in
+            software.
           </InitiativeCard>
           <InitiativeCard
             title="COHORT PROGRAM"
@@ -161,8 +115,9 @@ function HomePage() {
             command="cat cohort.md"
             action={{ label: "Join a cohort", href: links.programs.cohort }}
           >
-            A smaller community to help keep you accountable for interview
-            prep and job applications.
+            Find a supportive group of ambitious peers to navigate interview
+            prep and job applications together. Stay accountable and build
+            connections along the way.
           </InitiativeCard>
         </div>
       </section>

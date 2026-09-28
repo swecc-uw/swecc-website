@@ -32,7 +32,7 @@ export const links = {
   },
   config: {
     beholdFeedId: "5rAX7PhyjFjmyVfW4Plm",
-    currentQuarter: "(Spring 2026)",
+    currentQuarter: "(Fall 2026)",
     meetingTime: "5:30-6:30PM",
     meetingDay: "Wednesday",
     meetingLocation: "Loew Hall 216"

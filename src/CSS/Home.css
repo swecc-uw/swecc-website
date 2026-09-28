@@ -5,7 +5,6 @@
   --home-title: clamp(1.75rem, 1.2vw + 1.2rem, 3rem);
   --home-pad-x: clamp(1.25rem, 5vw, 6rem);
   --home-pad-y: clamp(3rem, 7vw, 7rem);
-  --home-photo: clamp(9.25rem, 21vw, 23.4375rem);
   background: var(--home-grey);
   color: var(--color-text);
   overflow-x: hidden;
@@ -117,56 +116,6 @@
   }
 }
 
-.home-about .home-band__inner {
-  padding: var(--home-pad-y) var(--home-pad-x);
-}
-
-.home-about__row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: clamp(1.5rem, 5vw, 4rem);
-}
-
-.home-about__text {
-  flex: 1 1 28rem;
-  text-align: center;
-}
-
-.home-about__text h2 {
-  margin-bottom: 1rem;
-  font-size: var(--home-title);
-}
-
-.home-about__text .type-body {
-  max-width: 42rem;
-  margin-inline: auto;
-  font-size: var(--home-body);
-  font-weight: 500;
-  line-height: 1.5;
-}
-
-.home-about__photo {
-  width: var(--home-photo);
-  height: auto;
-  aspect-ratio: 432 / 281;
-  object-fit: cover;
-  flex-shrink: 0;
-  border: clamp(3px, 0.4vw, 5px) solid #fafafa;
-  border-radius: clamp(0.75rem, 1.2vw, 1.125rem);
-  box-sizing: border-box;
-}
-
-.home-about__subhead {
-  margin: 1.5rem 0 0.5rem;
-  color: #d5c6f8;
-  font-size: var(--home-title);
-}
-
-.home-about__meta {
-  color: #fafafa;
-}
-
 .home-initiatives {
   padding: var(--home-pad-y) var(--home-pad-x) calc(var(--home-pad-y) * 1.4);
   text-align: center;
@@ -211,22 +160,6 @@
     width: 100%;
     max-width: none;
     height: min(28rem, 70vh);
-  }
-
-  .home-about__row,
-  .home-about__row--reverse {
-    flex-direction: column;
-  }
-
-  /* In a column the 28rem flex-basis becomes a min height and leaves a gap. */
-  .home-about__text {
-    flex: 0 1 auto;
-  }
-
-  /* Photo above its text in both sections, so the two photos never stack. */
-  .home-about__photo {
-    order: -1;
-    width: min(100%, 36rem);
   }
 
   .home-initiatives__grid {
