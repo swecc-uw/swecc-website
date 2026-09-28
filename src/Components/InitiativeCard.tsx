@@ -29,7 +29,7 @@ function InitiativeCard({
         {action && (
           <div className="initiative-card__action">
             <Button
-              size="sm"
+              size="lg"
               variant="primary"
               {...("to" in action
                 ? { to: action.to }

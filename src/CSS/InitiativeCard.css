@@ -65,3 +65,11 @@
 .initiative-card__action {
   margin-top: auto;
 }
+
+.initiative-card__action .swecc-button--lg {
+  max-width: 100%;
+  height: 2.03125rem;
+  padding: 0 0.9375rem;
+  border-radius: 7.5px;
+  font-size: 0.8125rem;
+}
