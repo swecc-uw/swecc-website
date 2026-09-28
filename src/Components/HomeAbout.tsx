@@ -15,8 +15,11 @@ const pillars = ["Projects", "Mentorship", "Workshops", "Community"];
 
 const mosaic = [
   { src: workshopImg, alt: "SWECC members in a discussion-style club meeting" },
-  { src: pairingImg, alt: "A mentor helping two students debug on a laptop" },
-  { src: mentorImg, alt: "Students pair programming with an industry mentor" },
+  {
+    src: pairingImg,
+    alt: "SWECC members gathered around a laptop at a workshop",
+  },
+  { src: mentorImg, alt: "Two SWECC members comparing code on their laptops" },
 ];
 
 const topics = [
@@ -25,14 +28,18 @@ const topics = [
   "Mentor circles",
 ];
 
-type MeetingFact = { label: string; value: string; href?: string };
+type MeetingFact = {
+  label: string;
+  value: string;
+  detail?: string;
+  href?: string;
+};
 
 const meetingFacts: MeetingFact[] = [
   {
     label: "When",
-    value: `${meetingDay}s, ${meetingTime
-      .replace("-", " – ")
-      .replace(/(\d)([AP]M)/g, "$1 $2")}`,
+    value: `${meetingDay}s`,
+    detail: meetingTime.replace("-", " – ").replace(/(\d)([AP]M)/g, "$1 $2"),
   },
   {
     label: "Where",
@@ -195,6 +202,11 @@ function HomeAbout() {
                         </a>
                       ) : (
                         fact.value
+                      )}
+                      {fact.detail && (
+                        <span className="meetings__fact-detail">
+                          {fact.detail}
+                        </span>
                       )}
                     </dd>
                   </div>

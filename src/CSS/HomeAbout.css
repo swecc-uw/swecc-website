@@ -259,6 +259,15 @@
   color: var(--ink);
 }
 
+.meetings__fact-detail {
+  display: block;
+  margin-top: 0.2rem;
+  font-weight: 600;
+  font-size: 0.8em;
+  white-space: nowrap;
+  color: var(--ink-muted);
+}
+
 .meetings__fact a {
   display: inline-flex;
   align-items: center;
