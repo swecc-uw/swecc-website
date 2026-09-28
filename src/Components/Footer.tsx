@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../CSS/Footer.css";
-import SWECCWordmark from "../Data/img/Logo/SWECCWordmarkWhite.png";
+import SWECCWordmark from "../Data/img/Logo/SWECCWordmarkWhite.webp";
 import {
   communityLinks,
   externalLinkProps,
