@@ -120,22 +120,22 @@ function HomePage() {
           <InitiativeCard
             title="SWECC LABS"
             accent="sage"
-            action={{ label: "details", href: links.social.discord }}
+            action={{ label: "Join Labs", href: links.programs.labs }}
           />
           <InitiativeCard
             title="MOCK INTERVIEWS"
             accent="mentorship"
-            action={{ label: "details", to: "/Events" }}
+            action={{ label: "Book a slot", href: links.programs.interviews }}
           />
           <InitiativeCard
             title="MENTORSHIP PROGRAM"
             accent="sage"
-            action={{ label: "details", href: links.social.discord }}
+            action={{ label: "Join the Discord", href: links.social.discord }}
           />
           <InitiativeCard
             title="COHORT PROGRAM"
             accent="mentorship"
-            action={{ label: "details", href: links.social.discord }}
+            action={{ label: "Join a cohort", href: links.programs.cohort }}
           />
         </div>
       </section>

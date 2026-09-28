@@ -14,6 +14,11 @@ export const links = {
     instagram: "https://www.instagram.com/swecc.uw/",
     github: "https://github.com/swecc-uw",
   },
+  programs: {
+    labs: "https://labs.swecc.org",
+    interviews: "https://interview.swecc.org",
+    cohort: "https://engagement.swecc.org",
+  },
   resources: {
     mailingList:
       "http://mailman11.u.washington.edu/mailman/listinfo/sweccmailinglist",
