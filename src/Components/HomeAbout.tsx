@@ -41,7 +41,6 @@ const meetingFacts: MeetingFact[] = [
       `${meetingLocation}, University of Washington, Seattle`,
     )}`,
   },
-  { label: "Quarter", value: currentQuarter.replace(/[()]/g, "") },
 ];
 
 function useRevealOnce<T extends HTMLElement>() {
@@ -141,7 +140,7 @@ function HomeAbout() {
               className="about__title reveal"
               style={stagger(1)}
             >
-              Show up any <em>{meetingDay}.</em>
+              See you on <em>{meetingDay}s.</em>
             </h2>
             <p className="about__lede reveal" style={stagger(2)}>
               General meetings are the heart of SWECC. Drop in to learn
@@ -177,7 +176,7 @@ function HomeAbout() {
                 <span className="meetings__pass-kicker">General meeting</span>
                 <span className="meetings__pass-live">
                   <span className="meetings__pass-dot" aria-hidden />
-                  Weekly
+                  {currentQuarter.replace(/[()]/g, "")}
                 </span>
               </div>
               <dl className="meetings__facts">

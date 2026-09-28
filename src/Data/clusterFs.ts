@@ -24,7 +24,7 @@ const FILES: Record<string, string> = {
 Software Engineering Career Club at the University of Washington.
 
 When are SWECC meetings?
-> Weekly on ${links.config.meetingDay}s during ${links.config.currentQuarter.replace(/[()]/g, "")}
+> ${links.config.meetingDay}s during ${links.config.currentQuarter.replace(/[()]/g, "")}
 > Time: ${links.config.meetingTime}
 > Location: ${links.config.meetingLocation}
 
