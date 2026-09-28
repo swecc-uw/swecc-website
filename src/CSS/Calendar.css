@@ -1,5 +1,5 @@
 .swecc-calendar {
-  width: min(1120px, 100%);
+  width: min(70rem, 100%);
   margin: 0 auto;
   display: grid;
   grid-template-columns: minmax(0, 1.6fr) minmax(280px, 0.9fr);
@@ -10,7 +10,7 @@
 
 .swecc-calendar--message,
 .swecc-calendar--error {
-  width: min(1120px, 100%);
+  width: min(70rem, 100%);
   margin: 0 auto;
   padding: 32px;
   background: var(--color-surface);
@@ -94,7 +94,7 @@
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--neutral-500);
+  color: var(--neutral-400);
   text-align: center;
   padding: 8px 0;
 }
@@ -113,7 +113,11 @@
 }
 
 .calendar-day--muted {
-  opacity: 0.4;
+  color: var(--neutral-400);
+}
+
+.calendar-day:hover {
+  background: rgba(250, 250, 250, 0.04);
 }
 
 .calendar-day--today .calendar-day-number {
@@ -140,7 +144,7 @@
 }
 
 .calendar-day-event {
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.2;
   background: var(--color-primary);
   color: var(--neutral-900);
@@ -152,8 +156,8 @@
 }
 
 .calendar-day-more {
-  font-size: 11px;
-  color: var(--color-primary);
+  font-size: 12px;
+  color: var(--neutral-50);
   font-family: var(--font-ui);
   font-weight: 700;
 }
@@ -169,7 +173,7 @@
 }
 
 .calendar-empty {
-  color: var(--neutral-500);
+  color: var(--neutral-400);
   margin: 0;
 }
 
@@ -185,8 +189,8 @@
 .calendar-event-card {
   width: 100%;
   text-align: left;
-  border: 1px solid var(--color-surface-2);
-  background: var(--color-surface-2);
+  border: 1px solid var(--neutral-700);
+  background: var(--color-background);
   color: var(--color-text);
   border-radius: 12px;
   padding: 12px;
@@ -239,5 +243,46 @@
   .calendar-month-label {
     width: 100%;
     white-space: normal;
+  }
+}
+
+@media (max-width: 600px) {
+  .calendar-board,
+  .calendar-agenda {
+    padding: 14px;
+  }
+
+  .calendar-toolbar .swecc-button,
+  .calendar-icon-btn {
+    height: 44px;
+  }
+
+  .calendar-icon-btn {
+    width: 44px;
+  }
+
+  .calendar-day {
+    min-height: 3.25rem;
+    padding: 4px 2px;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    justify-content: center;
+    gap: 3px;
+  }
+
+  .calendar-day-number {
+    margin-inline: calc((100% - 24px) / 2);
+  }
+
+  .calendar-day-event {
+    width: 6px;
+    height: 6px;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 0;
+  }
+
+  .calendar-day-more {
+    display: none;
   }
 }
