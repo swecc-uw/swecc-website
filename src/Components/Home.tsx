@@ -15,7 +15,10 @@ function HomePage() {
 
   const scrollTo = (id: string) => {
     const section = document.getElementById(id);
-    if (section) section.scrollIntoView({ behavior: "smooth" });
+    if (!section) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    section.scrollIntoView({ behavior: reduce ? "auto" : "smooth" });
+    section.focus({ preventScroll: true });
   };
 
   return (
@@ -112,8 +115,16 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="home-initiatives home-band home-band--black" id="initiatives">
-        <h2 className="type-display mono home-initiatives__title">
+      <section
+        className="home-initiatives home-band home-band--black"
+        id="initiatives"
+        tabIndex={-1}
+        aria-labelledby="initiatives-title"
+      >
+        <h2
+          id="initiatives-title"
+          className="type-display mono home-initiatives__title"
+        >
           Other Initiatives
         </h2>
         <div className="home-initiatives__grid">

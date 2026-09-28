@@ -173,6 +173,10 @@
   scroll-margin-top: 7.5rem;
 }
 
+.home-initiatives:focus {
+  outline: none;
+}
+
 .home-initiatives__title {
   margin-bottom: clamp(2rem, 5vw, 4rem);
   font-size: var(--home-title);
