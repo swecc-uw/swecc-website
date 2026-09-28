@@ -1,8 +1,8 @@
 .terminal-window {
   width: 100%;
-  min-height: 280px;
+  min-height: 17.5rem;
   background: var(--color-surface);
-  border-radius: 15px;
+  border-radius: 0.9375rem;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -24,19 +24,19 @@
 }
 
 .terminal-window__chrome {
-  height: 30px;
+  height: 1.875rem;
   flex-shrink: 0;
   background: var(--color-surface-2);
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 0 15px;
+  gap: 0.5rem;
+  padding: 0 0.9375rem;
   touch-action: none;
 }
 
 .terminal-window__dot {
-  width: 10px;
-  height: 10px;
+  width: 0.625rem;
+  height: 0.625rem;
   border-radius: 50%;
   display: inline-block;
 }
@@ -56,10 +56,10 @@
 .terminal-window__body {
   flex: 1;
   min-height: 0;
-  padding: 16px 19px;
+  padding: 1rem 1.1875rem;
   font-family: var(--font-display);
-  font-size: 14px;
-  line-height: 17px;
+  font-size: 0.875rem;
+  line-height: 1.0625rem;
   color: var(--color-text);
   white-space: pre-wrap;
 }
@@ -118,7 +118,7 @@
 
 .cluster-shell__vim-body {
   flex: 1;
-  margin: 0 0 8px;
+  margin: 0 0 0.5rem;
   overflow: auto;
   font: inherit;
   white-space: pre-wrap;
@@ -127,6 +127,6 @@
 .cluster-shell__vim-bar {
   flex-shrink: 0;
   margin-top: auto;
-  padding-top: 8px;
+  padding-top: 0.5rem;
   font: inherit;
 }
