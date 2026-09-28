@@ -4,8 +4,7 @@ import Button from "./Button";
 import TerminalWindow from "./TerminalWindow";
 import ClusterShell from "./ClusterShell";
 import InitiativeCard from "./InitiativeCard";
-import whoWeAreImg from "../Data/img/backgroundImg/1.jpg";
-import meetingsImg from "../Data/img/backgroundImg/4.jpg";
+import HomeAbout from "./HomeAbout";
 import { links } from "./Utils";
 import { FaDiscord } from "react-icons/fa";
 import { FiArrowDown } from "react-icons/fi";
@@ -65,55 +64,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="home-about home-band home-band--grey">
-        <div className="home-band__inner home-about__row">
-          <div className="home-about__text">
-            <h2 className="type-display mono">Who we are</h2>
-            <p className="type-body">
-              SWECC is a student-led community dedicated to helping aspiring
-              software engineers build the skills, experience, and connections
-              needed to succeed in tech. Through hands-on projects, mentorship,
-              workshops, and a supportive network of ambitious peers, we create
-              opportunities for students to grow as engineers and launch
-              meaningful careers in software. Our mission is simple: help
-              students become exceptional builders and confident problem-solvers.
-            </p>
-          </div>
-          <img
-            className="home-about__photo"
-            src={whoWeAreImg}
-            alt="SWECC members in a club meeting"
-          />
-        </div>
-      </section>
-
-      <section className="home-about home-band home-band--grey">
-        <div className="home-band__inner home-about__row home-about__row--reverse">
-          <img
-            className="home-about__photo"
-            src={meetingsImg}
-            alt="SWECC general meeting in a lecture classroom"
-          />
-          <div className="home-about__text">
-            <h2 className="type-display mono">Meetings</h2>
-            <p className="type-body">
-              SWECC Meetings feature topics in a vast number of areas, including
-              professional development, resume building, and mentor circles
-            </p>
-            <h3 className="home-about__subhead mono">
-              Meeting Times &amp; Location
-            </h3>
-            <p className="home-about__meta type-body">
-              {links.config.currentQuarter.replace(/[()]/g, "")}: Weekly on{" "}
-              {links.config.meetingDay}
-              <br />
-              Time: {links.config.meetingTime}
-              <br />
-              Location: {links.config.meetingLocation}
-            </p>
-          </div>
-        </div>
-      </section>
+      <HomeAbout />
 
       <section
         className="home-initiatives home-band home-band--black"
