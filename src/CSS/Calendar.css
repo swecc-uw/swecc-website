@@ -8,7 +8,6 @@
   color: var(--color-text);
 }
 
-.swecc-calendar--message,
 .swecc-calendar--error {
   width: min(70rem, 100%);
   margin: 0 auto;

@@ -122,10 +122,6 @@ function Calendar() {
   });
   const selectedLabel = dayLabel(selectedDay);
 
-  if (status === "loading") {
-    return <div className="swecc-calendar--message">Loading calendar…</div>;
-  }
-
   if (status === "error") {
     return (
       <div className="swecc-calendar--error">
@@ -229,7 +225,9 @@ function Calendar() {
       <aside className="calendar-agenda">
         <div aria-live="polite">
           <h2 className="sans">{selectedLabel}</h2>
-          {selectedEvents.length === 0 ? (
+          {status === "loading" ? (
+            <p className="calendar-empty">Loading events…</p>
+          ) : selectedEvents.length === 0 ? (
             <p className="calendar-empty">No events on this day.</p>
           ) : (
             <ul className="calendar-event-list">
@@ -252,7 +250,7 @@ function Calendar() {
 
         <div className="calendar-upcoming">
           <h3 className="sans">Upcoming</h3>
-          {upcoming.length === 0 ? (
+          {status === "loading" ? null : upcoming.length === 0 ? (
             <p className="calendar-empty">No upcoming events on the SWECC calendar.</p>
           ) : (
             <ul className="calendar-event-list">
