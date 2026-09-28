@@ -20,6 +20,7 @@
 }
 
 .home-band__inner {
+  box-sizing: border-box;
   max-width: 94.5rem;
   margin: 0 auto;
 }
