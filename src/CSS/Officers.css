@@ -19,8 +19,7 @@
   max-width: 1512px;
   margin: 0 auto;
   box-sizing: border-box;
-  padding: calc(clamp(4rem, 8vw, 6.25rem) + var(--officers-pad-y))
-    var(--officers-pad-x) var(--officers-pad-y);
+  padding: var(--officers-pad-y) var(--officers-pad-x);
   text-align: center;
 }
 

@@ -10,7 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: echo "CI=false" >> $GITHUB_ENV
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
       - run: echo "${{ secrets.ENV_FILE }}" > .env; npm run predeploy
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:

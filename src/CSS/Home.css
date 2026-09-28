@@ -35,8 +35,7 @@
   position: relative;
   min-height: clamp(36rem, 90vh, 61.375rem);
   box-sizing: border-box;
-  padding: calc(clamp(4rem, 8vw, 6.25rem) + var(--home-pad-y)) var(--home-pad-x)
-    var(--home-pad-y);
+  padding: var(--home-pad-y) var(--home-pad-x);
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   align-items: center;
@@ -83,7 +82,8 @@
 .home-hero__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 .home-hero__terminal,
