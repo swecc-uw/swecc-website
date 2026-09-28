@@ -204,8 +204,15 @@
     flex-direction: column;
   }
 
+  /* In a column the 28rem flex-basis becomes a min height and leaves a gap. */
+  .home-about__text {
+    flex: 0 1 auto;
+  }
+
+  /* Photo above its text in both sections, so the two photos never stack. */
   .home-about__photo {
-    width: min(var(--home-photo), 100%);
+    order: -1;
+    width: min(100%, 36rem);
   }
 
   .home-initiatives__grid {
