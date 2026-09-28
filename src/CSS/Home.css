@@ -5,6 +5,12 @@
   --home-title: clamp(1.75rem, 1.2vw + 1.2rem, 3rem);
   --home-pad-x: clamp(1.25rem, 5vw, 6rem);
   --home-pad-y: clamp(3rem, 7vw, 7rem);
+  --ink: #fafafa;
+  --ink-muted: rgb(250 250 250 / 0.7);
+  --hairline: rgb(250 250 250 / 0.1);
+  --sage: #7ea266;
+  --lavender: #d5c6f8;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   background: var(--home-grey);
   color: var(--color-text);
   overflow-x: hidden;
