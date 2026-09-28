@@ -1,5 +1,5 @@
 import "../CSS/HomeAbout.css";
-import React, { useEffect, useRef, type CSSProperties } from "react";
+import React, { useEffect, useRef, useState, type CSSProperties } from "react";
 import { FiArrowUpRight, FiCalendar } from "react-icons/fi";
 import Button from "./Button";
 import { links } from "./Utils";
@@ -11,7 +11,12 @@ import mentorImg from "../Data/img/backgroundImg/7.webp";
 const { currentQuarter, meetingDay, meetingTime, meetingLocation } =
   links.config;
 
-const pillars = ["Projects", "Mentorship", "Workshops", "Community"];
+const pillars = [
+  "Hands-on projects",
+  "Mentorship",
+  "Workshops",
+  "Peer network",
+];
 
 const mosaic = [
   { src: workshopImg, alt: "SWECC members in a discussion-style club meeting" },
@@ -74,6 +79,8 @@ const stagger = (i: number) => ({ "--i": i }) as CSSProperties;
 function HomeAbout() {
   const aboutRef = useRevealOnce<HTMLElement>();
   const meetingsRef = useRevealOnce<HTMLElement>();
+  const photosRef = useRef<HTMLDivElement>(null);
+  const [activePhoto, setActivePhoto] = useState(0);
 
   return (
     <>
@@ -93,13 +100,15 @@ function HomeAbout() {
               className="about__title reveal"
               style={stagger(1)}
             >
-              We help students become <em>exceptional builders.</em>
+              Exceptional builders. <em>Confident problem-solvers.</em>
             </h2>
             <p className="about__lede reveal" style={stagger(2)}>
-              SWECC is a student-led community at UW for aspiring software
-              engineers. Through hands-on projects, mentorship, workshops, and a
-              network of ambitious peers, we help you build the skills,
-              experience, and connections to launch a career in tech.
+              SWECC is a student-led community dedicated to helping aspiring
+              software engineers build the skills, experience, and connections
+              needed to succeed in tech. Through hands-on projects, mentorship,
+              workshops, and a supportive network of ambitious peers, we create
+              opportunities for students to grow as engineers and launch
+              meaningful careers in software.
             </p>
             <ol className="about__pillars reveal" style={stagger(3)}>
               {pillars.map((pillar, i) => (
@@ -112,22 +121,50 @@ function HomeAbout() {
               ))}
             </ol>
           </div>
-          <div className="about__mosaic">
-            {mosaic.map((photo, i) => (
-              <figure
-                key={photo.src}
-                className={`about__photo about__photo--${i} reveal-photo`}
-                style={stagger(i + 1)}
-              >
-                <img
-                  src={photo.src}
-                  alt={photo.alt}
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-            ))}
-          </div>
+          <section className="about__gallery" aria-label="SWECC community photos">
+            <div
+              className="about__mosaic"
+              id="about-photos"
+              ref={photosRef}
+              onScroll={(event) => {
+                const track = event.currentTarget;
+                setActivePhoto(Math.round(track.scrollLeft / track.clientWidth));
+              }}
+            >
+              {mosaic.map((photo, i) => (
+                <figure
+                  key={photo.src}
+                  className={`about__photo about__photo--${i} reveal-photo`}
+                  style={stagger(i + 1)}
+                >
+                  <img
+                    src={photo.src}
+                    alt={photo.alt}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </figure>
+              ))}
+            </div>
+            <div className="about__carousel-controls">
+              <span>Swipe to explore</span>
+              <div className="about__carousel-dots">
+                {mosaic.map((photo, i) => (
+                  <button
+                    key={photo.src}
+                    type="button"
+                    aria-label={`Show photo ${i + 1} of ${mosaic.length}`}
+                    aria-controls="about-photos"
+                    aria-pressed={activePhoto === i}
+                    onClick={() => {
+                      const track = photosRef.current;
+                      if (track) track.scrollTo({ left: i * track.clientWidth });
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
+          </section>
         </div>
       </section>
 
@@ -150,8 +187,11 @@ function HomeAbout() {
               See you on <em>{meetingDay}s.</em>
             </h2>
             <p className="about__lede reveal" style={stagger(2)}>
-              General meetings are the heart of SWECC. Drop in to learn
-              something new and meet people on the same path as you.
+              Build your skills and connect with other aspiring software
+              engineers at SWECC meetings. We cover a wide range of topics,
+              including professional development, resume building, and mentor
+              circles. Come learn from others and find support for your next
+              step in tech.
             </p>
             <ul
               className="meetings__topics reveal"

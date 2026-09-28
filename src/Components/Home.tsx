@@ -76,7 +76,7 @@ function HomePage() {
           id="initiatives-title"
           className="type-display mono home-initiatives__title"
         >
-          Other Initiatives
+          Build your future in software
         </h2>
         <div className="home-initiatives__grid">
           <InitiativeCard
@@ -85,8 +85,9 @@ function HomePage() {
             command="cat labs.md"
             action={{ label: "Join Labs", href: links.programs.labs }}
           >
-            A program for fostering an open source community for career
-            development.
+            Build software with other students through hands-on, open source
+            projects. Gain practical engineering experience and grow as a
+            problem-solver.
           </InitiativeCard>
           <InitiativeCard
             title="MOCK INTERVIEWS"
@@ -94,8 +95,9 @@ function HomePage() {
             command="cat interviews.md"
             action={{ label: "Book a slot", href: links.programs.interviews }}
           >
-            Prepare for technical and non-technical interviews through
-            scheduled mock interviews.
+            Practice technical and non-technical interviews with peers. Build
+            confidence explaining your approach and prepare for the next step
+            in your software career.
           </InitiativeCard>
           <InitiativeCard
             title="MENTORSHIP PROGRAM"
@@ -103,8 +105,9 @@ function HomePage() {
             command="cat mentorship.md"
             action={{ label: "Join the Discord", href: links.social.discord }}
           >
-            Connect with upperclassmen and alumni and get a chance to learn
-            from their experiences.
+            Learn from upperclassmen and alumni who have been in your shoes.
+            Get guidance as you grow as an engineer and explore careers in
+            software.
           </InitiativeCard>
           <InitiativeCard
             title="COHORT PROGRAM"
@@ -112,8 +115,9 @@ function HomePage() {
             command="cat cohort.md"
             action={{ label: "Join a cohort", href: links.programs.cohort }}
           >
-            A smaller community to help keep you accountable for interview
-            prep and job applications.
+            Find a supportive group of ambitious peers to navigate interview
+            prep and job applications together. Stay accountable and build
+            connections along the way.
           </InitiativeCard>
         </div>
       </section>

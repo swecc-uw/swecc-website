@@ -82,6 +82,14 @@
   color: var(--sage);
 }
 
+.about__gallery {
+  min-width: 0;
+}
+
+.about__carousel-controls {
+  display: none;
+}
+
 .about__mosaic {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
@@ -392,6 +400,72 @@
 }
 
 @media (max-width: 760px) {
+  .about__mosaic {
+    display: flex;
+    gap: 0;
+    aspect-ratio: auto;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+
+  .about__mosaic::-webkit-scrollbar {
+    display: none;
+  }
+
+  .about__photo {
+    flex: 0 0 100%;
+    aspect-ratio: 4 / 3;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  .about__carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--ink-muted);
+  }
+
+  .about__carousel-dots {
+    display: flex;
+  }
+
+  .about__carousel-dots button {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .about__carousel-dots button::after {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--ink-muted);
+  }
+
+  .about__carousel-dots button[aria-pressed="true"]::after {
+    width: 20px;
+    border-radius: 4px;
+    background: var(--sage);
+  }
+
+  .about__carousel-dots button:focus-visible {
+    outline: 2px solid var(--lavender);
+    outline-offset: -4px;
+  }
+
   .meetings__header,
   .meetings__photo,
   .meetings__pass {
@@ -416,23 +490,6 @@
     row-gap: 1.25rem;
   }
 
-  .about__mosaic {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: auto auto;
-    aspect-ratio: auto;
-  }
-
-  .about__photo--0 {
-    grid-row: auto;
-    grid-column: 1 / -1;
-    aspect-ratio: 4 / 3;
-  }
-
-  .about__photo--1,
-  .about__photo--2 {
-    aspect-ratio: 1;
-  }
-
   .meetings__photo {
     aspect-ratio: 4 / 3;
   }
@@ -446,5 +503,11 @@
   .meetings__ticket {
     --notch-y: 4rem;
     padding: 1.25rem 1.25rem 1.5rem;
+  }
+}
+
+@media (max-width: 760px) and (prefers-reduced-motion: no-preference) {
+  .about__mosaic {
+    scroll-behavior: smooth;
   }
 }
