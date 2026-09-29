@@ -2,9 +2,18 @@
   --accent: var(--sage);
   --r: 2rem;
   --frame: 5px;
+  --ratio: 2 / 3;
   position: relative;
-  display: flex;
-  aspect-ratio: 2 / 3;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* A grid item's aspect-ratio fixes its height, so a spacer sets the minimum
+   and the cell still grows when the copy runs longer. */
+.initiative-card::before {
+  content: "";
+  grid-area: 1 / 1;
+  aspect-ratio: var(--ratio);
 }
 
 .initiative-card--lavender {
@@ -19,7 +28,7 @@
     0 0 var(--side), 0 0 var(--side);
   position: relative;
   box-shadow: var(--flush);
-  flex: 1;
+  grid-area: 1 / 1;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
@@ -186,7 +195,7 @@
 
 @media (max-width: 600px) {
   .initiative-card {
-    aspect-ratio: 4 / 5;
+    --ratio: 4 / 5;
   }
 }
 
