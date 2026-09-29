@@ -3,9 +3,8 @@
   --r: 2rem;
   --frame: 5px;
   position: relative;
-  grid-row: span 4;
-  display: grid;
-  grid-template-rows: subgrid;
+  display: flex;
+  aspect-ratio: 2 / 3;
 }
 
 .initiative-card--lavender {
@@ -20,11 +19,10 @@
     0 0 var(--side), 0 0 var(--side);
   position: relative;
   box-shadow: var(--flush);
-  grid-row: 1 / -1;
-  display: grid;
-  grid-template-rows: subgrid;
-  row-gap: 0.8rem;
-  align-content: start;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
   padding: 1.6rem 1.5rem 1.5rem;
   background: var(--home-grey);
   border: var(--frame) solid var(--accent);
@@ -41,6 +39,8 @@
   text-transform: uppercase;
   color: var(--ink);
   text-wrap: balance;
+  /* Two lines tall so prompts line up whether or not the title wraps. */
+  min-height: 2lh;
 }
 
 .initiative-card__prompt {
@@ -98,7 +98,7 @@
 }
 
 .initiative-card__action {
-  align-self: end;
+  margin-top: auto;
   padding-top: 0.5rem;
 }
 
@@ -181,6 +181,12 @@
   .initiative-card:hover .initiative-card__caret::after,
   .initiative-card:has(a:focus-visible) .initiative-card__caret::after {
     animation: initiative-caret-blink 1s steps(1) infinite;
+  }
+}
+
+@media (max-width: 600px) {
+  .initiative-card {
+    aspect-ratio: 4 / 5;
   }
 }
 

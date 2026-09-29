@@ -473,8 +473,8 @@
   .meetings__pass {
     grid-row: 3;
     justify-self: end;
-    width: min(100% - 2rem, 26rem);
-    margin: -3rem 1rem 0 0;
+    width: min(100%, 26rem);
+    margin: 1.5rem 0 0;
   }
 }
 
@@ -491,7 +491,7 @@
   .meetings__pass {
     justify-self: stretch;
     width: auto;
-    margin: -2.5rem 0.75rem 0;
+    margin: 1.25rem 0 0;
   }
 
   .meetings__ticket {

@@ -135,12 +135,15 @@
 }
 
 .home-initiatives__header {
+  text-align: center;
   margin-bottom: clamp(2rem, 4vw, 3.5rem);
 }
 
 .home-initiatives__grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 17rem));
+  grid-auto-rows: 1fr;
+  justify-content: center;
   gap: clamp(1rem, 2vw, 1.5rem);
   margin: 0;
   padding: 0;
@@ -170,12 +173,12 @@
   }
 
   .home-initiatives__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 17rem));
   }
 }
 
 @media (max-width: 600px) {
   .home-initiatives__grid {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: minmax(0, 20rem);
   }
 }
