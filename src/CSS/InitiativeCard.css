@@ -1,145 +1,207 @@
 .initiative-card {
+  --accent: var(--sage);
+  --r: 2rem;
+  --frame: 5px;
   position: relative;
-  width: 100%;
-  max-width: 13.75rem;
-  aspect-ratio: 329 / 491;
-  height: auto;
+  grid-row: span 4;
+  display: grid;
+  grid-template-rows: subgrid;
 }
 
-.initiative-card__back {
-  position: absolute;
-  inset: 0;
-  border-radius: 2.1875rem 0 2.1875rem 0;
-  border: none;
+.initiative-card--lavender {
+  --accent: var(--lavender);
 }
 
-.initiative-card--sage .initiative-card__back {
-  background: var(--brand-sage);
-}
-
-.initiative-card--purple .initiative-card__back {
-  background: var(--brand-husky-purple);
-}
-
-.initiative-card--mentorship .initiative-card__back {
-  background: #d5c6f8;
-}
-
-.initiative-card--cohort .initiative-card__back {
-  background: var(--brand-sage);
-}
-
-.initiative-card__front {
-  position: absolute;
-  top: 2.24%;
-  left: 3.34%;
-  width: 93.31%;
-  height: 95.52%;
-  background: #2e2f33;
-  border-radius: 1.5625rem 0 1.5625rem 0;
-  border: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0.75rem 1rem 1.25rem;
-  box-sizing: border-box;
+.initiative-card__panel {
+  --side: color-mix(in srgb, var(--accent) 55%, var(--home-black));
+  --extrude: 1px 1px var(--side), 2px 2px var(--side), 3px 3px var(--side),
+    4px 4px var(--side), 5px 5px var(--side), 6px 6px var(--side);
+  --flush: 0 0 var(--side), 0 0 var(--side), 0 0 var(--side), 0 0 var(--side),
+    0 0 var(--side), 0 0 var(--side);
+  position: relative;
+  box-shadow: var(--flush);
+  grid-row: 1 / -1;
+  display: grid;
+  grid-template-rows: subgrid;
+  row-gap: 0.8rem;
+  align-content: start;
+  padding: 1.6rem 1.5rem 1.5rem;
+  background: var(--home-grey);
+  border: var(--frame) solid var(--accent);
+  border-radius: var(--r) 0 var(--r) 0;
 }
 
 .initiative-card__title {
-  font-family: var(--font-sans);
-  font-weight: 700;
-  font-size: clamp(1rem, 1.5vw, 1.5625rem);
-  line-height: 1.2;
-  color: #fafafa;
-  text-align: center;
-  margin: 0 0 0.625rem;
-  text-transform: uppercase;
-}
-
-.initiative-card__body {
-  flex: 1;
-  width: 100%;
-  min-height: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  text-align: left;
-  font-family: var(--font-sans);
-  font-size: 0.875rem;
-  font-weight: 400;
-  line-height: 1.45;
-  color: #fafafa;
-}
-
-.initiative-card__prompt,
-.initiative-card__output {
   margin: 0;
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-  line-height: inherit;
-  color: #fafafa;
+  font-family: var(--font-hero);
+  font-weight: 800;
+  font-size: clamp(1.25rem, 1rem + 0.6vw, 1.5rem);
+  line-height: 1.1;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-wrap: balance;
 }
 
 .initiative-card__prompt {
-  margin-bottom: 0.55em;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--ink);
+  white-space: nowrap;
 }
 
-.initiative-card__prompt-host {
-  color: #d5c6f8;
+.initiative-card__host {
+  color: var(--accent);
+}
+
+.initiative-card__type {
+  display: inline-block;
+  font-family: inherit;
+  overflow: hidden;
+  vertical-align: bottom;
+  width: calc(var(--n) * 1ch);
+}
+
+.initiative-card__caret {
+  position: relative;
+  display: inline-block;
+  width: 0.6em;
+  height: 1.1em;
+  margin-left: 0.15em;
+  vertical-align: -0.2em;
+}
+
+.initiative-card__caret::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  opacity: 0;
 }
 
 .initiative-card__output {
+  margin: 0;
   display: grid;
   grid-template-columns: auto 1fr;
-  column-gap: 0.4em;
-  flex: 1;
+  column-gap: 0.6em;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink-muted);
+  text-wrap: pretty;
 }
 
-.initiative-card__gt {
-  color: #d5c6f8;
+.initiative-card__glyph {
+  font-family: var(--font-mono);
+  color: var(--accent);
 }
 
 .initiative-card__action {
-  margin-top: auto;
+  align-self: end;
+  padding-top: 0.5rem;
 }
 
-.initiative-card__action .swecc-button--lg {
-  max-width: 100%;
-  height: 2.03125rem;
-  padding: 0 0.9375rem;
-  border-radius: 0.4688rem;
-  font-size: 0.8125rem;
+.initiative-card__action .swecc-button {
+  height: 2.75rem;
+  padding: 0 1.25rem;
+  font-size: 0.9375rem;
 }
 
-@media (max-width: 600px) {
-  .initiative-card {
-    max-width: none;
-    aspect-ratio: auto;
-    padding: 0.45rem;
-    box-sizing: border-box;
+.initiative-card__action .swecc-button::after {
+  content: "";
+  position: absolute;
+  inset: calc(var(--frame) * -1);
+  border-radius: var(--r) 0 var(--r) 0;
+}
+
+.initiative-card__action .swecc-button:focus-visible {
+  outline: none;
+}
+
+.initiative-card:has(a:focus-visible) .initiative-card__panel {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+  translate: -6px -6px;
+  box-shadow: var(--extrude);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .initiative-card:hover .initiative-card__panel {
+    translate: -6px -6px;
+    box-shadow: var(--extrude);
   }
 
-  .initiative-card__front {
-    position: relative;
-    inset: auto;
-    width: auto;
-    height: auto;
-    padding: 1rem 1.25rem 1.25rem;
+  .initiative-card:hover .swecc-button svg {
+    transform: translateX(3px);
+  }
+}
+
+.initiative-card:active .initiative-card__panel {
+  translate: 0 0;
+  box-shadow: var(--flush);
+}
+
+@media (hover: none) {
+  .initiative-card:active .initiative-card__panel {
+    scale: 0.98;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .initiative-card__panel {
+    transition:
+      translate 220ms var(--ease-out),
+      box-shadow 220ms var(--ease-out),
+      scale 120ms var(--ease-out);
   }
 
-  .initiative-card__title {
-    font-size: 1.25rem;
+  .initiative-card:active .initiative-card__panel {
+    transition-duration: 80ms;
   }
 
-  .initiative-card__body {
-    margin-bottom: 1.25rem;
-    font-size: 1rem;
+  .initiative-card__action .swecc-button svg {
+    transition: transform 200ms var(--ease-out);
   }
 
-  .initiative-card__action .swecc-button--lg {
-    height: 2.75rem;
-    padding: 0 1.25rem;
-    font-size: 0.9375rem;
+  [data-reveal="pending"] .initiative-card__type {
+    width: 0;
+  }
+
+  [data-reveal="shown"] .initiative-card__type {
+    transition: width calc(var(--n) * 45ms) steps(var(--n));
+    transition-delay: calc(var(--i, 0) * 80ms + 350ms);
+  }
+
+  [data-reveal="shown"] .initiative-card__caret {
+    animation: initiative-caret-typing calc(var(--n) * 45ms + 400ms) steps(1)
+      calc(var(--i, 0) * 80ms + 350ms) both;
+  }
+
+  .initiative-card:hover .initiative-card__caret::after,
+  .initiative-card:has(a:focus-visible) .initiative-card__caret::after {
+    animation: initiative-caret-blink 1s steps(1) infinite;
+  }
+}
+
+@keyframes initiative-caret-typing {
+  from {
+    background: var(--accent);
+  }
+
+  to {
+    background: transparent;
+  }
+}
+
+@keyframes initiative-caret-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
   }
 }
