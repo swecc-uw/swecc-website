@@ -1,12 +1,6 @@
 .about,
 .meetings {
-  --ink: #fafafa;
-  --ink-muted: rgb(250 250 250 / 0.7);
-  --hairline: rgb(250 250 250 / 0.1);
-  --sage: #7ea266;
-  --lavender: #d5c6f8;
   --radius-photo: clamp(1rem, 1.4vw, 1.5rem);
-  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .about__inner {
@@ -479,8 +473,8 @@
   .meetings__pass {
     grid-row: 3;
     justify-self: end;
-    width: min(100% - 2rem, 26rem);
-    margin: -3rem 1rem 0 0;
+    width: min(100%, 26rem);
+    margin: 1.5rem 0 0;
   }
 }
 
@@ -497,7 +491,7 @@
   .meetings__pass {
     justify-self: stretch;
     width: auto;
-    margin: -2.5rem 0.75rem 0;
+    margin: 1.25rem 0 0;
   }
 
   .meetings__ticket {
