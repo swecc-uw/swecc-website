@@ -4,10 +4,11 @@ import "../CSS/Officers.css";
 import ProfileCard from "./profileCard";
 import { officersByYear, rosterYears } from "../Data/officers";
 
+const yearOptions = rosterYears(new Date());
+
 const Officers = () => {
   const SHOW_OFFICER_APPLICATION = false;
   const APPLICATION_YEAR = "2025-2026";
-  const yearOptions = rosterYears(new Date());
   const [selectedYear, setSelectedYear] = useState<number | undefined>(
     yearOptions[0],
   );

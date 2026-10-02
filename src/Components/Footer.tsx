@@ -8,6 +8,8 @@ import {
   siteLinks,
 } from "./Utils";
 
+const year = new Date().getFullYear();
+
 function Footer() {
   return (
     <footer className="site-footer">
@@ -63,7 +65,7 @@ function Footer() {
             <span className="site-footer__cursor" aria-hidden="true" />
           </p>
           <p className="site-footer__legal">
-            <span>© {new Date().getFullYear()} UW SWECC</span>
+            <span>© {year} UW SWECC</span>
             <a
               href="https://webimpactuw.org/"
               className="site-footer__link"
