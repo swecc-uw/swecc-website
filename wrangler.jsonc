@@ -1,0 +1,8 @@
+{
+  "name": "swecc-website",
+  "compatibility_date": "2026-10-02",
+  "assets": {
+    "directory": "./build",
+    "not_found_handling": "single-page-application"
+  }
+}
