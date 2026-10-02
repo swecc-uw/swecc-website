@@ -32,7 +32,7 @@ type TerminalWindowProps = {
   children: ReactNode;
   className?: string;
   draggable?: boolean;
-  boundsRef?: RefObject<HTMLElement>;
+  boundsRef?: RefObject<HTMLElement | null>;
 };
 
 function TerminalWindow({

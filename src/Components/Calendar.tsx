@@ -80,7 +80,7 @@ function EventCard({ event, open, onToggle }: EventCardProps) {
 }
 
 function Calendar() {
-  const today = useMemo(() => new Date(), []);
+  const [today] = useState(() => new Date());
   const [visibleMonth, setVisibleMonth] = useState(() => startOfMonth(today));
   const [selectedDay, setSelectedDay] = useState(today);
   const [events, setEvents] = useState<CalendarEvent[]>([]);
@@ -110,10 +110,10 @@ function Calendar() {
     () => eventsOnDay(events, selectedDay),
     [events, selectedDay],
   );
-  const upcoming = useMemo(() => {
-    const now = new Date();
-    return events.filter((event) => event.end > now).slice(0, 8);
-  }, [events]);
+  const upcoming = useMemo(
+    () => events.filter((event) => event.end > today).slice(0, 8),
+    [events, today],
+  );
 
   const monthLabel = visibleMonth.toLocaleDateString("en-US", {
     month: "long",
