@@ -10,7 +10,7 @@
 
 # production
 /build
-.firebase
+.wrangler
 
 # misc
 .DS_Store
