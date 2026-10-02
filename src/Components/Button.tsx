@@ -1,5 +1,5 @@
 import React, { type MouseEventHandler, type ReactNode } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import "../CSS/Button.css";
 
 type ButtonTarget =

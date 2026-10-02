@@ -7,7 +7,7 @@
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
     "react-icons": "^4.10.1",
-    "react-router-dom": "^6.10.0"
+    "react-router": "^8.4.0"
   },
   "scripts": {
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
@@ -35,6 +35,6 @@
     "vite": "^8.3.1"
   },
   "engines": {
-    "node": ">=22.18"
+    "node": ">=22.22"
   }
 }

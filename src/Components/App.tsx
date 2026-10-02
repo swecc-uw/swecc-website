@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import Footer from "./Footer";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router";
 import Home from "./Home";
 import Events from "./Events";
 import Navbar from "./Navbar";
