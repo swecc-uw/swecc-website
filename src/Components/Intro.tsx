@@ -34,6 +34,7 @@ const HERO_REVEAL = [
 ] as const;
 
 function initialState(): IntroState {
+  if (typeof window === "undefined") return { phase: "done" };
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches)
     return { phase: "done" };
   if (new URLSearchParams(window.location.search).has("intro"))

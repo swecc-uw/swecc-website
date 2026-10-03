@@ -7,20 +7,25 @@ import Navbar from "./Navbar";
 import Intro from "./Intro";
 import ExternalRedirect from "./Redirect";
 import { links } from "./Utils";
-import favicon from "../icons/logo-23.png";
 import Officers from "./Officers";
 import OfficerApplication from "./OfficerApplication";
 
-const PAGE_TITLES: Record<string, string> = {
+export const PAGE_TITLES: Record<string, string> = {
   "/Officers": "Officers | SWECC",
   "/Events": "Events | SWECC",
   "/OfficerApplication": "Officer Applications | SWECC",
 };
 
-function App() {
-  const link = document.querySelector<HTMLLinkElement>("link[rel~='icon']");
-  if (link) link.href = favicon;
+export const REDIRECTS: Record<string, string> = {
+  "/discord": links.social.discord,
+  "/linkedin": links.social.linkedin,
+  "/instagram": links.social.instagram,
+  "/mailing-list": links.resources.mailingList,
+  "/officer-application": links.resources.officerApp,
+  "/Join-Now": links.social.discord,
+};
 
+function App() {
   const { pathname } = useLocation();
   const mainRef = useRef<HTMLElement>(null);
   const firstRender = useRef(true);
@@ -48,30 +53,13 @@ function App() {
           <Route path="/Events" element={<Events />} />
           <Route path="/Officers" element={<Officers />} />
           <Route path="/OfficerApplication" element={<OfficerApplication/>}/>
-          <Route
-            path="/discord"
-            element={<ExternalRedirect to={links.social.discord} />}
-          />
-          <Route
-            path="/linkedin"
-            element={<ExternalRedirect to={links.social.linkedin} />}
-          />
-          <Route
-            path="/instagram"
-            element={<ExternalRedirect to={links.social.instagram} />}
-          />
-          <Route
-            path="/mailing-list"
-            element={<ExternalRedirect to={links.resources.mailingList} />}
-          />
-          <Route 
-            path="/officer-application" 
-            element={<ExternalRedirect to={links.resources.officerApp} />}
-          />
-          <Route
-            path="/Join-Now"
-            element={<ExternalRedirect to={links.social.discord} />}
-          />
+          {Object.entries(REDIRECTS).map(([path, to]) => (
+            <Route
+              key={path}
+              path={path}
+              element={<ExternalRedirect to={to} />}
+            />
+          ))}
           <Route path="*" element={<Home />} />
         </Routes>
       </main>
