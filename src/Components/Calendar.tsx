@@ -11,6 +11,7 @@ import {
   laParts,
   loadGoogleCalendarEvents,
 } from "./Utils/googleCalendar";
+import { useMounted } from "./Utils/reveal";
 import "../CSS/Calendar.css";
 
 const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -80,6 +81,8 @@ function EventCard({ event, open, onToggle }: EventCardProps) {
 }
 
 function Calendar() {
+  // The month grid depends on the clock, so it only exists client-side.
+  const mounted = useMounted();
   const [today] = useState(() => new Date());
   const [visibleMonth, setVisibleMonth] = useState(() => startOfMonth(today));
   const [selectedDay, setSelectedDay] = useState(today);
@@ -122,11 +125,27 @@ function Calendar() {
   });
   const selectedLabel = dayLabel(selectedDay);
 
+  // Dates differ between the prerendered HTML and a later visit, so the
+  // calendar only mounts client-side; hydration attaches to this shell.
+  if (!mounted) {
+    return (
+      <div className="swecc-calendar">
+        <section className="calendar-board" aria-label="Monthly calendar">
+          <p className="calendar-empty">Loading events…</p>
+        </section>
+      </div>
+    );
+  }
+
   if (status === "error") {
     return (
       <div className="swecc-calendar--error">
         Could not load SWECC events.{" "}
-        <a href={GOOGLE_CALENDAR_OPEN_URL} target="_blank" rel="noopener noreferrer">
+        <a
+          href={GOOGLE_CALENDAR_OPEN_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Open Google Calendar
         </a>
       </div>
@@ -167,7 +186,13 @@ function Calendar() {
             >
               Today
             </Button>
-            <Button size="sm" variant="primary" href={GOOGLE_CALENDAR_OPEN_URL} target="_blank" rel="noopener noreferrer">
+            <Button
+              size="sm"
+              variant="primary"
+              href={GOOGLE_CALENDAR_OPEN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Google Calendar
             </Button>
           </div>
@@ -251,7 +276,9 @@ function Calendar() {
         <div className="calendar-upcoming">
           <h3 className="sans">Upcoming</h3>
           {status === "loading" ? null : upcoming.length === 0 ? (
-            <p className="calendar-empty">No upcoming events on the SWECC calendar.</p>
+            <p className="calendar-empty">
+              No upcoming events on the SWECC calendar.
+            </p>
           ) : (
             <ul className="calendar-event-list">
               {upcoming.map((event) => {

@@ -6,7 +6,7 @@ import Events from "./Events";
 import Navbar from "./Navbar";
 import Intro from "./Intro";
 import ExternalRedirect from "./Redirect";
-import { links } from "./Utils";
+import { links, useMounted } from "./Utils";
 import Officers from "./Officers";
 import OfficerApplication from "./OfficerApplication";
 
@@ -27,6 +27,9 @@ export const REDIRECTS: Record<string, string> = {
 
 function App() {
   const { pathname } = useLocation();
+  // The intro portal mounts after hydration so the overlay markup never
+  // diffs against the prerendered HTML (it server-renders as null).
+  const mounted = useMounted();
   const mainRef = useRef<HTMLElement>(null);
   const firstRender = useRef(true);
 
@@ -45,14 +48,14 @@ function App() {
       <a className="skip-link" href="#main">
         Skip to content
       </a>
-      <Intro />
+      {mounted && <Intro />}
       <Navbar />
       <main id="main" ref={mainRef} tabIndex={-1}>
         <Routes>
           <Route index element={<Home />} />
           <Route path="/Events" element={<Events />} />
           <Route path="/Officers" element={<Officers />} />
-          <Route path="/OfficerApplication" element={<OfficerApplication/>}/>
+          <Route path="/OfficerApplication" element={<OfficerApplication />} />
           {Object.entries(REDIRECTS).map(([path, to]) => (
             <Route
               key={path}

@@ -3,12 +3,7 @@ import { Link, NavLink, useLocation } from "react-router";
 import { FiMenu, FiX } from "react-icons/fi";
 import "../CSS/Navbar.css";
 import SWECCWordmark from "../Data/img/Logo/SWECCWordmarkWhite.webp";
-import {
-  communityLinks,
-  externalLinkProps,
-  links,
-  siteLinks,
-} from "./Utils";
+import { communityLinks, externalLinkProps, links, siteLinks } from "./Utils";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -18,10 +13,6 @@ function Navbar() {
     setMenuPathname(pathname);
     setMenuOpen(false);
   }
-
-  useEffect(() => {
-    document.body.classList.add("dark-mode");
-  }, []);
 
   useEffect(() => {
     if (!menuOpen) return;

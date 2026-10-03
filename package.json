@@ -21,7 +21,6 @@
     "lint": "oxlint"
   },
   "description": "SWECC",
-  "main": "index.js",
   "author": "",
   "license": "ISC",
   "devDependencies": {

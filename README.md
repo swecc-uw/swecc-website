@@ -18,13 +18,12 @@ This website is built in collaboration with [Dubvelopers][dubvelopers-url] at th
 
 ## About the Website 🌐
 
-The website can be found at [swecc.org](swecc-url).
+The website can be found at [swecc.org][swecc-url].
 
 ### Built With
 
 [![][react-shield]][react-url]
 [![][ts-shield]][ts-url]
-[![][bootstrap-shield]][bootstrap-url]
 [![][css3-shield]][css3-url]
 
 ## Getting Started
@@ -99,8 +98,6 @@ For more help, watch this video of how to fork and make a PR: [How to fork](http
 [linkedin-url]: https://www.linkedin.com/company/software-engineering-career-club-at-uw/
 [react-shield]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [react-url]: https://reactjs.org/
-[bootstrap-shield]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[bootstrap-url]: https://getbootstrap.com/
 [css3-shield]: https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
 [css3-url]: https://developer.mozilla.org/en-US/docs/Web/CSS
 [ts-shield]: https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white

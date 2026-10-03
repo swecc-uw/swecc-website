@@ -24,6 +24,9 @@
 deploy.sh
 push.sh
 
+# local agent tooling
+.devin/config.local.json
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
