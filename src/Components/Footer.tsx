@@ -1,16 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router";
 import "../CSS/Footer.css";
 import SWECCWordmark from "../Data/img/Logo/SWECCWordmarkWhite.webp";
-import {
-  communityLinks,
-  externalLinkProps,
-  siteLinks,
-} from "./Utils";
-
-const year = new Date().getFullYear();
+import { communityLinks, externalLinkProps, siteLinks } from "./Utils";
 
 function Footer() {
+  const [year] = useState(() => new Date().getFullYear());
   return (
     <footer className="site-footer">
       <div className="site-footer__inner">
@@ -65,7 +60,7 @@ function Footer() {
             <span className="site-footer__cursor" aria-hidden="true" />
           </p>
           <p className="site-footer__legal">
-            <span>© {year} UW SWECC</span>
+            <span suppressHydrationWarning>© {year} UW SWECC</span>
             <a
               href="https://webimpactuw.org/"
               className="site-footer__link"

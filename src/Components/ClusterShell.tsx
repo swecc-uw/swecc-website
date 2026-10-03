@@ -39,7 +39,7 @@ function ClusterShell() {
     motdLines(session).map((line, index) => ({
       ...line,
       id: `motd-${index}`,
-    }))
+    })),
   );
   const [value, setValue] = useState("");
   const [vim, setVim] = useState<VimBuffer | null>(null);
@@ -76,7 +76,9 @@ function ClusterShell() {
     ]);
     if (!typed.trim()) return;
 
-    setCmdHistory((prev) => (prev[prev.length - 1] === typed ? prev : [...prev, typed]));
+    setCmdHistory((prev) =>
+      prev[prev.length - 1] === typed ? prev : [...prev, typed],
+    );
     setHistIndex(null);
 
     const result = runClusterCommand(typed, cwd);
@@ -168,10 +170,11 @@ function ClusterShell() {
           <pre
             key={line.id}
             className={`cluster-shell__out cluster-shell--${line.tone}`}
+            suppressHydrationWarning={line.dynamic}
           >
             {line.text || " "}
           </pre>
-        )
+        ),
       )}
       <form className="cluster-shell__row" onSubmit={onSubmit}>
         <Prompt cwd={cwd} />

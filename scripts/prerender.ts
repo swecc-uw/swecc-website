@@ -55,7 +55,12 @@ for (const route of Object.keys(pages)) {
   if (route !== route.toLowerCase()) {
     redirects.push(`${route.toLowerCase()} ${route} 301`);
   }
+  // Direct /X.html hits bypass the route table and hydrate the wrong page.
+  redirects.push(`${route === "/" ? "/index" : route}.html ${route} 301`);
 }
-fs.writeFileSync(path.join(buildDir, "_redirects"), `${redirects.join("\n")}\n`);
+fs.writeFileSync(
+  path.join(buildDir, "_redirects"),
+  `${redirects.join("\n")}\n`,
+);
 
 console.log(`Prerendered ${Object.keys(pages).join(", ")}`);
