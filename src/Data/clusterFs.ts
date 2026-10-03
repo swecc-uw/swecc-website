@@ -2,7 +2,12 @@ import { links } from "../Components/Utils";
 
 const HOME = "/home/ec2-user";
 
-export type OutputLine = { tone: "white" | "lavender"; text: string };
+export type OutputLine = {
+  tone: "white" | "lavender";
+  text: string;
+  // Content generated per-session, so prerendered HTML never matches hydration.
+  dynamic?: boolean;
+};
 
 export type VimBuffer = {
   name: string;
@@ -180,6 +185,7 @@ export function motdLines(session: ClusterSession): OutputLine[] {
     {
       tone: "white",
       text: `Last login: ${session.lastLogin} from ${session.from}`,
+      dynamic: true,
     },
     { tone: "white", text: "Welcome to swecc.org  (Ubuntu 22.04 LTS)" },
     { tone: "lavender", text: "" },
@@ -339,7 +345,9 @@ export function runClusterCommand(raw: string, cwd: string): CommandResult {
     if (!positional[0]) {
       return {
         cwd,
-        lines: [{ tone: "white", text: "VIM: nothing to edit (try vim faq.md)" }],
+        lines: [
+          { tone: "white", text: "VIM: nothing to edit (try vim faq.md)" },
+        ],
       };
     }
     const file = resolveFile(positional[0], cwd);
