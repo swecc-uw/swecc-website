@@ -44,9 +44,13 @@ for (const [route, title] of Object.entries(pages)) {
   fs.writeFileSync(path.join(buildDir, file), html);
 }
 
-const redirects = Object.entries(REDIRECTS).map(
-  ([from, to]) => `${from} ${to} 302`,
-);
+const redirects = Object.entries(REDIRECTS).map(([from, to]) => {
+  // Cloudflare rejects the whole deploy if a _redirects target isn't HTTPS.
+  if (!to.startsWith("https://")) {
+    throw new Error(`Redirect ${from} must target an https:// URL, got ${to}`);
+  }
+  return `${from} ${to} 302`;
+});
 for (const route of Object.keys(pages)) {
   if (route !== route.toLowerCase()) {
     redirects.push(`${route.toLowerCase()} ${route} 301`);
