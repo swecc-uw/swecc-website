@@ -241,3 +241,7 @@
     transform: translateY(-100%);
   }
 }
+
+[data-intro="play"] #root {
+  visibility: hidden;
+}

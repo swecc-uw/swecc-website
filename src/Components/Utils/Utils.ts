@@ -21,7 +21,7 @@ export const links = {
   },
   resources: {
     mailingList:
-      "http://mailman11.u.washington.edu/mailman/listinfo/sweccmailinglist",
+      "https://mailman11.u.washington.edu/mailman/listinfo/sweccmailinglist",
     calendar:
       "https://calendar.google.com/calendar/embed?src=swecc%40uw.edu&ctz=America%2FLos_Angeles",
     calendarIcs:
