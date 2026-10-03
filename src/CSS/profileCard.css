@@ -26,6 +26,18 @@
   display: block;
 }
 
+.officer-card__photo--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2c2a2e;
+  color: #fafafa;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: clamp(1.75rem, 2vw, 2.25rem);
+  letter-spacing: 0.04em;
+}
+
 .officer-card__name {
   margin: 1rem 0 0.2rem;
   font-family: var(--font-sans);
@@ -43,6 +55,26 @@
   font-weight: 500;
   color: var(--color-text-accent);
   text-align: center;
+}
+
+.officer-card__fact {
+  margin: 0.7rem 0 0;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  line-height: 1.45;
+  font-weight: 400;
+  color: #d7d4d0;
+  text-align: center;
+}
+
+.officer-card__fact-label {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-accent);
 }
 
 .officer-card__socials {
@@ -65,7 +97,9 @@
   color: #fafafa;
   background: transparent;
   text-decoration: none;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .officer-card__social:hover {
