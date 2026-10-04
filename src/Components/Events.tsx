@@ -8,8 +8,8 @@ function Events() {
         <h1 className="event-headers mono">Upcoming Events</h1>
         <p className="event-page-description">
           Grow your skills through workshops and SWECC meetings on professional
-          development, resume building, mentor circles, and more. Meet peers
-          who share your goals and take your next step toward a career in software.
+          development, resume building, mentor circles, and more. Meet peers who
+          share your goals and take your next step toward a career in software.
         </p>
       </div>
 

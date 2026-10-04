@@ -15,9 +15,7 @@ declare module "react" {
 type Flip = { x: number; y: number; scale: number };
 
 type IntroState =
-  | { phase: "play" }
-  | { phase: "exit"; flip: Flip | null }
-  | { phase: "done" };
+  { phase: "play" } | { phase: "exit"; flip: Flip | null } | { phase: "done" };
 
 const BOOT_LINES = [
   "mounting community",

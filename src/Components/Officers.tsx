@@ -58,9 +58,7 @@ const Officers = () => {
           </nav>
 
           <div className="officers-roster">
-            <h2 className="type-display mono">
-              {selectedYear} Officers
-            </h2>
+            <h2 className="type-display mono">{selectedYear} Officers</h2>
             <ProfileCard info={teamMembers} />
           </div>
         </div>
