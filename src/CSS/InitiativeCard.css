@@ -22,9 +22,11 @@
 
 .initiative-card__panel {
   --side: color-mix(in srgb, var(--accent) 55%, var(--home-black));
-  --extrude: 1px 1px var(--side), 2px 2px var(--side), 3px 3px var(--side),
+  --extrude:
+    1px 1px var(--side), 2px 2px var(--side), 3px 3px var(--side),
     4px 4px var(--side), 5px 5px var(--side), 6px 6px var(--side);
-  --flush: 0 0 var(--side), 0 0 var(--side), 0 0 var(--side), 0 0 var(--side),
+  --flush:
+    0 0 var(--side), 0 0 var(--side), 0 0 var(--side), 0 0 var(--side),
     0 0 var(--side), 0 0 var(--side);
   position: relative;
   box-shadow: var(--flush);

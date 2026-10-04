@@ -65,7 +65,9 @@
   color: #fafafa;
   background: transparent;
   text-decoration: none;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .officer-card__social:hover {

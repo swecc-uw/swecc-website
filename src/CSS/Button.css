@@ -12,7 +12,9 @@
   text-decoration: none;
   box-sizing: border-box;
   padding: 0;
-  transition: opacity 0.2s ease, filter 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    filter 0.2s ease;
 }
 
 .swecc-button--md {

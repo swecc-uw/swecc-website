@@ -35,7 +35,7 @@ export const links = {
     currentQuarter: "(Fall 2026)",
     meetingTime: "5:30-6:30PM",
     meetingDay: "Wednesday",
-    meetingLocation: "Loew Hall 216"
+    meetingLocation: "Loew Hall 216",
   },
 };
 
