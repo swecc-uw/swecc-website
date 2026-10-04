@@ -78,6 +78,10 @@ For more help, watch this video of how to fork and make a PR: [How to fork](http
 - `<issue>`: issue number of the branch. If this a feature/bug/anything, open an issue and write out a description as well as spec for the branch. This can potentially be empty then the name should be `name-<description>`
 - `<description>`: Make it short but descriptive
 
+### Formatting:
+
+CI fails a pull request whose files are not formatted with [Prettier](https://prettier.io/). Run `npm run format` before you push.
+
 ## Contributors ✨
 
 <a href="https://github.com/swecc-uw/swecc-website/graphs/contributors">
