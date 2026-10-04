@@ -108,8 +108,8 @@ function TerminalWindow({
           clampToBounds(
             drag.originX + event.clientX - drag.startX,
             drag.originY + event.clientY - drag.startY,
-            drag.metrics
-          )
+            drag.metrics,
+          ),
         );
       };
 
@@ -138,7 +138,7 @@ function TerminalWindow({
       setDragging(true);
       return true;
     },
-    [applyOffset, clampToBounds, readMetrics, stopDrag]
+    [applyOffset, clampToBounds, readMetrics, stopDrag],
   );
 
   const onPointerDown = (event: ReactMouseEvent<HTMLDivElement>) => {
@@ -160,7 +160,7 @@ function TerminalWindow({
       const metrics = readMetrics();
       if (!metrics) return;
       applyOffset(
-        clampToBounds(offsetRef.current.x, offsetRef.current.y, metrics)
+        clampToBounds(offsetRef.current.x, offsetRef.current.y, metrics),
       );
     };
     window.addEventListener("resize", onResize);
