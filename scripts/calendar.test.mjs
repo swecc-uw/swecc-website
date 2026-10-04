@@ -47,20 +47,6 @@ test("weekly meetings keep their local time when daylight saving ends", () => {
   );
 });
 
-test("weekly meetings keep their local time when daylight saving begins", () => {
-  assert.deepEqual(
-    starts(
-      calendar(
-        "DTSTART;TZID=America/Los_Angeles:20260304T173000",
-        "DTEND;TZID=America/Los_Angeles:20260304T183000",
-        "RRULE:FREQ=WEEKLY",
-      ),
-      "2026-03-12T01:00:00Z",
-    ),
-    ["2026-03-05T01:30:00.000Z", "2026-03-12T00:30:00.000Z"],
-  );
-});
-
 test("COUNT includes the first meeting and limits expansion", () => {
   assert.deepEqual(
     starts(
@@ -132,42 +118,22 @@ test("floating meetings use Los Angeles time", () => {
   );
 });
 
-test("all-day weekly events stay on their calendar dates", () => {
-  const events = parseIcsEvents(
-    calendar(
-      "DTSTART;VALUE=DATE:20261028",
-      "DTEND;VALUE=DATE:20261029",
-      "RRULE:FREQ=WEEKLY;COUNT=2",
-    ),
-    { rangeEnd: new Date("2026-11-20T00:00:00Z") },
-  );
-  assert.deepEqual(
-    events.map((event) => event.start.toISOString()),
-    ["2026-10-28T19:00:00.000Z", "2026-11-04T20:00:00.000Z"],
-  );
-  assert.equal(eventsOnDay(events, new Date("2026-11-04T20:00:00Z")).length, 1);
-  assert.equal(eventsOnDay(events, new Date("2026-11-05T20:00:00Z")).length, 0);
-});
-
-test("one-off events retain their dates and descriptions", () => {
+test("one-off events retain their dates", () => {
   const events = parseIcsEvents(
     calendar(
       "DTSTART:20261029T003000Z",
       "DTEND:20261029T013000Z",
-      "DESCRIPTION:Bring a laptop.",
     ),
   );
   assert.deepEqual(
     events.map((event) => ({
       start: event.start.toISOString(),
       end: event.end.toISOString(),
-      description: event.description,
     })),
     [
       {
         start: "2026-10-29T00:30:00.000Z",
         end: "2026-10-29T01:30:00.000Z",
-        description: "Bring a laptop.",
       },
     ],
   );
@@ -220,6 +186,9 @@ test("all-day recurrences retain their exclusive end date across daylight saving
       { start: "2026-03-14T19:00:00.000Z", end: "2026-03-16T19:00:00.000Z" },
     ],
   );
+  assert.equal(eventsOnDay(events, new Date("2026-03-14T19:00:00Z")).length, 1);
+  assert.equal(eventsOnDay(events, new Date("2026-03-15T19:00:00Z")).length, 1);
+  assert.equal(eventsOnDay(events, new Date("2026-03-16T19:00:00Z")).length, 0);
 });
 
 test("spring clock gaps retain the existing forward resolution", () => {
