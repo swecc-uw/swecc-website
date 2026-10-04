@@ -17,6 +17,7 @@
     "start": "vite",
     "build": "npm run typecheck && npm run lint && vite build && node scripts/prerender.ts",
     "preview": "vite preview",
+    "test": "node --test scripts/calendar.test.mjs",
     "typecheck": "tsc -p tsconfig.json && tsc -p tsconfig.node.json",
     "lint": "oxlint"
   },
