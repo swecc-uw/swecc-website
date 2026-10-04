@@ -18,6 +18,8 @@
     "start": "vite",
     "build": "npm run typecheck && npm run lint && vite build && node scripts/prerender.ts",
     "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "typecheck": "tsc -p tsconfig.json && tsc -p tsconfig.node.json",
     "lint": "oxlint"
   },
@@ -32,7 +34,8 @@
     "oxlint": "^1.86.0",
     "prettier": "^3.9.9",
     "typescript": "^7.0.2",
-    "vite": "^8.3.2"
+    "vite": "^8.3.2",
+    "vitest": "^5.0.3"
   },
   "engines": {
     "node": ">=22.22"
