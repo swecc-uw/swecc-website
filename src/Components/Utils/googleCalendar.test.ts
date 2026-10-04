@@ -1,12 +1,7 @@
-import assert from "node:assert/strict";
-import test from "node:test";
-import {
-  eventsOnDay,
-  formatEventTime,
-  parseIcsEvents,
-} from "../src/Components/Utils/googleCalendar.ts";
+import { expect, test } from "vitest";
+import { eventsOnDay, formatEventTime, parseIcsEvents } from "./googleCalendar";
 
-function calendar(...properties) {
+function calendar(...properties: string[]) {
   return [
     "BEGIN:VCALENDAR",
     "BEGIN:VEVENT",
@@ -18,7 +13,7 @@ function calendar(...properties) {
   ].join("\r\n");
 }
 
-function starts(ics, rangeEnd) {
+function starts(ics: string, rangeEnd: string) {
   return parseIcsEvents(ics, { rangeEnd: new Date(rangeEnd) }).map((event) =>
     event.start.toISOString(),
   );
@@ -33,22 +28,22 @@ test("weekly meetings keep their local time when daylight saving ends", () => {
     ),
     { rangeEnd: new Date("2026-11-20T00:00:00Z") },
   );
-  assert.deepEqual(
-    events.map((event) => event.start.toISOString()),
-    ["2026-10-29T00:30:00.000Z", "2026-11-05T01:30:00.000Z"],
-  );
-  assert.deepEqual(
-    events.map((event) => formatEventTime(event)),
-    ["5:30 PM", "5:30 PM"],
-  );
-  assert.deepEqual(
-    events.map((event) => event.end.toISOString()),
-    ["2026-10-29T01:30:00.000Z", "2026-11-05T02:30:00.000Z"],
-  );
+  expect(events.map((event) => event.start.toISOString())).toEqual([
+    "2026-10-29T00:30:00.000Z",
+    "2026-11-05T01:30:00.000Z",
+  ]);
+  expect(events.map((event) => formatEventTime(event))).toEqual([
+    "5:30 PM",
+    "5:30 PM",
+  ]);
+  expect(events.map((event) => event.end.toISOString())).toEqual([
+    "2026-10-29T01:30:00.000Z",
+    "2026-11-05T02:30:00.000Z",
+  ]);
 });
 
 test("COUNT includes the first meeting and limits expansion", () => {
-  assert.deepEqual(
+  expect(
     starts(
       calendar(
         "DTSTART;TZID=America/Los_Angeles:20261028T173000",
@@ -57,12 +52,11 @@ test("COUNT includes the first meeting and limits expansion", () => {
       ),
       "2026-11-20T00:00:00Z",
     ),
-    ["2026-10-29T00:30:00.000Z", "2026-11-05T01:30:00.000Z"],
-  );
+  ).toEqual(["2026-10-29T00:30:00.000Z", "2026-11-05T01:30:00.000Z"]);
 });
 
 test("excluded meetings do not extend COUNT", () => {
-  assert.deepEqual(
+  expect(
     starts(
       calendar(
         "DTSTART;TZID=America/Los_Angeles:20261028T173000",
@@ -72,12 +66,11 @@ test("excluded meetings do not extend COUNT", () => {
       ),
       "2026-11-20T00:00:00Z",
     ),
-    ["2026-10-29T00:30:00.000Z"],
-  );
+  ).toEqual(["2026-10-29T00:30:00.000Z"]);
 });
 
 test("UTC meetings keep their UTC time across daylight saving", () => {
-  assert.deepEqual(
+  expect(
     starts(
       calendar(
         "DTSTART:20261029T003000Z",
@@ -86,12 +79,11 @@ test("UTC meetings keep their UTC time across daylight saving", () => {
       ),
       "2026-11-20T00:00:00Z",
     ),
-    ["2026-10-29T00:30:00.000Z", "2026-11-05T00:30:00.000Z"],
-  );
+  ).toEqual(["2026-10-29T00:30:00.000Z", "2026-11-05T00:30:00.000Z"]);
 });
 
 test("meetings use their source timezone instead of the site timezone", () => {
-  assert.deepEqual(
+  expect(
     starts(
       calendar(
         "DTSTART;TZID=Europe/London:20261021T173000",
@@ -100,12 +92,11 @@ test("meetings use their source timezone instead of the site timezone", () => {
       ),
       "2026-10-29T00:00:00Z",
     ),
-    ["2026-10-21T16:30:00.000Z", "2026-10-28T17:30:00.000Z"],
-  );
+  ).toEqual(["2026-10-21T16:30:00.000Z", "2026-10-28T17:30:00.000Z"]);
 });
 
 test("floating meetings use Los Angeles time", () => {
-  assert.deepEqual(
+  expect(
     starts(
       calendar(
         "DTSTART:20261028T173000",
@@ -114,33 +105,28 @@ test("floating meetings use Los Angeles time", () => {
       ),
       "2026-11-20T00:00:00Z",
     ),
-    ["2026-10-29T00:30:00.000Z", "2026-11-05T01:30:00.000Z"],
-  );
+  ).toEqual(["2026-10-29T00:30:00.000Z", "2026-11-05T01:30:00.000Z"]);
 });
 
 test("one-off events retain their dates", () => {
   const events = parseIcsEvents(
-    calendar(
-      "DTSTART:20261029T003000Z",
-      "DTEND:20261029T013000Z",
-    ),
+    calendar("DTSTART:20261029T003000Z", "DTEND:20261029T013000Z"),
   );
-  assert.deepEqual(
+  expect(
     events.map((event) => ({
       start: event.start.toISOString(),
       end: event.end.toISOString(),
     })),
-    [
-      {
-        start: "2026-10-29T00:30:00.000Z",
-        end: "2026-10-29T01:30:00.000Z",
-      },
-    ],
-  );
+  ).toEqual([
+    {
+      start: "2026-10-29T00:30:00.000Z",
+      end: "2026-10-29T01:30:00.000Z",
+    },
+  ]);
 });
 
 test("spring transition mornings use the offset at the event time", () => {
-  assert.deepEqual(
+  expect(
     starts(
       calendar(
         "DTSTART;TZID=America/Los_Angeles:20260301T033000",
@@ -149,12 +135,11 @@ test("spring transition mornings use the offset at the event time", () => {
       ),
       "2026-03-20T00:00:00Z",
     ),
-    ["2026-03-01T11:30:00.000Z", "2026-03-08T10:30:00.000Z"],
-  );
+  ).toEqual(["2026-03-01T11:30:00.000Z", "2026-03-08T10:30:00.000Z"]);
 });
 
 test("fall transition mornings use the offset at the event time", () => {
-  assert.deepEqual(
+  expect(
     starts(
       calendar(
         "DTSTART;TZID=America/Los_Angeles:20261025T023000",
@@ -163,8 +148,7 @@ test("fall transition mornings use the offset at the event time", () => {
       ),
       "2026-11-20T00:00:00Z",
     ),
-    ["2026-10-25T09:30:00.000Z", "2026-11-01T10:30:00.000Z"],
-  );
+  ).toEqual(["2026-10-25T09:30:00.000Z", "2026-11-01T10:30:00.000Z"]);
 });
 
 test("all-day recurrences retain their exclusive end date across daylight saving", () => {
@@ -176,23 +160,22 @@ test("all-day recurrences retain their exclusive end date across daylight saving
     ),
     { rangeEnd: new Date("2026-03-20T00:00:00Z") },
   );
-  assert.deepEqual(
+  expect(
     events.map((event) => ({
       start: event.start.toISOString(),
       end: event.end.toISOString(),
     })),
-    [
-      { start: "2026-03-07T20:00:00.000Z", end: "2026-03-09T19:00:00.000Z" },
-      { start: "2026-03-14T19:00:00.000Z", end: "2026-03-16T19:00:00.000Z" },
-    ],
-  );
-  assert.equal(eventsOnDay(events, new Date("2026-03-14T19:00:00Z")).length, 1);
-  assert.equal(eventsOnDay(events, new Date("2026-03-15T19:00:00Z")).length, 1);
-  assert.equal(eventsOnDay(events, new Date("2026-03-16T19:00:00Z")).length, 0);
+  ).toEqual([
+    { start: "2026-03-07T20:00:00.000Z", end: "2026-03-09T19:00:00.000Z" },
+    { start: "2026-03-14T19:00:00.000Z", end: "2026-03-16T19:00:00.000Z" },
+  ]);
+  expect(eventsOnDay(events, new Date("2026-03-14T19:00:00Z")).length).toBe(1);
+  expect(eventsOnDay(events, new Date("2026-03-15T19:00:00Z")).length).toBe(1);
+  expect(eventsOnDay(events, new Date("2026-03-16T19:00:00Z")).length).toBe(0);
 });
 
 test("spring clock gaps retain the existing forward resolution", () => {
-  assert.deepEqual(
+  expect(
     starts(
       calendar(
         "DTSTART;TZID=America/Los_Angeles:20260308T023000",
@@ -200,12 +183,11 @@ test("spring clock gaps retain the existing forward resolution", () => {
       ),
       "2026-03-20T00:00:00Z",
     ),
-    ["2026-03-08T10:30:00.000Z"],
-  );
+  ).toEqual(["2026-03-08T10:30:00.000Z"]);
 });
 
 test("repeated fall clock times retain their first occurrence", () => {
-  assert.deepEqual(
+  expect(
     starts(
       calendar(
         "DTSTART;TZID=America/Los_Angeles:20261101T013000",
@@ -213,6 +195,5 @@ test("repeated fall clock times retain their first occurrence", () => {
       ),
       "2026-11-20T00:00:00Z",
     ),
-    ["2026-11-01T08:30:00.000Z"],
-  );
+  ).toEqual(["2026-11-01T08:30:00.000Z"]);
 });
