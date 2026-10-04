@@ -50,7 +50,9 @@ function stripHtml(html: string) {
 function parseIcsUtc(stamp: string) {
   const m = stamp.match(/^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})Z$/);
   if (!m) return new Date(NaN);
-  return new Date(Date.UTC(+m[1], +m[2] - 1, +m[3], +m[4], +m[5], +m[6]));
+  return new Date(
+    Date.UTC(+m[1], +m[2] - 1, +m[3], +m[4], +m[5], +m[6]),
+  );
 }
 
 function wallClockDate(date: Date, timeZone: string) {
@@ -100,6 +102,7 @@ function wallClockToUtc(wallClock: Date, timeZone: string) {
   const candidate = new Date(requested - offset);
   const difference = wallClockDate(candidate, timeZone).getTime() - requested;
   if (difference === 0) return candidate;
+  // A clock time skipped by daylight saving has no exact match; keep the later candidate.
   const corrected = new Date(candidate.getTime() - difference);
   return wallClockDate(corrected, timeZone).getTime() === requested
     ? corrected
@@ -191,20 +194,13 @@ function parseVEvent(block: string): ParsedEvent {
   const start = parseIcsDate(startLine);
   const end: IcsDate = endLine ? parseIcsDate(endLine) : { ...start };
   if (start.allDay && end.date <= start.date) {
-    const next = wallClockDate(start.date, start.timeZone);
-    next.setUTCDate(next.getUTCDate() + 1);
-    end.date = wallClockToUtc(next, start.timeZone);
+    const next = new Date(start.date.getTime() + 24 * 60 * 60 * 1000);
+    end.date = next;
   }
 
-  const summary = unescapeIcs(
-    getLine(block, "SUMMARY").split(/:(.+)/)[1] || "",
-  ).trim();
-  const location = unescapeIcs(
-    getLine(block, "LOCATION").split(/:(.+)/)[1] || "",
-  ).trim();
-  const description = stripHtml(
-    getLine(block, "DESCRIPTION").split(/:(.+)/)[1] || "",
-  );
+  const summary = unescapeIcs(getLine(block, "SUMMARY").split(/:(.+)/)[1] || "").trim();
+  const location = unescapeIcs(getLine(block, "LOCATION").split(/:(.+)/)[1] || "").trim();
+  const description = stripHtml(getLine(block, "DESCRIPTION").split(/:(.+)/)[1] || "");
   const uid = (getLine(block, "UID").split(/:(.+)/)[1] || "").trim();
   const rrule = (getLine(block, "RRULE").split(/:(.+)/)[1] || "").trim();
   const exdates = parseExdates(block);
@@ -253,22 +249,20 @@ function expandWeekly(
   const countMatch = event.rrule.match(/(?:^|;)COUNT=(\d+)(?:;|$)/);
   const count = countMatch ? +countMatch[1] : Infinity;
   const duration = event.end.getTime() - event.start.getTime();
+  const firstWallClock = wallClockDate(event.start, timeZone).getTime();
   const instances: CalendarEvent[] = [];
-  const cursor = wallClockDate(event.start, timeZone);
-  const endCursor = event.allDay ? wallClockDate(event.end, timeZone) : null;
-  let start = event.start;
-  while (start.getTime() <= until.getTime() && instances.length < count) {
+  for (let week = 0; week < count; week++) {
+    const start = wallClockToUtc(
+      new Date(firstWallClock + week * 7 * 24 * 60 * 60 * 1000),
+      timeZone,
+    );
+    if (start > until) break;
     instances.push({
       ...event,
-      start: new Date(start),
-      end: endCursor
-        ? wallClockToUtc(endCursor, timeZone)
-        : new Date(start.getTime() + duration),
+      start,
+      end: new Date(start.getTime() + duration),
       rrule: "",
     });
-    cursor.setUTCDate(cursor.getUTCDate() + 7);
-    if (endCursor) endCursor.setUTCDate(endCursor.getUTCDate() + 7);
-    start = wallClockToUtc(cursor, timeZone);
   }
   return instances;
 }
@@ -336,9 +330,7 @@ export function parseIcsEvents(
     .flatMap((event) => expandWeekly(event, rangeEnd))
     .filter((event) => !exceptions.has(`${event.uid}|${dateKey(event.start)}`));
 
-  return [...expanded, ...singles].sort(
-    (a, b) => a.start.getTime() - b.start.getTime(),
-  );
+  return [...expanded, ...singles].sort((a, b) => a.start.getTime() - b.start.getTime());
 }
 
 export async function loadGoogleCalendarEvents() {
