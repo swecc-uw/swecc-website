@@ -50,9 +50,7 @@ function stripHtml(html: string) {
 function parseIcsUtc(stamp: string) {
   const m = stamp.match(/^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})Z$/);
   if (!m) return new Date(NaN);
-  return new Date(
-    Date.UTC(+m[1], +m[2] - 1, +m[3], +m[4], +m[5], +m[6]),
-  );
+  return new Date(Date.UTC(+m[1], +m[2] - 1, +m[3], +m[4], +m[5], +m[6]));
 }
 
 function wallClockDate(date: Date, timeZone: string) {
@@ -198,9 +196,15 @@ function parseVEvent(block: string): ParsedEvent {
     end.date = next;
   }
 
-  const summary = unescapeIcs(getLine(block, "SUMMARY").split(/:(.+)/)[1] || "").trim();
-  const location = unescapeIcs(getLine(block, "LOCATION").split(/:(.+)/)[1] || "").trim();
-  const description = stripHtml(getLine(block, "DESCRIPTION").split(/:(.+)/)[1] || "");
+  const summary = unescapeIcs(
+    getLine(block, "SUMMARY").split(/:(.+)/)[1] || "",
+  ).trim();
+  const location = unescapeIcs(
+    getLine(block, "LOCATION").split(/:(.+)/)[1] || "",
+  ).trim();
+  const description = stripHtml(
+    getLine(block, "DESCRIPTION").split(/:(.+)/)[1] || "",
+  );
   const uid = (getLine(block, "UID").split(/:(.+)/)[1] || "").trim();
   const rrule = (getLine(block, "RRULE").split(/:(.+)/)[1] || "").trim();
   const exdates = parseExdates(block);
@@ -330,7 +334,9 @@ export function parseIcsEvents(
     .flatMap((event) => expandWeekly(event, rangeEnd))
     .filter((event) => !exceptions.has(`${event.uid}|${dateKey(event.start)}`));
 
-  return [...expanded, ...singles].sort((a, b) => a.start.getTime() - b.start.getTime());
+  return [...expanded, ...singles].sort(
+    (a, b) => a.start.getTime() - b.start.getTime(),
+  );
 }
 
 export async function loadGoogleCalendarEvents() {

@@ -59,7 +59,9 @@ function HomePage() {
   const scrollTo = (id: string) => {
     const section = document.getElementById(id);
     if (!section) return;
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reduce = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
     section.scrollIntoView({ behavior: reduce ? "auto" : "smooth" });
     section.focus({ preventScroll: true });
   };
@@ -68,43 +70,43 @@ function HomePage() {
     <div className="home-page">
       <section className="home-hero home-band home-band--black">
         <div className="home-band__inner home-hero__inner" ref={heroRef}>
-        <div className="home-hero__copy">
-          <h1 className="home-hero__title">
-            <span className="type-hero-mono">Software</span>
-            <span className="type-hero-mono">Engineering</span>
-            <span className="type-hero-sans">CAREER CLUB</span>
-          </h1>
-          <p className="home-hero__kicker">
-            AT THE <em>UNIVERSITY OF WASHINGTON</em>
-          </p>
-          <div className="home-hero__actions">
-            <Button
-              variant="primary"
-              size="lg"
-              href={links.social.discord}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaDiscord aria-hidden />
-              Join the Discord
-            </Button>
-            <Button
-              variant="ghost"
-              size="lg"
-              onClick={() => scrollTo("initiatives")}
-            >
-              Explore programs
-              <FiArrowDown aria-hidden className="swecc-button__nudge" />
-            </Button>
+          <div className="home-hero__copy">
+            <h1 className="home-hero__title">
+              <span className="type-hero-mono">Software</span>
+              <span className="type-hero-mono">Engineering</span>
+              <span className="type-hero-sans">CAREER CLUB</span>
+            </h1>
+            <p className="home-hero__kicker">
+              AT THE <em>UNIVERSITY OF WASHINGTON</em>
+            </p>
+            <div className="home-hero__actions">
+              <Button
+                variant="primary"
+                size="lg"
+                href={links.social.discord}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaDiscord aria-hidden />
+                Join the Discord
+              </Button>
+              <Button
+                variant="ghost"
+                size="lg"
+                onClick={() => scrollTo("initiatives")}
+              >
+                Explore programs
+                <FiArrowDown aria-hidden className="swecc-button__nudge" />
+              </Button>
+            </div>
           </div>
-        </div>
-        <TerminalWindow
-          className="home-hero__terminal"
-          draggable
-          boundsRef={heroRef}
-        >
-          <ClusterShell />
-        </TerminalWindow>
+          <TerminalWindow
+            className="home-hero__terminal"
+            draggable
+            boundsRef={heroRef}
+          >
+            <ClusterShell />
+          </TerminalWindow>
         </div>
       </section>
 

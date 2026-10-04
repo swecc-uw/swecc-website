@@ -100,14 +100,19 @@ function HomeAbout() {
               ))}
             </ol>
           </div>
-          <section className="about__gallery" aria-label="SWECC community photos">
+          <section
+            className="about__gallery"
+            aria-label="SWECC community photos"
+          >
             <div
               className="about__mosaic"
               id="about-photos"
               ref={photosRef}
               onScroll={(event) => {
                 const track = event.currentTarget;
-                setActivePhoto(Math.round(track.scrollLeft / track.clientWidth));
+                setActivePhoto(
+                  Math.round(track.scrollLeft / track.clientWidth),
+                );
               }}
             >
               {mosaic.map((photo, i) => (
@@ -137,7 +142,8 @@ function HomeAbout() {
                     aria-pressed={activePhoto === i}
                     onClick={() => {
                       const track = photosRef.current;
-                      if (track) track.scrollTo({ left: i * track.clientWidth });
+                      if (track)
+                        track.scrollTo({ left: i * track.clientWidth });
                     }}
                   />
                 ))}

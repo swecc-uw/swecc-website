@@ -10,7 +10,8 @@
     "react-router": "^8.4.0"
   },
   "scripts": {
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "sync-calendar": "node scripts/sync-calendar.ts",
     "prestart": "node scripts/sync-calendar.ts",
     "prebuild": "node scripts/sync-calendar.ts",
@@ -23,7 +24,6 @@
     "lint": "oxlint"
   },
   "description": "SWECC",
-  "main": "index.js",
   "author": "",
   "license": "ISC",
   "devDependencies": {

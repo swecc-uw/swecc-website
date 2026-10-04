@@ -39,11 +39,15 @@ download(ICS_URL)
     }
     fs.mkdirSync(path.dirname(DEST), { recursive: true });
     fs.writeFileSync(DEST, text);
-    console.log(`Synced Google Calendar ICS to ${path.relative(process.cwd(), DEST)}`);
+    console.log(
+      `Synced Google Calendar ICS to ${path.relative(process.cwd(), DEST)}`,
+    );
   })
   .catch((error: Error) => {
     if (fs.existsSync(DEST)) {
-      console.warn(`${error.message}. Using existing ${path.relative(process.cwd(), DEST)}`);
+      console.warn(
+        `${error.message}. Using existing ${path.relative(process.cwd(), DEST)}`,
+      );
       process.exit(0);
     }
     console.error(error.message);
