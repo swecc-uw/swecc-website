@@ -10,6 +10,10 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
-      - run: npm test
-      - run: npm run format:check
-      - run: npm run build
+      - parallel:
+          - name: Test
+            run: npm test
+          - name: Format check
+            run: npm run format:check
+          - name: Build
+            run: npm run build
