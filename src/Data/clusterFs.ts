@@ -1,4 +1,4 @@
-import { links } from "../Components/Utils";
+import { links } from "../app/Utils";
 
 const HOME = "/home/ec2-user";
 

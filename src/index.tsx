@@ -2,8 +2,8 @@ import React from "react";
 import { createRoot, hydrateRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router";
 
-import "./index.css";
-import App from "./Components/App";
+import "./components/global.css";
+import App from "./app/App";
 
 const container = document.getElementById("root");
 if (!container) throw new Error("Missing #root element");
