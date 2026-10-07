@@ -24,7 +24,7 @@ The website can be found at [swecc.org][swecc-url].
 
 [![][react-shield]][react-url]
 [![][ts-shield]][ts-url]
-[![][css3-shield]][css3-url]
+[![][stylex-shield]][stylex-url]
 
 ## Getting Started
 
@@ -59,6 +59,10 @@ npm start
 ```
 
 4. Open your browser and visit `http://localhost:3000/` to view the app.
+
+## Styling 🎨
+
+All styles are written in [StyleX][stylex-url]. Shared tokens and building blocks live in the design library at [`src/components`](src/components/README.md). Page code in `src/app` composes those components and keeps its own styles next to its markup in `stylex.create`. Don't add new `.css` files.
 
 ## Contributing 🤝
 
@@ -102,7 +106,7 @@ CI fails a pull request whose files are not formatted with [Prettier](https://pr
 [linkedin-url]: https://www.linkedin.com/company/software-engineering-career-club-at-uw/
 [react-shield]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [react-url]: https://reactjs.org/
-[css3-shield]: https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
-[css3-url]: https://developer.mozilla.org/en-US/docs/Web/CSS
+[stylex-shield]: https://img.shields.io/badge/StyleX-1572B6?style=for-the-badge&logo=css3&logoColor=white
+[stylex-url]: https://stylexjs.com
 [ts-shield]: https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white
 [ts-url]: https://www.typescriptlang.org/
