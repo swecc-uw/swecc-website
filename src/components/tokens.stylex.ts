@@ -10,10 +10,13 @@ export const colors = stylex.defineVars({
   surface: "#2e2f33",
   surfaceRaised: "#43454a",
   surfaceAccent: "#484a4d",
+  // Stands in for a missing photo, e.g. an officer's initials.
+  placeholder: "#2c2a2e",
 
   text: "#fafafa",
   textMuted: "rgb(250 250 250 / 0.7)",
   textSubtle: "#a7aab1",
+  textSoft: "#d7d4d0",
   textOnPrimary: "#1f1d20",
 
   primary: "#7ea266",

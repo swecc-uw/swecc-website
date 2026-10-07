@@ -32,46 +32,73 @@ function SocialLink({ href, label, Icon }: SocialLinkProps) {
   );
 }
 
+function initials(name: string) {
+  const parts = name.trim().split(/\s+/);
+  const first = parts[0]?.[0] ?? "";
+  const last = parts.length > 1 ? (parts[parts.length - 1]?.[0] ?? "") : "";
+  return (first + last).toUpperCase();
+}
+
 function Card({ member }: { member: Officer }) {
+  const photoSrc = member.imgSrc
+    ? photos[`../Data/officers/${member.imgSrc}`]
+    : undefined;
+  const hasSocials = Boolean(
+    member.portfolio || member.github || member.linkedin || member.email,
+  );
+
   return (
     <div {...stylex.props(styles.card)}>
-      <img
-        src={photos[`../Data/officers/${member.imgSrc}`]}
-        alt={member.name}
-        {...stylex.props(styles.photo)}
-      />
+      {photoSrc ? (
+        <img src={photoSrc} alt={member.name} {...stylex.props(styles.photo)} />
+      ) : (
+        <div
+          aria-hidden="true"
+          {...stylex.props(styles.photo, styles.photoPlaceholder)}
+        >
+          {initials(member.name)}
+        </div>
+      )}
       <Text style={styles.name}>{member.name}</Text>
       <Text style={styles.role}>{member.position}</Text>
-      <div {...stylex.props(styles.socials)}>
-        {member.portfolio && (
-          <SocialLink
-            href={member.portfolio}
-            label={`${member.name}'s portfolio`}
-            Icon={AiOutlineLink}
-          />
-        )}
-        {member.github && (
-          <SocialLink
-            href={member.github}
-            label={`${member.name}'s GitHub profile`}
-            Icon={FaGithub}
-          />
-        )}
-        {member.linkedin && (
-          <SocialLink
-            href={member.linkedin}
-            label={`${member.name}'s LinkedIn profile`}
-            Icon={FaLinkedin}
-          />
-        )}
-        {member.email && (
-          <SocialLink
-            href={`mailto:${member.email}`}
-            label={`Email ${member.name}`}
-            Icon={MdOutlineEmail}
-          />
-        )}
-      </div>
+      {member.funFact && (
+        <Text style={styles.fact}>
+          <span {...stylex.props(styles.factLabel)}>Fun fact</span>
+          {member.funFact}
+        </Text>
+      )}
+      {hasSocials && (
+        <div {...stylex.props(styles.socials)}>
+          {member.portfolio && (
+            <SocialLink
+              href={member.portfolio}
+              label={`${member.name}'s portfolio`}
+              Icon={AiOutlineLink}
+            />
+          )}
+          {member.github && (
+            <SocialLink
+              href={member.github}
+              label={`${member.name}'s GitHub profile`}
+              Icon={FaGithub}
+            />
+          )}
+          {member.linkedin && (
+            <SocialLink
+              href={member.linkedin}
+              label={`${member.name}'s LinkedIn profile`}
+              Icon={FaLinkedin}
+            />
+          )}
+          {member.email && (
+            <SocialLink
+              href={`mailto:${member.email}`}
+              label={`Email ${member.name}`}
+              Icon={MdOutlineEmail}
+            />
+          )}
+        </div>
+      )}
     </div>
   );
 }
@@ -118,6 +145,17 @@ const styles = stylex.create({
     boxSizing: "border-box",
     display: "block",
   },
+  photoPlaceholder: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: colors.placeholder,
+    color: colors.text,
+    fontFamily: fonts.sans,
+    fontWeight: 700,
+    fontSize: "clamp(1.75rem, 2vw, 2.25rem)",
+    letterSpacing: "0.04em",
+  },
   name: {
     margin: "1rem 0 0.2rem",
     fontFamily: fonts.sans,
@@ -134,6 +172,24 @@ const styles = stylex.create({
     fontWeight: 500,
     color: colors.primary,
     textAlign: "center",
+  },
+  fact: {
+    margin: "0.7rem 0 0",
+    fontFamily: fonts.sans,
+    fontSize: "0.9rem",
+    lineHeight: 1.45,
+    fontWeight: 400,
+    color: colors.textSoft,
+    textAlign: "center",
+  },
+  factLabel: {
+    display: "block",
+    marginBottom: "0.2rem",
+    fontSize: "0.72rem",
+    fontWeight: 700,
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
+    color: colors.primary,
   },
   socials: {
     display: "flex",

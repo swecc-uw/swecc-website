@@ -1,0 +1,103 @@
+[
+  {
+    "name": "Advay Patil",
+    "imgSrc": "advay.webp",
+    "position": "President",
+    "portfolio": "https://advayp.github.io/",
+    "linkedin": "https://www.linkedin.com/in/advaypatil27/"
+  },
+  {
+    "name": "Navneeth Dhamotharan",
+    "imgSrc": "navneeth.webp",
+    "position": "Software Engineer, Lead: SWECC Labs",
+    "funFact": "I play badminton.",
+    "portfolio": "https://www.navneethd.me",
+    "linkedin": "https://www.linkedin.com/in/navneethd",
+    "github": "https://github.com/navneethd8"
+  },
+  {
+    "name": "Rudra Singh",
+    "imgSrc": "rudra.webp",
+    "position": "Officer",
+    "linkedin": "https://www.linkedin.com/in/rudra-p-singh/"
+  },
+  {
+    "name": "Amelia Li",
+    "imgSrc": "ameliali.webp",
+    "position": "Officer",
+    "funFact": "I own a $400 Hamilton poster signed by Lin-Manuel Miranda.",
+    "portfolio": "https://ameliali.com/",
+    "github": "https://github.com/amelial9",
+    "linkedin": "https://www.linkedin.com/in/amelial9/"
+  },
+  {
+    "name": "Benjamin So",
+    "imgSrc": "Ben.webp",
+    "position": "Marketing",
+    "linkedin": "https://www.linkedin.com/in/benjaminsoyh/"
+  },
+  {
+    "name": "Anthony Wen",
+    "imgSrc": "anthony-wen.webp",
+    "position": "Lead: Mentorship Program",
+    "funFact": "I have an identical twin.",
+    "linkedin": "https://www.linkedin.com/in/aw-programmer",
+    "github": "https://github.com/wena04"
+  },
+  {
+    "name": "Druhin Bhowal",
+    "imgSrc": "druhin.webp",
+    "position": "Software Engineering",
+    "funFact": "I once befriended a black bear.",
+    "portfolio": "https://druhin.net/",
+    "github": "https://github.com/druhinb",
+    "linkedin": "https://www.linkedin.com/in/druhinb"
+  },
+  {
+    "name": "Sean Luu",
+    "imgSrc": "sean.webp",
+    "position": "Officer",
+    "funFact": "I have unfortunately passed over 15,000 levels on Candy Crush Saga.",
+    "linkedin": "https://www.linkedin.com/in/seanluu/"
+  },
+  {
+    "name": "Evan Li",
+    "imgSrc": "evan.webp",
+    "position": "Officer",
+    "funFact": "I've gotten second place in a national speech and debate league, twice in a row. Even though I lost, the photos are good.",
+    "portfolio": "https://evanly-me.vercel.app/",
+    "github": "https://github.com/evanly-gh",
+    "linkedin": "https://www.linkedin.com/in/evanhly/"
+  },
+  {
+    "name": "Joseph Davis Chamdani",
+    "imgSrc": "joseph.webp",
+    "position": "Officer",
+    "funFact": "I drink Americanos. Nutty beans, not fruity ones.",
+    "portfolio": "https://joechamdani.com/",
+    "github": "https://github.com/JosephDavisC",
+    "linkedin": "https://www.linkedin.com/in/joseph-chamdani/"
+  },
+  {
+    "name": "Rishi Vora",
+    "imgSrc": "rishi.webp",
+    "position": "Officer",
+    "funFact": "I am a big Seahawks fan.",
+    "linkedin": "https://www.linkedin.com/in/rishivora0/"
+  },
+  {
+    "name": "Michael Lin",
+    "imgSrc": "michael.webp",
+    "position": "Officer",
+    "funFact": "I've been to over 30 countries.",
+    "linkedin": "https://www.linkedin.com/in/michael-lin07/"
+  },
+  {
+    "name": "Justin Hernandez-Tovalin",
+    "imgSrc": "justin-hernandez-tovalin.webp",
+    "position": "Officer",
+    "funFact": "I love Shiba Inus.",
+    "portfolio": "https://justinhtovalin.dev/",
+    "linkedin": "https://www.linkedin.com/in/justinhernandeztovalin"
+  }
+]
