@@ -9,7 +9,7 @@ import ExternalRedirect from "./Redirect";
 import { links, useMounted } from "./Utils";
 import Officers from "./Officers";
 import OfficerApplication from "./OfficerApplication";
-import { SkipLink } from "../components";
+import { SkipLink } from "@swecc/ui";
 
 export const PAGE_TITLES: Record<string, string> = {
   "/Officers": "Officers | SWECC",

@@ -1,10 +1,16 @@
 import React from "react";
 import * as stylex from "@stylexjs/stylex";
 import { FiArrowRight } from "react-icons/fi";
-import { Button, ButtonIcon, Heading, Text, reveal } from "../components";
-import { revealMarker } from "../components/markers.stylex";
-import { REVEAL_STEP_MS } from "../components/Reveal";
-import { colors, easings, fonts, media } from "../components/tokens.stylex";
+import {
+  Button,
+  ButtonIcon,
+  Heading,
+  REVEAL_STEP_MS,
+  Text,
+  reveal,
+} from "@swecc/ui";
+import { revealMarker } from "@swecc/ui/markers.stylex";
+import { colors, easings, fonts, media } from "@swecc/ui/tokens.stylex";
 import { cardVars } from "./InitiativeCard.stylex";
 import { externalLinkProps } from "./Utils";
 

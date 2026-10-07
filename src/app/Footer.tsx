@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router";
 import * as stylex from "@stylexjs/stylex";
 import SWECCWordmark from "../Data/img/Logo/SWECCWordmarkWhite.webp";
-import { Container, Heading, Text } from "../components";
-import { colors, fonts, layout, media } from "../components/tokens.stylex";
+import { Container, Heading, Text } from "@swecc/ui";
+import { colors, fonts, layout, media } from "@swecc/ui/tokens.stylex";
 import { communityLinks, externalLinkProps, siteLinks } from "./Utils";
 
 function Footer() {

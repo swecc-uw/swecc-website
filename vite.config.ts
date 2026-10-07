@@ -13,8 +13,8 @@ export default defineConfig({
     react(),
   ],
   build: { outDir: "build" },
-  // Vitest stubs CSS by default; the design-system guards read global.css.
-  test: { css: { include: [/global\.css/] } },
+  // The prerender runs in Node, which cannot run uncompiled StyleX.
+  ssr: { noExternal: ["@swecc/ui"] },
   server: {
     port: 3000,
     proxy: {

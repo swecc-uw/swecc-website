@@ -1,7 +1,7 @@
 import React from "react";
 import * as stylex from "@stylexjs/stylex";
-import { Heading, Text } from "../components";
-import { colors, fonts, layout } from "../components/tokens.stylex";
+import { Heading, Text } from "@swecc/ui";
+import { colors, fonts, layout } from "@swecc/ui/tokens.stylex";
 import meetingImg from "../Data/img/backgroundImg/2.webp";
 import Calendar from "./Calendar";
 

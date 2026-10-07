@@ -16,8 +16,8 @@ import {
   reveal,
   typeStyles,
   useReveal,
-} from "../components";
-import { colors, fontSizes, layout, media } from "../components/tokens.stylex";
+} from "@swecc/ui";
+import { colors, fontSizes, layout, media } from "@swecc/ui/tokens.stylex";
 import ClusterShell from "./ClusterShell";
 import InitiativeCard from "./InitiativeCard";
 import HomeAbout from "./HomeAbout";

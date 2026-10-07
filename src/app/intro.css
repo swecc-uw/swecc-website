@@ -1,0 +1,17 @@
+/*
+ * The only hand-written CSS in the app: intro hooks that must apply to the
+ * prerendered HTML before React hydrates. Everything else is StyleX.
+ */
+
+/* index.html sets data-intro before first paint; Intro.tsx clears it. */
+[data-intro="play"] #root {
+  visibility: hidden;
+}
+
+[data-intro] [data-intro-part="title"] {
+  visibility: hidden;
+}
+
+[data-intro="play"] [data-intro-part="reveal"] {
+  opacity: 0;
+}

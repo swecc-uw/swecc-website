@@ -1,7 +1,7 @@
 import React, { type ReactNode } from "react";
 import * as stylex from "@stylexjs/stylex";
-import { Heading, Text } from "../components";
-import { colors, fonts } from "../components/tokens.stylex";
+import { Heading, Text } from "@swecc/ui";
+import { colors, fonts } from "@swecc/ui/tokens.stylex";
 import groupPhoto from "../Data/img/Officers/officerGroupPic.webp";
 import { links } from "./Utils/Utils";
 

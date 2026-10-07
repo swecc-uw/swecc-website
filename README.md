@@ -62,7 +62,9 @@ npm start
 
 ## Styling 🎨
 
-All styles are written in [StyleX][stylex-url]. Shared tokens and building blocks live in the design library at [`src/components`](src/components/README.md). Page code in `src/app` composes those components and keeps its own styles next to its markup in `stylex.create`. Don't add new `.css` files.
+All styles are written in [StyleX][stylex-url]. Shared tokens and building blocks come from the [`@swecc/ui`][swecc-ui-url] design library, which every SWECC frontend can install. Page code in `src/app` composes those components and keeps its own styles next to its markup in `stylex.create`. Don't add new `.css` files.
+
+To change a shared component or a token, open a pull request in [swecc-ui][swecc-ui-url]. Then update the `@swecc/ui` dependency in `package.json`.
 
 ## Contributing 🤝
 
@@ -108,5 +110,6 @@ CI fails a pull request whose files are not formatted with [Prettier](https://pr
 [react-url]: https://reactjs.org/
 [stylex-shield]: https://img.shields.io/badge/StyleX-1572B6?style=for-the-badge&logo=css3&logoColor=white
 [stylex-url]: https://stylexjs.com
+[swecc-ui-url]: https://github.com/swecc-uw/swecc-ui
 [ts-shield]: https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white
 [ts-url]: https://www.typescriptlang.org/
