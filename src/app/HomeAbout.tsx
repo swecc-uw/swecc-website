@@ -469,7 +469,7 @@ const styles = stylex.create({
     borderRadius: "1.5rem",
     backgroundColor: colors.background,
     boxShadow: "inset 0 0 0 1px rgb(250 250 250 / 0.08)",
-    mask: "radial-gradient(circle at 0 var(--notch-y), #0000 var(--notch), #000 calc(var(--notch) + 0.5px)), radial-gradient(circle at 100% var(--notch-y), #0000 var(--notch), #000 calc(var(--notch) + 0.5px))",
+    mask: "radial-gradient(circle at 0 var(--notch-y), transparent var(--notch), black calc(var(--notch) + 0.5px)), radial-gradient(circle at 100% var(--notch-y), transparent var(--notch), black calc(var(--notch) + 0.5px))",
     maskComposite: "intersect",
   },
   passHead: {

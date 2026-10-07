@@ -183,12 +183,13 @@ export function TerminalWindow({
     <div
       {...props}
       ref={windowRef}
-      {...stylex.props(styles.window, dragging && styles.dragging, style)}
-      style={
-        draggable
-          ? { transform: `translate(${offset.x}px, ${offset.y}px)` }
-          : undefined
-      }
+      {...stylex.props(
+        styles.window,
+        dragging && styles.dragging,
+        style,
+        // Last, so the drag position wins over any `style` passed in.
+        draggable && styles.offset(offset.x, offset.y),
+      )}
     >
       <div
         {...stylex.props(
@@ -219,6 +220,9 @@ const styles = stylex.create({
     flexDirection: "column",
     boxSizing: "border-box",
   },
+  offset: (x: number, y: number) => ({
+    transform: `translate(${x}px, ${y}px)`,
+  }),
   dragging: {
     zIndex: 5,
     boxShadow: "0 18px 40px rgba(0, 0, 0, 0.35)",
@@ -246,9 +250,9 @@ const styles = stylex.create({
     borderRadius: "50%",
     display: "inline-block",
   },
-  close: { backgroundColor: "#ff5f56" },
-  minimize: { backgroundColor: "#ffbd2e" },
-  maximize: { backgroundColor: "#27c93f" },
+  close: { backgroundColor: colors.windowClose },
+  minimize: { backgroundColor: colors.windowMinimize },
+  maximize: { backgroundColor: colors.windowMaximize },
   body: {
     flex: 1,
     minHeight: 0,

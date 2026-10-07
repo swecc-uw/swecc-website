@@ -85,7 +85,7 @@ function InitiativeCard({
   );
 }
 
-const lavender = stylex.createTheme(cardVars, { accent: "#d5c6f8" });
+const lavender = stylex.createTheme(cardVars, { accent: colors.accent });
 
 // The panel lifts off a solid "side" by stacking 1px shadows.
 const side = `color-mix(in srgb, ${cardVars.accent} 55%, ${colors.background})`;

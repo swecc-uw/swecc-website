@@ -22,6 +22,11 @@ export const colors = stylex.defineVars({
 
   border: "#43454a",
   hairline: "rgb(250 250 250 / 0.1)",
+
+  // macOS window buttons on `TerminalWindow`.
+  windowClose: "#ff5f56",
+  windowMinimize: "#ffbd2e",
+  windowMaximize: "#27c93f",
 });
 
 const sans =
@@ -33,10 +38,26 @@ export const fonts = stylex.defineVars({
   hero: `"Manrope", ${sans}`,
 });
 
+// Media queries, used as condition keys: `{ default: a, [media.max768]: b }`.
+export const media = stylex.defineConsts({
+  max1100: "@media (max-width: 1100px)",
+  max900: "@media (max-width: 900px)",
+  max768: "@media (max-width: 768px)",
+  max760: "@media (max-width: 760px)",
+  max720: "@media (max-width: 720px)",
+  max600: "@media (max-width: 600px)",
+  max380: "@media (max-width: 380px)",
+  motionOK: "@media (prefers-reduced-motion: no-preference)",
+  reducedMotion: "@media (prefers-reduced-motion: reduce)",
+  hoverFine: "@media (hover: hover) and (pointer: fine)",
+  hoverNone: "@media (hover: none)",
+  pointerCoarse: "@media (pointer: coarse)",
+});
+
 export const fontSizes = stylex.defineVars({
-  h1: { default: "2.5rem", "@media (max-width: 768px)": "2rem" },
-  h2: { default: "1.5rem", "@media (max-width: 768px)": "1.375rem" },
-  h3: { default: "1.25rem", "@media (max-width: 768px)": "1.125rem" },
+  h1: { default: "2.5rem", [media.max768]: "2rem" },
+  h2: { default: "1.5rem", [media.max768]: "1.375rem" },
+  h3: { default: "1.25rem", [media.max768]: "1.125rem" },
   h4: "1.125rem",
   h5: "1rem",
   h6: "0.875rem",
@@ -75,20 +96,4 @@ export const easings = stylex.defineConsts({
   outExpo: "cubic-bezier(0.16, 1, 0.3, 1)",
   in: "cubic-bezier(0.7, 0, 0.84, 0)",
   handoff: "cubic-bezier(0.33, 0, 0.1, 1)",
-});
-
-// Media queries, used as condition keys: `{ default: a, [media.max768]: b }`.
-export const media = stylex.defineConsts({
-  max1100: "@media (max-width: 1100px)",
-  max900: "@media (max-width: 900px)",
-  max768: "@media (max-width: 768px)",
-  max760: "@media (max-width: 760px)",
-  max720: "@media (max-width: 720px)",
-  max600: "@media (max-width: 600px)",
-  max380: "@media (max-width: 380px)",
-  motionOK: "@media (prefers-reduced-motion: no-preference)",
-  reducedMotion: "@media (prefers-reduced-motion: reduce)",
-  hoverFine: "@media (hover: hover) and (pointer: fine)",
-  hoverNone: "@media (hover: none)",
-  pointerCoarse: "@media (pointer: coarse)",
 });

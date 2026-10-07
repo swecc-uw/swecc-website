@@ -1,6 +1,7 @@
 export { Button, ButtonIcon } from "./Button";
 export type { ButtonProps, ButtonSize, ButtonVariant } from "./Button";
 export { Band, Container } from "./Layout";
+export { NavLink } from "./NavLink";
 export { Photo } from "./Photo";
 export { Pill } from "./Pill";
 export { reveal, useReveal } from "./Reveal";

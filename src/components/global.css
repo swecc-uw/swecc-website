@@ -2,7 +2,9 @@
  * The only hand-written CSS in the app. It covers what StyleX cannot express:
  * document-level defaults, element resets, and intro hooks that must apply to
  * the prerendered HTML before React hydrates. Component styles live in StyleX.
- * Values mirror tokens.stylex.ts.
+ *
+ * StyleX hashes token variable names, so colors here are literals. Each must
+ * equal a `colors` value in tokens.stylex.ts; guards.test.ts enforces that.
  */
 
 * {
@@ -23,8 +25,8 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #fafafa;
-  background-color: #1f1d20;
+  color: #fafafa; /* colors.text */
+  background-color: #1f1d20; /* colors.background */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -36,7 +38,7 @@ ul {
 }
 
 a {
-  color: #fafafa;
+  color: #fafafa; /* colors.text */
   text-decoration: none;
 }
 
@@ -46,7 +48,7 @@ a:hover {
 }
 
 :focus-visible {
-  outline: 2px solid #7ea266;
+  outline: 2px solid #7ea266; /* colors.primary */
   outline-offset: 3px;
 }
 

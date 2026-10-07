@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Link, NavLink, useLocation } from "react-router";
+import { Link, useLocation } from "react-router";
 import { FiMenu, FiX } from "react-icons/fi";
 import * as stylex from "@stylexjs/stylex";
 import SWECCWordmark from "../Data/img/Logo/SWECCWordmarkWhite.webp";
-import { Container } from "../components";
+import { Container, NavLink } from "../components";
 import {
   colors,
   fonts,
@@ -48,10 +48,8 @@ function Navbar() {
                 <NavLink
                   to={to}
                   end={to === "/"}
-                  className={({ isActive }) =>
-                    stylex.props(styles.link, isActive && styles.linkActive)
-                      .className ?? ""
-                  }
+                  style={styles.link}
+                  activeStyle={styles.linkActive}
                 >
                   {label}
                 </NavLink>
@@ -94,12 +92,8 @@ function Navbar() {
                 to={to}
                 end={to === "/"}
                 onClick={closeMenu}
-                className={({ isActive }) =>
-                  stylex.props(
-                    styles.menuLink,
-                    isActive && styles.menuLinkActive,
-                  ).className ?? ""
-                }
+                style={styles.menuLink}
+                activeStyle={styles.menuLinkActive}
               >
                 {label}
               </NavLink>
