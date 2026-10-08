@@ -7,7 +7,7 @@ import React, {
   useState,
 } from "react";
 import * as stylex from "@stylexjs/stylex";
-import { colors, fonts } from "../components/tokens.stylex";
+import { colors, fonts } from "@swecc/ui/tokens.stylex";
 import {
   CLUSTER_HOME,
   type OutputLine,

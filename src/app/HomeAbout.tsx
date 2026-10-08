@@ -14,14 +14,8 @@ import {
   Pill,
   reveal,
   useReveal,
-} from "../components";
-import {
-  colors,
-  easings,
-  fonts,
-  layout,
-  media,
-} from "../components/tokens.stylex";
+} from "@swecc/ui";
+import { colors, easings, fonts, layout, media } from "@swecc/ui/tokens.stylex";
 import { links } from "./Utils";
 import workshopImg from "../Data/img/backgroundImg/1.webp";
 import generalMeetingImg from "../Data/img/backgroundImg/2.webp";

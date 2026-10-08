@@ -1,8 +1,8 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import * as stylex from "@stylexjs/stylex";
-import { typeStyles } from "../components";
-import { colors, easings, fonts, media } from "../components/tokens.stylex";
+import { typeStyles } from "@swecc/ui";
+import { colors, easings, fonts, media } from "@swecc/ui/tokens.stylex";
 
 type Flip = { x: number; y: number; scale: number };
 

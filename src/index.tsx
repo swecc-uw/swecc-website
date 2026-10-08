@@ -2,7 +2,8 @@ import React from "react";
 import { createRoot, hydrateRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router";
 
-import "./components/global.css";
+import "@swecc/ui/global.css";
+import "./app/intro.css";
 import App from "./app/App";
 
 const container = document.getElementById("root");

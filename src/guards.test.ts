@@ -1,20 +1,17 @@
 import { describe, expect, it } from "vitest";
-import globalCss from "./global.css?raw";
-import tokens from "./tokens.stylex.ts?raw";
 
-// Design-system rules that review alone won't hold. Each failure message says
-// what to do instead; see src/components/README.md for the reasoning.
+// Styling rules that review alone won't hold. Each failure message says what
+// to do instead; see the @swecc/ui README for the reasoning.
 
 const sources = import.meta.glob<string>(
-  ["../**/*.{ts,tsx}", "!../**/*.test.ts"],
+  ["./**/*.{ts,tsx}", "!./**/*.test.ts"],
   { query: "?raw", import: "default", eager: true },
 );
-const cssFiles = Object.keys(import.meta.glob("../**/*.css"));
+const cssFiles = Object.keys(import.meta.glob("./**/*.css"));
 
 const files = (filter: (path: string) => boolean = () => true) =>
   Object.entries(sources).filter(([path]) => filter(path));
-const isTokens = (path: string) => path.endsWith("/tokens.stylex.ts");
-const isApp = (path: string) => path.startsWith("../app/");
+const isApp = (path: string) => path.startsWith("./app/");
 
 const HEX = /(?<![\w&])#(?:[0-9a-f]{3,4}|[0-9a-f]{6}|[0-9a-f]{8})\b/gi;
 
@@ -32,28 +29,28 @@ describe("design system guards", () => {
     },
   );
 
-  it("has no stylesheets besides components/global.css", () => {
-    expect(cssFiles).toEqual(["./global.css"]);
+  it("has no stylesheets besides app/intro.css", () => {
+    expect(cssFiles).toEqual(["./app/intro.css"]);
   });
 
   it.each(files())(
-    "%s imports no CSS other than global.css",
+    "%s imports no CSS; only index.tsx loads the global styles",
     (path, source) => {
       const imports = [
         ...source.matchAll(
           /from\s+["']([^"']+\.css)["']|import\s+["']([^"']+\.css)["']/g,
         ),
-      ]
-        .map((m) => m[1] ?? m[2])
-        .filter((spec) => !spec.endsWith("?raw"));
+      ].map((m) => m[1] ?? m[2]);
       const allowed =
-        path === "../index.tsx" ? ["./components/global.css"] : [];
+        path === "./index.tsx"
+          ? ["@swecc/ui/global.css", "./app/intro.css"]
+          : [];
       expect(imports).toEqual(allowed);
     },
   );
 
-  it.each(files((path) => !isTokens(path)))(
-    "%s takes colors from tokens.stylex.ts, not hex literals",
+  it.each(files())(
+    "%s takes colors from @swecc/ui/tokens.stylex, not hex literals",
     (_, source) => {
       expect(source.match(HEX) ?? []).toEqual([]);
     },
@@ -72,15 +69,4 @@ describe("design system guards", () => {
       expect(source).not.toMatch(/\)\s*\.(className|style)\b/);
     },
   );
-
-  it("global.css only uses colors defined as tokens", () => {
-    const start = tokens.indexOf("export const colors");
-    const colorTokens = tokens.slice(start, tokens.indexOf("});", start));
-    const tokenHexes = new Set(
-      (colorTokens.match(HEX) ?? []).map((h) => h.toLowerCase()),
-    );
-    const used = (globalCss.match(HEX) ?? []).map((h) => h.toLowerCase());
-    expect(used.length).toBeGreaterThan(0);
-    expect(used.filter((hex) => !tokenHexes.has(hex))).toEqual([]);
-  });
 });

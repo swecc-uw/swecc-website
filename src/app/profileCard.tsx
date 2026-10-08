@@ -3,8 +3,8 @@ import * as stylex from "@stylexjs/stylex";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { AiOutlineLink } from "react-icons/ai";
-import { Text } from "../components";
-import { colors, fonts, media } from "../components/tokens.stylex";
+import { Text } from "@swecc/ui";
+import { colors, fonts, media } from "@swecc/ui/tokens.stylex";
 import type { Officer } from "../Data/officers";
 
 const photos = import.meta.glob<string>("../Data/officers/*", {

@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { Link } from "react-router";
 import * as stylex from "@stylexjs/stylex";
-import { Band, Container, Heading, typeStyles } from "../components";
+import { Band, Container, Heading, typeStyles } from "@swecc/ui";
 import {
   colors,
   fontSizes,
   layout,
   media,
   radii,
-} from "../components/tokens.stylex";
+} from "@swecc/ui/tokens.stylex";
 import ProfileCard from "./profileCard";
 import { officersByYear, rosterYears } from "../Data/officers";
 

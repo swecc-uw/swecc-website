@@ -5,6 +5,7 @@
   "type": "module",
   "dependencies": {
     "@stylexjs/stylex": "^0.19.1",
+    "@swecc/ui": "^0.1.1",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
     "react-icons": "^5.7.0",

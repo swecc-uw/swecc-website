@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import * as stylex from "@stylexjs/stylex";
-import { Button, Heading, Text } from "../components";
+import { Button, Heading, Text } from "@swecc/ui";
 import {
   colors,
   fonts,
@@ -8,7 +8,7 @@ import {
   lineHeights,
   media,
   radii,
-} from "../components/tokens.stylex";
+} from "@swecc/ui/tokens.stylex";
 import {
   type CalendarEvent,
   GOOGLE_CALENDAR_OPEN_URL,

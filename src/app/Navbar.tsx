@@ -3,14 +3,8 @@ import { Link, useLocation } from "react-router";
 import { FiMenu, FiX } from "react-icons/fi";
 import * as stylex from "@stylexjs/stylex";
 import SWECCWordmark from "../Data/img/Logo/SWECCWordmarkWhite.webp";
-import { Container, NavLink } from "../components";
-import {
-  colors,
-  fonts,
-  layout,
-  media,
-  radii,
-} from "../components/tokens.stylex";
+import { Container, NavLink } from "@swecc/ui";
+import { colors, fonts, layout, media, radii } from "@swecc/ui/tokens.stylex";
 import { communityLinks, externalLinkProps, links, siteLinks } from "./Utils";
 
 function Navbar() {
