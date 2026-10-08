@@ -16,6 +16,8 @@ export type CalendarEvent = {
   allDay: boolean;
   rrule: string;
   exdates: Date[];
+  /** When the event was added to the calendar, if the feed says. */
+  created: Date | null;
 };
 
 type IcsDate = { date: Date; allDay: boolean; timeZone: string };
@@ -208,6 +210,9 @@ function parseVEvent(block: string): ParsedEvent {
   const uid = (getLine(block, "UID").split(/:(.+)/)[1] || "").trim();
   const rrule = (getLine(block, "RRULE").split(/:(.+)/)[1] || "").trim();
   const exdates = parseExdates(block);
+  const created = parseIcsUtc(
+    (getLine(block, "CREATED").split(/:(.+)/)[1] || "").trim(),
+  );
 
   return {
     event: {
@@ -220,6 +225,7 @@ function parseVEvent(block: string): ParsedEvent {
       allDay: start.allDay,
       rrule,
       exdates,
+      created: Number.isNaN(created.getTime()) ? null : created,
     },
     timeZone: start.timeZone,
   };
@@ -371,6 +377,66 @@ export function eventsOnDay(events: CalendarEvent[], day: Date) {
     }
     return dateKey(event.start) === key;
   });
+}
+
+/**
+ * The next `limit` events that haven't ended yet, showing each recurring
+ * series once (at its next occurrence). Expects events sorted by start.
+ */
+export function upcomingEvents(
+  events: CalendarEvent[],
+  now = new Date(),
+  limit = 3,
+) {
+  const seen = new Set<string>();
+  const upcoming: CalendarEvent[] = [];
+  for (const event of events) {
+    if (upcoming.length === limit) break;
+    if (event.end <= now) continue;
+    const key = event.uid || `${event.title}|${event.start.toISOString()}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    upcoming.push(event);
+  }
+  return upcoming;
+}
+
+const NEW_EVENT_MS = 14 * 24 * 60 * 60 * 1000;
+
+/** Whether the event was added to the calendar in the last two weeks. */
+export function isNewEvent(event: CalendarEvent, now = new Date()) {
+  if (!event.created) return false;
+  const age = now.getTime() - event.created.getTime();
+  return age >= 0 && age < NEW_EVENT_MS;
+}
+
+function compactUtc(date: Date) {
+  return date.toISOString().replace(/[-:]|\.\d{3}/g, "");
+}
+
+/** A link that opens Google Calendar with this event filled in. */
+export function addToCalendarUrl(event: CalendarEvent) {
+  const dates = event.allDay
+    ? [event.start, event.end].map((date) => dateKey(date).replace(/-/g, ""))
+    : [event.start, event.end].map(compactUtc);
+  const params = new URLSearchParams({
+    action: "TEMPLATE",
+    text: event.title,
+    dates: dates.join("/"),
+  });
+  if (event.location) params.set("location", event.location);
+  if (event.description) params.set("details", event.description);
+  return `https://calendar.google.com/calendar/render?${params}`;
+}
+
+/** The description's first paragraph without bare links, or "" if none. */
+export function eventSummary(event: CalendarEvent) {
+  const [first = ""] = event.description
+    .replace(/https?:\/\/\S+/g, "")
+    .split(/\n\s*\n/)
+    .map((paragraph) => paragraph.replace(/\s+/g, " ").trim())
+    .filter(Boolean);
+  return first.length >= 20 ? first : "";
 }
 
 export function formatEventTime(event: CalendarEvent, timeZone = TZ) {
