@@ -21,6 +21,7 @@ import { colors, fontSizes, layout, media } from "@swecc/ui/tokens.stylex";
 import ClusterShell from "./ClusterShell";
 import InitiativeCard from "./InitiativeCard";
 import HomeAbout from "./HomeAbout";
+import HomeEvents, { NextEventBanner } from "./HomeEvents";
 import { links } from "./Utils";
 
 type Program = {
@@ -85,6 +86,7 @@ function HomePage() {
       <Band tone="black" style={styles.hero}>
         <Container ref={heroRef} style={styles.heroInner}>
           <div {...stylex.props(styles.heroCopy)}>
+            <NextEventBanner />
             <Heading level={1} data-intro-part="title" style={styles.heroTitle}>
               <span {...stylex.props(typeStyles.hero, styles.heroLine)}>
                 Software
@@ -140,6 +142,8 @@ function HomePage() {
           </TerminalWindow>
         </Container>
       </Band>
+
+      <HomeEvents />
 
       <HomeAbout />
 

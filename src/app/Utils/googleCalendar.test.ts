@@ -1,5 +1,13 @@
 import { expect, test } from "vitest";
-import { eventsOnDay, formatEventTime, parseIcsEvents } from "./googleCalendar";
+import {
+  addToCalendarUrl,
+  eventSummary,
+  eventsOnDay,
+  formatEventTime,
+  isNewEvent,
+  parseIcsEvents,
+  upcomingEvents,
+} from "./googleCalendar";
 
 function calendar(...properties: string[]) {
   return [
@@ -191,4 +199,100 @@ test("repeated fall clock times retain their first occurrence", () => {
       "2026-11-20T00:00:00Z",
     ),
   ).toEqual(["2026-11-01T08:30:00.000Z"]);
+});
+
+test("upcoming events skip past events and show each series once", () => {
+  const ics = [
+    "BEGIN:VCALENDAR",
+    "BEGIN:VEVENT",
+    "UID:weekly-meeting",
+    "SUMMARY:Weekly meeting",
+    "DTSTART;TZID=America/Los_Angeles:20261007T173000",
+    "DTEND;TZID=America/Los_Angeles:20261007T183000",
+    "RRULE:FREQ=WEEKLY",
+    "END:VEVENT",
+    "BEGIN:VEVENT",
+    "UID:resume-workshop",
+    "SUMMARY:Resume workshop",
+    "DTSTART;TZID=America/Los_Angeles:20261016T180000",
+    "DTEND;TZID=America/Los_Angeles:20261016T190000",
+    "END:VEVENT",
+    "BEGIN:VEVENT",
+    "UID:kickoff",
+    "SUMMARY:Kickoff",
+    "DTSTART;TZID=America/Los_Angeles:20261001T180000",
+    "DTEND;TZID=America/Los_Angeles:20261001T190000",
+    "END:VEVENT",
+    "END:VCALENDAR",
+  ].join("\r\n");
+  const events = parseIcsEvents(ics, {
+    rangeEnd: new Date("2026-12-01T00:00:00Z"),
+  });
+  const upcoming = upcomingEvents(events, new Date("2026-10-08T12:00:00Z"));
+  expect(
+    upcoming.map((event) => [event.title, event.start.toISOString()]),
+  ).toEqual([
+    ["Weekly meeting", "2026-10-15T00:30:00.000Z"],
+    ["Resume workshop", "2026-10-17T01:00:00.000Z"],
+  ]);
+  expect(
+    upcomingEvents(events, new Date("2026-10-08T12:00:00Z"), 1),
+  ).toHaveLength(1);
+});
+
+test("events added in the last two weeks are new", () => {
+  const [event] = parseIcsEvents(
+    calendar(
+      "DTSTART;TZID=America/Los_Angeles:20261016T180000",
+      "DTEND;TZID=America/Los_Angeles:20261016T190000",
+      "CREATED:20261001T120000Z",
+    ),
+  );
+  expect(event.created?.toISOString()).toBe("2026-10-01T12:00:00.000Z");
+  expect(isNewEvent(event, new Date("2026-10-08T12:00:00Z"))).toBe(true);
+  expect(isNewEvent(event, new Date("2026-10-20T12:00:00Z"))).toBe(false);
+
+  const [undated] = parseIcsEvents(
+    calendar(
+      "DTSTART;TZID=America/Los_Angeles:20261016T180000",
+      "DTEND;TZID=America/Los_Angeles:20261016T190000",
+    ),
+  );
+  expect(undated.created).toBeNull();
+  expect(isNewEvent(undated, new Date("2026-10-08T12:00:00Z"))).toBe(false);
+});
+
+test("add-to-calendar links carry the event's UTC times and place", () => {
+  const [event] = parseIcsEvents(
+    calendar(
+      "DTSTART;TZID=America/Los_Angeles:20261016T180000",
+      "DTEND;TZID=America/Los_Angeles:20261016T190000",
+      "LOCATION:CSE2 G10",
+    ),
+  );
+  const url = new URL(addToCalendarUrl(event));
+  expect(url.searchParams.get("text")).toBe("Weekly meeting");
+  expect(url.searchParams.get("dates")).toBe(
+    "20261017T010000Z/20261017T020000Z",
+  );
+  expect(url.searchParams.get("location")).toBe("CSE2 G10");
+});
+
+test("event summaries keep the first paragraph and drop bare links", () => {
+  const [event] = parseIcsEvents(
+    calendar(
+      "DTSTART;TZID=America/Los_Angeles:20261016T180000",
+      "DESCRIPTION:Bring your resume and get feedback from mentors.\\n\\nZoom: https://example.com/j/1",
+    ),
+  );
+  expect(eventSummary(event)).toBe(
+    "Bring your resume and get feedback from mentors.",
+  );
+  const [linkOnly] = parseIcsEvents(
+    calendar(
+      "DTSTART;TZID=America/Los_Angeles:20261016T180000",
+      "DESCRIPTION:Zoom link: https://example.com/j/1",
+    ),
+  );
+  expect(eventSummary(linkOnly)).toBe("");
 });
